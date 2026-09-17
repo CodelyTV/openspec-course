@@ -1,0 +1,19 @@
+guia-openspec.html
+  s_a47cac6ccb2a1e::t_45cadff26c39b5 1-1470
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "4d8e70655885e82bce5f84577af7a30b85c524aa",
+  "prompts": {},
+  "sessions": {
+    "s_a47cac6ccb2a1e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "69974447-30d5-40a2-afd5-5b6ad2d68dd5",
+        "model": "unknown"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
