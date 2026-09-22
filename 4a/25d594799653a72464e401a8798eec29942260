@@ -1,0 +1,33 @@
+RESOURCES.md
+  s_05b1b5560cb3fc::t_04ca5e9a878b14 1-59
+MISSION.md
+  s_a50e05d6158f4c::t_3a0160e5055b66 1-19
+NOTES.md
+  s_a50e05d6158f4c::t_92d88513c092db 1-7
+learning-records/0001-ya-ha-hecho-ciclos-reales.md
+  s_a50e05d6158f4c::t_c3e8ba5184d4df 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4a25d594799653a72464e401a8798eec29942260",
+  "prompts": {},
+  "sessions": {
+    "s_05b1b5560cb3fc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "42fb9ac7-e004-4330-a5d6-3acaa1b41167",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    },
+    "s_a50e05d6158f4c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ca6de5a1-50d5-48fa-83c8-8c54dcca0ee5",
+        "model": "unknown"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
