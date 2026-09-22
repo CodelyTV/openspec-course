@@ -1,0 +1,35 @@
+.gitignore
+  s_96e242df998a6e::t_eae206d711fa78 1
+pocs/01-multirepo-store.sh
+  s_96e242df998a6e::t_fe2f2422589d5c 1-137
+pocs/README.md
+  s_96e242df998a6e::t_03627844a5eacd 1-53
+pocs/05-manual-agent.md
+  s_96e242df998a6e::t_3b5c33ac3d7c42 1-73
+pocs/00-setup.sh
+  s_96e242df998a6e::t_e9a16b7c03eb9b 1-28
+pocs/03-customization.sh
+  s_96e242df998a6e::t_663e46bd3cedd0 1-87
+pocs/env.sh
+  s_96e242df998a6e::t_645b757c5aa536 1-24
+pocs/04-ci-archive.sh
+  s_96e242df998a6e::t_63ebc3be9287ca 1-38
+pocs/02-worksets.sh
+  s_96e242df998a6e::t_c171d8d94b0181 1-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "aea5faad70ffbca31352c10b101e158fffcdfe4f",
+  "prompts": {},
+  "sessions": {
+    "s_96e242df998a6e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "20e13c2d-21e3-49ac-a158-4bfea4916c16",
+        "model": "unknown"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
