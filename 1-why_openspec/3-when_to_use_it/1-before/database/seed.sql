@@ -140,24 +140,24 @@ select so.id,
 from seeded_orders so;
 
 with variants_numbered as (
-	select v.id as variant_id, v.product_id, p.price_amount,
+	select v.id as variant_id, v.product_id, p.name as product_name, v.color, v.size, p.price_amount,
 		row_number() over (order by v.id) as rn, count(*) over () as total
 	from product_variants v
 	join products p on p.id = v.product_id
 )
-insert into order_lines (order_id, product_id, variant_id, quantity, unit_price_amount)
-select so.id, vn.product_id, vn.variant_id, 1 + (so.sequence % 2), vn.price_amount
+insert into order_lines (order_id, product_id, variant_id, product_name, color, size, quantity, unit_price_amount)
+select so.id, vn.product_id, vn.variant_id, vn.product_name, vn.color, vn.size, 1 + (so.sequence % 2), vn.price_amount
 from seeded_orders so
 join variants_numbered vn on vn.rn = ((so.sequence * 7) % vn.total) + 1;
 
 with variants_numbered as (
-	select v.id as variant_id, v.product_id, p.price_amount,
+	select v.id as variant_id, v.product_id, p.name as product_name, v.color, v.size, p.price_amount,
 		row_number() over (order by v.id) as rn, count(*) over () as total
 	from product_variants v
 	join products p on p.id = v.product_id
 )
-insert into order_lines (order_id, product_id, variant_id, quantity, unit_price_amount)
-select so.id, vn.product_id, vn.variant_id, 1, vn.price_amount
+insert into order_lines (order_id, product_id, variant_id, product_name, color, size, quantity, unit_price_amount)
+select so.id, vn.product_id, vn.variant_id, vn.product_name, vn.color, vn.size, 1, vn.price_amount
 from seeded_orders so
 join variants_numbered vn on vn.rn = ((so.sequence * 13 + 5) % vn.total) + 1
 where so.sequence % 2 = 0

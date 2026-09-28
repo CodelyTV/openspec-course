@@ -1,5 +1,5 @@
-import { VariantId } from "@/contexts/backend/products/domain/VariantId";
-import type { CurrentUserProvider } from "@/contexts/backend/users/domain/CurrentUserProvider";
+import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
+import { VariantId } from "@/contexts/shared/domain/VariantId";
 
 import type { CheckoutRepository } from "../../domain/CheckoutRepository";
 

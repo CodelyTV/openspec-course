@@ -4,10 +4,9 @@ import { OrderId } from "@/contexts/backend/orders/domain/OrderId";
 import type { OrderLinePrimitives } from "@/contexts/backend/orders/domain/OrderLine";
 import { PostgresOrderRepository } from "@/contexts/backend/orders/infrastructure/PostgresOrderRepository";
 import { PostgresConnection } from "@/contexts/backend/shared/infrastructure/PostgresConnection";
-import { UserId } from "@/contexts/backend/users/domain/UserId";
+import type { MoneyPrimitives } from "@/contexts/shared/domain/Money";
+import { UserId } from "@/contexts/shared/domain/UserId";
 
-import { ProductMother } from "../../products/domain/ProductMother";
-import { ProductVariantMother } from "../../products/domain/ProductVariantMother";
 import { describeWithEnvironmentArranger } from "../../shared/infrastructure/describeWithEnvironmentArranger";
 import { RetailEnvironmentArranger } from "../../shared/infrastructure/RetailEnvironmentArranger";
 import { UserMother } from "../../users/domain/UserMother";
@@ -21,34 +20,35 @@ const repository = new PostgresOrderRepository(connection);
 const user = UserMother.create({ id: "user-aibuilder" });
 const otherUser = UserMother.create({ id: "user-other" });
 
-async function seedUsersProductAndVariant(): Promise<void> {
+async function seedUsers(): Promise<void> {
 	await arranger.givenUsers(user, otherUser);
-	await arranger.givenProducts(
-		ProductMother.create({
-			id: "p1",
-			variants: [ProductVariantMother.createPrimitives({ id: "v1" })],
-		}),
-	);
 }
 
 describeWithEnvironmentArranger(
 	arranger,
 	"PostgresOrderRepository should",
 	() => {
-		const seededLine = (quantity: number): OrderLinePrimitives =>
-			OrderLineMother.createPrimitives({
-				productId: "p1",
-				variantId: "v1",
-				quantity,
-				unitPrice: { amount: 50, currency: "EUR" },
-			});
+		const lineOf = (
+			quantity: number,
+			unitPrice: MoneyPrimitives = { amount: 50, currency: "EUR" },
+		): OrderLinePrimitives =>
+			OrderLineMother.createPrimitives({ quantity, unitPrice });
 
-		it("save an order and read it back with its creation date", async () => {
-			await seedUsersProductAndVariant();
+		it("save an order and read it back with its creation date and what was bought", async () => {
+			await seedUsers();
 			const order = OrderMother.create({
 				userId: "user-aibuilder",
 				createdAt: "2026-01-15T09:30:00.000Z",
-				lines: [seededLine(2)],
+				lines: [
+					OrderLineMother.createPrimitives({
+						productId: "product-no-longer-in-the-catalog",
+						productName: "Tee",
+						color: "Black",
+						size: "M",
+						quantity: 2,
+						unitPrice: { amount: 50, currency: "EUR" },
+					}),
+				],
 			});
 
 			await repository.save(order);
@@ -58,7 +58,7 @@ describeWithEnvironmentArranger(
 		});
 
 		it("find nothing for an unknown order id", async () => {
-			await seedUsersProductAndVariant();
+			await seedUsers();
 
 			expect(
 				await repository.search(
@@ -68,16 +68,16 @@ describeWithEnvironmentArranger(
 		});
 
 		it("list saved orders newest first", async () => {
-			await seedUsersProductAndVariant();
+			await seedUsers();
 			const older = OrderMother.create({
 				userId: "user-aibuilder",
 				createdAt: "2026-01-15T09:30:00.000Z",
-				lines: [seededLine(1)],
+				lines: [lineOf(1)],
 			});
 			const newer = OrderMother.create({
 				userId: "user-other",
 				createdAt: "2026-02-15T09:30:00.000Z",
-				lines: [seededLine(1)],
+				lines: [lineOf(1)],
 			});
 			await repository.save(older);
 			await repository.save(newer);
@@ -91,11 +91,11 @@ describeWithEnvironmentArranger(
 		});
 
 		it("list saved orders and count their items", async () => {
-			await seedUsersProductAndVariant();
+			await seedUsers();
 			await repository.save(
 				OrderMother.create({
 					userId: "user-aibuilder",
-					lines: [seededLine(3)],
+					lines: [lineOf(3)],
 				}),
 			);
 
@@ -106,17 +106,50 @@ describeWithEnvironmentArranger(
 			expect(orders[0].subtotal.amount).toBe(150);
 		});
 
+		it("list only the latest orders up to the limit, newest first, with their lines", async () => {
+			await seedUsers();
+			const oldest = OrderMother.create({
+				userId: "user-aibuilder",
+				createdAt: "2026-01-15T09:30:00.000Z",
+				lines: [lineOf(1)],
+			});
+			const middle = OrderMother.create({
+				userId: "user-other",
+				createdAt: "2026-02-15T09:30:00.000Z",
+				lines: [lineOf(1)],
+			});
+			const newest = OrderMother.create({
+				userId: "user-aibuilder",
+				createdAt: "2026-03-15T09:30:00.000Z",
+				lines: [lineOf(2)],
+			});
+			await repository.save(oldest);
+			await repository.save(middle);
+			await repository.save(newest);
+
+			const orders = await repository.searchLatest(2);
+
+			expect(orders.map((order) => order.toPrimitives())).toEqual([
+				newest.toPrimitives(),
+				middle.toPrimitives(),
+			]);
+		});
+
+		it("list no latest orders when none has been placed", async () => {
+			expect(await repository.searchLatest(5)).toEqual([]);
+		});
+
 		it("list orders scoped to a user", async () => {
-			await seedUsersProductAndVariant();
+			await seedUsers();
 			const ownOrder = OrderMother.create({
 				userId: "user-aibuilder",
-				lines: [seededLine(1)],
+				lines: [lineOf(1)],
 			});
 			await repository.save(ownOrder);
 			await repository.save(
 				OrderMother.create({
 					userId: "user-other",
-					lines: [seededLine(1)],
+					lines: [lineOf(1)],
 				}),
 			);
 
@@ -127,6 +160,44 @@ describeWithEnvironmentArranger(
 			expect(orders.map((order) => order.toPrimitives())).toEqual([
 				ownOrder.toPrimitives(),
 			]);
+		});
+
+		it("sum the revenue and count the orders of each currency, sorted by currency", async () => {
+			await seedUsers();
+			await repository.save(
+				OrderMother.create({
+					userId: "user-aibuilder",
+					lines: [lineOf(1, { amount: 40, currency: "USD" })],
+				}),
+			);
+			await repository.save(
+				OrderMother.create({
+					userId: "user-aibuilder",
+					lines: [lineOf(1, { amount: 30, currency: "EUR" })],
+				}),
+			);
+			await repository.save(
+				OrderMother.create({
+					userId: "user-other",
+					lines: [lineOf(2, { amount: 25, currency: "EUR" })],
+				}),
+			);
+
+			const revenues = await repository.revenuePerCurrency();
+
+			expect(
+				revenues.map(({ revenue, ordersCount }) => ({
+					revenue: revenue.toPrimitives(),
+					ordersCount,
+				})),
+			).toEqual([
+				{ revenue: { amount: 80, currency: "EUR" }, ordersCount: 2 },
+				{ revenue: { amount: 40, currency: "USD" }, ordersCount: 1 },
+			]);
+		});
+
+		it("report no revenue when no order has been placed", async () => {
+			expect(await repository.revenuePerCurrency()).toEqual([]);
 		});
 	},
 );

@@ -1,6 +1,6 @@
 import { PostgresRepository } from "@/contexts/backend/shared/infrastructure/PostgresRepository";
-import type { UserId } from "@/contexts/backend/users/domain/UserId";
 import { parseDeliveryMethod } from "@/contexts/shared/domain/DeliveryMethod";
+import type { UserId } from "@/contexts/shared/domain/UserId";
 
 import { Checkout, parseCheckoutStatus } from "../domain/Checkout";
 import type { CheckoutRepository } from "../domain/CheckoutRepository";

@@ -5,26 +5,34 @@ import { CheckoutConfirmer } from "@/contexts/backend/checkout/application/confi
 import { CartItemCounter } from "@/contexts/backend/checkout/application/count/CartItemCounter";
 import { CartVariantRemover } from "@/contexts/backend/checkout/application/remove/CartVariantRemover";
 import { CheckoutViewGetter } from "@/contexts/backend/checkout/application/view/CheckoutViewGetter";
+import { OrdersOrderPlacement } from "@/contexts/backend/checkout/infrastructure/OrdersOrderPlacement";
 import { PostgresCheckoutRepository } from "@/contexts/backend/checkout/infrastructure/PostgresCheckoutRepository";
+import { ProductsCheckoutCatalog } from "@/contexts/backend/checkout/infrastructure/ProductsCheckoutCatalog";
+import { ProductsStockReserver } from "@/contexts/backend/checkout/infrastructure/ProductsStockReserver";
 import { OrderFinder } from "@/contexts/backend/orders/application/find/OrderFinder";
 import { UserOrderFinder } from "@/contexts/backend/orders/application/find-mine/UserOrderFinder";
 import { OrdersLister } from "@/contexts/backend/orders/application/list/OrdersLister";
 import { UserOrdersLister } from "@/contexts/backend/orders/application/list-mine/UserOrdersLister";
+import { RecentOrdersLister } from "@/contexts/backend/orders/application/list-recent/RecentOrdersLister";
 import { OrderPlacer } from "@/contexts/backend/orders/application/place/OrderPlacer";
+import { OrdersSummaryGetter } from "@/contexts/backend/orders/application/summarize/OrdersSummaryGetter";
 import { PostgresOrderRepository } from "@/contexts/backend/orders/infrastructure/PostgresOrderRepository";
+import { UsersCustomerDirectory } from "@/contexts/backend/orders/infrastructure/UsersCustomerDirectory";
 import { CategoriesLister } from "@/contexts/backend/products/application/categories/CategoriesLister";
 import { CollectionsLister } from "@/contexts/backend/products/application/collections/CollectionsLister";
+import { StockDecreaser } from "@/contexts/backend/products/application/decrease-stock/StockDecreaser";
 import { ProductFinder } from "@/contexts/backend/products/application/find/ProductFinder";
 import { RelatedProductsFinder } from "@/contexts/backend/products/application/find-related/RelatedProductsFinder";
 import { InventoryLister } from "@/contexts/backend/products/application/inventory/InventoryLister";
 import { LowStockLister } from "@/contexts/backend/products/application/low-stock/LowStockLister";
 import { ProductsSearcher } from "@/contexts/backend/products/application/search/ProductsSearcher";
+import { VariantsSearcher } from "@/contexts/backend/products/application/search-variants/VariantsSearcher";
 import { PostgresProductRepository } from "@/contexts/backend/products/infrastructure/PostgresProductRepository";
 import { CurrentUserGetter } from "@/contexts/backend/users/application/current/CurrentUserGetter";
-import type { CurrentUserProvider } from "@/contexts/backend/users/domain/CurrentUserProvider";
+import { UsersByIdsSearcher } from "@/contexts/backend/users/application/search-by-ids/UsersByIdsSearcher";
 import { FakeSessionCurrentUserProvider } from "@/contexts/backend/users/infrastructure/FakeSessionCurrentUserProvider";
 import { PostgresUserRepository } from "@/contexts/backend/users/infrastructure/PostgresUserRepository";
-import { DashboardGetter } from "@/contexts/frontend/retail/application/dashboard/DashboardGetter";
+import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
 
 import { CryptoIdGenerator } from "./CryptoIdGenerator";
 import { PostgresConnection } from "./PostgresConnection";
@@ -87,6 +95,18 @@ class RetailContainer {
 		return new LowStockLister(this.productRepository);
 	}
 
+	get variantsSearcher(): VariantsSearcher {
+		return new VariantsSearcher(this.productRepository);
+	}
+
+	get stockDecreaser(): StockDecreaser {
+		return new StockDecreaser(this.productRepository);
+	}
+
+	private get customerDirectory(): UsersCustomerDirectory {
+		return new UsersCustomerDirectory(this.usersByIdsSearcher);
+	}
+
 	get orderPlacer(): OrderPlacer {
 		return new OrderPlacer(
 			this.orderRepository,
@@ -96,7 +116,18 @@ class RetailContainer {
 	}
 
 	get ordersLister(): OrdersLister {
-		return new OrdersLister(this.orderRepository, this.userRepository);
+		return new OrdersLister(this.orderRepository, this.customerDirectory);
+	}
+
+	get recentOrdersLister(): RecentOrdersLister {
+		return new RecentOrdersLister(
+			this.orderRepository,
+			this.customerDirectory,
+		);
+	}
+
+	get ordersSummaryGetter(): OrdersSummaryGetter {
+		return new OrdersSummaryGetter(this.orderRepository);
 	}
 
 	get userOrdersLister(): UserOrdersLister {
@@ -107,11 +138,7 @@ class RetailContainer {
 	}
 
 	get orderFinder(): OrderFinder {
-		return new OrderFinder(
-			this.orderRepository,
-			this.productRepository,
-			this.userRepository,
-		);
+		return new OrderFinder(this.orderRepository, this.customerDirectory);
 	}
 
 	get userOrderFinder(): UserOrderFinder {
@@ -121,14 +148,14 @@ class RetailContainer {
 		);
 	}
 
-	get dashboardGetter(): DashboardGetter {
-		return new DashboardGetter(this.ordersLister, this.lowStockLister);
+	private get checkoutCatalog(): ProductsCheckoutCatalog {
+		return new ProductsCheckoutCatalog(this.variantsSearcher);
 	}
 
 	get cartVariantAdder(): CartVariantAdder {
 		return new CartVariantAdder(
 			this.checkoutRepository,
-			this.productRepository,
+			this.checkoutCatalog,
 			this.currentUserProviderInstance,
 			this.idGenerator,
 		);
@@ -151,7 +178,7 @@ class RetailContainer {
 	get checkoutViewGetter(): CheckoutViewGetter {
 		return new CheckoutViewGetter(
 			this.checkoutRepository,
-			this.productRepository,
+			this.checkoutCatalog,
 			this.currentUserProviderInstance,
 		);
 	}
@@ -159,8 +186,9 @@ class RetailContainer {
 	get checkoutConfirmer(): CheckoutConfirmer {
 		return new CheckoutConfirmer(
 			this.checkoutRepository,
-			this.productRepository,
-			this.orderPlacer,
+			this.checkoutCatalog,
+			new ProductsStockReserver(this.stockDecreaser),
+			new OrdersOrderPlacement(this.orderPlacer),
 			this.currentUserProviderInstance,
 			this.unitOfWork,
 		);
@@ -171,6 +199,10 @@ class RetailContainer {
 			this.currentUserProviderInstance,
 			this.userRepository,
 		);
+	}
+
+	get usersByIdsSearcher(): UsersByIdsSearcher {
+		return new UsersByIdsSearcher(this.userRepository);
 	}
 
 	get currentUserProvider(): CurrentUserProvider {

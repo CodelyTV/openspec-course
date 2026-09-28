@@ -13,6 +13,9 @@ export class OrderLineMother {
 				.slugify(faker.commerce.productName())
 				.toLowerCase(),
 			variantId: faker.string.uuid(),
+			productName: faker.commerce.productName(),
+			color: faker.color.human(),
+			size: faker.helpers.arrayElement(["XS", "S", "M", "L", "XL"]),
 			quantity: faker.number.int({ min: 1, max: 3 }),
 			unitPrice: MoneyMother.createPrimitives(),
 			...overrides,

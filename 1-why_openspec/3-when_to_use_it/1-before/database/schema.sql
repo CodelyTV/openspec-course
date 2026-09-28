@@ -63,8 +63,11 @@ create table orders (
 
 create table order_lines (
 	order_id text not null references orders(id) on delete cascade,
-	product_id text not null references products(id) on delete restrict,
-	variant_id text not null references product_variants(id) on delete restrict,
+	product_id text not null,
+	variant_id text not null,
+	product_name text not null,
+	color text not null,
+	size text not null,
 	quantity integer not null check (quantity > 0),
 	unit_price_amount integer not null,
 	primary key (order_id, variant_id)

@@ -1,8 +1,7 @@
+import { CatalogItemNotFoundError } from "@/contexts/backend/checkout/domain/errors/CatalogItemNotFoundError";
 import { CheckoutConcurrentModificationError } from "@/contexts/backend/checkout/domain/errors/CheckoutConcurrentModificationError";
 import { EmptyCheckoutError } from "@/contexts/backend/checkout/domain/errors/EmptyCheckoutError";
 import { VariantOutOfStockError } from "@/contexts/backend/checkout/domain/errors/VariantOutOfStockError";
-import { ProductNotFoundError } from "@/contexts/backend/products/domain/errors/ProductNotFoundError";
-import { VariantNotFoundError } from "@/contexts/backend/products/domain/errors/VariantNotFoundError";
 import { EmptyStringValueObjectError } from "@/contexts/shared/domain/errors/EmptyStringValueObjectError";
 import { InvalidArgumentError } from "@/contexts/shared/domain/errors/InvalidArgumentError";
 
@@ -25,8 +24,7 @@ const userFacingMessages: UserFacingMessages = [
 		EmptyCheckoutError,
 		"Your cart is empty. Add a product before confirming your order.",
 	],
-	[ProductNotFoundError, "One of the products is no longer available."],
-	[VariantNotFoundError, "The selected variant is no longer available."],
+	[CatalogItemNotFoundError, "One of the products is no longer available."],
 	[InvalidArgumentError, invalidRequestMessage],
 	[EmptyStringValueObjectError, invalidRequestMessage],
 ];

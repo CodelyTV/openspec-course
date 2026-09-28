@@ -1,4 +1,6 @@
-import type { DashboardResponse } from "../application/dashboard/DashboardGetter";
+import type { OrdersSummaryResponse } from "@/contexts/backend/orders/application/summarize/OrdersSummaryGetter";
+import type { LowStockReportResponse } from "@/contexts/backend/products/application/low-stock/LowStockLister";
+
 import { formatMoneyPerCurrency, formatUnits } from "../ui/format";
 
 import { MetricCard } from "./MetricCard";
@@ -8,30 +10,34 @@ import styles from "./DashboardMetrics.module.scss";
 const tones = ["green", "violet", "yellow", "pink", "neutral"] as const;
 
 export function DashboardMetrics({
-	dashboard,
+	ordersSummary,
+	lowStockReport,
 }: {
-	dashboard: DashboardResponse;
+	ordersSummary: OrdersSummaryResponse;
+	lowStockReport: LowStockReportResponse;
 }): React.JSX.Element {
 	const metrics = [
 		{
 			label: "Revenue",
-			value: formatMoneyPerCurrency(dashboard.revenuePerCurrency),
+			value: formatMoneyPerCurrency(ordersSummary.revenuePerCurrency),
 			detail: "Confirmed orders",
 		},
 		{
 			label: "Orders",
-			value: String(dashboard.ordersCount),
+			value: String(ordersSummary.ordersCount),
 			detail: "Total confirmed",
 		},
 		{
 			label: "Average order",
-			value: formatMoneyPerCurrency(dashboard.averageOrderPerCurrency),
+			value: formatMoneyPerCurrency(
+				ordersSummary.averageOrderPerCurrency,
+			),
 			detail: "Per order",
 		},
 		{
 			label: "Low stock",
-			value: String(dashboard.lowStockCount),
-			detail: `${formatUnits(dashboard.lowStockThreshold)} or fewer`,
+			value: String(lowStockReport.variants.length),
+			detail: `${formatUnits(lowStockReport.threshold)} or fewer`,
 		},
 	];
 

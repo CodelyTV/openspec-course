@@ -1,7 +1,7 @@
 import { PostgresRepository } from "@/contexts/backend/shared/infrastructure/PostgresRepository";
+import type { UserId } from "@/contexts/shared/domain/UserId";
 
 import { User } from "../domain/User";
-import type { UserId } from "../domain/UserId";
 import type { UserRepository } from "../domain/UserRepository";
 
 type UserRow = {
@@ -30,6 +30,16 @@ export class PostgresUserRepository
 		const rows = await this.sql<
 			UserRow[]
 		>`select id, name, email from users`;
+
+		return rows.map((row) => User.fromPrimitives(row));
+	}
+
+	async searchByIds(ids: UserId[]): Promise<User[]> {
+		const rows = await this.sql<UserRow[]>`
+			select id, name, email
+			from users
+			where id = any(${ids.map((id) => id.value)})
+		`;
 
 		return rows.map((row) => User.fromPrimitives(row));
 	}

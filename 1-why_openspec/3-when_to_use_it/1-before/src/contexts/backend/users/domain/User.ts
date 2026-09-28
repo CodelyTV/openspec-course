@@ -1,4 +1,4 @@
-import { UserId } from "./UserId";
+import { UserId } from "@/contexts/shared/domain/UserId";
 
 export type UserPrimitives = {
 	id: string;

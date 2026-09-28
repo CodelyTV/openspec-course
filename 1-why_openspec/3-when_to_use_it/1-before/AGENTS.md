@@ -19,7 +19,8 @@ make checks              # lint:fix + build + test
 - Next.js 16 (App Router), Hexagonal Architecture, DDD.
 - Frontend routes and server actions in `src/app/` (`src/app/actions/`).
 - Backend business logic in `src/contexts/backend/`, split by bounded context (`products`, `checkout`, `orders`, `users`), each with `domain/application/infrastructure`.
-- Shared domain primitives in `src/contexts/shared/`.
+- Shared kernel (cross-context identifiers and generic primitives) in `src/contexts/shared/domain/`.
+- Contexts collaborate through consumer-owned ports adapted to the provider's `application/` use cases; never import another context's `domain/` or `infrastructure/` (enforced by ESLint).
 
 # Documentation
 

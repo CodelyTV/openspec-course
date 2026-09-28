@@ -1,4 +1,4 @@
-import { VariantId } from "@/contexts/backend/products/domain/VariantId";
+import { VariantId } from "@/contexts/shared/domain/VariantId";
 
 import { InvalidCheckoutLineQuantityError } from "./errors/InvalidCheckoutLineQuantityError";
 

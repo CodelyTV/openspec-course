@@ -4,8 +4,8 @@ import { Checkout } from "@/contexts/backend/checkout/domain/Checkout";
 import { CheckoutId } from "@/contexts/backend/checkout/domain/CheckoutId";
 import { CheckoutConcurrentModificationError } from "@/contexts/backend/checkout/domain/errors/CheckoutConcurrentModificationError";
 import { PostgresCheckoutRepository } from "@/contexts/backend/checkout/infrastructure/PostgresCheckoutRepository";
-import { VariantId } from "@/contexts/backend/products/domain/VariantId";
 import { PostgresConnection } from "@/contexts/backend/shared/infrastructure/PostgresConnection";
+import { VariantId } from "@/contexts/shared/domain/VariantId";
 
 import { ProductMother } from "../../products/domain/ProductMother";
 import { ProductVariantMother } from "../../products/domain/ProductVariantMother";

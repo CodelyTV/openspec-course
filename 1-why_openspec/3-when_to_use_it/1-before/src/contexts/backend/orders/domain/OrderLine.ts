@@ -5,6 +5,9 @@ import { InvalidOrderLineQuantityError } from "./errors/InvalidOrderLineQuantity
 export type OrderLinePrimitives = {
 	productId: string;
 	variantId: string;
+	productName: string;
+	color: string;
+	size: string;
 	quantity: number;
 	unitPrice: MoneyPrimitives;
 };
@@ -13,6 +16,9 @@ export class OrderLine {
 	constructor(
 		readonly productId: string,
 		readonly variantId: string,
+		readonly productName: string,
+		readonly color: string,
+		readonly size: string,
 		readonly quantity: number,
 		readonly unitPrice: Money,
 	) {
@@ -27,6 +33,9 @@ export class OrderLine {
 		return new OrderLine(
 			primitives.productId,
 			primitives.variantId,
+			primitives.productName,
+			primitives.color,
+			primitives.size,
 			primitives.quantity,
 			Money.fromPrimitives(primitives.unitPrice),
 		);
@@ -40,6 +49,9 @@ export class OrderLine {
 		return {
 			productId: this.productId,
 			variantId: this.variantId,
+			productName: this.productName,
+			color: this.color,
+			size: this.size,
 			quantity: this.quantity,
 			unitPrice: this.unitPrice.toPrimitives(),
 		};

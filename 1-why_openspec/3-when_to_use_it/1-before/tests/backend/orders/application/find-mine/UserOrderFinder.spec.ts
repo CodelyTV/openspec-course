@@ -5,8 +5,8 @@ import type {
 	OrderFinder,
 } from "@/contexts/backend/orders/application/find/OrderFinder";
 import { UserOrderFinder } from "@/contexts/backend/orders/application/find-mine/UserOrderFinder";
-import type { CurrentUserProvider } from "@/contexts/backend/users/domain/CurrentUserProvider";
-import { UserId } from "@/contexts/backend/users/domain/UserId";
+import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
+import { UserId } from "@/contexts/shared/domain/UserId";
 
 import { OrderDetailResponseMother } from "../../../../frontend/retail/responses/OrderDetailResponseMother";
 import { Mock } from "../../../../shared/Mock";

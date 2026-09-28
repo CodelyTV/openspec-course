@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import type { OrderResponse } from "@/contexts/backend/orders/application/list/OrdersLister";
+import type { OrderResponse } from "@/contexts/backend/orders/application/OrderResponse";
 
 import { formatDayAndMonth, formatMoney, formatUnits } from "../ui/format";
 

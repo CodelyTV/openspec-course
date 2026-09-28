@@ -1,9 +1,9 @@
 import { beforeEach, describe, expect, it } from "vitest";
 
 import { CurrentUserGetter } from "@/contexts/backend/users/application/current/CurrentUserGetter";
-import type { CurrentUserProvider } from "@/contexts/backend/users/domain/CurrentUserProvider";
 import { UserNotFoundError } from "@/contexts/backend/users/domain/errors/UserNotFoundError";
 import type { UserRepository } from "@/contexts/backend/users/domain/UserRepository";
+import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
 
 import { Mock } from "../../../../shared/Mock";
 import { UserMother } from "../../domain/UserMother";

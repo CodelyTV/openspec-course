@@ -6,7 +6,7 @@ PostgreSQL runs in Docker (see `compose.yml`). Schema and seed data live in `dat
 
 - `products`, `product_variants` — catalog; variants carry size/color and `online_stock` (`check (online_stock >= 0)`).
 - `checkouts`, `checkout_lines` — in-progress carts. One checkout per user (`user_id` unique). `version` is an optimistic lock: every save bumps it and fails with `CheckoutConcurrentModificationError` if it changed since the checkout was read.
-- `orders`, `order_lines` — confirmed purchases. `order_lines` reference products and variants with `on delete restrict`: ordered products can't be deleted.
+- `orders`, `order_lines` — confirmed purchases. Each order line snapshots what was bought when the order was placed (`product_name`, `color`, `size` and `unit_price_amount`), so order history doesn't change when the catalog does. `product_id` and `variant_id` are kept as plain references without foreign keys: products can be renamed or deleted without rewriting or breaking past orders.
 - `users` — customers (no auth: the current user is faked, see `FakeSessionCurrentUserProvider`).
 - Line quantities are `check (quantity > 0)` in `checkout_lines` and `order_lines`.
 

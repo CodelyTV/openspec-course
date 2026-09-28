@@ -1,6 +1,7 @@
+import type { ProductId } from "@/contexts/shared/domain/ProductId";
+import type { VariantId } from "@/contexts/shared/domain/VariantId";
+
 import type { Product } from "./Product";
-import type { ProductId } from "./ProductId";
-import type { VariantId } from "./VariantId";
 
 export type ProductCriteria = {
 	collection?: string;
@@ -17,6 +18,8 @@ export abstract class ProductRepository {
 	abstract searchByIds(ids: ProductId[]): Promise<Product[]>;
 
 	abstract searchByVariantId(variantId: VariantId): Promise<Product | null>;
+
+	abstract searchByVariantIds(variantIds: VariantId[]): Promise<Product[]>;
 
 	abstract searchOthersSameCollectionFirst(
 		product: Product,

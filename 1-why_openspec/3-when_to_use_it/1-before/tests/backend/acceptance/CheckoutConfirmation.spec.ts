@@ -6,23 +6,28 @@ import { Checkout } from "@/contexts/backend/checkout/domain/Checkout";
 import { CheckoutId } from "@/contexts/backend/checkout/domain/CheckoutId";
 import { EmptyCheckoutError } from "@/contexts/backend/checkout/domain/errors/EmptyCheckoutError";
 import { VariantOutOfStockError } from "@/contexts/backend/checkout/domain/errors/VariantOutOfStockError";
+import { OrdersOrderPlacement } from "@/contexts/backend/checkout/infrastructure/OrdersOrderPlacement";
 import { PostgresCheckoutRepository } from "@/contexts/backend/checkout/infrastructure/PostgresCheckoutRepository";
+import { ProductsCheckoutCatalog } from "@/contexts/backend/checkout/infrastructure/ProductsCheckoutCatalog";
+import { ProductsStockReserver } from "@/contexts/backend/checkout/infrastructure/ProductsStockReserver";
 import { OrderPlacer } from "@/contexts/backend/orders/application/place/OrderPlacer";
 import { PostgresOrderRepository } from "@/contexts/backend/orders/infrastructure/PostgresOrderRepository";
-import { VariantId } from "@/contexts/backend/products/domain/VariantId";
+import { StockDecreaser } from "@/contexts/backend/products/application/decrease-stock/StockDecreaser";
+import { VariantsSearcher } from "@/contexts/backend/products/application/search-variants/VariantsSearcher";
 import { PostgresProductRepository } from "@/contexts/backend/products/infrastructure/PostgresProductRepository";
 import { PostgresConnection } from "@/contexts/backend/shared/infrastructure/PostgresConnection";
 import { PostgresUnitOfWork } from "@/contexts/backend/shared/infrastructure/PostgresUnitOfWork";
-import type { CurrentUserProvider } from "@/contexts/backend/users/domain/CurrentUserProvider";
 import type { Clock } from "@/contexts/shared/domain/Clock";
+import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
 import type { IdGenerator } from "@/contexts/shared/domain/IdGenerator";
+import { VariantId } from "@/contexts/shared/domain/VariantId";
 
-import { Mock } from "../../../shared/Mock";
-import { ProductMother } from "../../products/domain/ProductMother";
-import { ProductVariantMother } from "../../products/domain/ProductVariantMother";
-import { describeWithEnvironmentArranger } from "../../shared/infrastructure/describeWithEnvironmentArranger";
-import { RetailEnvironmentArranger } from "../../shared/infrastructure/RetailEnvironmentArranger";
-import { UserMother } from "../../users/domain/UserMother";
+import { Mock } from "../../shared/Mock";
+import { ProductMother } from "../products/domain/ProductMother";
+import { ProductVariantMother } from "../products/domain/ProductVariantMother";
+import { describeWithEnvironmentArranger } from "../shared/infrastructure/describeWithEnvironmentArranger";
+import { RetailEnvironmentArranger } from "../shared/infrastructure/RetailEnvironmentArranger";
+import { UserMother } from "../users/domain/UserMother";
 
 const connection = new PostgresConnection();
 const arranger = new RetailEnvironmentArranger(connection);
@@ -35,8 +40,11 @@ const clock = Mock.create<Clock>();
 const currentUserProvider = Mock.create<CurrentUserProvider>();
 const confirmer = new CheckoutConfirmer(
 	checkoutRepository,
-	productRepository,
-	new OrderPlacer(orderRepository, idGenerator, clock),
+	new ProductsCheckoutCatalog(new VariantsSearcher(productRepository)),
+	new ProductsStockReserver(new StockDecreaser(productRepository)),
+	new OrdersOrderPlacement(
+		new OrderPlacer(orderRepository, idGenerator, clock),
+	),
 	currentUserProvider,
 	new PostgresUnitOfWork(connection),
 );
@@ -94,7 +102,7 @@ async function cartItemCount(): Promise<number | undefined> {
 
 describeWithEnvironmentArranger(
 	arranger,
-	"Checkout confirmation on PostgreSQL should",
+	"Checkout confirmation across checkout, products and orders should",
 	() => {
 		beforeEach(async () => {
 			vi.mocked(idGenerator.generate).mockImplementation(() =>

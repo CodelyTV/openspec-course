@@ -1,25 +1,24 @@
 import { beforeEach, describe, expect, it } from "vitest";
 
 import { CheckoutViewGetter } from "@/contexts/backend/checkout/application/view/CheckoutViewGetter";
+import type { CheckoutCatalog } from "@/contexts/backend/checkout/domain/CheckoutCatalog";
 import type { CheckoutRepository } from "@/contexts/backend/checkout/domain/CheckoutRepository";
-import { ProductNotFoundError } from "@/contexts/backend/products/domain/errors/ProductNotFoundError";
-import { ProductId } from "@/contexts/backend/products/domain/ProductId";
-import type { ProductRepository } from "@/contexts/backend/products/domain/ProductRepository";
-import type { CurrentUserProvider } from "@/contexts/backend/users/domain/CurrentUserProvider";
-import { UserId } from "@/contexts/backend/users/domain/UserId";
+import { CatalogItemNotFoundError } from "@/contexts/backend/checkout/domain/errors/CatalogItemNotFoundError";
+import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
+import { UserId } from "@/contexts/shared/domain/UserId";
+import { VariantId } from "@/contexts/shared/domain/VariantId";
 
 import { Mock } from "../../../../shared/Mock";
-import { ProductMother } from "../../../products/domain/ProductMother";
-import { ProductVariantMother } from "../../../products/domain/ProductVariantMother";
+import { CatalogItemMother } from "../../domain/CatalogItemMother";
 import { CheckoutMother } from "../../domain/CheckoutMother";
 
 describe("CheckoutViewGetter should", () => {
 	const checkoutRepository = Mock.create<CheckoutRepository>();
-	const productRepository = Mock.create<ProductRepository>();
+	const catalog = Mock.create<CheckoutCatalog>();
 	const currentUserProvider = Mock.create<CurrentUserProvider>();
 	const getter = new CheckoutViewGetter(
 		checkoutRepository,
-		productRepository,
+		catalog,
 		currentUserProvider,
 	);
 	const userId = new UserId("user-aibuilder");
@@ -36,33 +35,25 @@ describe("CheckoutViewGetter should", () => {
 			subtotal: null,
 			lines: [],
 		});
-		productRepository.expectSearchByIdsNotToHaveBeenCalled();
+		catalog.expectSearchItemsNotToHaveBeenCalled();
 	});
 
-	it("show the cart lines of the products in it sorted by name with their subtotal", async () => {
-		const tee = ProductMother.create({
-			id: "tee",
-			name: "Tee",
-			price: { amount: 30, currency: "EUR" },
-			variants: [
-				ProductVariantMother.createPrimitives({
-					id: "tee-m",
-					color: "Black",
-					size: "M",
-				}),
-			],
+	it("show the cart lines of the items in it sorted by name with their subtotal", async () => {
+		const tee = CatalogItemMother.create({
+			productId: "tee",
+			variantId: "tee-m",
+			productName: "Tee",
+			color: "Black",
+			size: "M",
+			unitPrice: { amount: 30, currency: "EUR" },
 		});
-		const hoodie = ProductMother.create({
-			id: "hoodie",
-			name: "Hoodie",
-			price: { amount: 80, currency: "EUR" },
-			variants: [
-				ProductVariantMother.createPrimitives({
-					id: "hoodie-l",
-					color: "Ecru",
-					size: "L",
-				}),
-			],
+		const hoodie = CatalogItemMother.create({
+			productId: "hoodie",
+			variantId: "hoodie-l",
+			productName: "Hoodie",
+			color: "Ecru",
+			size: "L",
+			unitPrice: { amount: 80, currency: "EUR" },
 		});
 		checkoutRepository.searchByUserShouldReturn(
 			CheckoutMother.create({
@@ -73,7 +64,7 @@ describe("CheckoutViewGetter should", () => {
 				],
 			}),
 		);
-		productRepository.searchByIdsShouldReturn([tee, hoodie]);
+		catalog.searchItemsShouldReturn([tee, hoodie]);
 
 		expect(await getter.get()).toEqual({
 			status: "draft",
@@ -99,18 +90,20 @@ describe("CheckoutViewGetter should", () => {
 				},
 			],
 		});
-		productRepository.expectSearchByIdsToHaveBeenCalledWith([
-			new ProductId("tee"),
-			new ProductId("hoodie"),
+		catalog.expectSearchItemsToHaveBeenCalledWith([
+			new VariantId("tee-m"),
+			new VariantId("hoodie-l"),
 		]);
 	});
 
-	it("fail instead of hiding a line whose product no longer exists", async () => {
+	it("fail instead of hiding a line whose item is no longer in the catalog", async () => {
 		checkoutRepository.searchByUserShouldReturn(
 			CheckoutMother.create({ userId: userId.value }),
 		);
-		productRepository.searchByIdsShouldReturn([]);
+		catalog.searchItemsShouldReturn([]);
 
-		await expect(getter.get()).rejects.toBeInstanceOf(ProductNotFoundError);
+		await expect(getter.get()).rejects.toBeInstanceOf(
+			CatalogItemNotFoundError,
+		);
 	});
 });

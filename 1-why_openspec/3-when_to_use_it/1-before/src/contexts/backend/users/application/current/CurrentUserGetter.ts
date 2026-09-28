@@ -1,4 +1,5 @@
-import type { CurrentUserProvider } from "../../domain/CurrentUserProvider";
+import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
+
 import { UserNotFoundError } from "../../domain/errors/UserNotFoundError";
 import type { UserRepository } from "../../domain/UserRepository";
 

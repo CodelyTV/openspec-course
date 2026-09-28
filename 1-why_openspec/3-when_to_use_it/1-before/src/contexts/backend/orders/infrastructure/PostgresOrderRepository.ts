@@ -1,8 +1,9 @@
 import { PostgresRepository } from "@/contexts/backend/shared/infrastructure/PostgresRepository";
-import type { UserId } from "@/contexts/backend/users/domain/UserId";
 import { parseDeliveryMethod } from "@/contexts/shared/domain/DeliveryMethod";
-import { parseCurrency } from "@/contexts/shared/domain/Money";
+import { Money, parseCurrency } from "@/contexts/shared/domain/Money";
+import type { UserId } from "@/contexts/shared/domain/UserId";
 
+import type { CurrencyRevenue } from "../domain/CurrencyRevenue";
 import { Order, parseOrderStatus } from "../domain/Order";
 import type { OrderId } from "../domain/OrderId";
 import type { OrderRepository } from "../domain/OrderRepository";
@@ -21,8 +22,17 @@ type OrderLineRow = {
 	order_id: string;
 	product_id: string;
 	variant_id: string;
+	product_name: string;
+	color: string;
+	size: string;
 	quantity: number;
 	unit_price_amount: number;
+};
+
+type CurrencyRevenueRow = {
+	currency: string;
+	revenue_amount: number;
+	orders_count: number;
 };
 
 export class PostgresOrderRepository
@@ -54,12 +64,18 @@ export class PostgresOrderRepository
 						order_id: primitives.id,
 						product_id: line.productId,
 						variant_id: line.variantId,
+						product_name: line.productName,
+						color: line.color,
+						size: line.size,
 						quantity: line.quantity,
 						unit_price_amount: line.unitPrice.amount,
 					})),
 					"order_id",
 					"product_id",
 					"variant_id",
+					"product_name",
+					"color",
+					"size",
 					"quantity",
 					"unit_price_amount",
 				)}
@@ -75,12 +91,23 @@ export class PostgresOrderRepository
 				order by created_at desc
 			`,
 			this.sql<OrderLineRow[]>`
-				select order_id, product_id, variant_id, quantity, unit_price_amount
+				select order_id, product_id, variant_id, product_name, color, size, quantity, unit_price_amount
 				from order_lines
 			`,
 		]);
 
 		return orderRows.map((order) => this.toOrder(order, lineRows));
+	}
+
+	async searchLatest(limit: number): Promise<Order[]> {
+		const orderRows = await this.sql<OrderRow[]>`
+			select id, user_id, created_at, status, delivery_method, subtotal_amount, currency
+			from orders
+			order by created_at desc
+			limit ${limit}
+		`;
+
+		return this.withLines(orderRows);
 	}
 
 	async search(id: OrderId): Promise<Order | null> {
@@ -96,13 +123,9 @@ export class PostgresOrderRepository
 			return null;
 		}
 
-		const lineRows = await this.sql<OrderLineRow[]>`
-			select order_id, product_id, variant_id, quantity, unit_price_amount
-			from order_lines
-			where order_id = ${id.value}
-		`;
+		const [found] = await this.withLines([order]);
 
-		return this.toOrder(order, lineRows);
+		return found;
 	}
 
 	async searchByUser(userId: UserId): Promise<Order[]> {
@@ -113,8 +136,26 @@ export class PostgresOrderRepository
 			order by created_at desc
 		`;
 
+		return this.withLines(orderRows);
+	}
+
+	async revenuePerCurrency(): Promise<CurrencyRevenue[]> {
+		const rows = await this.sql<CurrencyRevenueRow[]>`
+			select currency, sum(subtotal_amount)::int as revenue_amount, count(*)::int as orders_count
+			from orders
+			group by currency
+			order by currency
+		`;
+
+		return rows.map((row) => ({
+			revenue: new Money(row.revenue_amount, parseCurrency(row.currency)),
+			ordersCount: row.orders_count,
+		}));
+	}
+
+	private async withLines(orderRows: OrderRow[]): Promise<Order[]> {
 		const lineRows = await this.sql<OrderLineRow[]>`
-			select order_id, product_id, variant_id, quantity, unit_price_amount
+			select order_id, product_id, variant_id, product_name, color, size, quantity, unit_price_amount
 			from order_lines
 			where order_id = any(${orderRows.map((order) => order.id)})
 		`;
@@ -137,6 +178,9 @@ export class PostgresOrderRepository
 				.map((line) => ({
 					productId: line.product_id,
 					variantId: line.variant_id,
+					productName: line.product_name,
+					color: line.color,
+					size: line.size,
 					quantity: line.quantity,
 					unitPrice: { amount: line.unit_price_amount, currency },
 				})),

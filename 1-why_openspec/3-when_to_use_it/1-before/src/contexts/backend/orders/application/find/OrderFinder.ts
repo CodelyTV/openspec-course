@@ -1,12 +1,6 @@
-import { ProductNotFoundError } from "@/contexts/backend/products/domain/errors/ProductNotFoundError";
-import { VariantNotFoundError } from "@/contexts/backend/products/domain/errors/VariantNotFoundError";
-import type { Product } from "@/contexts/backend/products/domain/Product";
-import { ProductId } from "@/contexts/backend/products/domain/ProductId";
-import type { ProductRepository } from "@/contexts/backend/products/domain/ProductRepository";
-import { VariantId } from "@/contexts/backend/products/domain/VariantId";
-import type { UserRepository } from "@/contexts/backend/users/domain/UserRepository";
 import type { Currency } from "@/contexts/shared/domain/Money";
 
+import type { CustomerDirectory } from "../../domain/CustomerDirectory";
 import { OrderId } from "../../domain/OrderId";
 import type { OrderLine } from "../../domain/OrderLine";
 import type { OrderRepository } from "../../domain/OrderRepository";
@@ -34,8 +28,7 @@ export type OrderDetailResponse = {
 export class OrderFinder {
 	constructor(
 		private readonly orderRepository: OrderRepository,
-		private readonly productRepository: ProductRepository,
-		private readonly userRepository: UserRepository,
+		private readonly customerDirectory: CustomerDirectory,
 	) {}
 
 	async find(id: string): Promise<OrderDetailResponse | null> {
@@ -51,23 +44,18 @@ export class OrderFinder {
 			return null;
 		}
 
-		const orderedProductIds = [
-			...new Set(order.lines.map((line) => line.productId)),
-		].map((productId) => new ProductId(productId));
-
-		const [products, customer] = await Promise.all([
-			this.productRepository.searchByIds(orderedProductIds),
-			this.userRepository.search(order.userId),
+		const customerNames = await this.customerDirectory.namesOf([
+			order.userId,
 		]);
 
 		const lines = order.lines
-			.map((line) => this.toLineResponse(line, products))
+			.map((line) => this.toLineResponse(line))
 			.sort((a, b) => a.productName.localeCompare(b.productName));
 
 		return {
 			id: order.id.value,
 			userId: order.userId.value,
-			customerName: customer?.name ?? order.userId.value,
+			customerName: customerNames.nameOf(order.userId),
 			createdAt: order.createdAt.toISOString(),
 			status: order.status,
 			deliveryMethod: order.deliveryMethod,
@@ -77,28 +65,11 @@ export class OrderFinder {
 		};
 	}
 
-	private toLineResponse(
-		line: OrderLine,
-		products: Product[],
-	): OrderDetailLineResponse {
-		const product = products.find(
-			(candidate) => candidate.id.value === line.productId,
-		);
-
-		if (!product) {
-			throw new ProductNotFoundError(line.productId);
-		}
-
-		const variant = product.variant(new VariantId(line.variantId));
-
-		if (!variant) {
-			throw new VariantNotFoundError(line.variantId);
-		}
-
+	private toLineResponse(line: OrderLine): OrderDetailLineResponse {
 		return {
-			productName: product.name,
-			color: variant.color,
-			size: variant.size,
+			productName: line.productName,
+			color: line.color,
+			size: line.size,
 			quantity: line.quantity,
 			unitPriceAmount: line.unitPrice.amount,
 		};

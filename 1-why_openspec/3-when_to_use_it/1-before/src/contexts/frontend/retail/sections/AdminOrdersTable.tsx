@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import type { OrderResponse } from "@/contexts/backend/orders/application/list/OrdersLister";
+import type { OrderResponse } from "@/contexts/backend/orders/application/OrderResponse";
 import { Table } from "@/contexts/frontend/design-system/molecules/Table";
 
 import { formatMoney, formatShortDate, formatStatus } from "../ui/format";

@@ -1,6 +1,5 @@
 import { parseLiteral } from "@/contexts/shared/domain/parseLiteral";
-
-import { VariantId } from "./VariantId";
+import { VariantId } from "@/contexts/shared/domain/VariantId";
 
 export const sizeOrder = ["XS", "S", "M", "L", "XL"] as const;
 

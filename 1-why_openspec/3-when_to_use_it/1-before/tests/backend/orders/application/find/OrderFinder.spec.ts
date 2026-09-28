@@ -1,61 +1,45 @@
 import { describe, expect, it } from "vitest";
 
 import { OrderFinder } from "@/contexts/backend/orders/application/find/OrderFinder";
+import {
+	type CustomerDirectory,
+	CustomerNames,
+} from "@/contexts/backend/orders/domain/CustomerDirectory";
 import type { OrderRepository } from "@/contexts/backend/orders/domain/OrderRepository";
-import { ProductNotFoundError } from "@/contexts/backend/products/domain/errors/ProductNotFoundError";
-import { ProductId } from "@/contexts/backend/products/domain/ProductId";
-import type { ProductRepository } from "@/contexts/backend/products/domain/ProductRepository";
-import type { UserRepository } from "@/contexts/backend/users/domain/UserRepository";
+import { UserId } from "@/contexts/shared/domain/UserId";
 
 import { Mock } from "../../../../shared/Mock";
-import { ProductMother } from "../../../products/domain/ProductMother";
-import { ProductVariantMother } from "../../../products/domain/ProductVariantMother";
-import { UserMother } from "../../../users/domain/UserMother";
 import { OrderLineMother } from "../../domain/OrderLineMother";
 import { OrderMother } from "../../domain/OrderMother";
 
 describe("OrderFinder should", () => {
 	const orderRepository = Mock.create<OrderRepository>();
-	const productRepository = Mock.create<ProductRepository>();
-	const userRepository = Mock.create<UserRepository>();
-	const finder = new OrderFinder(
-		orderRepository,
-		productRepository,
-		userRepository,
-	);
+	const customerDirectory = Mock.create<CustomerDirectory>();
+	const finder = new OrderFinder(orderRepository, customerDirectory);
 
-	const customer = UserMother.create({ name: "AI Builder" });
-	const product = ProductMother.create({
-		id: "tee",
-		name: "Tee",
-		variants: [
-			ProductVariantMother.createPrimitives({
-				id: "tee-m",
-				color: "Black",
-				size: "M",
-			}),
-		],
-	});
+	const customerId = new UserId("user-aibuilder");
 	const order = OrderMother.create({
-		userId: customer.id.value,
+		userId: customerId.value,
 		lines: [
 			OrderLineMother.createPrimitives({
-				productId: "tee",
-				variantId: "tee-m",
+				productName: "Tee",
+				color: "Black",
+				size: "M",
 				quantity: 2,
 				unitPrice: { amount: 30, currency: "EUR" },
 			}),
 		],
 	});
 
-	it("return the order with its customer and the products of its lines", async () => {
+	it("return the order with its customer and what was bought on each line", async () => {
 		orderRepository.searchShouldReturn(order);
-		productRepository.searchByIdsShouldReturn([product]);
-		userRepository.searchShouldReturn(customer);
+		customerDirectory.namesOfShouldReturn(
+			new CustomerNames(new Map([[customerId.value, "AI Builder"]])),
+		);
 
 		expect(await finder.find(order.id.value)).toEqual({
 			id: order.id.value,
-			userId: customer.id.value,
+			userId: customerId.value,
 			customerName: "AI Builder",
 			createdAt: order.createdAt.toISOString(),
 			status: "confirmed",
@@ -72,9 +56,41 @@ describe("OrderFinder should", () => {
 				},
 			],
 		});
-		productRepository.expectSearchByIdsToHaveBeenCalledWith([
-			new ProductId("tee"),
+		customerDirectory.expectNamesOfToHaveBeenCalledWith([customerId]);
+	});
+
+	it("sort the lines by product name", async () => {
+		orderRepository.searchShouldReturn(
+			OrderMother.create({
+				lines: [
+					OrderLineMother.createPrimitives({
+						productName: "Sweatshirt",
+						unitPrice: { amount: 60, currency: "EUR" },
+					}),
+					OrderLineMother.createPrimitives({
+						productName: "Cap",
+						unitPrice: { amount: 20, currency: "EUR" },
+					}),
+				],
+			}),
+		);
+		customerDirectory.namesOfShouldReturn(new CustomerNames(new Map()));
+
+		const found = await finder.find(order.id.value);
+
+		expect(found?.lines.map((line) => line.productName)).toEqual([
+			"Cap",
+			"Sweatshirt",
 		]);
+	});
+
+	it("show the customer id when the customer is no longer a known user", async () => {
+		orderRepository.searchShouldReturn(order);
+		customerDirectory.namesOfShouldReturn(new CustomerNames(new Map()));
+
+		expect((await finder.find(order.id.value))?.customerName).toBe(
+			customerId.value,
+		);
 	});
 
 	it("return null when the order does not exist", async () => {
@@ -86,15 +102,5 @@ describe("OrderFinder should", () => {
 	it("return null for a blank id without looking it up", async () => {
 		expect(await finder.find(" ")).toBeNull();
 		orderRepository.expectSearchNotToHaveBeenCalled();
-	});
-
-	it("fail instead of hiding a line whose product no longer exists", async () => {
-		orderRepository.searchShouldReturn(order);
-		productRepository.searchByIdsShouldReturn([]);
-		userRepository.searchShouldReturn(customer);
-
-		await expect(finder.find(order.id.value)).rejects.toBeInstanceOf(
-			ProductNotFoundError,
-		);
 	});
 });

@@ -1,24 +1,27 @@
 import { describe, expect, it } from "vitest";
 
 import { OrdersLister } from "@/contexts/backend/orders/application/list/OrdersLister";
+import {
+	type CustomerDirectory,
+	CustomerNames,
+} from "@/contexts/backend/orders/domain/CustomerDirectory";
 import type { OrderRepository } from "@/contexts/backend/orders/domain/OrderRepository";
-import type { UserRepository } from "@/contexts/backend/users/domain/UserRepository";
+import { UserId } from "@/contexts/shared/domain/UserId";
 
 import { Mock } from "../../../../shared/Mock";
-import { UserMother } from "../../../users/domain/UserMother";
 import { OrderLineMother } from "../../domain/OrderLineMother";
 import { OrderMother } from "../../domain/OrderMother";
 
 describe("OrdersLister should", () => {
 	const orderRepository = Mock.create<OrderRepository>();
-	const userRepository = Mock.create<UserRepository>();
-	const lister = new OrdersLister(orderRepository, userRepository);
+	const customerDirectory = Mock.create<CustomerDirectory>();
+	const lister = new OrdersLister(orderRepository, customerDirectory);
+	const noKnownCustomers = new CustomerNames(new Map());
 
 	it("list every order with the name of its customer, its subtotal and its item count", async () => {
-		const customer = UserMother.create({ name: "Ada Lovelace" });
 		const order = OrderMother.create({
 			id: "order-1",
-			userId: customer.id.value,
+			userId: "user-ada",
 			createdAt: "2026-03-14T10:00:00.000Z",
 			status: "confirmed",
 			lines: [
@@ -33,7 +36,9 @@ describe("OrdersLister should", () => {
 			],
 		});
 		orderRepository.searchAllShouldReturn([order]);
-		userRepository.searchAllShouldReturn([customer, UserMother.create()]);
+		customerDirectory.namesOfShouldReturn(
+			new CustomerNames(new Map([["user-ada", "Ada Lovelace"]])),
+		);
 
 		expect(await lister.list()).toEqual([
 			{
@@ -45,6 +50,9 @@ describe("OrdersLister should", () => {
 				currency: "EUR",
 				items: 3,
 			},
+		]);
+		customerDirectory.expectNamesOfToHaveBeenCalledWith([
+			new UserId("user-ada"),
 		]);
 	});
 
@@ -58,7 +66,7 @@ describe("OrdersLister should", () => {
 				],
 			}),
 		]);
-		userRepository.searchAllShouldReturn([]);
+		customerDirectory.namesOfShouldReturn(noKnownCustomers);
 
 		const [order] = await lister.list();
 
@@ -69,7 +77,7 @@ describe("OrdersLister should", () => {
 		orderRepository.searchAllShouldReturn([
 			OrderMother.create({ userId: "user-gone" }),
 		]);
-		userRepository.searchAllShouldReturn([]);
+		customerDirectory.namesOfShouldReturn(noKnownCustomers);
 
 		const [order] = await lister.list();
 
@@ -81,7 +89,7 @@ describe("OrdersLister should", () => {
 			OrderMother.create({ id: "newest" }),
 			OrderMother.create({ id: "oldest" }),
 		]);
-		userRepository.searchAllShouldReturn([]);
+		customerDirectory.namesOfShouldReturn(noKnownCustomers);
 
 		const orders = await lister.list();
 
@@ -90,7 +98,7 @@ describe("OrdersLister should", () => {
 
 	it("return no orders when none has been placed", async () => {
 		orderRepository.searchAllShouldReturn([]);
-		userRepository.searchAllShouldReturn([UserMother.create()]);
+		customerDirectory.namesOfShouldReturn(noKnownCustomers);
 
 		expect(await lister.list()).toEqual([]);
 	});

@@ -1,11 +1,11 @@
-import { VariantNotFoundError } from "@/contexts/backend/products/domain/errors/VariantNotFoundError";
-import type { ProductRepository } from "@/contexts/backend/products/domain/ProductRepository";
-import { VariantId } from "@/contexts/backend/products/domain/VariantId";
-import type { CurrentUserProvider } from "@/contexts/backend/users/domain/CurrentUserProvider";
-import type { UserId } from "@/contexts/backend/users/domain/UserId";
+import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
 import type { IdGenerator } from "@/contexts/shared/domain/IdGenerator";
+import type { UserId } from "@/contexts/shared/domain/UserId";
+import { VariantId } from "@/contexts/shared/domain/VariantId";
 
+import { CatalogItems } from "../../domain/CatalogItems";
 import { Checkout } from "../../domain/Checkout";
+import type { CheckoutCatalog } from "../../domain/CheckoutCatalog";
 import { CheckoutId } from "../../domain/CheckoutId";
 import type { CheckoutRepository } from "../../domain/CheckoutRepository";
 import { VariantOutOfStockError } from "../../domain/errors/VariantOutOfStockError";
@@ -13,28 +13,22 @@ import { VariantOutOfStockError } from "../../domain/errors/VariantOutOfStockErr
 export class CartVariantAdder {
 	constructor(
 		private readonly checkoutRepository: CheckoutRepository,
-		private readonly productRepository: ProductRepository,
+		private readonly catalog: CheckoutCatalog,
 		private readonly currentUserProvider: CurrentUserProvider,
 		private readonly idGenerator: IdGenerator,
 	) {}
 
 	async add(rawVariantId: string): Promise<void> {
 		const variantId = new VariantId(rawVariantId);
-		const product =
-			await this.productRepository.searchByVariantId(variantId);
-		const variant = product?.variant(variantId);
-
-		if (!product || !variant) {
-			throw new VariantNotFoundError(variantId.value);
-		}
+		const catalogItems = new CatalogItems(
+			await this.catalog.searchItems([variantId]),
+		);
+		const item = catalogItems.itemOf(variantId);
 
 		const checkout = await this.currentUserCheckout();
-		const updatedCheckout = checkout.addVariant(
-			product.id.value,
-			variantId,
-		);
+		const updatedCheckout = checkout.addVariant(item.productId, variantId);
 
-		if (!variant.hasStockFor(updatedCheckout.quantityOf(variantId))) {
+		if (!item.hasStockFor(updatedCheckout.quantityOf(variantId))) {
 			throw new VariantOutOfStockError(variantId.value);
 		}
 

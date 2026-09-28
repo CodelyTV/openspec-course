@@ -1,5 +1,6 @@
+import { ProductId } from "@/contexts/shared/domain/ProductId";
+
 import { ProductNotFoundError } from "../../domain/errors/ProductNotFoundError";
-import { ProductId } from "../../domain/ProductId";
 import type { ProductRepository } from "../../domain/ProductRepository";
 import { type ProductResponse, toProductResponse } from "../ProductResponse";
 

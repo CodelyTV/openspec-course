@@ -1,14 +1,14 @@
 import { PostgresRepository } from "@/contexts/backend/shared/infrastructure/PostgresRepository";
 import { parseCurrency } from "@/contexts/shared/domain/Money";
+import type { ProductId } from "@/contexts/shared/domain/ProductId";
+import type { VariantId } from "@/contexts/shared/domain/VariantId";
 
 import { parseProductAccent, Product } from "../domain/Product";
-import type { ProductId } from "../domain/ProductId";
 import type {
 	ProductCriteria,
 	ProductRepository,
 } from "../domain/ProductRepository";
 import { parseSize } from "../domain/ProductVariant";
-import type { VariantId } from "../domain/VariantId";
 
 type ProductRow = {
 	id: string;
@@ -80,6 +80,21 @@ export class PostgresProductRepository
 		`;
 
 		return (await this.withVariants(productRows)).at(0) ?? null;
+	}
+
+	async searchByVariantIds(variantIds: VariantId[]): Promise<Product[]> {
+		const productRows = await this.sql<ProductRow[]>`
+			select *
+			from products
+			where id in (
+				select product_id
+				from product_variants
+				where id = any(${variantIds.map((variantId) => variantId.value)})
+			)
+			order by collection, name
+		`;
+
+		return this.withVariants(productRows);
 	}
 
 	async searchOthersSameCollectionFirst(

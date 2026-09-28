@@ -2,8 +2,8 @@ import { beforeEach, describe, expect, it } from "vitest";
 
 import { UserOrdersLister } from "@/contexts/backend/orders/application/list-mine/UserOrdersLister";
 import type { OrderRepository } from "@/contexts/backend/orders/domain/OrderRepository";
-import type { CurrentUserProvider } from "@/contexts/backend/users/domain/CurrentUserProvider";
-import { UserId } from "@/contexts/backend/users/domain/UserId";
+import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
+import { UserId } from "@/contexts/shared/domain/UserId";
 
 import { Mock } from "../../../../shared/Mock";
 import { OrderLineMother } from "../../domain/OrderLineMother";

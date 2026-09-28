@@ -4,19 +4,20 @@
 
 Tests live in `tests/`, mirroring `src/` (`tests/backend/**` ↔ `src/contexts/backend/**`, `tests/frontend/**` ↔ `src/contexts/frontend/**`, `tests/shared/**` ↔ `src/contexts/shared/**`, `tests/app/**` ↔ `src/app/**`). `tests/shared/Mock.ts` is the shared mocking helper. Vitest runs three projects (see `vitest.config.ts`):
 
-| Project       | Files                                                     | Environment | Command                    |
-| ------------- | --------------------------------------------------------- | ----------- | -------------------------- |
-| `unit`        | `tests/**/*.spec.ts`, except `tests/**/infrastructure/**` | node        | `npm run test`             |
-| `frontend`    | `tests/**/*.spec.tsx`                                     | jsdom       | `npm run test`             |
-| `integration` | `tests/**/infrastructure/**/*.spec.ts`                    | node        | `npm run test:integration` |
+| Project       | Files                                                                                       | Environment | Command                    |
+| ------------- | ------------------------------------------------------------------------------------------- | ----------- | -------------------------- |
+| `unit`        | `tests/**/*.spec.ts`, except `tests/**/infrastructure/**` and `tests/backend/acceptance/**` | node        | `npm run test`             |
+| `frontend`    | `tests/**/*.spec.tsx`                                                                       | jsdom       | `npm run test`             |
+| `integration` | `tests/**/infrastructure/**/*.spec.ts`, `tests/backend/acceptance/**/*.spec.ts`             | node        | `npm run test:integration` |
 
 Integration tests need the database up and the test database created (`npm run db:test:reset`); they run against `retail_test`, never the dev database.
 
 ### Backend
 
-- **Unit**: test every use case through its public API, mocking domain ports with `Mock.create<T>()` and its helpers (`<method>ShouldReturn`, `expect<Method>ToHaveBeenCalledWith`). Domain classes are covered through the use cases, not tested directly.
+- **Unit**: test every use case through its public API, mocking its own context's domain ports with `Mock.create<T>()` and its helpers (`<method>ShouldReturn`, `expect<Method>ToHaveBeenCalledWith`). Domain classes are covered through the use cases, not tested directly.
 - **Object mothers**: build aggregates and entities with a mother next to the mirrored domain (`tests/backend/<context>/domain/<Name>Mother.ts`, `tests/shared/domain/MoneyMother.ts`), never by hand. Ids and simple value objects (`new UserId("user-1")`) may be built directly.
 - **Integration**: every Postgres repository is tested against `retail_test`, arranging data with mothers and the repository itself (no raw SQL). Data whose repository has no `save` (users, products) is arranged with `RetailEnvironmentArranger` (`givenUsers`, `givenProducts`).
+- **Acceptance**: cross-context flows live in `tests/backend/acceptance/` and wire the real use cases, adapters and Postgres repositories of every involved context (e.g. `CheckoutConfirmation.spec.ts`: checkout → products stock → orders inside one `UnitOfWork`). Only time, ids and the current user are mocked.
 - **Deterministic**: tests control time and generated ids instead of depending on the real clock or random values. Faker runs with a fixed seed (`tests/setupFaker.ts`, loaded by every Vitest project).
 
 ### Frontend
@@ -91,6 +92,7 @@ expect(container).toMatchSnapshot();
 - [format.spec.ts](../../tests/frontend/retail/ui/format.spec.ts)
 - [ProductPurchasePanel.spec.tsx](../../tests/app/products/[id]/ProductPurchasePanel.spec.tsx)
 - [AddToCartForm.spec.tsx](../../tests/app/products/[id]/AddToCartForm.spec.tsx)
+- [CheckoutConfirmation.spec.ts](../../tests/backend/acceptance/CheckoutConfirmation.spec.ts)
 - [CustomerOrdersTable.spec.tsx](../../tests/frontend/retail/sections/CustomerOrdersTable.spec.tsx)
 
 ## 🔗 Related agreements

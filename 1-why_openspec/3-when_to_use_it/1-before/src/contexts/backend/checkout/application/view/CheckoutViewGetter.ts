@@ -1,12 +1,9 @@
-import { ProductNotFoundError } from "@/contexts/backend/products/domain/errors/ProductNotFoundError";
-import { VariantNotFoundError } from "@/contexts/backend/products/domain/errors/VariantNotFoundError";
-import type { Product } from "@/contexts/backend/products/domain/Product";
-import { ProductId } from "@/contexts/backend/products/domain/ProductId";
-import type { ProductRepository } from "@/contexts/backend/products/domain/ProductRepository";
-import type { CurrentUserProvider } from "@/contexts/backend/users/domain/CurrentUserProvider";
+import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
 import { Money, type MoneyPrimitives } from "@/contexts/shared/domain/Money";
 
+import { CatalogItems } from "../../domain/CatalogItems";
 import type { CheckoutStatus } from "../../domain/Checkout";
+import type { CheckoutCatalog } from "../../domain/CheckoutCatalog";
 import type { CheckoutLine } from "../../domain/CheckoutLine";
 import type { CheckoutRepository } from "../../domain/CheckoutRepository";
 
@@ -31,7 +28,7 @@ const statusOfACartNotCreatedYet: CheckoutStatus = "draft";
 export class CheckoutViewGetter {
 	constructor(
 		private readonly checkoutRepository: CheckoutRepository,
-		private readonly productRepository: ProductRepository,
+		private readonly catalog: CheckoutCatalog,
 		private readonly currentUserProvider: CurrentUserProvider,
 	) {}
 
@@ -47,11 +44,11 @@ export class CheckoutViewGetter {
 			};
 		}
 
-		const products = await this.productRepository.searchByIds(
-			checkout.productIds().map((id) => new ProductId(id)),
+		const catalogItems = new CatalogItems(
+			await this.catalog.searchItems(checkout.variantIds()),
 		);
 		const lines = checkout.lines
-			.map((line) => this.toLineResponse(line, products))
+			.map((line) => this.toLineResponse(line, catalogItems))
 			.sort((a, b) => a.productName.localeCompare(b.productName));
 
 		const subtotal = lines
@@ -67,30 +64,18 @@ export class CheckoutViewGetter {
 
 	private toLineResponse(
 		line: CheckoutLine,
-		products: Product[],
+		catalogItems: CatalogItems,
 	): CheckoutLineResponse {
-		const product = products.find(
-			(candidate) => candidate.id.value === line.productId,
-		);
-
-		if (!product) {
-			throw new ProductNotFoundError(line.productId);
-		}
-
-		const variant = product.variant(line.variantId);
-
-		if (!variant) {
-			throw new VariantNotFoundError(line.variantId.value);
-		}
+		const item = catalogItems.itemOf(line.variantId);
 
 		return {
 			variantId: line.variantId.value,
-			productName: product.name,
-			color: variant.color,
-			size: variant.size,
+			productName: item.productName,
+			color: item.color,
+			size: item.size,
 			quantity: line.quantity,
-			price: product.price.toPrimitives(),
-			lineTotal: product.price.multiply(line.quantity).toPrimitives(),
+			price: item.unitPrice.toPrimitives(),
+			lineTotal: item.unitPrice.multiply(line.quantity).toPrimitives(),
 		};
 	}
 }

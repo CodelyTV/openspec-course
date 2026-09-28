@@ -1,7 +1,7 @@
-import { UserId } from "@/contexts/backend/users/domain/UserId";
 import type { DeliveryMethod } from "@/contexts/shared/domain/DeliveryMethod";
 import { Money, type MoneyPrimitives } from "@/contexts/shared/domain/Money";
 import { parseLiteral } from "@/contexts/shared/domain/parseLiteral";
+import { UserId } from "@/contexts/shared/domain/UserId";
 
 import { EmptyOrderError } from "./errors/EmptyOrderError";
 import { OrderId } from "./OrderId";

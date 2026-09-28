@@ -10,8 +10,14 @@ import styles from "./page.module.scss";
 
 export const metadata: Metadata = { title: "Admin" };
 
+const recentOrdersShown = 5;
+
 export default async function AdminDashboardPage(): Promise<React.JSX.Element> {
-	const dashboard = await retailContainer.dashboardGetter.get();
+	const [ordersSummary, recentOrders, lowStockReport] = await Promise.all([
+		retailContainer.ordersSummaryGetter.get(),
+		retailContainer.recentOrdersLister.list(recentOrdersShown),
+		retailContainer.lowStockLister.list(),
+	]);
 
 	return (
 		<div>
@@ -22,11 +28,14 @@ export default async function AdminDashboardPage(): Promise<React.JSX.Element> {
 				description="How the store is doing: catalog, stock and orders at a glance."
 			/>
 
-			<DashboardMetrics dashboard={dashboard} />
+			<DashboardMetrics
+				ordersSummary={ordersSummary}
+				lowStockReport={lowStockReport}
+			/>
 
 			<section className={styles.panels}>
-				<LowStockPanel variants={dashboard.lowStock} />
-				<RecentOrdersPanel orders={dashboard.recentOrders} />
+				<LowStockPanel variants={lowStockReport.variants} />
+				<RecentOrdersPanel orders={recentOrders} />
 			</section>
 		</div>
 	);

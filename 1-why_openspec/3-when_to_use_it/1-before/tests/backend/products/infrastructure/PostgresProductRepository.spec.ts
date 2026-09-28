@@ -1,10 +1,10 @@
 import { expect, it } from "vitest";
 
 import type { Product } from "@/contexts/backend/products/domain/Product";
-import { ProductId } from "@/contexts/backend/products/domain/ProductId";
-import { VariantId } from "@/contexts/backend/products/domain/VariantId";
 import { PostgresProductRepository } from "@/contexts/backend/products/infrastructure/PostgresProductRepository";
 import { PostgresConnection } from "@/contexts/backend/shared/infrastructure/PostgresConnection";
+import { ProductId } from "@/contexts/shared/domain/ProductId";
+import { VariantId } from "@/contexts/shared/domain/VariantId";
 
 import { describeWithEnvironmentArranger } from "../../shared/infrastructure/describeWithEnvironmentArranger";
 import { RetailEnvironmentArranger } from "../../shared/infrastructure/RetailEnvironmentArranger";
@@ -138,6 +138,38 @@ describeWithEnvironmentArranger(
 			const found = await repository.searchByIds([
 				wanted.id,
 				alsoWanted.id,
+			]);
+
+			expect(idsOf(found).sort()).toEqual(["also-wanted", "wanted"]);
+		});
+
+		it("search only the products owning the given variants, once each", async () => {
+			const wanted = ProductMother.create({
+				id: "wanted",
+				variants: [
+					ProductVariantMother.createPrimitives({ id: "wanted-s" }),
+					ProductVariantMother.createPrimitives({ id: "wanted-m" }),
+				],
+			});
+			const alsoWanted = ProductMother.create({
+				id: "also-wanted",
+				variants: [
+					ProductVariantMother.createPrimitives({
+						id: "also-wanted-l",
+					}),
+				],
+			});
+			await arranger.givenProducts(
+				wanted,
+				alsoWanted,
+				ProductMother.create({ id: "not-wanted" }),
+			);
+
+			const found = await repository.searchByVariantIds([
+				new VariantId("wanted-s"),
+				new VariantId("wanted-m"),
+				new VariantId("also-wanted-l"),
+				new VariantId("ghost"),
 			]);
 
 			expect(idsOf(found).sort()).toEqual(["also-wanted", "wanted"]);

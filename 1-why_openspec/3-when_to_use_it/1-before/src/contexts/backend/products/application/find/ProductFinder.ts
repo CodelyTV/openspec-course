@@ -1,4 +1,5 @@
-import { ProductId } from "../../domain/ProductId";
+import { ProductId } from "@/contexts/shared/domain/ProductId";
+
 import type { ProductRepository } from "../../domain/ProductRepository";
 import { type ProductResponse, toProductResponse } from "../ProductResponse";
 

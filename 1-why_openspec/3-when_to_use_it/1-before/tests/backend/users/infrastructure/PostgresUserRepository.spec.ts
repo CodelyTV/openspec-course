@@ -1,8 +1,8 @@
 import { expect, it } from "vitest";
 
 import { PostgresConnection } from "@/contexts/backend/shared/infrastructure/PostgresConnection";
-import { UserId } from "@/contexts/backend/users/domain/UserId";
 import { PostgresUserRepository } from "@/contexts/backend/users/infrastructure/PostgresUserRepository";
+import { UserId } from "@/contexts/shared/domain/UserId";
 
 import { describeWithEnvironmentArranger } from "../../shared/infrastructure/describeWithEnvironmentArranger";
 import { RetailEnvironmentArranger } from "../../shared/infrastructure/RetailEnvironmentArranger";
@@ -47,6 +47,28 @@ describeWithEnvironmentArranger(
 
 		it("list no users when there are none", async () => {
 			expect(await repository.searchAll()).toEqual([]);
+		});
+
+		it("find only the users with the given ids, skipping unknown ones", async () => {
+			const ada = UserMother.create();
+			const grace = UserMother.create();
+			await arranger.givenUsers(ada, grace, UserMother.create());
+
+			const users = await repository.searchByIds([
+				ada.id,
+				grace.id,
+				new UserId("user-ghost"),
+			]);
+
+			expect(users.map((user) => user.toPrimitives()).sort(byId)).toEqual(
+				[ada.toPrimitives(), grace.toPrimitives()].sort(byId),
+			);
+		});
+
+		it("find no users when no ids are given", async () => {
+			await arranger.givenUsers(UserMother.create());
+
+			expect(await repository.searchByIds([])).toEqual([]);
 		});
 	},
 );

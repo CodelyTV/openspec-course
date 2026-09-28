@@ -1,8 +1,8 @@
-import type { UserId } from "@/contexts/backend/users/domain/UserId";
 import type { Clock } from "@/contexts/shared/domain/Clock";
 import type { DeliveryMethod } from "@/contexts/shared/domain/DeliveryMethod";
 import type { IdGenerator } from "@/contexts/shared/domain/IdGenerator";
 import { Money, type MoneyPrimitives } from "@/contexts/shared/domain/Money";
+import type { UserId } from "@/contexts/shared/domain/UserId";
 
 import { Order } from "../../domain/Order";
 import { OrderId } from "../../domain/OrderId";
@@ -12,6 +12,9 @@ import type { OrderRepository } from "../../domain/OrderRepository";
 export type PlaceOrderLine = {
 	productId: string;
 	variantId: string;
+	productName: string;
+	color: string;
+	size: string;
 	quantity: number;
 	unitPrice: MoneyPrimitives;
 };
@@ -38,6 +41,9 @@ export class OrderPlacer {
 					new OrderLine(
 						line.productId,
 						line.variantId,
+						line.productName,
+						line.color,
+						line.size,
 						line.quantity,
 						Money.fromPrimitives(line.unitPrice),
 					),

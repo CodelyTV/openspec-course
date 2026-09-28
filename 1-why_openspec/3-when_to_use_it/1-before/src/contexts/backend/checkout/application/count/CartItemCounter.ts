@@ -1,4 +1,4 @@
-import type { CurrentUserProvider } from "@/contexts/backend/users/domain/CurrentUserProvider";
+import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
 
 import type { CheckoutRepository } from "../../domain/CheckoutRepository";
 

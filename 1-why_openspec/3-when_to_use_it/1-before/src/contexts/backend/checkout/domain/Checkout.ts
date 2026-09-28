@@ -1,7 +1,7 @@
-import type { VariantId } from "@/contexts/backend/products/domain/VariantId";
-import { UserId } from "@/contexts/backend/users/domain/UserId";
 import type { DeliveryMethod } from "@/contexts/shared/domain/DeliveryMethod";
 import { parseLiteral } from "@/contexts/shared/domain/parseLiteral";
+import { UserId } from "@/contexts/shared/domain/UserId";
+import type { VariantId } from "@/contexts/shared/domain/VariantId";
 
 import { CheckoutId } from "./CheckoutId";
 import { CheckoutLine, type CheckoutLinePrimitives } from "./CheckoutLine";
@@ -83,8 +83,8 @@ export class Checkout {
 		return this.lines.find((line) => line.isFor(variantId))?.quantity ?? 0;
 	}
 
-	productIds(): string[] {
-		return [...new Set(this.lines.map((line) => line.productId))];
+	variantIds(): VariantId[] {
+		return this.lines.map((line) => line.variantId);
 	}
 
 	itemCount(): number {

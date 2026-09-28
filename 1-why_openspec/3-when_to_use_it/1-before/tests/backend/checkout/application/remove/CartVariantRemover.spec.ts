@@ -2,9 +2,9 @@ import { beforeEach, describe, expect, it } from "vitest";
 
 import { CartVariantRemover } from "@/contexts/backend/checkout/application/remove/CartVariantRemover";
 import type { CheckoutRepository } from "@/contexts/backend/checkout/domain/CheckoutRepository";
-import type { CurrentUserProvider } from "@/contexts/backend/users/domain/CurrentUserProvider";
-import { UserId } from "@/contexts/backend/users/domain/UserId";
+import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
 import { EmptyStringValueObjectError } from "@/contexts/shared/domain/errors/EmptyStringValueObjectError";
+import { UserId } from "@/contexts/shared/domain/UserId";
 
 import { Mock } from "../../../../shared/Mock";
 import { CheckoutLineMother } from "../../domain/CheckoutLineMother";

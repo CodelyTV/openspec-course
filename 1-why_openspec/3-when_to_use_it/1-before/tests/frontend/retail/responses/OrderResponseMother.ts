@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-import type { OrderResponse } from "@/contexts/backend/orders/application/list/OrdersLister";
+import type { OrderResponse } from "@/contexts/backend/orders/application/OrderResponse";
 
 const referenceDate = new Date("2026-09-28T12:00:00.000Z");
 

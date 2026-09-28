@@ -27,6 +27,20 @@ describe("LowStockPanel should", () => {
 		expect(variant).toHaveTextContent("1 unit");
 	});
 
+	it("show only the first six variants running out", () => {
+		const variants = Array.from({ length: 8 }, (_, index) =>
+			LowStockResponseMother.create({
+				productName: `Product ${index + 1}`,
+			}),
+		);
+
+		render(<LowStockPanel variants={variants} />);
+
+		expect(screen.getAllByRole("listitem")).toHaveLength(6);
+		expect(screen.getByText("Product 6")).toBeInTheDocument();
+		expect(screen.queryByText("Product 7")).not.toBeInTheDocument();
+	});
+
 	it("tell there are no stock alerts when nothing is running out", () => {
 		render(<LowStockPanel variants={[]} />);
 

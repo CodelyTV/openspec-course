@@ -1,4 +1,4 @@
-import type { UserId } from "@/contexts/backend/users/domain/UserId";
+import type { UserId } from "@/contexts/shared/domain/UserId";
 
 import type { Checkout } from "./Checkout";
 

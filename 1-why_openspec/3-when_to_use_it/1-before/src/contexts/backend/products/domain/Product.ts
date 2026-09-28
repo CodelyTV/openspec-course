@@ -1,14 +1,14 @@
 import { Money, type MoneyPrimitives } from "@/contexts/shared/domain/Money";
 import { parseLiteral } from "@/contexts/shared/domain/parseLiteral";
+import { ProductId } from "@/contexts/shared/domain/ProductId";
+import type { VariantId } from "@/contexts/shared/domain/VariantId";
 
-import { ProductId } from "./ProductId";
 import {
 	ProductVariant,
 	type ProductVariantPrimitives,
 	type Size,
 	sizeOrder,
 } from "./ProductVariant";
-import type { VariantId } from "./VariantId";
 
 export const productAccents = ["green", "violet", "yellow", "pink"] as const;
 

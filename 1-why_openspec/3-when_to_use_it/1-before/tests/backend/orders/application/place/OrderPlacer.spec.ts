@@ -4,11 +4,11 @@ import { OrderPlacer } from "@/contexts/backend/orders/application/place/OrderPl
 import { EmptyOrderError } from "@/contexts/backend/orders/domain/errors/EmptyOrderError";
 import { InvalidOrderLineQuantityError } from "@/contexts/backend/orders/domain/errors/InvalidOrderLineQuantityError";
 import type { OrderRepository } from "@/contexts/backend/orders/domain/OrderRepository";
-import { UserId } from "@/contexts/backend/users/domain/UserId";
 import type { Clock } from "@/contexts/shared/domain/Clock";
 import { CurrencyMismatchError } from "@/contexts/shared/domain/errors/CurrencyMismatchError";
 import { InvalidMoneyAmountError } from "@/contexts/shared/domain/errors/InvalidMoneyAmountError";
 import type { IdGenerator } from "@/contexts/shared/domain/IdGenerator";
+import { UserId } from "@/contexts/shared/domain/UserId";
 
 import { Mock } from "../../../../shared/Mock";
 import { OrderLineMother } from "../../domain/OrderLineMother";

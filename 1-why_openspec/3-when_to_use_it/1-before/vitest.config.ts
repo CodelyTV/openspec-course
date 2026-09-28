@@ -33,6 +33,7 @@ export default defineConfig({
 					exclude: [
 						"**/node_modules/**",
 						"tests/**/infrastructure/**",
+						"tests/backend/acceptance/**",
 					],
 					setupFiles: ["tests/setupFaker.ts"],
 				},
@@ -54,7 +55,10 @@ export default defineConfig({
 				test: {
 					name: "integration",
 					environment: "node",
-					include: ["tests/**/infrastructure/**/*.spec.ts"],
+					include: [
+						"tests/**/infrastructure/**/*.spec.ts",
+						"tests/backend/acceptance/**/*.spec.ts",
+					],
 					setupFiles: ["tests/setupFaker.ts", "tests/setupTests.ts"],
 					pool: "forks",
 					fileParallelism: false,

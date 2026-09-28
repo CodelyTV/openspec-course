@@ -6,11 +6,15 @@ import { formatUnits, variantLabel } from "../ui/format";
 
 import styles from "./DashboardPanel.module.scss";
 
+const variantsShown = 6;
+
 export function LowStockPanel({
 	variants,
 }: {
 	variants: LowStockResponse[];
 }): React.JSX.Element {
+	const shownVariants = variants.slice(0, variantsShown);
+
 	return (
 		<article className={styles.panel}>
 			<div className={styles.panelHead}>
@@ -23,7 +27,7 @@ export function LowStockPanel({
 				<p className={styles.panelEmpty}>No stock alerts.</p>
 			) : (
 				<ul className={styles.list}>
-					{variants.map((variant) => {
+					{shownVariants.map((variant) => {
 						const label = variantLabel(variant.color, variant.size);
 
 						return (
