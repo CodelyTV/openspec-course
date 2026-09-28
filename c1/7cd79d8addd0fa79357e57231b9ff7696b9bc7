@@ -1,0 +1,23 @@
+1-why_openspec/3-when_to_use_it/1-before/docs/architecture/hexagonal-architecture.md
+  s_2af548a0103de3::t_88432d9078bf19 11,17-30,38,66-93,101-106
+1-why_openspec/3-when_to_use_it/1-before/docs/architecture/project-layout.md
+  s_2af548a0103de3::t_ef41bb4f21bf58 5-6,8
+1-why_openspec/3-when_to_use_it/1-before/docs/testing/testing-strategy.md
+  s_2af548a0103de3::t_18f772ddcd3dfb 17,20,95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c17cd79d8addd0fa79357e57231b9ff7696b9bc7",
+  "prompts": {},
+  "sessions": {
+    "s_2af548a0103de3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5309e294-62fc-4b47-893f-fc9e6a3e2fd5",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
