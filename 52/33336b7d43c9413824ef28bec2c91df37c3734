@@ -1,0 +1,19 @@
+1-why_openspec/3-when_to_use_it/1-before/compose.yml
+  s_4bce3a24a0a481::t_596d82b20ac074 1-2,18,21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5233336b7d43c9413824ef28bec2c91df37c3734",
+  "prompts": {},
+  "sessions": {
+    "s_4bce3a24a0a481": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "72e276dc-c25e-413c-a1e1-c84279a73db4",
+        "model": "unknown"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
