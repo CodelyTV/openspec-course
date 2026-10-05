@@ -1,3 +1,5 @@
+name: codely-atelier
+
 services:
   postgres:
     image: postgres:17-alpine
@@ -13,7 +15,7 @@ services:
       timeout: 5s
       retries: 10
     volumes:
-      - retail-postgres-data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
 
 volumes:
-  retail-postgres-data:
+  postgres-data:
