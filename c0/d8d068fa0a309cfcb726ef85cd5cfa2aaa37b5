@@ -1,0 +1,695 @@
+2-use_openspec/2-update_apply/2-after-luna/.agents/skills/.openspec-target
+  s_7e2386a68c572e::t_53b8c01ce09901 1
+2-use_openspec/2-update_apply/2-after-luna/.agents/skills/openspec-apply-change/SKILL.md
+  s_7e2386a68c572e::t_11ff18b5b7922e 1-205
+2-use_openspec/2-update_apply/2-after-luna/.agents/skills/openspec-archive-change/SKILL.md
+  s_7e2386a68c572e::t_b31c3b5cb3cd6b 1-221
+2-use_openspec/2-update_apply/2-after-luna/.agents/skills/openspec-explore/SKILL.md
+  s_7e2386a68c572e::t_c63469d7c54915 1-354
+2-use_openspec/2-update_apply/2-after-luna/.agents/skills/openspec-propose/SKILL.md
+  s_7e2386a68c572e::t_d56c42f92a2a20 1-174
+2-use_openspec/2-update_apply/2-after-luna/.agents/skills/openspec-sync-specs/SKILL.md
+  s_7e2386a68c572e::t_71943f565bea1d 1-290
+2-use_openspec/2-update_apply/2-after-luna/.agents/skills/openspec-update-change/SKILL.md
+  s_7e2386a68c572e::t_cb7bfb1027d9a6 1-109
+2-use_openspec/2-update_apply/2-after-luna/.claude/skills/openspec-apply-change/SKILL.md
+  s_7e2386a68c572e::t_a3a98fd004313e 1-205
+2-use_openspec/2-update_apply/2-after-luna/.claude/skills/openspec-archive-change/SKILL.md
+  s_7e2386a68c572e::t_82a6fbbe83effb 1-221
+2-use_openspec/2-update_apply/2-after-luna/.claude/skills/openspec-explore/SKILL.md
+  s_7e2386a68c572e::t_715204cf001fbe 1-354
+2-use_openspec/2-update_apply/2-after-luna/.claude/skills/openspec-propose/SKILL.md
+  s_7e2386a68c572e::t_69fa3d51b71954 1-174
+2-use_openspec/2-update_apply/2-after-luna/.claude/skills/openspec-sync-specs/SKILL.md
+  s_7e2386a68c572e::t_54f62362ab14c7 1-290
+2-use_openspec/2-update_apply/2-after-luna/.claude/skills/openspec-update-change/SKILL.md
+  s_7e2386a68c572e::t_b2abb3eea89f95 1-109
+2-use_openspec/2-update_apply/2-after-luna/.github/skills/openspec-apply-change/SKILL.md
+  s_7e2386a68c572e::t_f81b9c25b50bec 1-205
+2-use_openspec/2-update_apply/2-after-luna/.github/skills/openspec-archive-change/SKILL.md
+  s_7e2386a68c572e::t_26966da0fab673 1-221
+2-use_openspec/2-update_apply/2-after-luna/.github/skills/openspec-explore/SKILL.md
+  s_7e2386a68c572e::t_b00dd3b6b6abf3 1-354
+2-use_openspec/2-update_apply/2-after-luna/.github/skills/openspec-propose/SKILL.md
+  s_7e2386a68c572e::t_32a5124e60718d 1-174
+2-use_openspec/2-update_apply/2-after-luna/.github/skills/openspec-sync-specs/SKILL.md
+  s_7e2386a68c572e::t_47cb0a31589b96 1-290
+2-use_openspec/2-update_apply/2-after-luna/.github/skills/openspec-update-change/SKILL.md
+  s_7e2386a68c572e::t_45a135f6ba4f7d 1-109
+2-use_openspec/2-update_apply/2-after-luna/.gitignore
+  s_7e2386a68c572e::t_768451f60d6624 1-6
+2-use_openspec/2-update_apply/2-after-luna/.opencode/skills/openspec-apply-change/SKILL.md
+  s_7e2386a68c572e::t_e501f7834b00e0 1-205
+2-use_openspec/2-update_apply/2-after-luna/.opencode/skills/openspec-archive-change/SKILL.md
+  s_7e2386a68c572e::t_e24d34826d7e60 1-221
+2-use_openspec/2-update_apply/2-after-luna/.opencode/skills/openspec-explore/SKILL.md
+  s_7e2386a68c572e::t_15955dfe8b79e5 1-354
+2-use_openspec/2-update_apply/2-after-luna/.opencode/skills/openspec-propose/SKILL.md
+  s_7e2386a68c572e::t_60d6a85e174e31 1-174
+2-use_openspec/2-update_apply/2-after-luna/.opencode/skills/openspec-sync-specs/SKILL.md
+  s_7e2386a68c572e::t_1ef93f1a4d5a9e 1-290
+2-use_openspec/2-update_apply/2-after-luna/.opencode/skills/openspec-update-change/SKILL.md
+  s_7e2386a68c572e::t_ef5fb344dac4c6 1-109
+2-use_openspec/2-update_apply/2-after-luna/AGENTS.md
+  s_7e2386a68c572e::t_8760a8a65728b6 1-42
+2-use_openspec/2-update_apply/2-after-luna/CLAUDE.md
+  s_7e2386a68c572e::t_23b8e74fb88b2e 1
+2-use_openspec/2-update_apply/2-after-luna/Makefile
+  s_7e2386a68c572e::t_d5701bb93b980b 1-5
+2-use_openspec/2-update_apply/2-after-luna/compose.yml
+  s_7e2386a68c572e::t_f728f7bbc80a94 1-21
+2-use_openspec/2-update_apply/2-after-luna/database/schema.sql
+  s_7e2386a68c572e::t_b6a8a888c282ab 1-74
+2-use_openspec/2-update_apply/2-after-luna/database/seed.sql
+  s_7e2386a68c572e::t_9a77a1ae2db7a4 1-170
+2-use_openspec/2-update_apply/2-after-luna/docs/architecture/hexagonal-architecture.md
+  s_7e2386a68c572e::t_bbc9aa211b4326 1-111
+2-use_openspec/2-update_apply/2-after-luna/docs/architecture/project-layout.md
+  s_7e2386a68c572e::t_04cfa855e04656 1-9
+2-use_openspec/2-update_apply/2-after-luna/docs/architecture/screens.md
+  s_7e2386a68c572e::t_721ba0edc5b3ec 1-11
+2-use_openspec/2-update_apply/2-after-luna/docs/documentation-guidelines.md
+  s_7e2386a68c572e::t_17efb8a018090b 1-79
+2-use_openspec/2-update_apply/2-after-luna/docs/sql-database/data-model.md
+  s_7e2386a68c572e::t_fd52d369a1365a 1-18
+2-use_openspec/2-update_apply/2-after-luna/docs/testing/testing-strategy.md
+  s_7e2386a68c572e::t_625cd3be0fcabb 1-100
+2-use_openspec/2-update_apply/2-after-luna/eslint.config.mjs
+  s_7e2386a68c572e::t_91165c121f89d9 1-129
+2-use_openspec/2-update_apply/2-after-luna/global.d.ts
+  s_7e2386a68c572e::t_3f1b20bcb96495 1-39
+2-use_openspec/2-update_apply/2-after-luna/next.config.ts
+  s_7e2386a68c572e::t_ce4fcb460d3c7f 1-24
+2-use_openspec/2-update_apply/2-after-luna/openspec/changes/add-outfit-suggestions/.openspec.yaml
+  s_7e2386a68c572e::t_f48c03e14e2e0c 1-2
+2-use_openspec/2-update_apply/2-after-luna/openspec/changes/add-outfit-suggestions/design.md
+  s_7e2386a68c572e::t_86ca836e490c26 1-170
+2-use_openspec/2-update_apply/2-after-luna/openspec/changes/add-outfit-suggestions/proposal.md
+  s_7e2386a68c572e::t_2c1739a323772c 1-34
+2-use_openspec/2-update_apply/2-after-luna/openspec/changes/add-outfit-suggestions/specs/outfit-management/spec.md
+  s_7e2386a68c572e::t_d24d2ad537e2b6 1-108
+2-use_openspec/2-update_apply/2-after-luna/openspec/changes/add-outfit-suggestions/specs/outfit-suggestions/spec.md
+  s_7e2386a68c572e::t_9cbfe0b86234ae 1-50
+2-use_openspec/2-update_apply/2-after-luna/openspec/changes/add-outfit-suggestions/tasks.md
+  s_7e2386a68c572e::t_7e80e41f1253cd 1-44
+2-use_openspec/2-update_apply/2-after-luna/openspec/config.yaml
+  s_7e2386a68c572e::t_ec0b431c55f3ae 1-30
+2-use_openspec/2-update_apply/2-after-luna/package-lock.json
+  s_7e2386a68c572e::t_d06098d2749b46 1-11163
+2-use_openspec/2-update_apply/2-after-luna/package.json
+  s_7e2386a68c572e::t_c8c8a33355fbe2 1-52
+2-use_openspec/2-update_apply/2-after-luna/public/products/CREDITS.md
+  s_7e2386a68c572e::t_7f9227ca100407 1-21
+2-use_openspec/2-update_apply/2-after-luna/src/app/account/layout.module.scss
+  s_7e2386a68c572e::t_e0c85851f044d1 1-3
+2-use_openspec/2-update_apply/2-after-luna/src/app/account/layout.tsx
+  s_7e2386a68c572e::t_84e2845293c798 1-16
+2-use_openspec/2-update_apply/2-after-luna/src/app/account/orders/[id]/page.tsx
+  s_7e2386a68c572e::t_ed3a2d1f9a14a8 1-28
+2-use_openspec/2-update_apply/2-after-luna/src/app/account/orders/page.tsx
+  s_7e2386a68c572e::t_e71c7b22814cec 1-22
+2-use_openspec/2-update_apply/2-after-luna/src/app/actions/ActionState.ts
+  s_7e2386a68c572e::t_88c3ecf545e626 1-3
+2-use_openspec/2-update_apply/2-after-luna/src/app/actions/actionStateFor.ts
+  s_7e2386a68c572e::t_0b7768158329a0 1-46
+2-use_openspec/2-update_apply/2-after-luna/src/app/actions/checkout/addSelectedVariantToCart.ts
+  s_7e2386a68c572e::t_e9a5e43e08dd33 1-30
+2-use_openspec/2-update_apply/2-after-luna/src/app/actions/checkout/confirmOrder.ts
+  s_7e2386a68c572e::t_42c6c82edf44e2 1-32
+2-use_openspec/2-update_apply/2-after-luna/src/app/actions/checkout/removeCartLine.ts
+  s_7e2386a68c572e::t_f6e5078fb9d82b 1-27
+2-use_openspec/2-update_apply/2-after-luna/src/app/actions/checkout/requiredVariantId.ts
+  s_7e2386a68c572e::t_25bbd31bb8ab19 1-11
+2-use_openspec/2-update_apply/2-after-luna/src/app/admin/AdminNav.module.scss
+  s_7e2386a68c572e::t_1024389a231575 1-32
+2-use_openspec/2-update_apply/2-after-luna/src/app/admin/AdminNav.tsx
+  s_7e2386a68c572e::t_73314119dc709f 1-41
+2-use_openspec/2-update_apply/2-after-luna/src/app/admin/inventory/page.tsx
+  s_7e2386a68c572e::t_928d5b9222a337 1-23
+2-use_openspec/2-update_apply/2-after-luna/src/app/admin/layout.module.scss
+  s_7e2386a68c572e::t_9353afe4cdd1b0 1-47
+2-use_openspec/2-update_apply/2-after-luna/src/app/admin/layout.tsx
+  s_7e2386a68c572e::t_871966af4e95ca 1-27
+2-use_openspec/2-update_apply/2-after-luna/src/app/admin/orders/[id]/page.tsx
+  s_7e2386a68c572e::t_c93e7f3b3c694e 1-28
+2-use_openspec/2-update_apply/2-after-luna/src/app/admin/orders/page.tsx
+  s_7e2386a68c572e::t_41345978360671 1-23
+2-use_openspec/2-update_apply/2-after-luna/src/app/admin/page.module.scss
+  s_7e2386a68c572e::t_b8d4a57de6f2e4 1-12
+2-use_openspec/2-update_apply/2-after-luna/src/app/admin/page.tsx
+  s_7e2386a68c572e::t_3a277a30f4eb34 1-42
+2-use_openspec/2-update_apply/2-after-luna/src/app/app.scss
+  s_7e2386a68c572e::t_9dfdfb4e94902c 1-61
+2-use_openspec/2-update_apply/2-after-luna/src/app/checkout/CartSummary.module.scss
+  s_7e2386a68c572e::t_e40fb9cbf8daec 1-71
+2-use_openspec/2-update_apply/2-after-luna/src/app/checkout/CartSummary.tsx
+  s_7e2386a68c572e::t_06f683c69ded8e 1-71
+2-use_openspec/2-update_apply/2-after-luna/src/app/checkout/ConfirmOrderForm.module.scss
+  s_7e2386a68c572e::t_982cd8723a1438 1-4
+2-use_openspec/2-update_apply/2-after-luna/src/app/checkout/ConfirmOrderForm.tsx
+  s_7e2386a68c572e::t_489ebe9aeb5850 1-29
+2-use_openspec/2-update_apply/2-after-luna/src/app/checkout/OrderConfirmation.module.scss
+  s_7e2386a68c572e::t_c3f5eb7d95a51b 1-22
+2-use_openspec/2-update_apply/2-after-luna/src/app/checkout/OrderConfirmation.tsx
+  s_7e2386a68c572e::t_a8740909968121 1-25
+2-use_openspec/2-update_apply/2-after-luna/src/app/checkout/RemoveCartLineForm.tsx
+  s_7e2386a68c572e::t_8c1c6409595478 1-38
+2-use_openspec/2-update_apply/2-after-luna/src/app/checkout/page.module.scss
+  s_7e2386a68c572e::t_3c500f8ebfd802 1-95
+2-use_openspec/2-update_apply/2-after-luna/src/app/checkout/page.tsx
+  s_7e2386a68c572e::t_8e8232d71f07dd 1-86
+2-use_openspec/2-update_apply/2-after-luna/src/app/error.tsx
+  s_7e2386a68c572e::t_a5414e20a068d2 1-28
+2-use_openspec/2-update_apply/2-after-luna/src/app/global-error.tsx
+  s_7e2386a68c572e::t_dc472feccc9de6 1-36
+2-use_openspec/2-update_apply/2-after-luna/src/app/icon.svg
+  s_7e2386a68c572e::t_856899fc18ebe1 1-15
+2-use_openspec/2-update_apply/2-after-luna/src/app/layout.module.scss
+  s_7e2386a68c572e::t_6dfbc845d804e3 1-89
+2-use_openspec/2-update_apply/2-after-luna/src/app/layout.tsx
+  s_7e2386a68c572e::t_ea59d3d7a26a07 1-69
+2-use_openspec/2-update_apply/2-after-luna/src/app/loading.tsx
+  s_7e2386a68c572e::t_871b095b6f3509 1-10
+2-use_openspec/2-update_apply/2-after-luna/src/app/not-found.tsx
+  s_7e2386a68c572e::t_09c607568a2267 1-18
+2-use_openspec/2-update_apply/2-after-luna/src/app/page.module.scss
+  s_7e2386a68c572e::t_b1f4c6668e4d37 1-18
+2-use_openspec/2-update_apply/2-after-luna/src/app/page.tsx
+  s_7e2386a68c572e::t_d3ea6fa4e8be68 1-59
+2-use_openspec/2-update_apply/2-after-luna/src/app/products/[id]/AddToCartForm.module.scss
+  s_7e2386a68c572e::t_f6c660d7b3846c 1-4
+2-use_openspec/2-update_apply/2-after-luna/src/app/products/[id]/AddToCartForm.tsx
+  s_7e2386a68c572e::t_f91fa038b6b06b 1-36
+2-use_openspec/2-update_apply/2-after-luna/src/app/products/[id]/ProductPurchasePanel.module.scss
+  s_7e2386a68c572e::t_3ea8e31a23d73c 1-115
+2-use_openspec/2-update_apply/2-after-luna/src/app/products/[id]/ProductPurchasePanel.tsx
+  s_7e2386a68c572e::t_ba228b3a815746 1-208
+2-use_openspec/2-update_apply/2-after-luna/src/app/products/[id]/page.module.scss
+  s_7e2386a68c572e::t_6cd0d608e22aa4 1-59
+2-use_openspec/2-update_apply/2-after-luna/src/app/products/[id]/page.tsx
+  s_7e2386a68c572e::t_206072f1b4afe2 1-83
+2-use_openspec/2-update_apply/2-after-luna/src/app/status.module.scss
+  s_7e2386a68c572e::t_8cd1e81ca2215e 1-28
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/application/add/CartVariantAdder.ts
+  s_7e2386a68c572e::t_fe0472b6c1531a 1-53
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/application/confirm/CheckoutConfirmer.ts
+  s_7e2386a68c572e::t_85f5194dbf377e 1-76
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/application/count/CartItemCounter.ts
+  s_7e2386a68c572e::t_a43c6afbe3b141 1-18
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/application/remove/CartVariantRemover.ts
+  s_7e2386a68c572e::t_7e0273b4920cf0 1-25
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/application/view/CheckoutViewGetter.ts
+  s_7e2386a68c572e::t_e17f801024bd6b 1-81
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/CatalogItem.ts
+  s_7e2386a68c572e::t_21945c7398d416 1-56
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/CatalogItems.ts
+  s_7e2386a68c572e::t_0953757ceba0ae 1-18
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/Checkout.ts
+  s_7e2386a68c572e::t_c154daf985b512 1-123
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/CheckoutCatalog.ts
+  s_7e2386a68c572e::t_6e9f04ec2504b5 1-7
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/CheckoutId.ts
+  s_7e2386a68c572e::t_bf147ff375e21c 1-3
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/CheckoutLine.ts
+  s_7e2386a68c572e::t_23e9d2cf2505cf 1-51
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/CheckoutRepository.ts
+  s_7e2386a68c572e::t_789713f31f7e53 1-11
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/OrderPlacement.ts
+  s_7e2386a68c572e::t_10d10d83927a11 1-22
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/StockReserver.ts
+  s_7e2386a68c572e::t_fe5a34c06a3148 1-5
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/errors/CatalogItemNotFoundError.ts
+  s_7e2386a68c572e::t_62e3a070071b8b 1-7
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/errors/CheckoutConcurrentModificationError.ts
+  s_7e2386a68c572e::t_52ebc949a42c9a 1-11
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/errors/EmptyCheckoutError.ts
+  s_7e2386a68c572e::t_b7779fddc9edde 1-7
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/errors/InvalidCheckoutLineQuantityError.ts
+  s_7e2386a68c572e::t_b378003a8e8d72 1-9
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/domain/errors/VariantOutOfStockError.ts
+  s_7e2386a68c572e::t_4b07a699f74393 1-7
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/infrastructure/OrdersOrderPlacement.ts
+  s_7e2386a68c572e::t_12a4d6d41f6fc9 1-41
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/infrastructure/PostgresCheckoutRepository.ts
+  s_7e2386a68c572e::t_33e8265d7bbf55 1-147
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/infrastructure/ProductsCheckoutCatalog.ts
+  s_7e2386a68c572e::t_ad273d7a37b6b7 1-34
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/checkout/infrastructure/ProductsStockReserver.ts
+  s_7e2386a68c572e::t_41b61c31f6315f 1-29
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/application/OrderResponse.ts
+  s_7e2386a68c572e::t_39f98dc6916747 1-34
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/application/find-mine/UserOrderFinder.ts
+  s_7e2386a68c572e::t_2c030c7540c0ba 1-21
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/application/find/OrderFinder.ts
+  s_7e2386a68c572e::t_17c59b8150d097 1-77
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/application/list-mine/UserOrdersLister.ts
+  s_7e2386a68c572e::t_3d9f8887252429 1-36
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/application/list-recent/RecentOrdersLister.ts
+  s_7e2386a68c572e::t_e9a09f0d24e7ed 1-23
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/application/list/OrdersLister.ts
+  s_7e2386a68c572e::t_6be739558ed69d 1-23
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/application/place/OrderPlacer.ts
+  s_7e2386a68c572e::t_27fdf219a03a6d 1-57
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/application/summarize/OrdersSummaryGetter.ts
+  s_7e2386a68c572e::t_6b5cb32c22cffb 1-40
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/domain/CurrencyRevenue.ts
+  s_7e2386a68c572e::t_5b12f88fb4424d 1-6
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/domain/CustomerDirectory.ts
+  s_7e2386a68c572e::t_9b2a29264addfb 1-15
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/domain/Order.ts
+  s_7e2386a68c572e::t_e8b00781049b0a 1-92
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/domain/OrderId.ts
+  s_7e2386a68c572e::t_3a24ecdb090041 1-3
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/domain/OrderLine.ts
+  s_7e2386a68c572e::t_2c3b3a0aa89c8e 1-59
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/domain/OrderRepository.ts
+  s_7e2386a68c572e::t_6314be4d5053d9 1-19
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/domain/errors/EmptyOrderError.ts
+  s_7e2386a68c572e::t_101807ddc5e240 1-7
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/domain/errors/InvalidOrderLineQuantityError.ts
+  s_7e2386a68c572e::t_075a78c5411065 1-9
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/infrastructure/PostgresOrderRepository.ts
+  s_7e2386a68c572e::t_e76bea4e2d0886 1-189
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/orders/infrastructure/UsersCustomerDirectory.ts
+  s_7e2386a68c572e::t_9605ea2e9c0335 1-20
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/application/ProductResponse.ts
+  s_7e2386a68c572e::t_dd2d970bd74d00 1-55
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/application/categories/CategoriesLister.ts
+  s_7e2386a68c572e::t_afd0b80c7df859 1-9
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/application/collections/CollectionsLister.ts
+  s_7e2386a68c572e::t_04f4a95bdf8bc4 1-9
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/application/decrease-stock/NotEnoughStockError.ts
+  s_7e2386a68c572e::t_db2966ee2cf3ac 1-7
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/application/decrease-stock/StockDecreaser.ts
+  s_7e2386a68c572e::t_40c9991f319b91 1-38
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/application/find-related/RelatedProductsFinder.ts
+  s_7e2386a68c572e::t_0a82b7fc1b1d31 1-26
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/application/find/ProductFinder.ts
+  s_7e2386a68c572e::t_f9b3a3d517dc8e 1-20
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/application/inventory/InventoryLister.ts
+  s_7e2386a68c572e::t_2d7aca4350b720 1-45
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/application/low-stock/LowStockLister.ts
+  s_7e2386a68c572e::t_707cfedcc35043 1-42
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/application/search-variants/VariantsSearcher.ts
+  s_7e2386a68c572e::t_cd42597eaacf61 1-48
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/application/search/ProductsSearcher.ts
+  s_7e2386a68c572e::t_fdf0dad9aa1646 1-17
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/domain/Product.ts
+  s_7e2386a68c572e::t_6aa7bd7cea5837 1-124
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/domain/ProductRepository.ts
+  s_7e2386a68c572e::t_417432c8fb8e0f 1-37
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/domain/ProductVariant.ts
+  s_7e2386a68c572e::t_fc4f1429b590b2 1-68
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/domain/errors/ProductNotFoundError.ts
+  s_7e2386a68c572e::t_2cbeda9357cc1d 1-7
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/domain/errors/VariantNotFoundError.ts
+  s_7e2386a68c572e::t_ef4f5ad418e3bf 1-7
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/products/infrastructure/PostgresProductRepository.ts
+  s_7e2386a68c572e::t_57c36489d580a0 1-199
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/shared/infrastructure/CryptoIdGenerator.ts
+  s_7e2386a68c572e::t_fa3433b4f56dd7 1-9
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/shared/infrastructure/PostgresConnection.ts
+  s_7e2386a68c572e::t_6fbd4cd0068422 1-36
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/shared/infrastructure/PostgresRepository.ts
+  s_7e2386a68c572e::t_5733ab3d57185e 1-15
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/shared/infrastructure/PostgresUnitOfWork.ts
+  s_7e2386a68c572e::t_697b86d27baef9 1-13
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/shared/infrastructure/RetailContainer.ts
+  s_7e2386a68c572e::t_df2f69eb8b0e2f 1-213
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/shared/infrastructure/SystemClock.ts
+  s_7e2386a68c572e::t_70583e03c5cf55 1-7
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/users/application/current/CurrentUserGetter.ts
+  s_7e2386a68c572e::t_8aa619ec665ad3 1-28
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/users/application/search-by-ids/UsersByIdsSearcher.ts
+  s_7e2386a68c572e::t_b7a01ba1efa2b0 1-24
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/users/domain/User.ts
+  s_7e2386a68c572e::t_fcb173ade3493e 1-27
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/users/domain/UserRepository.ts
+  s_7e2386a68c572e::t_472a2999798000 1-11
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/users/domain/errors/UserNotFoundError.ts
+  s_7e2386a68c572e::t_e0e4d69dce4189 1-8
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/users/infrastructure/FakeSessionCurrentUserProvider.ts
+  s_7e2386a68c572e::t_2ece587c9c69b4 1-9
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/backend/users/infrastructure/PostgresUserRepository.ts
+  s_7e2386a68c572e::t_dac2b5b5d706d8 1-46
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/atoms/Badge.module.scss
+  s_7e2386a68c572e::t_21009588f6b4f8 1-83
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/atoms/Badge.tsx
+  s_7e2386a68c572e::t_f7a8570a5db364 1-49
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/atoms/Button.module.scss
+  s_7e2386a68c572e::t_de76df2f6b1733 1-127
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/atoms/Button.tsx
+  s_7e2386a68c572e::t_511d189bfa4fab 1-106
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/atoms/CodelyLink.tsx
+  s_7e2386a68c572e::t_20a8004faaf2c9 1-20
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/atoms/FormError.module.scss
+  s_7e2386a68c572e::t_98112d16a7d88a 1-11
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/atoms/FormError.tsx
+  s_7e2386a68c572e::t_dce84f2595a213 1-17
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/atoms/Heading.module.scss
+  s_7e2386a68c572e::t_ac57c3b33a6602 1-33
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/atoms/Heading.tsx
+  s_7e2386a68c572e::t_6c7e3d87f222d8 1-47
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/atoms/Icon.module.scss
+  s_7e2386a68c572e::t_25afdc0b2125e2 1-29
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/atoms/Icon.tsx
+  s_7e2386a68c572e::t_fbb85ca0ac5e59 1-38
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/atoms/SubmitButton.tsx
+  s_7e2386a68c572e::t_900d7d260cafc7 1-14
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/generic/_base.scss
+  s_7e2386a68c572e::t_1f6a6e62a14ae2 1-76
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/generic/_fonts.scss
+  s_7e2386a68c572e::t_baa08fadcab43b 1-39
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/generic/_reset.scss
+  s_7e2386a68c572e::t_02d1a68c32eef9 1-82
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/icons/brand.svg
+  s_7e2386a68c572e::t_89d89ad011fe2c 1-18
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/icons/cart.svg
+  s_7e2386a68c572e::t_b3389d0d207876 1
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/icons/icons.tsx
+  s_7e2386a68c572e::t_8a2edda9b71adf 1-2
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/icons/load.svg
+  s_7e2386a68c572e::t_c9d0d975014638 1-4
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/index.scss
+  s_7e2386a68c572e::t_cebae0fd0527f0 1-3
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/molecules/Table.module.scss
+  s_7e2386a68c572e::t_9e46560ce937fb 1-44
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/molecules/Table.tsx
+  s_7e2386a68c572e::t_d95f9a893e7cc9 1-74
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/settings/_border.scss
+  s_7e2386a68c572e::t_93212b3ce2d71e 1-3
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/settings/_colors.scss
+  s_7e2386a68c572e::t_211d3dbc9db37f 1-57
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/settings/_sizes.scss
+  s_7e2386a68c572e::t_869dc9a1f8c99a 1-5
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/settings/_spacing.scss
+  s_7e2386a68c572e::t_0e84682f8b5b3a 1-27
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/settings/_typography.scss
+  s_7e2386a68c572e::t_4843eb40dbf17f 1-34
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/shared/classNames.ts
+  s_7e2386a68c572e::t_d08d9f607426fb 1-25
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/tools/_colors.scss
+  s_7e2386a68c572e::t_f3417d3bc62964 1-117
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/design-system/tools/_typography.scss
+  s_7e2386a68c572e::t_803384652b515b 1-70
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/AdminLink.module.scss
+  s_7e2386a68c572e::t_5f4a018c8fb425 1-24
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/AdminLink.tsx
+  s_7e2386a68c572e::t_be0514f5807fba 1-24
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/AdminOrdersTable.tsx
+  s_7e2386a68c572e::t_b1e0af852d7ab6 1-62
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/CartLink.module.scss
+  s_7e2386a68c572e::t_a8a6cf6f5f6688 1-32
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/CartLink.tsx
+  s_7e2386a68c572e::t_28bb068b584cc4 1-9
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/CartLinkView.tsx
+  s_7e2386a68c572e::t_c8b39a65feb291 1-27
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/CatalogSummary.module.scss
+  s_7e2386a68c572e::t_04fa99d2647b40 1-19
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/CatalogSummary.tsx
+  s_7e2386a68c572e::t_a578b760258469 1-27
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/CategoryFilters.module.scss
+  s_7e2386a68c572e::t_120913e57ef683 1-30
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/CategoryFilters.tsx
+  s_7e2386a68c572e::t_9e9d92fce69fcc 1-59
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/CustomerOrdersTable.tsx
+  s_7e2386a68c572e::t_0acdc99a7626e7 1-70
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/DashboardMetrics.module.scss
+  s_7e2386a68c572e::t_1bf0ad411e4153 1-17
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/DashboardMetrics.tsx
+  s_7e2386a68c572e::t_4c31fc71f91b65 1-57
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/DashboardPanel.module.scss
+  s_7e2386a68c572e::t_92f0fc71654c6e 1-80
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/Footer.module.scss
+  s_7e2386a68c572e::t_3f17c5bdae4fe6 1-55
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/Footer.tsx
+  s_7e2386a68c572e::t_b6ea077e624f6d 1-32
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/InventoryTable.module.scss
+  s_7e2386a68c572e::t_fdd50af6b24c6d 1-11
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/InventoryTable.tsx
+  s_7e2386a68c572e::t_470d9d6953f759 1-42
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/LowStockPanel.tsx
+  s_7e2386a68c572e::t_bcdf5d83dcbea3 1-56
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/MainNav.module.scss
+  s_7e2386a68c572e::t_2b441b2f01917b 1-33
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/MainNav.tsx
+  s_7e2386a68c572e::t_945eead94008a3 1-9
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/MainNavLinks.tsx
+  s_7e2386a68c572e::t_925c6d3f55f906 1-50
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/MetricCard.module.scss
+  s_7e2386a68c572e::t_d9cbd07298571f 1-44
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/MetricCard.tsx
+  s_7e2386a68c572e::t_f40142ea4b193e 1-32
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/OrderDetail.tsx
+  s_7e2386a68c572e::t_9bd6a96aac314e 1-98
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/PageHeader.module.scss
+  s_7e2386a68c572e::t_2e504b94086672 1-48
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/PageHeader.tsx
+  s_7e2386a68c572e::t_f5548b66c585a2 1-54
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/ProductBadges.tsx
+  s_7e2386a68c572e::t_81501420743ad8 1-32
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/ProductCard.module.scss
+  s_7e2386a68c572e::t_dfe3843844b218 1-100
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/ProductCard.tsx
+  s_7e2386a68c572e::t_e6c8a74de0b5bf 1-79
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/ProductGrid.module.scss
+  s_7e2386a68c572e::t_da66e224b682da 1-26
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/ProductGrid.tsx
+  s_7e2386a68c572e::t_dc2eafab97d961 1-33
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/ProductInfo.module.scss
+  s_7e2386a68c572e::t_df7a5a1f58a926 1-59
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/ProductInfo.tsx
+  s_7e2386a68c572e::t_db325d6b3f57c2 1-58
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/ProductVisual.module.scss
+  s_7e2386a68c572e::t_b834edf24f3445 1-59
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/ProductVisual.tsx
+  s_7e2386a68c572e::t_a35d1e93f7499e 1-44
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/RecentOrdersPanel.tsx
+  s_7e2386a68c572e::t_4f0ce4e0574c77 1-52
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/UserMenu.module.scss
+  s_7e2386a68c572e::t_3907ed019c2412 1-64
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/UserMenu.tsx
+  s_7e2386a68c572e::t_5bb461dbcb415a 1-9
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/UserMenuTrigger.tsx
+  s_7e2386a68c572e::t_0fc52672e0003f 1-89
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/sections/orders.module.scss
+  s_7e2386a68c572e::t_3b91d96c6d88ff 1-55
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/frontend/retail/ui/format.ts
+  s_7e2386a68c572e::t_02caa2296797d0 1-74
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/Clock.ts
+  s_7e2386a68c572e::t_4eb75890c9edc0 1-3
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/CodelyError.ts
+  s_7e2386a68c572e::t_42d05727454860 1-6
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/CurrentUserProvider.ts
+  s_7e2386a68c572e::t_ffb4b60fbca4bd 1-5
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/DeliveryMethod.ts
+  s_7e2386a68c572e::t_427417c61d699d 1-9
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/IdGenerator.ts
+  s_7e2386a68c572e::t_df0808324b51fe 1-3
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/Money.ts
+  s_7e2386a68c572e::t_e323d345564ee6 1-60
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/ProductId.ts
+  s_7e2386a68c572e::t_d4b96879a74687 1-3
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/UnitOfWork.ts
+  s_7e2386a68c572e::t_7f80ee83105f80 1-3
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/UserId.ts
+  s_7e2386a68c572e::t_61f318ff07e0ea 1-3
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/VariantId.ts
+  s_7e2386a68c572e::t_1d21c3188c7efc 1-3
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/errors/CurrencyMismatchError.ts
+  s_7e2386a68c572e::t_32a9a2b181e1da 1-7
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/errors/EmptyStringValueObjectError.ts
+  s_7e2386a68c572e::t_5d8e8f68c5af25 1-7
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/errors/InvalidArgumentError.ts
+  s_7e2386a68c572e::t_584e3a1bb418ad 1-3
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/errors/InvalidLiteralError.ts
+  s_7e2386a68c572e::t_a13951b9e02993 1-9
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/errors/InvalidMoneyAmountError.ts
+  s_7e2386a68c572e::t_a36d448d2797e1 1-7
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/parseLiteral.ts
+  s_7e2386a68c572e::t_7b360cb795ba72 1-16
+2-use_openspec/2-update_apply/2-after-luna/src/contexts/shared/domain/value-object/StringValueObject.ts
+  s_7e2386a68c572e::t_48f1edb90f3279 1-15
+2-use_openspec/2-update_apply/2-after-luna/tests/app/admin/AdminNav.spec.tsx
+  s_7e2386a68c572e::t_e88c52fb1f6ec3 1-53
+2-use_openspec/2-update_apply/2-after-luna/tests/app/checkout/CartSummary.spec.tsx
+  s_7e2386a68c572e::t_09c3cf55fb7e6a 1-56
+2-use_openspec/2-update_apply/2-after-luna/tests/app/checkout/ConfirmOrderForm.spec.tsx
+  s_7e2386a68c572e::t_b2cb7892ed8a8e 1-61
+2-use_openspec/2-update_apply/2-after-luna/tests/app/checkout/OrderConfirmation.spec.tsx
+  s_7e2386a68c572e::t_bbbd94053c22b3 1-17
+2-use_openspec/2-update_apply/2-after-luna/tests/app/checkout/RemoveCartLineForm.spec.tsx
+  s_7e2386a68c572e::t_4fbdd4c2bfb680 1-74
+2-use_openspec/2-update_apply/2-after-luna/tests/app/products/[id]/AddToCartForm.spec.tsx
+  s_7e2386a68c572e::t_30a63491be7279 1-65
+2-use_openspec/2-update_apply/2-after-luna/tests/app/products/[id]/ProductPurchasePanel.spec.tsx
+  s_7e2386a68c572e::t_f50312e77a17ca 1-195
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/acceptance/CheckoutConfirmation.spec.ts
+  s_7e2386a68c572e::t_96134312edffe9 1-170
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/checkout/application/add/CartVariantAdder.spec.ts
+  s_7e2386a68c572e::t_f6716ff153909d 1-121
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/checkout/application/confirm/CheckoutConfirmer.spec.ts
+  s_7e2386a68c572e::t_9a2603d00bd1ee 1-150
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/checkout/application/count/CartItemCounter.spec.ts
+  s_7e2386a68c572e::t_6978ad93dad1d1 1-53
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/checkout/application/remove/CartVariantRemover.spec.ts
+  s_7e2386a68c572e::t_9d666bc2ca229d 1-80
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/checkout/application/view/CheckoutViewGetter.spec.ts
+  s_7e2386a68c572e::t_38351e3ec47b74 1-109
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/checkout/domain/CatalogItemMother.ts
+  s_7e2386a68c572e::t_ca8265d1276898 1-33
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/checkout/domain/CheckoutLineMother.ts
+  s_7e2386a68c572e::t_1c7155d15b7cb1 1-18
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/checkout/domain/CheckoutMother.ts
+  s_7e2386a68c572e::t_4b03eb4bf74b4b 1-30
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/checkout/infrastructure/PostgresCheckoutRepository.spec.ts
+  s_7e2386a68c572e::t_5a0a1ce1dedc4b 1-109
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/orders/application/find-mine/UserOrderFinder.spec.ts
+  s_7e2386a68c572e::t_08a2e55371681f 1-46
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/orders/application/find/OrderFinder.spec.ts
+  s_7e2386a68c572e::t_d0b1984a7d8316 1-106
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/orders/application/list-mine/UserOrdersLister.spec.ts
+  s_7e2386a68c572e::t_c46cd4c77820fe 1-58
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/orders/application/list-recent/RecentOrdersLister.spec.ts
+  s_7e2386a68c572e::t_96bf779cbaa3df 1-72
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/orders/application/list/OrdersLister.spec.ts
+  s_7e2386a68c572e::t_7dead6680bbf9b 1-105
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/orders/application/place/OrderPlacer.spec.ts
+  s_7e2386a68c572e::t_ea1e5c0a28f636 1-104
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/orders/application/summarize/OrdersSummaryGetter.spec.ts
+  s_7e2386a68c572e::t_3c3e9f85b22db5 1-61
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/orders/domain/OrderLineMother.ts
+  s_7e2386a68c572e::t_45764c4362e79a 1-24
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/orders/domain/OrderMother.ts
+  s_7e2386a68c572e::t_4a75723d0f0488 1-49
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/orders/infrastructure/PostgresOrderRepository.spec.ts
+  s_7e2386a68c572e::t_9468efeac86cab 1-203
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/orders/infrastructure/UsersCustomerDirectory.spec.ts
+  s_7e2386a68c572e::t_388093400a4c32 1-30
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/products/application/categories/CategoriesLister.spec.ts
+  s_7e2386a68c572e::t_15c9fac67c79c9 1-23
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/products/application/collections/CollectionsLister.spec.ts
+  s_7e2386a68c572e::t_0905dafdd98dae 1-29
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/products/application/decrease-stock/StockDecreaser.spec.ts
+  s_7e2386a68c572e::t_f89bc9a65fdac2 1-66
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/products/application/find-related/RelatedProductsFinder.spec.ts
+  s_7e2386a68c572e::t_42cefe29cd3634 1-38
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/products/application/find/ProductFinder.spec.ts
+  s_7e2386a68c572e::t_9f6ff376660316 1-127
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/products/application/inventory/InventoryLister.spec.ts
+  s_7e2386a68c572e::t_08dbcd1d79523e 1-99
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/products/application/low-stock/LowStockLister.spec.ts
+  s_7e2386a68c572e::t_b635697a9da456 1-60
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/products/application/search-variants/VariantsSearcher.spec.ts
+  s_7e2386a68c572e::t_c78de6e12e1777 1-61
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/products/application/search/ProductsSearcher.spec.ts
+  s_7e2386a68c572e::t_caf4f65c2cd266 1-42
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/products/domain/ProductMother.ts
+  s_7e2386a68c572e::t_289a938bab7bda 1-38
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/products/domain/ProductVariantMother.ts
+  s_7e2386a68c572e::t_fcf30f197b19ff 1-25
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/products/infrastructure/PostgresProductRepository.spec.ts
+  s_7e2386a68c572e::t_b555e6ede58104 1-303
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/shared/infrastructure/RetailEnvironmentArranger.ts
+  s_7e2386a68c572e::t_6778431f450db7 1-74
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/shared/infrastructure/describeWithEnvironmentArranger.ts
+  s_7e2386a68c572e::t_155d47beb25eb4 1-21
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/users/application/current/CurrentUserGetter.spec.ts
+  s_7e2386a68c572e::t_9de84ac5cac2ee 1-32
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/users/application/search-by-ids/UsersByIdsSearcher.spec.ts
+  s_7e2386a68c572e::t_567d9ea8f7342c 1-41
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/users/domain/UserMother.ts
+  s_7e2386a68c572e::t_54782b69215b00 1-23
+2-use_openspec/2-update_apply/2-after-luna/tests/backend/users/infrastructure/PostgresUserRepository.spec.ts
+  s_7e2386a68c572e::t_13a677662c34c4 1-78
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/design-system/atoms/Button.spec.tsx
+  s_7e2386a68c572e::t_edbe9b7b31cf53 1-38
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/design-system/atoms/FormError.spec.tsx
+  s_7e2386a68c572e::t_a35e6114135e8d 1-20
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/design-system/atoms/SubmitButton.spec.tsx
+  s_7e2386a68c572e::t_c1cb6e5102a1c5 1-41
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/responses/CheckoutResponseMother.ts
+  s_7e2386a68c572e::t_b15bb08e4c9846 1-52
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/responses/InventoryResponseMother.ts
+  s_7e2386a68c572e::t_acd6732b51bf14 1-20
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/responses/LowStockReportResponseMother.ts
+  s_7e2386a68c572e::t_fae80717b18c60 1-14
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/responses/LowStockResponseMother.ts
+  s_7e2386a68c572e::t_60fedbabcbb660 1-19
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/responses/MyOrderResponseMother.ts
+  s_7e2386a68c572e::t_44d45ff5f44079 1-22
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/responses/OrderDetailResponseMother.ts
+  s_7e2386a68c572e::t_644d244a0eedb7 1-52
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/responses/OrderResponseMother.ts
+  s_7e2386a68c572e::t_71b722d7bfe667 1-22
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/responses/OrdersSummaryResponseMother.ts
+  s_7e2386a68c572e::t_69ed945a1f7ae0 1-26
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/responses/ProductResponseMother.ts
+  s_7e2386a68c572e::t_3f6b2f0645e2fb 1-13
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/AdminOrdersTable.spec.tsx
+  s_7e2386a68c572e::t_939ae33b709f55 1-75
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/CartLinkView.spec.tsx
+  s_7e2386a68c572e::t_691c0739b96ad6 1-31
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/CatalogSummary.spec.tsx
+  s_7e2386a68c572e::t_db7d4f83c3dbe2 1-45
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/CategoryFilters.spec.tsx
+  s_7e2386a68c572e::t_4b164ab09a5c73 1-70
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/CustomerOrdersTable.spec.tsx
+  s_7e2386a68c572e::t_80344a7da39884 1-75
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/DashboardMetrics.spec.tsx
+  s_7e2386a68c572e::t_f9590e358e7c51 1-88
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/InventoryTable.spec.tsx
+  s_7e2386a68c572e::t_18248a6ed6f22d 1-50
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/LowStockPanel.spec.tsx
+  s_7e2386a68c572e::t_caa5f31f5bd269 1-58
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/MainNavLinks.spec.tsx
+  s_7e2386a68c572e::t_19ed6c4dd1d85b 1-81
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/MetricCard.spec.tsx
+  s_7e2386a68c572e::t_4d28c5c2c3fdb2 1-21
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/OrderDetail.spec.tsx
+  s_7e2386a68c572e::t_60d3913e58aede 1-101
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/PageHeader.spec.tsx
+  s_7e2386a68c572e::t_09c5197a1aa514 1-40
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_7e2386a68c572e::t_b28f16f9c80f29 1-20
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/ProductCard.spec.tsx
+  s_7e2386a68c572e::t_880eb31d3eadb5 1-75
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/ProductGrid.spec.tsx
+  s_7e2386a68c572e::t_842df33859f5fe 1-49
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/RecentOrdersPanel.spec.tsx
+  s_7e2386a68c572e::t_c66c774c6a92c4 1-48
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/sections/UserMenuTrigger.spec.tsx
+  s_7e2386a68c572e::t_c8eb03cd0c3d74 1-118
+2-use_openspec/2-update_apply/2-after-luna/tests/frontend/retail/ui/format.spec.ts
+  s_7e2386a68c572e::t_6a316d1e27575a 1-73
+2-use_openspec/2-update_apply/2-after-luna/tests/setupFaker.ts
+  s_7e2386a68c572e::t_177afe6ba5cc1d 1-5
+2-use_openspec/2-update_apply/2-after-luna/tests/setupFrontendTests.ts
+  s_7e2386a68c572e::t_45714af1d49985 1-8
+2-use_openspec/2-update_apply/2-after-luna/tests/setupTests.ts
+  s_7e2386a68c572e::t_25a204e9d697e4 1-5
+2-use_openspec/2-update_apply/2-after-luna/tests/shared/Mock.ts
+  s_7e2386a68c572e::t_2174f6b043ffba 1-154
+2-use_openspec/2-update_apply/2-after-luna/tests/shared/domain/MoneyMother.ts
+  s_7e2386a68c572e::t_9e6f4a1c7d29e2 1-19
+2-use_openspec/2-update_apply/2-after-luna/tsconfig.json
+  s_7e2386a68c572e::t_2b3577a6dc4975 1-33
+2-use_openspec/2-update_apply/2-after-luna/vitest.config.ts
+  s_7e2386a68c572e::t_e805f3db66a601 1-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c0d8d068fa0a309cfcb726ef85cd5cfa2aaa37b5",
+  "prompts": {},
+  "sessions": {
+    "s_7e2386a68c572e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8ded8c1d-fb07-4e6d-ab23-6a8f17188131",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
