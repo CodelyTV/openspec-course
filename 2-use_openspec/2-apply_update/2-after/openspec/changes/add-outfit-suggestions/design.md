@@ -32,11 +32,11 @@ src/contexts/backend/outfits/
   domain/
     Outfit.ts               id: OutfitId, name: OutfitName, productIds: ProductId[]
     OutfitId.ts, OutfitName.ts
-    OutfitRepository.ts     save, search(id), searchAll, searchContaining(productId), delete(id)
+    OutfitRepository.ts     save, search(id), searchByName(name), searchAll, searchContaining(productId), delete(id)
     OutfitCatalog.ts        port: searchExistingProductIds(ids) -> ProductId[]
     errors/                 EmptyOutfitNameError, InvalidOutfitPiecesCountError,
                             RepeatedOutfitProductError, OutfitProductNotFoundError,
-                            OutfitNotFoundError
+                            OutfitNotFoundError, OutfitNameAlreadyExistsError
   application/
     create/OutfitCreator.ts           (IdGenerator, OutfitCatalog)
     update/OutfitUpdater.ts           (OutfitCatalog)
@@ -50,9 +50,11 @@ src/contexts/backend/outfits/
     ProductsOutfitCatalog.ts          adapter over products' ProductsByIdsSearcher
 ```
 
-The `Outfit` constructor enforces the composition rules: 2 to 6 products, no repeats. `OutfitName` rejects empty or whitespace-only names. The "every product exists" rule needs the catalog, so it lives in the creator and updater: they ask `OutfitCatalog` which ids exist and throw `OutfitProductNotFoundError` for the first missing one. `OutfitUpdater` throws `OutfitNotFoundError` for an unknown id and keeps the outfit's id.
+The `Outfit` constructor enforces the composition rules: 2 to 4 products, no repeats. `OutfitName` rejects empty or whitespace-only names. The "every product exists" rule needs the catalog, so it lives in the creator and updater: they ask `OutfitCatalog` which ids exist and throw `OutfitProductNotFoundError` for the first missing one. `OutfitUpdater` throws `OutfitNotFoundError` for an unknown id and keeps the outfit's id.
 
 `EmptyOutfitNameError` is its own error rather than the shared `EmptyStringValueObjectError`. The shared one already maps to the generic "invalid request" message, and the form needs "name is required".
+
+Name uniqueness spans all outfits and ignores case and leading or trailing spaces. `OutfitRepository.searchByName(name)` returns an `Outfit | null` using the same normalized comparison as the database index in decision 4. Both creator and updater check it before saving and throw `OutfitNameAlreadyExistsError` if a different outfit owns the name. The updater excludes its own id, allowing unchanged names and changes only to case or surrounding spaces. The aggregate validates the name's non-emptiness; uniqueness is checked through the repository because it involves other aggregates. Display names retain their casing; normalization is only for comparison.
 
 *Alternatives:* putting `Outfit` inside `products` was rejected because outfits are editorial content with their own lifecycle that products should not know about. Validating product existence with a foreign key was rejected because tables owned by different contexts are not linked, as with `order_lines`.
 
@@ -90,6 +92,8 @@ create table outfits (
 	name text not null
 );
 
+create unique index outfits_name_unique on outfits (lower(btrim(name)));
+
 create table outfit_products (
 	outfit_id text not null references outfits(id) on delete cascade,
 	product_id text not null,          -- no FK: owned by another context
@@ -100,6 +104,8 @@ create table outfit_products (
 ```
 
 `PostgresOutfitRepository.save` upserts the `outfits` row and replaces its `outfit_products` rows inside `this.transaction`, following the checkout pattern. `searchContaining(productId)` selects outfits with an `exists` subquery on `outfit_products` and loads all their pieces ordered by `position`. `delete` relies on the cascade.
+
+`searchByName` compares `lower(btrim(name))` with `lower(btrim($1::text))`, keeping lookup and enforcement aligned. The unique index protects saves even when concurrent requests both pass the use-case check. After the transaction rolls back, the repository translates only a PostgreSQL unique violation (`23505`) identifying `outfits_name_unique` into `OutfitNameAlreadyExistsError`; unrelated database failures propagate. A rejected save leaves both the outfit and its pieces unchanged. Upserts target the outfit id, so name conflicts never overwrite another outfit. Deleting an outfit releases its name immediately.
 
 ### 5. Backoffice routes and server actions
 
@@ -112,14 +118,16 @@ src/app/actions/outfits/
   createOutfit.ts   -> outfitCreator.create(name, productIds); redirect("/admin/outfits")
   updateOutfit.ts   -> outfitUpdater.update(id, name, productIds); redirect("/admin/outfits")
   deleteOutfit.ts   -> outfitDeleter.delete(id); revalidatePath("/", "layout")
-  outfitFormData.ts -> reads name + piece-0..piece-5, drops empty slots, keeps slot order
+  outfitFormData.ts -> reads name + piece-0..piece-3, drops empty slots, keeps slot order
 ```
 
-All three actions call `revalidatePath("/", "layout")` before redirecting, so product pages drop stale outfits. Domain errors map to user-facing messages through `actionStateFor(error, outfitMessages)`, with one message per error listed in decision 1. `OutfitProductNotFoundError` reuses the wording "One of the products is no longer available."
+All three actions call `revalidatePath("/", "layout")`, so product pages drop stale outfits. Only create and update redirect to `/admin/outfits`; delete returns to the panel without a redirect. Domain errors map to user-facing messages through `actionStateFor(error, outfitMessages)`, with one message per error listed in decision 1. `OutfitProductNotFoundError` reuses the wording "One of the products is no longer available."
 
-`OutfitForm` is a client component with `useActionState`. Its name and slot values are controlled state, so the admin's input survives a failed submit: React resets uncontrolled form fields after an action. It renders 6 `Select`s whose options are every catalog product ordered by name (`productsSearcher.search()`), plus a "None" option.
+`OutfitNameAlreadyExistsError` maps to "An outfit with this name already exists." in both create and update actions, including conflicts discovered during persistence. The form keeps the entered name and pieces on this error, just as for other failed submissions.
 
-The 6-slot form is what enforces the maximum of 6 in the UI. The domain also enforces it, which covers forged requests.
+`OutfitForm` is a client component with `useActionState`. Its name and slot values are controlled state, so the admin's input survives a failed submit: React resets uncontrolled form fields after an action. It renders 4 `Select`s whose options are every catalog product ordered by name (`productsSearcher.search()`), plus a "None" option.
+
+The 4-slot form is what enforces the maximum of 4 in the UI. The domain also enforces it, which covers forged requests.
 
 ### 6. Design-system form atoms
 
@@ -142,9 +150,10 @@ The tests follow `docs/testing/testing-strategy.md`:
 - **Unit:** every outfits use case and `ProductsByIdsSearcher`, using `Mock.create` on their ports and an `OutfitMother`.
 - **Integration:** `PostgresOutfitRepository` against `retail_test`. The existing arranger already truncates every table.
 - **Acceptance:** `OutfitCreation.spec.ts` wires `OutfitCreator` with the real `ProductsOutfitCatalog` → `ProductsByIdsSearcher` → Postgres.
+- **Name uniqueness:** unit tests cover creator/updater duplicate rejection and allowing an outfit's own name. Repository integration tests cover normalized lookup, case and surrounding-space duplicates on creation and renaming, rollback of name and piece changes, reuse after deletion, and concurrent saves where exactly one succeeds with the other returning `OutfitNameAlreadyExistsError`. Acceptance tests verify duplicate-name rejection through the real wiring.
 - **Frontend:**
   - `ProductOutfits` (order, current marker, sold out, missing piece, empty state).
-  - `OutfitForm` (slot ordering via action payload, error and pending states).
+  - `OutfitForm` (slot ordering via action payload, error and pending states, duplicate-name errors preserving the entered values).
   - `OutfitsTable` (list and empty state).
   - `AdminNav` (new entry).
   - An `OutfitResponseMother` in `tests/frontend/retail/responses/`.
