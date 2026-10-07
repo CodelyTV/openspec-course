@@ -59,6 +59,25 @@ The backoffice SHALL have an Outfits section, reachable from the admin navigatio
 - **WHEN** an admin opens the Outfits section and there are no outfits
 - **THEN** the admin sees an empty state with a way to create the first outfit
 
+### Requirement: Outfits with out-of-stock pieces are flagged
+In the Outfits section, each outfit with at least one product that has no stock in any variant SHALL show a warning naming those products, in the outfit's order, so the admin can restock or replace them. Outfits whose products all have stock in some variant SHALL show no warning. The warning SHALL NOT change the list's order.
+
+#### Scenario: Outfit with a sold-out piece
+- **WHEN** "Pure Function Tee", one of the products of "Weekend Refactor", has no stock in any variant
+- **THEN** "Weekend Refactor" shows a warning naming "Pure Function Tee"
+
+#### Scenario: Several sold-out pieces
+- **WHEN** two products of an outfit have no stock in any variant
+- **THEN** the warning names both, in the order the admin set
+
+#### Scenario: Piece with some variants sold out
+- **WHEN** a product of an outfit has no stock in its M size but has stock in other variants
+- **THEN** the outfit shows no warning
+
+#### Scenario: Order is not changed by the warning
+- **WHEN** "Deploy Friday" has no warning and "Weekend Refactor" has one
+- **THEN** "Deploy Friday" is still listed first
+
 ### Requirement: Create outfit
 Admins SHALL be able to create an outfit by giving it a name and choosing its products from the catalog.
 

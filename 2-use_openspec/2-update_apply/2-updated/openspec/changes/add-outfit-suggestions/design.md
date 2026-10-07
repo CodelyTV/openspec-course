@@ -66,18 +66,21 @@ create index outfit_products_product_id_idx on outfit_products(product_id);
   - `OutfitNameAlreadyExistsError`: `OutfitCreator` / `OutfitUpdater` call `searchByName` and reject when the match is a different outfit. The `unique` constraint is the safety net for races.
   - `OutfitProductNotFoundError`: the use cases check every product id with `ProductRepository.searchByIds`.
   - `OutfitNotFoundError`: updating or deleting a missing outfit.
+- `Product` gains `isOutOfStock()` (no variant `hasStock()`), the single definition of a sold-out piece for the outfits list warning.
 - **Alternative: rely only on the DB constraint for the name.** It would make the domain depend on a Postgres error code. Rejected.
 
 ### 4. Use cases
 
 | Use case | Folder | Returns |
 |---|---|---|
-| `OutfitsLister` | `application/list-outfits/` | `OutfitSummaryResponse[]` (id, name, productCount), ordered by name |
+| `OutfitsLister` | `application/list-outfits/` | `OutfitSummaryResponse[]` (id, name, productCount, outOfStockProductNames), ordered by name |
 | `OutfitFinder` | `application/find-outfit/` | `OutfitResponse \| null` (id, name, productIds) for the edit form |
 | `OutfitCreator` | `application/create-outfit/` | `void`; id from `IdGenerator` |
 | `OutfitUpdater` | `application/update-outfit/` | `void` |
 | `OutfitDeleter` | `application/delete-outfit/` | `void` |
 | `ProductSuggestionsFinder` | `application/find-suggestions/` | `ProductSuggestionsResponse` |
+
+`OutfitsLister` loads every outfit with `OutfitRepository.searchAll()` and the products of all of them with one `ProductRepository.searchByIds`, then fills `outOfStockProductNames: string[]` with the names of the products where `isOutOfStock()`, in each outfit's order (empty when none). The rule stays in the use case; `OutfitsTable` only renders the warning when the list is not empty.
 
 `ProductSuggestionsResponse` is a discriminated union:
 
@@ -89,15 +92,19 @@ type ProductSuggestionsResponse =
 type OutfitSuggestionResponse = { name: string; products: ProductResponse[] };
 ```
 
-`ProductSuggestionsFinder` loads the product's outfits (`OutfitRepository.searchContaining(productId)`), keeps the displayable ones sorted by name, loads their products with one `ProductRepository.searchByIds` and keeps each outfit's order. With no displayable outfit, it falls back to `searchOthersSameCollectionFirst(product, 4)`. It replaces `RelatedProductsFinder`, which is removed together with its test (its behavior moves into the fallback branch).
+`ProductSuggestionsFinder` loads the product's outfits (`OutfitRepository.searchContaining(productId)`), keeps the displayable ones sorted by name, loads their products with one `ProductRepository.searchByIds` and keeps each outfit's order. With no displayable outfit, it falls back to `searchOthersSameCollectionFirst(product, 4)`. It replaces `RelatedProductsFinder`, which is removed together with its test (its behavior moves into the fallback branch). If the product does not exist, it returns `{ kind: "collection", products: [] }`.
 
 - **Alternative: decide in `page.tsx`** calling an outfits finder and then `RelatedProductsFinder`. The rule would be untested (pages are not tested). Rejected.
 
 The "currently viewed" mark is decided in the component by comparing ids; the response stays free of view concerns.
 
-### 5. "In outfit" flag enriched in the listers
+### 5. Outfit membership enriched in the listers
 
-`LowStockResponse` and `InventoryResponse` gain `inOutfit: boolean`. Both listers receive `OutfitRepository` and call `searchProductIdsInAnyOutfit()` (`select distinct product_id from outfit_products`) once, then check each product against that set. Order and `lowStockCount` are unchanged.
+Both listers receive `OutfitRepository` and call `countOutfitsByProduct()` (`select product_id, count(*) from outfit_products group by product_id`) once, then look up each product in the resulting map:
+- `LowStockResponse` gains `outfitCount: number` (0 when the product is in no outfit), so the panel can show "In N outfits".
+- `InventoryResponse` gains `inOutfit: boolean` (`outfitCount > 0`); the inventory only needs the tag.
+
+Order and `lowStockCount` are unchanged.
 
 - **Alternative: query in the page and mark rows in the UI.** Moves a rule to `src/app/`. Rejected.
 
@@ -124,6 +131,7 @@ The "currently viewed" mark is decided in the component by comparing ids; the re
 - [Products are only removed directly in the DB, so a 1-product outfit can stay unnoticed] → It is hidden from the product page, still listed in `/admin/outfits` with its product count, so the admin sees "1 product".
 - [Race between the name check and the insert] → The `unique` constraint rejects the second write; the repository maps unique-violation on `outfits.name` to `OutfitNameAlreadyExistsError` so the user still gets the friendly message.
 - [The tag marks every variant of an outfit product, even sizes that don't affect the look] → Accepted product decision: outfits reference products, not variants.
+- [The sold-out warning reflects stock when the page is loaded; a checkout that sells the last unit only shows up on reload] → Acceptable for a backoffice list.
 - [A product in many outfits makes the product page long] → Acceptable with today's catalog size; a cap can be added later without changing the model.
 
 ## Migration Plan
