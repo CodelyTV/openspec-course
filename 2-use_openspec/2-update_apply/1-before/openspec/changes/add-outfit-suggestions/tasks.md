@@ -1,44 +1,44 @@
 # Tasks
 
-## 1. Products: search by ids
+## 1. Database
 
-- [ ] 1.1 Add `ProductsByIdsSearcher` in `products/application/search-by-ids/` (dedupe ids, empty list short-circuit, unknown ids skipped) and verify with a unit test in `tests/backend/products/application/search-by-ids/` using `Mock.create<ProductRepository>()` and `ProductMother`
-- [ ] 1.2 Register `productsByIdsSearcher` in `RetailContainer` and verify `npm run typecheck` passes
+- [ ] 1.1 Add `outfits` and `outfit_products` (FKs with `on delete cascade`, `position`, PK `(outfit_id, product_id)`, index on `product_id`) to `database/schema.sql` as in design.md §2, and verify `npm run db:reset` and `npm run db:test:reset` succeed
+- [ ] 1.2 Add 2–3 seed outfits to `database/seed.sql` (at least one product in two outfits, one product in none) and verify `npm run db:reset` loads them
+- [ ] 1.3 Make `RetailEnvironmentArranger` clean the new tables between integration tests and verify `npm run test:integration` still passes
+- [ ] 1.4 Document the new tables in `docs/sql-database/data-model.md` (cascade from products, `position`, unique name) and verify the doc matches `schema.sql`
 
-## 2. Outfits domain and persistence
+## 2. Outfit domain and repository
 
-- [ ] 2.1 Add `"outfits"` to `backendContexts` in `eslint.config.mjs` and verify `npm run lint` passes
-- [ ] 2.2 Create the `outfits` domain: `OutfitId`, `OutfitName` (throws `EmptyOutfitNameError`), `Outfit` (2-6 products, no repeats, ordered; `fromPrimitives`/`toPrimitives`), its errors, `OutfitRepository` and the `OutfitCatalog` port; add `OutfitMother` in `tests/backend/outfits/domain/` and verify `npm run typecheck` passes
-- [ ] 2.3 Add the `outfits` and `outfit_products` tables to `database/schema.sql` (including the `drop table if exists` lines) and verify `npm run db:reset` and `npm run db:test:reset` succeed
-- [ ] 2.4 Implement `PostgresOutfitRepository` (`save` upsert + replace pieces in a transaction, `search`, `searchAll`, `searchContaining`, `delete`) and verify with an integration test in `tests/backend/outfits/infrastructure/` covering piece order, replacing pieces on re-save, search by product and delete (`npm run test:integration`)
-- [ ] 2.5 Implement `ProductsOutfitCatalog` over `ProductsByIdsSearcher` and verify `npm run typecheck` passes
+- [ ] 2.1 Create `OutfitId`, `Outfit` (`create` validating name, 2–4 products and no repeats; `fromPrimitives` without validation; `isDisplayable()`), `OutfitRepository` port (`save`, `search`, `searchByName`, `searchAll`, `searchContaining`, `searchProductIdsInAnyOutfit`, `delete`) and the domain errors from design.md §3, and verify `npm run typecheck` passes
+- [ ] 2.2 Add `OutfitMother` in `tests/backend/products/domain/` and verify it builds valid outfits in a throwaway assertion inside the next tasks' tests
+- [ ] 2.3 Implement `PostgresOutfitRepository` (transactional replace on `save`, products kept in `position` order, unique-violation on name mapped to `OutfitNameAlreadyExistsError`) and verify its integration test covers save/update, search by id and name, `searchContaining`, `searchProductIdsInAnyOutfit`, delete, and cascade when a product is deleted
 
-## 3. Outfits use cases
+## 3. Outfit management use cases
 
-- [ ] 3.1 Add `OutfitResponse` and `OutfitCreator` (generated id, rejects unknown products with `OutfitProductNotFoundError`) and verify unit tests cover a valid outfit and each composition rule from the `outfit-management` spec
-- [ ] 3.2 Add `OutfitUpdater` (keeps id, `OutfitNotFoundError` for unknown ids, same rules as creation) and verify with unit tests
-- [ ] 3.3 Add `OutfitDeleter`, `OutfitFinder`, `OutfitsLister` and `ProductOutfitsFinder` (lists ordered by name) and verify with unit tests, including `OutfitFinder` returning null for an unknown id
-- [ ] 3.4 Register `outfitRepository`, the private `outfitCatalog` and the six outfits use cases in `RetailContainer` and verify `npm run typecheck` passes
-- [ ] 3.5 Add the acceptance test `tests/backend/acceptance/OutfitCreation.spec.ts` wiring `OutfitCreator` with the real `ProductsOutfitCatalog` and Postgres repositories, covering a saved outfit and an unknown product rejected, and verify `npm run test:integration` passes
+- [ ] 3.1 Implement `OutfitCreator` (name uniqueness, product existence via `ProductRepository.searchByIds`, id from `IdGenerator`) and verify unit tests cover every validation scenario of the outfit-management spec
+- [ ] 3.2 Implement `OutfitUpdater` (same rules, allows keeping its own name, `OutfitNotFoundError` when missing) and verify unit tests cover the "Edit outfit" and "Unique outfit names" scenarios
+- [ ] 3.3 Implement `OutfitDeleter`, `OutfitsLister` (ordered by name, with product count) and `OutfitFinder`, and verify their unit tests pass
+- [ ] 3.4 Register the new use cases and `PostgresOutfitRepository` in `RetailContainer` and verify `npm run build` succeeds
 
-## 4. Product page: outfits section
+## 4. Backoffice outfits section
 
-- [ ] 4.1 Add an optional `isCurrent` prop to `ProductCard` that shows a "You're viewing this" marker and verify existing frontend tests still pass
-- [ ] 4.2 Add `OutfitResponseMother` in `tests/frontend/retail/responses/` and the `ProductOutfits` section in `src/contexts/frontend/retail/sections/` and verify with a frontend test covering piece order, current product marker, sold-out piece, missing piece skipped, several outfits and the empty state rendering nothing
-- [ ] 4.3 Render `ProductOutfits` on `src/app/products/[id]/page.tsx` between the purchase details and "You might also like", composing `productOutfitsFinder` and `productsByIdsSearcher`, and verify on `npm run dev` that a seeded product shows its outfits and a product in no outfit shows none
-- [ ] 4.4 Add sample outfits to `database/seed.sql` (at least two, one product shared by both) and verify `npm run db:reset` loads them
-- [ ] 4.5 Update `docs/architecture/screens.md` (product detail section) and `docs/sql-database/data-model.md` (new tables, no FK to products) and verify the descriptions match the implemented behavior
+- [ ] 4.1 Add `createOutfit`, `updateOutfit` and `deleteOutfit` server actions in `src/app/actions/outfits/` with user-facing messages for each outfit error, and verify `npm run typecheck` passes
+- [ ] 4.2 Build `OutfitsTable` (with empty state) in `src/contexts/frontend/retail/sections/` and verify its frontend test covers rows and empty state
+- [ ] 4.3 Build the client `OutfitForm` (name + 4 product selects, error and pending states) and verify its test, mocking the actions module, covers submit, error message and pending state
+- [ ] 4.4 Add `/admin/outfits`, `/admin/outfits/new` and `/admin/outfits/[id]` pages (with delete) and the "Outfits" `AdminNav` entry, and verify `AdminNav.spec.tsx` covers the new link and the flow works in `npm run dev`
+- [ ] 4.5 Document the new screens in `docs/architecture/screens.md` and verify every new route is listed
 
-## 5. Backoffice: manage outfits
+## 5. Product page suggestions
 
-- [ ] 5.1 Add the `TextField` and `Select` atoms to `src/contexts/frontend/design-system/atoms/` and verify `npm run lint` and `npm run typecheck` pass
-- [ ] 5.2 Add `src/app/actions/outfits/` (`outfitFormData`, `createOutfit`, `updateOutfit`, `deleteOutfit`) with user-facing messages for every outfits error via `actionStateFor`, revalidating the layout and redirecting to `/admin/outfits` after create/update, and verify `npm run typecheck` passes
-- [ ] 5.3 Add the `OutfitForm` client component (controlled name and 6 ordered piece selects with a "None" option) and verify with a frontend test that submits the filled slots in order, keeps entered values and shows the error on failure, and shows the pending state
-- [ ] 5.4 Add `/admin/outfits` with an `OutfitsTable` (name, pieces count, edit link, delete form, create action, empty state) and verify with a frontend test for the list, the empty state and the delete action
-- [ ] 5.5 Add `/admin/outfits/new` and `/admin/outfits/[id]/edit` (pre-filled, `notFound()` for unknown ids) and verify on `npm run dev` that creating, editing and deleting an outfit is reflected on the panel and on product pages
-- [ ] 5.6 Add the "Outfits" entry to `AdminNav` and verify the updated `tests/app/admin/AdminNav.spec.tsx` passes
-- [ ] 5.7 Update `docs/architecture/screens.md` (admin outfits screens), `docs/architecture/project-layout.md` and `CLAUDE.md` (new `outfits` context) and verify they list the new screens and context
+- [ ] 5.1 Implement `ProductSuggestionsFinder` returning the discriminated union from design.md §4, replacing `RelatedProductsFinder` (remove it and its test), and verify unit tests cover every product-suggestions scenario (one/several outfits ordered by name, product order kept, hidden <2 outfits, sold-out pieces kept, collection fallback, product not found)
+- [ ] 5.2 Add a response mother for `OutfitSuggestionResponse` and build the `OutfitSuggestions` section (outfit name, pieces in order, current product marked "Viewing" and not linked), and verify its frontend test covers the marking and links
+- [ ] 5.3 Wire `productSuggestionsFinder` in `RetailContainer` and `src/app/products/[id]/page.tsx` (outfits section or existing "You might also like"), and verify both cases in `npm run dev` with the seed data
 
-## 6. Integration check
+## 6. "In outfit" tag in stock views
 
-- [ ] 6.1 Run `make checks` and `npm run test:integration` and verify both pass
+- [ ] 6.1 Add `inOutfit` to `LowStockResponse` and `InventoryResponse`, inject `OutfitRepository` in `LowStockLister` and `InventoryLister`, and verify their unit tests cover tagged/untagged variants and unchanged order
+- [ ] 6.2 Show the "In outfit" tag in `LowStockPanel` and `InventoryTable`, update `LowStockResponseMother` and `InventoryResponseMother`, and verify their frontend tests cover rows with and without the tag
+
+## 7. Integration checks
+
+- [ ] 7.1 Run `make checks` and `npm run test:integration` and verify both pass
