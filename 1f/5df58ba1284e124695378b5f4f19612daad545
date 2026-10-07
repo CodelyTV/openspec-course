@@ -1,0 +1,27 @@
+2-use_openspec/2-update_apply/2-updated/openspec/changes/add-outfit-suggestions/specs/stock-monitoring/spec.md
+  s_2cf8aabfb2dadf::t_01343612fd0164 10,13-18,22,40,43-44
+2-use_openspec/2-update_apply/2-updated/openspec/changes/add-outfit-suggestions/design.md
+  s_2cf8aabfb2dadf::t_81a2b336374100 69,76,83-84,95,101-105,107,134
+2-use_openspec/2-update_apply/2-updated/openspec/changes/add-outfit-suggestions/proposal.md
+  s_2cf8aabfb2dadf::t_afcb3bd1e7b866 11,14,19,29-30
+2-use_openspec/2-update_apply/2-updated/openspec/changes/add-outfit-suggestions/specs/outfit-management/spec.md
+  s_2cf8aabfb2dadf::t_c26fddcda43f99 62-80
+2-use_openspec/2-update_apply/2-updated/openspec/changes/add-outfit-suggestions/tasks.md
+  s_2cf8aabfb2dadf::t_22e1e309226347 6,12,14,20,26,37,39-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1f5df58ba1284e124695378b5f4f19612daad545",
+  "prompts": {},
+  "sessions": {
+    "s_2cf8aabfb2dadf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4e6b8ff0-1bb8-408a-a313-8295223364d4",
+        "model": "unknown"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
