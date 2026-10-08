@@ -1,0 +1,25 @@
+2-use_openspec/2-update_apply/4-selector_updated/openspec/changes/add-outfit-suggestions/design.md
+  s_af432b04391425::t_8604e32afe9dae 22,120-125,140
+2-use_openspec/2-update_apply/4-selector_updated/openspec/changes/add-outfit-suggestions/proposal.md
+  s_af432b04391425::t_4c2a505efe0876 11,31
+2-use_openspec/2-update_apply/4-selector_updated/openspec/changes/add-outfit-suggestions/specs/outfit-management/spec.md
+  s_af432b04391425::t_0a9baf11285f8a 88-118
+2-use_openspec/2-update_apply/4-selector_updated/openspec/changes/add-outfit-suggestions/tasks.md
+  s_af432b04391425::t_e00b36f7a53867 45-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a793fa879a1647299bfa5c25d94fdaa93c8c5900",
+  "prompts": {},
+  "sessions": {
+    "s_af432b04391425": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "571686c8-b1bc-4cc3-aaef-eb8a6b011824",
+        "model": "unknown"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
