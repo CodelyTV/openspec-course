@@ -1,0 +1,31 @@
+.form {
+	display: grid;
+	gap: 16px;
+	max-width: 520px;
+}
+
+.field {
+	display: grid;
+	gap: 6px;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.input {
+	padding: 10px 12px;
+	font: inherit;
+	font-weight: 400;
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+}
+
+.optional {
+	color: var(--codely-gray);
+	font-weight: 400;
+}
+
+.actions {
+	display: grid;
+	gap: 12px;
+}

@@ -1,0 +1,90 @@
+.panel {
+	padding: 20px;
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+}
+
+.panelHead {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 12px;
+	margin-bottom: 12px;
+}
+
+.panelTitle {
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+.panelLink {
+	color: var(--codely-gray);
+	font-size: 0.85rem;
+	font-weight: 700;
+
+	&:hover {
+		color: var(--codely-blue);
+	}
+}
+
+.panelEmpty {
+	color: var(--codely-gray);
+	font-size: 0.9rem;
+}
+
+.list {
+	display: grid;
+	gap: 4px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.listRow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 10px 0;
+	border-top: 1px solid var(--border);
+}
+
+.listRow:first-child {
+	border-top: none;
+}
+
+.listName {
+	display: block;
+	font-weight: 700;
+}
+
+.listMeta {
+	display: block;
+	margin-top: 2px;
+	color: var(--codely-gray);
+	font-size: 0.8rem;
+}
+
+.listValue {
+	font-weight: 700;
+}
+
+.stockTag {
+	padding: 2px 10px;
+	color: var(--codely-blue);
+	font-size: 0.8rem;
+	font-weight: 700;
+	background: var(--codely-yellow);
+	border-radius: 999px;
+}
+
+.outfitTag {
+	display: inline-block;
+	margin-top: 4px;
+	padding: 2px 10px;
+	font-size: 0.78rem;
+	font-weight: 700;
+	background: var(--surface-strong);
+	border-radius: 999px;
+}

@@ -1,0 +1,22 @@
+.heading {
+	margin: 8px 0 20px;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.outfits {
+	display: grid;
+	gap: 32px;
+}
+
+.name {
+	margin-bottom: 16px;
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+.pieces {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 24px;
+}

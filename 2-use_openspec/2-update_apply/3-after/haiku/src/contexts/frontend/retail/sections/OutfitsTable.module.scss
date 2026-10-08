@@ -1,0 +1,21 @@
+.link {
+	font-weight: 700;
+
+	&:hover {
+		color: var(--codely-gray);
+	}
+}
+
+.warning {
+	padding: 2px 10px;
+	color: var(--codely-blue);
+	font-weight: 700;
+	background: var(--codely-yellow);
+	border-radius: 999px;
+}
+
+.empty {
+	display: grid;
+	justify-items: start;
+	gap: 8px;
+}

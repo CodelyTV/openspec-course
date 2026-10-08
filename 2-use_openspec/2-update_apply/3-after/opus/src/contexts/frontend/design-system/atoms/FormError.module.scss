@@ -1,0 +1,11 @@
+@use "../settings/border";
+@use "../settings/colors";
+@use "../settings/typography";
+
+.error {
+	padding: 0.75rem 1rem;
+	color: colors.$state-error;
+	font: typography.$b200-bold;
+	background: colors.$state-error-background;
+	border-radius: border.$radius-large;
+}

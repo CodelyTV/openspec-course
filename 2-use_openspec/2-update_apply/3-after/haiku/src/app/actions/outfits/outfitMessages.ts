@@ -1,0 +1,20 @@
+import { InvalidOutfitNameError } from "@/contexts/backend/products/domain/errors/InvalidOutfitNameError";
+import { InvalidOutfitSizeError } from "@/contexts/backend/products/domain/errors/InvalidOutfitSizeError";
+import { OutfitNameAlreadyExistsError } from "@/contexts/backend/products/domain/errors/OutfitNameAlreadyExistsError";
+import { OutfitNotFoundError } from "@/contexts/backend/products/domain/errors/OutfitNotFoundError";
+import { OutfitProductNotFoundError } from "@/contexts/backend/products/domain/errors/OutfitProductNotFoundError";
+import { RepeatedOutfitProductError } from "@/contexts/backend/products/domain/errors/RepeatedOutfitProductError";
+
+import type { UserFacingMessages } from "../actionStateFor";
+
+export const outfitMessages: UserFacingMessages = [
+	[InvalidOutfitNameError, "Give the outfit a name."],
+	[InvalidOutfitSizeError, "An outfit needs between 2 and 4 products."],
+	[
+		RepeatedOutfitProductError,
+		"A product can only appear once in an outfit.",
+	],
+	[OutfitNameAlreadyExistsError, "An outfit with that name already exists."],
+	[OutfitProductNotFoundError, "One of the products is no longer available."],
+	[OutfitNotFoundError, "This outfit no longer exists."],
+];
