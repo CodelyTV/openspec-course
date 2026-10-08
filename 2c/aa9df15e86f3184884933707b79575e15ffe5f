@@ -1,0 +1,41 @@
+1-why_openspec/3-when_to_use_it/1-before/eslint.config.mjs
+  s_e38c302ed9b80c::t_4189207f336b1a 92-94
+2-use_openspec/1-explore_propose/1-before/eslint.config.mjs
+  s_e38c302ed9b80c::t_b68dc53db42b27 92-94
+2-use_openspec/1-explore_propose/2-proposed/eslint.config.mjs
+  s_e38c302ed9b80c::t_28249a12846557 92-94
+2-use_openspec/2-update_apply/1-before/eslint.config.mjs
+  s_e38c302ed9b80c::t_0967f1bfe3465a 92-94
+2-use_openspec/2-update_apply/2-updated/eslint.config.mjs
+  s_e38c302ed9b80c::t_a54565cb684726 92-94
+2-use_openspec/2-update_apply/3-applied/haiku/eslint.config.mjs
+  s_e38c302ed9b80c::t_acab8dd430ebf4 92-94
+2-use_openspec/2-update_apply/3-applied/luna/eslint.config.mjs
+  s_e38c302ed9b80c::t_c3060dd6e66a83 92-94
+2-use_openspec/2-update_apply/3-applied/opus/eslint.config.mjs
+  s_e38c302ed9b80c::t_70498f4d3ee0eb 92-94
+2-use_openspec/2-update_apply/3-applied/sol/eslint.config.mjs
+  s_e38c302ed9b80c::t_e2c5bf0450a2f5 92-94
+2-use_openspec/2-update_apply/3-applied/sonnet/eslint.config.mjs
+  s_e38c302ed9b80c::t_2c3181a62bc16a 92-94
+2-use_openspec/2-update_apply/4-selector_updated/eslint.config.mjs
+  s_e38c302ed9b80c::t_55aeadb2ed8c97 92-94
+2-use_openspec/2-update_apply/5-selector_applied/eslint.config.mjs
+  s_e38c302ed9b80c::t_df3bab88ed460f 92-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2caa9df15e86f3184884933707b79575e15ffe5f",
+  "prompts": {},
+  "sessions": {
+    "s_e38c302ed9b80c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "32b4322f-d29c-43e7-b7f2-2dcb551ce2b3",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
