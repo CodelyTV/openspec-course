@@ -1,0 +1,19 @@
+2-use_openspec/2-update_apply/5-selector_applied/openspec/changes/add-outfit-suggestions/tasks.md
+  s_531a76f9c01419::t_af06b5ea361bf3 51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "17e7a35b15b5442d84d3ab39d0b209b96679870f",
+  "prompts": {},
+  "sessions": {
+    "s_531a76f9c01419": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "560dd7f9-d3e5-454c-8ee7-9c8491421351",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
