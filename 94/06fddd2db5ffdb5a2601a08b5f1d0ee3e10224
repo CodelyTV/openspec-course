@@ -1,0 +1,1253 @@
+3-work_on_a_project/2-implementation/3-archived/retail-api/.agents/skills/.openspec-target
+  s_e807d32fb8a970::t_a72a2865131980 1
+3-work_on_a_project/2-implementation/3-archived/retail-api/.agents/skills/openspec-apply-change/SKILL.md
+  s_e807d32fb8a970::t_cd1c3a762def6b 1-206
+3-work_on_a_project/2-implementation/3-archived/retail-api/.agents/skills/openspec-archive-change/SKILL.md
+  s_e807d32fb8a970::t_d12b0946c52d05 1-221
+3-work_on_a_project/2-implementation/3-archived/retail-api/.agents/skills/openspec-explore/SKILL.md
+  s_e807d32fb8a970::t_f511df0efbb356 1-354
+3-work_on_a_project/2-implementation/3-archived/retail-api/.agents/skills/openspec-propose/SKILL.md
+  s_e807d32fb8a970::t_93f2f141111175 1-174
+3-work_on_a_project/2-implementation/3-archived/retail-api/.agents/skills/openspec-sync-specs/SKILL.md
+  s_e807d32fb8a970::t_1565076bcbbfc2 1-290
+3-work_on_a_project/2-implementation/3-archived/retail-api/.agents/skills/openspec-update-change/SKILL.md
+  s_e807d32fb8a970::t_04503bcfa3c0d1 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-api/.agents/skills/openspec-verify-change/SKILL.md
+  s_e807d32fb8a970::t_a1a98402e36dbc 1-220
+3-work_on_a_project/2-implementation/3-archived/retail-api/.claude/skills/openspec-apply-change/SKILL.md
+  s_e807d32fb8a970::t_eb8b24398acc35 1-206
+3-work_on_a_project/2-implementation/3-archived/retail-api/.claude/skills/openspec-archive-change/SKILL.md
+  s_e807d32fb8a970::t_80a4b8242d57e5 1-221
+3-work_on_a_project/2-implementation/3-archived/retail-api/.claude/skills/openspec-explore/SKILL.md
+  s_e807d32fb8a970::t_ee8b762524735e 1-354
+3-work_on_a_project/2-implementation/3-archived/retail-api/.claude/skills/openspec-propose/SKILL.md
+  s_e807d32fb8a970::t_af61f52ffe002d 1-174
+3-work_on_a_project/2-implementation/3-archived/retail-api/.claude/skills/openspec-sync-specs/SKILL.md
+  s_e807d32fb8a970::t_a493243b4faf63 1-290
+3-work_on_a_project/2-implementation/3-archived/retail-api/.claude/skills/openspec-update-change/SKILL.md
+  s_e807d32fb8a970::t_e37226a4227e8f 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-api/.claude/skills/openspec-verify-change/SKILL.md
+  s_e807d32fb8a970::t_266e61efa86ad3 1-220
+3-work_on_a_project/2-implementation/3-archived/retail-api/.env.example
+  s_e807d32fb8a970::t_10049d7408ef85 1-4
+3-work_on_a_project/2-implementation/3-archived/retail-api/.github/skills/openspec-apply-change/SKILL.md
+  s_e807d32fb8a970::t_6320f8ba5b8210 1-206
+3-work_on_a_project/2-implementation/3-archived/retail-api/.github/skills/openspec-archive-change/SKILL.md
+  s_e807d32fb8a970::t_6c582f3a6eec32 1-221
+3-work_on_a_project/2-implementation/3-archived/retail-api/.github/skills/openspec-explore/SKILL.md
+  s_e807d32fb8a970::t_b793b2adce5602 1-354
+3-work_on_a_project/2-implementation/3-archived/retail-api/.github/skills/openspec-propose/SKILL.md
+  s_e807d32fb8a970::t_f2ac2f11920336 1-174
+3-work_on_a_project/2-implementation/3-archived/retail-api/.github/skills/openspec-sync-specs/SKILL.md
+  s_e807d32fb8a970::t_e7ba2bd154c20d 1-290
+3-work_on_a_project/2-implementation/3-archived/retail-api/.github/skills/openspec-update-change/SKILL.md
+  s_e807d32fb8a970::t_7a55c35fcc2d46 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-api/.github/skills/openspec-verify-change/SKILL.md
+  s_e807d32fb8a970::t_37bce5db53ce83 1-220
+3-work_on_a_project/2-implementation/3-archived/retail-api/.gitignore
+  s_e807d32fb8a970::t_e9b948b473b9d8 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/.opencode/skills/openspec-apply-change/SKILL.md
+  s_e807d32fb8a970::t_bbd9dd0a438441 1-206
+3-work_on_a_project/2-implementation/3-archived/retail-api/.opencode/skills/openspec-archive-change/SKILL.md
+  s_e807d32fb8a970::t_e91891be4348a4 1-221
+3-work_on_a_project/2-implementation/3-archived/retail-api/.opencode/skills/openspec-explore/SKILL.md
+  s_e807d32fb8a970::t_9a492914c9e6e2 1-354
+3-work_on_a_project/2-implementation/3-archived/retail-api/.opencode/skills/openspec-propose/SKILL.md
+  s_e807d32fb8a970::t_2c8b716b6045ff 1-174
+3-work_on_a_project/2-implementation/3-archived/retail-api/.opencode/skills/openspec-sync-specs/SKILL.md
+  s_e807d32fb8a970::t_2740dc48b9eb0b 1-290
+3-work_on_a_project/2-implementation/3-archived/retail-api/.opencode/skills/openspec-update-change/SKILL.md
+  s_e807d32fb8a970::t_32de2476c02c8a 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-api/.opencode/skills/openspec-verify-change/SKILL.md
+  s_e807d32fb8a970::t_a9e09788ae3ad7 1-220
+3-work_on_a_project/2-implementation/3-archived/retail-api/AGENTS.md
+  s_e807d32fb8a970::t_65ab37c20272d4 1-49
+3-work_on_a_project/2-implementation/3-archived/retail-api/CLAUDE.md
+  s_e807d32fb8a970::t_e9bf7e25986356 1
+3-work_on_a_project/2-implementation/3-archived/retail-api/Makefile
+  s_e807d32fb8a970::t_f3fb7ace15b7fc 1-5
+3-work_on_a_project/2-implementation/3-archived/retail-api/compose.yml
+  s_e807d32fb8a970::t_c9259382394b51 1-21
+3-work_on_a_project/2-implementation/3-archived/retail-api/database/schema.sql
+  s_e807d32fb8a970::t_34a0a44c681518 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-api/database/seed.sql
+  s_e807d32fb8a970::t_3a792ef42c9c5d 1-201
+3-work_on_a_project/2-implementation/3-archived/retail-api/docs/architecture/hexagonal-architecture.md
+  s_e807d32fb8a970::t_fa03f5d24126a1 1-114
+3-work_on_a_project/2-implementation/3-archived/retail-api/docs/architecture/project-layout.md
+  s_e807d32fb8a970::t_78f8327ce86110 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/docs/documentation-guidelines.md
+  s_e807d32fb8a970::t_f01df83c17c94a 1-79
+3-work_on_a_project/2-implementation/3-archived/retail-api/docs/http/contract.md
+  s_e807d32fb8a970::t_499d768cf9305e 1-80
+3-work_on_a_project/2-implementation/3-archived/retail-api/docs/sql-database/data-model.md
+  s_e807d32fb8a970::t_a676f5489c063d 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-api/docs/testing/testing-strategy.md
+  s_e807d32fb8a970::t_576729c80633ea 1-88
+3-work_on_a_project/2-implementation/3-archived/retail-api/eslint.config.mjs
+  s_e807d32fb8a970::t_94a1118b511548 1-93
+3-work_on_a_project/2-implementation/3-archived/retail-api/next.config.ts
+  s_e807d32fb8a970::t_771f03f224226b 1-13
+3-work_on_a_project/2-implementation/3-archived/retail-api/openspec/config.yaml
+  s_e807d32fb8a970::t_749d079ae6527e 1-2
+3-work_on_a_project/2-implementation/3-archived/retail-api/package-lock.json
+  s_e807d32fb8a970::t_53f0339802970e 1-8663
+3-work_on_a_project/2-implementation/3-archived/retail-api/package.json
+  s_e807d32fb8a970::t_94aa0e33f62b3a 1-43
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/categories/route.ts
+  s_e807d32fb8a970::t_2c5f18442fa77c 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/collections/route.ts
+  s_e807d32fb8a970::t_e023bbbf48fe9f 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/inventory/low-stock/route.ts
+  s_e807d32fb8a970::t_dbe0b173e73837 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/inventory/route.ts
+  s_e807d32fb8a970::t_fa568399fa5600 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/me/checkout/confirmation/route.ts
+  s_e807d32fb8a970::t_b0f94ca0fe7718 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/me/checkout/item-count/route.ts
+  s_e807d32fb8a970::t_572c3cf0165404 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/me/checkout/lines/[id]/route.ts
+  s_e807d32fb8a970::t_b76399f7f66d94 1-14
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/me/checkout/lines/route.ts
+  s_e807d32fb8a970::t_a745ade0044f0b 1-16
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/me/checkout/route.ts
+  s_e807d32fb8a970::t_16d0077224821f 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/me/orders/[id]/route.ts
+  s_e807d32fb8a970::t_f73b0f5e1be1fa 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/me/orders/route.ts
+  s_e807d32fb8a970::t_7496450f667cd0 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/me/products/[id]/review-eligibility/route.ts
+  s_e807d32fb8a970::t_674f0f9e27e5f7 1-16
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/me/reviews/route.ts
+  s_e807d32fb8a970::t_360e75b86475bb 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/me/route.ts
+  s_e807d32fb8a970::t_0757df0a1924ef 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/orders/[id]/route.ts
+  s_e807d32fb8a970::t_d356fed5f9ce16 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/orders/recent/route.ts
+  s_e807d32fb8a970::t_ae3948228596ec 1-21
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/orders/route.ts
+  s_e807d32fb8a970::t_2b03bc08643174 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/orders/summary/route.ts
+  s_e807d32fb8a970::t_940ba2176178a8 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/outfits/[id]/route.ts
+  s_e807d32fb8a970::t_705feee31b34e7 1-50
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/outfits/route.ts
+  s_e807d32fb8a970::t_2365727eccf579 1-24
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/products/[id]/reviews/route.ts
+  s_e807d32fb8a970::t_59c4011775db48 1-16
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/products/[id]/route.ts
+  s_e807d32fb8a970::t_8d5212afb85034 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/products/[id]/suggestions/route.ts
+  s_e807d32fb8a970::t_9f705180ffafeb 1-16
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/products/route.ts
+  s_e807d32fb8a970::t_3bc3ec71dacfb8 1-15
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/reviews/[id]/approval/route.ts
+  s_e807d32fb8a970::t_f16a788523a03c 1-14
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/reviews/[id]/rejection/route.ts
+  s_e807d32fb8a970::t_6984c864399782 1-14
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/reviews/pending/route.ts
+  s_e807d32fb8a970::t_6d1256db74385e 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/application/add/CartVariantAdder.ts
+  s_e807d32fb8a970::t_7b54727bb6486f 1-53
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/application/confirm/CheckoutConfirmer.ts
+  s_e807d32fb8a970::t_46ad5ee58472be 1-76
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/application/count/CartItemCounter.ts
+  s_e807d32fb8a970::t_a711297c77e543 1-18
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/application/remove/CartVariantRemover.ts
+  s_e807d32fb8a970::t_25f43f1a44b8b8 1-25
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/application/view/CheckoutViewGetter.ts
+  s_e807d32fb8a970::t_047a2350803344 1-81
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/CatalogItem.ts
+  s_e807d32fb8a970::t_2e5ea322df39a4 1-56
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/CatalogItems.ts
+  s_e807d32fb8a970::t_64bb8ce079f5f2 1-18
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/Checkout.ts
+  s_e807d32fb8a970::t_b5f93811b7e970 1-123
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/CheckoutCatalog.ts
+  s_e807d32fb8a970::t_048520b6aa8b2b 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/CheckoutId.ts
+  s_e807d32fb8a970::t_02587f1ad3a00e 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/CheckoutLine.ts
+  s_e807d32fb8a970::t_cc2671c7907836 1-51
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/CheckoutRepository.ts
+  s_e807d32fb8a970::t_969c63d132ac0b 1-11
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/OrderPlacement.ts
+  s_e807d32fb8a970::t_fff4873f752d5e 1-22
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/StockReserver.ts
+  s_e807d32fb8a970::t_c4f770c46a03d6 1-5
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/errors/CatalogItemNotFoundError.ts
+  s_e807d32fb8a970::t_a9c9927d26f7b3 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/errors/CheckoutConcurrentModificationError.ts
+  s_e807d32fb8a970::t_fe218f920bc284 1-11
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/errors/EmptyCheckoutError.ts
+  s_e807d32fb8a970::t_6f28fa13da124a 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/errors/InvalidCheckoutLineQuantityError.ts
+  s_e807d32fb8a970::t_4244d4d4f827a7 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/domain/errors/VariantOutOfStockError.ts
+  s_e807d32fb8a970::t_a0fda2bc5e9abb 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/infrastructure/OrdersOrderPlacement.ts
+  s_e807d32fb8a970::t_630f27780679b1 1-41
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/infrastructure/PostgresCheckoutRepository.ts
+  s_e807d32fb8a970::t_1cf12c64f4325c 1-147
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/infrastructure/ProductsCheckoutCatalog.ts
+  s_e807d32fb8a970::t_61c04f764690fb 1-34
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/checkout/infrastructure/ProductsStockReserver.ts
+  s_e807d32fb8a970::t_d04d546c11f829 1-29
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/application/OrderResponse.ts
+  s_e807d32fb8a970::t_f1492186ed02c3 1-34
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/application/find-mine/UserOrderFinder.ts
+  s_e807d32fb8a970::t_04cf97c98a4513 1-21
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/application/find-purchased-product/PurchasedProductFinder.ts
+  s_e807d32fb8a970::t_36092fc8a4afa7 1-40
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/application/find/OrderFinder.ts
+  s_e807d32fb8a970::t_8252a43793efae 1-77
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/application/list-mine/UserOrdersLister.ts
+  s_e807d32fb8a970::t_d20768cba6176a 1-36
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/application/list-recent/RecentOrdersLister.ts
+  s_e807d32fb8a970::t_30ee67f9a74e0f 1-23
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/application/list/OrdersLister.ts
+  s_e807d32fb8a970::t_97ae207a424c90 1-23
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/application/place/OrderPlacer.ts
+  s_e807d32fb8a970::t_5a9500a86c45e9 1-57
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/application/summarize/OrdersSummaryGetter.ts
+  s_e807d32fb8a970::t_e11778549a832a 1-40
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/domain/CurrencyRevenue.ts
+  s_e807d32fb8a970::t_3749a1bf1cfdef 1-6
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/domain/CustomerDirectory.ts
+  s_e807d32fb8a970::t_65f81eca2c3e82 1-15
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/domain/Order.ts
+  s_e807d32fb8a970::t_fd2f7bbf41aea1 1-92
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/domain/OrderId.ts
+  s_e807d32fb8a970::t_12a7cc9aed8f60 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/domain/OrderLine.ts
+  s_e807d32fb8a970::t_3dce442ce9e20d 1-59
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/domain/OrderRepository.ts
+  s_e807d32fb8a970::t_b9a5f050a443b6 1-19
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/domain/errors/EmptyOrderError.ts
+  s_e807d32fb8a970::t_dcf567020018b3 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/domain/errors/InvalidOrderLineQuantityError.ts
+  s_e807d32fb8a970::t_b9918875c25c81 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/domain/errors/OrderNotFoundError.ts
+  s_e807d32fb8a970::t_03f2688de4ca31 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/infrastructure/PostgresOrderRepository.ts
+  s_e807d32fb8a970::t_84602db3582bda 1-189
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/infrastructure/UsersCustomerDirectory.ts
+  s_e807d32fb8a970::t_c4f6472420a6a4 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/OutfitSaveGuard.ts
+  s_e807d32fb8a970::t_413d7cbcb466ea 1-48
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/ProductResponse.ts
+  s_e807d32fb8a970::t_af96f1c99cac22 1-55
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/categories/CategoriesLister.ts
+  s_e807d32fb8a970::t_655a8b3706a859 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/collections/CollectionsLister.ts
+  s_e807d32fb8a970::t_78271a530b85ef 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/create-outfit/OutfitCreator.ts
+  s_e807d32fb8a970::t_cbd4bb37e43137 1-31
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/decrease-stock/NotEnoughStockError.ts
+  s_e807d32fb8a970::t_0619149bee84dc 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/decrease-stock/StockDecreaser.ts
+  s_e807d32fb8a970::t_187936c9ee6ec5 1-38
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/delete-outfit/OutfitDeleter.ts
+  s_e807d32fb8a970::t_9697224e0f88c0 1-17
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/find-outfit/OutfitFinder.ts
+  s_e807d32fb8a970::t_ea95ebe010f5b7 1-24
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/find-suggestions/ProductSuggestionsFinder.ts
+  s_e807d32fb8a970::t_6e6902fbd0fa62 1-86
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/find/ProductFinder.ts
+  s_e807d32fb8a970::t_65a34adb0c0d04 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/inventory/InventoryLister.ts
+  s_e807d32fb8a970::t_98af531942c6d0 1-55
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/list-outfits/OutfitsLister.ts
+  s_e807d32fb8a970::t_5d81d0400650ca 1-49
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/low-stock/LowStockLister.ts
+  s_e807d32fb8a970::t_5da5750c6fe051 1-52
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/search-variants/VariantsSearcher.ts
+  s_e807d32fb8a970::t_e0ea7f8a12bfea 1-48
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/search/ProductsSearcher.ts
+  s_e807d32fb8a970::t_9845840988b445 1-17
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/application/update-outfit/OutfitUpdater.ts
+  s_e807d32fb8a970::t_22bbad22efddb5 1-40
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/Outfit.ts
+  s_e807d32fb8a970::t_7acc8167eb0001 1-75
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/OutfitId.ts
+  s_e807d32fb8a970::t_582c33b67e9839 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/OutfitRepository.ts
+  s_e807d32fb8a970::t_759b32875b2e1e 1-22
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/Product.ts
+  s_e807d32fb8a970::t_902c0591c53331 1-128
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/ProductRepository.ts
+  s_e807d32fb8a970::t_4c4e94e7c3629b 1-37
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/ProductVariant.ts
+  s_e807d32fb8a970::t_c3fd66025adc09 1-68
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/errors/InvalidOutfitNameError.ts
+  s_e807d32fb8a970::t_bb81f7d591dc4b 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/errors/InvalidOutfitSizeError.ts
+  s_e807d32fb8a970::t_36d075205a3584 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/errors/OutfitNameAlreadyExistsError.ts
+  s_e807d32fb8a970::t_d85ac9ba40d05b 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/errors/OutfitNotFoundError.ts
+  s_e807d32fb8a970::t_bdbd719f60c135 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/errors/OutfitProductNotFoundError.ts
+  s_e807d32fb8a970::t_8574929e2ea335 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/errors/ProductNotFoundError.ts
+  s_e807d32fb8a970::t_0f3f2251e97cfa 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/errors/RepeatedOutfitProductError.ts
+  s_e807d32fb8a970::t_8cbf3d77eb5ead 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/domain/errors/VariantNotFoundError.ts
+  s_e807d32fb8a970::t_37b622b7e7cdc3 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/infrastructure/PostgresOutfitRepository.ts
+  s_e807d32fb8a970::t_2a0d22b7dcb7cf 1-157
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/products/infrastructure/PostgresProductRepository.ts
+  s_e807d32fb8a970::t_55980469adea48 1-199
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/ReviewResponse.ts
+  s_e807d32fb8a970::t_1f0b7848fbb057 1-21
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/approve/ReviewApprover.ts
+  s_e807d32fb8a970::t_907e5859c6c367 1-17
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/check-eligibility/ReviewEligibilityChecker.ts
+  s_e807d32fb8a970::t_28f02dde0ff12d 1-44
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/find-for-product/ProductReviewsFinder.ts
+  s_e807d32fb8a970::t_02cf586507bcb8 1-40
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/list-pending/PendingReviewsLister.ts
+  s_e807d32fb8a970::t_4f8b918a86a71b 1-26
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/reject/ReviewRejecter.ts
+  s_e807d32fb8a970::t_6fa799b8870a74 1-17
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/submit/ReviewSubmitter.ts
+  s_e807d32fb8a970::t_5471b6ecf57b09 1-69
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/PurchaseHistory.ts
+  s_e807d32fb8a970::t_d91a2d1d9d47f3 1-14
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/Review.ts
+  s_e807d32fb8a970::t_637b1e7422fb13 1-135
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/ReviewAuthors.ts
+  s_e807d32fb8a970::t_abadfef2799cc7 1-5
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/ReviewBody.ts
+  s_e807d32fb8a970::t_6d83335d1a6a31 1-18
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/ReviewId.ts
+  s_e807d32fb8a970::t_1700f7a1b379c3 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/ReviewRating.ts
+  s_e807d32fb8a970::t_00d4731b878a7d 1-17
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/ReviewRepository.ts
+  s_e807d32fb8a970::t_f4fb036fc7056b 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/ReviewTitle.ts
+  s_e807d32fb8a970::t_c1746ebd1e6fed 1-18
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/errors/InvalidReviewBodyError.ts
+  s_e807d32fb8a970::t_f2082ec55d7791 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/errors/InvalidReviewRatingError.ts
+  s_e807d32fb8a970::t_b0b10b480ad3a4 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/errors/InvalidReviewTitleError.ts
+  s_e807d32fb8a970::t_c8a70f1279781d 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/errors/ProductNotPurchasedError.ts
+  s_e807d32fb8a970::t_7e0f58ecdf692f 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/errors/ReviewAlreadyExistsError.ts
+  s_e807d32fb8a970::t_befb641a94946a 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/errors/ReviewAlreadyModeratedError.ts
+  s_e807d32fb8a970::t_4f1eb0ea507854 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/errors/ReviewNotFoundError.ts
+  s_e807d32fb8a970::t_8e886d5441280d 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/infrastructure/OrdersPurchaseHistory.ts
+  s_e807d32fb8a970::t_85ffb3035e4240 1-23
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/infrastructure/PostgresReviewRepository.ts
+  s_e807d32fb8a970::t_b7dd25e35b6715 1-133
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/infrastructure/UsersReviewAuthors.ts
+  s_e807d32fb8a970::t_c94f869fa8e5f8 1-16
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/shared/infrastructure/CryptoIdGenerator.ts
+  s_e807d32fb8a970::t_4a49bdf27f95c2 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/shared/infrastructure/PostgresConnection.ts
+  s_e807d32fb8a970::t_f75bbc22a5557c 1-36
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/shared/infrastructure/PostgresRepository.ts
+  s_e807d32fb8a970::t_efe6d610453a2a 1-15
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/shared/infrastructure/PostgresUnitOfWork.ts
+  s_e807d32fb8a970::t_e12844d485d1bc 1-13
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/shared/infrastructure/RetailContainer.ts
+  s_e807d32fb8a970::t_14eb7ec78b387e 1-317
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/shared/infrastructure/SystemClock.ts
+  s_e807d32fb8a970::t_a9cc7df048f67e 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/shared/infrastructure/http/httpErrorResponse.ts
+  s_e807d32fb8a970::t_b2084839589036 1-88
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/shared/infrastructure/http/requestBody.ts
+  s_e807d32fb8a970::t_3025d7cfa3972c 1-52
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/shared/infrastructure/http/withErrorHandling.ts
+  s_e807d32fb8a970::t_011a224f884ff4 1-18
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/users/application/current/CurrentUserGetter.ts
+  s_e807d32fb8a970::t_ebb8b1f90d10fd 1-28
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/users/application/search-by-ids/UsersByIdsSearcher.ts
+  s_e807d32fb8a970::t_80d3b34d8b721e 1-24
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/users/domain/User.ts
+  s_e807d32fb8a970::t_702a8f8f60af9c 1-27
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/users/domain/UserRepository.ts
+  s_e807d32fb8a970::t_04e97e33c9804c 1-11
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/users/domain/errors/UserNotFoundError.ts
+  s_e807d32fb8a970::t_03a734c607f9d7 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/users/infrastructure/FakeSessionCurrentUserProvider.ts
+  s_e807d32fb8a970::t_7dd38548a0eb01 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/users/infrastructure/PostgresUserRepository.ts
+  s_e807d32fb8a970::t_fbcea65d53f442 1-46
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/Clock.ts
+  s_e807d32fb8a970::t_5f991ea9d2c456 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/CodelyError.ts
+  s_e807d32fb8a970::t_dee5d9025244b6 1-6
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/CurrentUserProvider.ts
+  s_e807d32fb8a970::t_ecfe76475df30d 1-5
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/DeliveryMethod.ts
+  s_e807d32fb8a970::t_862c453b44dd85 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/IdGenerator.ts
+  s_e807d32fb8a970::t_5085866f9a0c84 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/Money.ts
+  s_e807d32fb8a970::t_76618b8a0ae456 1-60
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/ProductId.ts
+  s_e807d32fb8a970::t_6bef42dc9d356d 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/UnitOfWork.ts
+  s_e807d32fb8a970::t_9b4ab0215df0b6 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/UserId.ts
+  s_e807d32fb8a970::t_2e46b20578eb73 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/VariantId.ts
+  s_e807d32fb8a970::t_ff3f8121e82fac 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/errors/CurrencyMismatchError.ts
+  s_e807d32fb8a970::t_18a3bdaa3fac35 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/errors/EmptyStringValueObjectError.ts
+  s_e807d32fb8a970::t_19daba3ea8de0f 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/errors/InvalidArgumentError.ts
+  s_e807d32fb8a970::t_f902e977b056cc 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/errors/InvalidLiteralError.ts
+  s_e807d32fb8a970::t_c5cd0d5a6b184a 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/errors/InvalidMoneyAmountError.ts
+  s_e807d32fb8a970::t_286a9da020edce 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/parseLiteral.ts
+  s_e807d32fb8a970::t_fa38ffca0e4838 1-16
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/shared/domain/value-object/StringValueObject.ts
+  s_e807d32fb8a970::t_3ea474f767cad4 1-15
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/me/checkout/confirmation/route.spec.ts
+  s_e807d32fb8a970::t_09187dbf6898f7 1-70
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/me/products/[id]/review-eligibility/route.spec.ts
+  s_e807d32fb8a970::t_4528649316d567 1-45
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/me/reviews/route.spec.ts
+  s_e807d32fb8a970::t_07b4273e2e1956 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/orders/[id]/route.spec.ts
+  s_e807d32fb8a970::t_2a41a519e9943f 1-49
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/orders/recent/route.spec.ts
+  s_e807d32fb8a970::t_53480191facce5 1-48
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/outfits/route.spec.ts
+  s_e807d32fb8a970::t_935274629a1070 1-89
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/products/[id]/reviews/route.spec.ts
+  s_e807d32fb8a970::t_d73d2e8a0e1190 1-63
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/products/[id]/route.spec.ts
+  s_e807d32fb8a970::t_d77e102b5f3977 1-51
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/reviews/[id]/approval/route.spec.ts
+  s_e807d32fb8a970::t_bccb04183113b0 1-60
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/reviews/[id]/rejection/route.spec.ts
+  s_e807d32fb8a970::t_809f99038c1f2f 1-60
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/reviews/pending/route.spec.ts
+  s_e807d32fb8a970::t_301c124aba26ae 1-40
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/acceptance/CheckoutConfirmation.spec.ts
+  s_e807d32fb8a970::t_6ade1a725e18d6 1-170
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/checkout/application/add/CartVariantAdder.spec.ts
+  s_e807d32fb8a970::t_088434966f9572 1-121
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/checkout/application/confirm/CheckoutConfirmer.spec.ts
+  s_e807d32fb8a970::t_15cf66706d41d0 1-150
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/checkout/application/count/CartItemCounter.spec.ts
+  s_e807d32fb8a970::t_415c1cda284522 1-53
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/checkout/application/remove/CartVariantRemover.spec.ts
+  s_e807d32fb8a970::t_fb6b7c57a28d24 1-80
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/checkout/application/view/CheckoutViewGetter.spec.ts
+  s_e807d32fb8a970::t_08c3bf17bd1c6b 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/checkout/domain/CatalogItemMother.ts
+  s_e807d32fb8a970::t_1229f8116a8821 1-33
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/checkout/domain/CheckoutLineMother.ts
+  s_e807d32fb8a970::t_fa5b951a4e1066 1-18
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/checkout/domain/CheckoutMother.ts
+  s_e807d32fb8a970::t_c1909f2b2557e5 1-30
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/checkout/infrastructure/PostgresCheckoutRepository.spec.ts
+  s_e807d32fb8a970::t_c58ae5e7432ff7 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/application/find-mine/UserOrderFinder.spec.ts
+  s_e807d32fb8a970::t_88eab5d9b37713 1-46
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/application/find-purchased-product/PurchasedProductFinder.spec.ts
+  s_e807d32fb8a970::t_c7b91611e23fb3 1-60
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/application/find/OrderDetailResponseMother.ts
+  s_e807d32fb8a970::t_112d8fcbf05c49 1-52
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/application/find/OrderFinder.spec.ts
+  s_e807d32fb8a970::t_1fa856c2d30b24 1-106
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/application/list-mine/UserOrdersLister.spec.ts
+  s_e807d32fb8a970::t_c4ed5348d4e7c4 1-58
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/application/list-recent/RecentOrdersLister.spec.ts
+  s_e807d32fb8a970::t_edb8a153341b2d 1-72
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/application/list/OrdersLister.spec.ts
+  s_e807d32fb8a970::t_c513c2abaafcf6 1-105
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/application/place/OrderPlacer.spec.ts
+  s_e807d32fb8a970::t_7ce40cd14fb849 1-104
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/application/summarize/OrdersSummaryGetter.spec.ts
+  s_e807d32fb8a970::t_84ea488fc4b362 1-61
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/domain/OrderLineMother.ts
+  s_e807d32fb8a970::t_c3e4ed2684fafd 1-24
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/domain/OrderMother.ts
+  s_e807d32fb8a970::t_6c2ed358b6a995 1-49
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/infrastructure/PostgresOrderRepository.spec.ts
+  s_e807d32fb8a970::t_ddb8d083cdeaf9 1-203
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/infrastructure/UsersCustomerDirectory.spec.ts
+  s_e807d32fb8a970::t_3651ab1c087cfd 1-30
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/categories/CategoriesLister.spec.ts
+  s_e807d32fb8a970::t_2e61e6ca0adf44 1-23
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/collections/CollectionsLister.spec.ts
+  s_e807d32fb8a970::t_0f9082b1c1aa69 1-29
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/create-outfit/OutfitCreator.spec.ts
+  s_e807d32fb8a970::t_913e282d2e1329 1-117
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/decrease-stock/StockDecreaser.spec.ts
+  s_e807d32fb8a970::t_a32f14e2175b4b 1-66
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/delete-outfit/OutfitDeleter.spec.ts
+  s_e807d32fb8a970::t_d3a4f797046986 1-31
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/find-outfit/OutfitFinder.spec.ts
+  s_e807d32fb8a970::t_261a7f6462469a 1-37
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/find-suggestions/ProductSuggestionsFinder.spec.ts
+  s_e807d32fb8a970::t_66351898d60455 1-170
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/find/ProductFinder.spec.ts
+  s_e807d32fb8a970::t_495ea53d8598d7 1-127
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/inventory/InventoryLister.spec.ts
+  s_e807d32fb8a970::t_135bc081c8ef93 1-151
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/list-outfits/OutfitsLister.spec.ts
+  s_e807d32fb8a970::t_4add0df41bde68 1-156
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/low-stock/LowStockLister.spec.ts
+  s_e807d32fb8a970::t_da48037276dade 1-129
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/search-variants/VariantsSearcher.spec.ts
+  s_e807d32fb8a970::t_7973de3114d68f 1-61
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/search/ProductsSearcher.spec.ts
+  s_e807d32fb8a970::t_67803ab13fd1a5 1-42
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/application/update-outfit/OutfitUpdater.spec.ts
+  s_e807d32fb8a970::t_eba0d6f46c0b6e 1-142
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/domain/OutfitMother.ts
+  s_e807d32fb8a970::t_f63c09b9d0fa32 1-51
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/domain/Product.spec.ts
+  s_e807d32fb8a970::t_04b2751e234286 1-29
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/domain/ProductMother.ts
+  s_e807d32fb8a970::t_8736723a42d52e 1-38
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/domain/ProductVariantMother.ts
+  s_e807d32fb8a970::t_3f61319bb9b062 1-25
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/infrastructure/PostgresOutfitRepository.spec.ts
+  s_e807d32fb8a970::t_52ef8b4e82454a 1-206
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/products/infrastructure/PostgresProductRepository.spec.ts
+  s_e807d32fb8a970::t_0edf634252ac08 1-303
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/approve/ReviewApprover.spec.ts
+  s_e807d32fb8a970::t_a9d9d399e1b013 1-53
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/check-eligibility/ReviewEligibilityChecker.spec.ts
+  s_e807d32fb8a970::t_771b03358376f5 1-80
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/find-for-product/ProductReviewsFinder.spec.ts
+  s_e807d32fb8a970::t_3e7c9b7ff2abfe 1-71
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/list-pending/PendingReviewsLister.spec.ts
+  s_e807d32fb8a970::t_fc40c3c2eb445b 1-63
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/reject/ReviewRejecter.spec.ts
+  s_e807d32fb8a970::t_cb44c63e96e6e0 1-53
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/submit/ReviewSubmitter.spec.ts
+  s_e807d32fb8a970::t_c5e81496e58b89 1-220
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/domain/ReviewMother.ts
+  s_e807d32fb8a970::t_10a4030e12132f 1-52
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/infrastructure/OrdersPurchaseHistory.spec.ts
+  s_e807d32fb8a970::t_a00e7bb098aa5a 1-45
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/infrastructure/PostgresReviewRepository.spec.ts
+  s_e807d32fb8a970::t_8fba0df7cf63e4 1-172
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/infrastructure/UsersReviewAuthors.spec.ts
+  s_e807d32fb8a970::t_ec4c91a63b8f74 1-27
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/shared/infrastructure/RetailEnvironmentArranger.ts
+  s_e807d32fb8a970::t_b8eb89b22a1c13 1-78
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/shared/infrastructure/describeWithEnvironmentArranger.ts
+  s_e807d32fb8a970::t_8309fc1fa12197 1-21
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/users/application/current/CurrentUserGetter.spec.ts
+  s_e807d32fb8a970::t_067a99583c79c7 1-32
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/users/application/search-by-ids/UsersByIdsSearcher.spec.ts
+  s_e807d32fb8a970::t_4397e2260933b2 1-41
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/users/domain/UserMother.ts
+  s_e807d32fb8a970::t_910744371c8b69 1-23
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/users/infrastructure/PostgresUserRepository.spec.ts
+  s_e807d32fb8a970::t_f2f54f275a4f0e 1-78
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/setupFaker.ts
+  s_e807d32fb8a970::t_686345e46cbb99 1-5
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/setupTests.ts
+  s_e807d32fb8a970::t_380ec27bf90a18 1-5
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/shared/Mock.ts
+  s_e807d32fb8a970::t_67a35ef992c05d 1-154
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/shared/domain/MoneyMother.ts
+  s_e807d32fb8a970::t_9dbc6202f7c934 1-19
+3-work_on_a_project/2-implementation/3-archived/retail-api/tsconfig.json
+  s_e807d32fb8a970::t_2873c4d85c1147 1-33
+3-work_on_a_project/2-implementation/3-archived/retail-api/vitest.config.ts
+  s_e807d32fb8a970::t_ad0a96cb0b0059 1-43
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.agents/skills/.openspec-target
+  s_e807d32fb8a970::t_f9c4e351644da1 1
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.agents/skills/openspec-apply-change/SKILL.md
+  s_e807d32fb8a970::t_ee6539dde71047 1-206
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.agents/skills/openspec-archive-change/SKILL.md
+  s_e807d32fb8a970::t_eb99a4998acfe7 1-221
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.agents/skills/openspec-explore/SKILL.md
+  s_e807d32fb8a970::t_da3fb55e57152e 1-354
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.agents/skills/openspec-propose/SKILL.md
+  s_e807d32fb8a970::t_d03449224a1e7d 1-174
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.agents/skills/openspec-sync-specs/SKILL.md
+  s_e807d32fb8a970::t_5e6651091baea3 1-290
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.agents/skills/openspec-update-change/SKILL.md
+  s_e807d32fb8a970::t_d9e46463dd5544 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.agents/skills/openspec-verify-change/SKILL.md
+  s_e807d32fb8a970::t_99d148dc83fd6b 1-220
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.claude/settings.json
+  s_e807d32fb8a970::t_d82794b2cd3205 1-5
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.claude/skills/openspec-apply-change/SKILL.md
+  s_e807d32fb8a970::t_9252bf897fd9a9 1-206
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.claude/skills/openspec-archive-change/SKILL.md
+  s_e807d32fb8a970::t_444b2a00ee4277 1-221
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.claude/skills/openspec-explore/SKILL.md
+  s_e807d32fb8a970::t_198c19b44b3d4f 1-354
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.claude/skills/openspec-propose/SKILL.md
+  s_e807d32fb8a970::t_ac35ae63c56922 1-174
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.claude/skills/openspec-sync-specs/SKILL.md
+  s_e807d32fb8a970::t_d04310fe5e7bed 1-290
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.claude/skills/openspec-update-change/SKILL.md
+  s_e807d32fb8a970::t_d711ab37b83543 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.claude/skills/openspec-verify-change/SKILL.md
+  s_e807d32fb8a970::t_cc262a545c43be 1-220
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.codex/config.toml
+  s_e807d32fb8a970::t_fb7f7433643b89 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.github/skills/openspec-apply-change/SKILL.md
+  s_e807d32fb8a970::t_6bbe0eb710ea50 1-206
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.github/skills/openspec-archive-change/SKILL.md
+  s_e807d32fb8a970::t_e3bb7b8f0d607f 1-221
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.github/skills/openspec-explore/SKILL.md
+  s_e807d32fb8a970::t_aee57442307704 1-354
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.github/skills/openspec-propose/SKILL.md
+  s_e807d32fb8a970::t_3085bd38a6efe4 1-174
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.github/skills/openspec-sync-specs/SKILL.md
+  s_e807d32fb8a970::t_4f748462805f68 1-290
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.github/skills/openspec-update-change/SKILL.md
+  s_e807d32fb8a970::t_502dcde6689f86 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.github/skills/openspec-verify-change/SKILL.md
+  s_e807d32fb8a970::t_8371d2acab5d7d 1-220
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.opencode/skills/openspec-apply-change/SKILL.md
+  s_e807d32fb8a970::t_db41e31404d65a 1-206
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.opencode/skills/openspec-archive-change/SKILL.md
+  s_e807d32fb8a970::t_2e096644da6a0e 1-221
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.opencode/skills/openspec-explore/SKILL.md
+  s_e807d32fb8a970::t_b7fbfc9e683203 1-354
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.opencode/skills/openspec-propose/SKILL.md
+  s_e807d32fb8a970::t_bd9b6ca221794d 1-174
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.opencode/skills/openspec-sync-specs/SKILL.md
+  s_e807d32fb8a970::t_a4441e6e03e9da 1-290
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.opencode/skills/openspec-update-change/SKILL.md
+  s_e807d32fb8a970::t_0ede88d987be5e 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.opencode/skills/openspec-verify-change/SKILL.md
+  s_e807d32fb8a970::t_b00b7d2838b57b 1-220
+3-work_on_a_project/2-implementation/3-archived/retail-specs/.openspec-store/store.yaml
+  s_e807d32fb8a970::t_24c92c4e6f425a 1-2
+3-work_on_a_project/2-implementation/3-archived/retail-specs/AGENTS.md
+  s_e807d32fb8a970::t_1cf81b31a50b02 1-23
+3-work_on_a_project/2-implementation/3-archived/retail-specs/CLAUDE.md
+  s_e807d32fb8a970::t_2825802624ceda 1
+3-work_on_a_project/2-implementation/3-archived/retail-specs/bin/setup
+  s_e807d32fb8a970::t_1c25681e3c02ea 1-10
+3-work_on_a_project/2-implementation/3-archived/retail-specs/bin/update
+  s_e807d32fb8a970::t_36289d88f627e5 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-specs/opencode.json
+  s_e807d32fb8a970::t_ad4929979d748a 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-08-add-outfit-suggestions/.openspec.yaml
+  s_e807d32fb8a970::t_67445a337886ec 1-2
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-08-add-outfit-suggestions/design.md
+  s_e807d32fb8a970::t_34e1a9d6e4da60 1-149
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-08-add-outfit-suggestions/proposal.md
+  s_e807d32fb8a970::t_e679a6706c5528 1-33
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-08-add-outfit-suggestions/specs/outfit-management/spec.md
+  s_e807d32fb8a970::t_442834d2e6877e 1-150
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-08-add-outfit-suggestions/specs/product-suggestions/spec.md
+  s_e807d32fb8a970::t_276992ed04e923 1-47
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-08-add-outfit-suggestions/specs/stock-monitoring/spec.md
+  s_e807d32fb8a970::t_17c61a486bfa88 1-44
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-08-add-outfit-suggestions/tasks.md
+  s_e807d32fb8a970::t_45f02260d42dc2 1-51
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-08-add-product-reviews/.openspec.yaml
+  s_e807d32fb8a970::t_f453eaeb69de8d 1-2
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-08-add-product-reviews/design.md
+  s_e807d32fb8a970::t_cc226041d8422c 1-174
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-08-add-product-reviews/proposal.md
+  s_e807d32fb8a970::t_a34e0724f1ae58 1-33
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-08-add-product-reviews/specs/product-reviews/spec.md
+  s_e807d32fb8a970::t_fbe875aed1fc27 1-116
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-08-add-product-reviews/specs/review-moderation/spec.md
+  s_e807d32fb8a970::t_f48ab75370fcee 1-47
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-08-add-product-reviews/tasks.md
+  s_e807d32fb8a970::t_9639104caa6b82 1-33
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/config.yaml
+  s_e807d32fb8a970::t_141a0ee40a87f6 1-27
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/specs/outfit-management/spec.md
+  s_e807d32fb8a970::t_560ee17db4b924 1-150
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/specs/product-reviews/spec.md
+  s_e807d32fb8a970::t_18aca28c5ff0af 1-116
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/specs/product-suggestions/spec.md
+  s_e807d32fb8a970::t_3059fcb166deb6 1-47
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/specs/review-moderation/spec.md
+  s_e807d32fb8a970::t_fcf976918b1369 1-47
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/specs/stock-monitoring/spec.md
+  s_e807d32fb8a970::t_8dd879f0485e2e 1-44
+3-work_on_a_project/2-implementation/3-archived/retail-specs/retail.code-workspace
+  s_e807d32fb8a970::t_2636d4ee69ba97 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-web/.agents/skills/.openspec-target
+  s_e807d32fb8a970::t_994e6b6ddb91b6 1
+3-work_on_a_project/2-implementation/3-archived/retail-web/.agents/skills/openspec-apply-change/SKILL.md
+  s_e807d32fb8a970::t_fd5830ee297163 1-206
+3-work_on_a_project/2-implementation/3-archived/retail-web/.agents/skills/openspec-archive-change/SKILL.md
+  s_e807d32fb8a970::t_03b5525f6799aa 1-221
+3-work_on_a_project/2-implementation/3-archived/retail-web/.agents/skills/openspec-explore/SKILL.md
+  s_e807d32fb8a970::t_5737818b40b4ae 1-354
+3-work_on_a_project/2-implementation/3-archived/retail-web/.agents/skills/openspec-propose/SKILL.md
+  s_e807d32fb8a970::t_3d6af136ba3b49 1-174
+3-work_on_a_project/2-implementation/3-archived/retail-web/.agents/skills/openspec-sync-specs/SKILL.md
+  s_e807d32fb8a970::t_8eae0d1f120fa3 1-290
+3-work_on_a_project/2-implementation/3-archived/retail-web/.agents/skills/openspec-update-change/SKILL.md
+  s_e807d32fb8a970::t_b3ca530237a185 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-web/.agents/skills/openspec-verify-change/SKILL.md
+  s_e807d32fb8a970::t_d6653928559328 1-220
+3-work_on_a_project/2-implementation/3-archived/retail-web/.claude/skills/openspec-apply-change/SKILL.md
+  s_e807d32fb8a970::t_f154b342674f6f 1-206
+3-work_on_a_project/2-implementation/3-archived/retail-web/.claude/skills/openspec-archive-change/SKILL.md
+  s_e807d32fb8a970::t_bcef7a9b1d205f 1-221
+3-work_on_a_project/2-implementation/3-archived/retail-web/.claude/skills/openspec-explore/SKILL.md
+  s_e807d32fb8a970::t_313f1d5e182c95 1-354
+3-work_on_a_project/2-implementation/3-archived/retail-web/.claude/skills/openspec-propose/SKILL.md
+  s_e807d32fb8a970::t_10293638f67e1d 1-174
+3-work_on_a_project/2-implementation/3-archived/retail-web/.claude/skills/openspec-sync-specs/SKILL.md
+  s_e807d32fb8a970::t_d10100b66f13a2 1-290
+3-work_on_a_project/2-implementation/3-archived/retail-web/.claude/skills/openspec-update-change/SKILL.md
+  s_e807d32fb8a970::t_a07966ec76ae81 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-web/.claude/skills/openspec-verify-change/SKILL.md
+  s_e807d32fb8a970::t_b65c88af24f56d 1-220
+3-work_on_a_project/2-implementation/3-archived/retail-web/.env.example
+  s_e807d32fb8a970::t_8a7ac2d39dadb0 1
+3-work_on_a_project/2-implementation/3-archived/retail-web/.github/skills/openspec-apply-change/SKILL.md
+  s_e807d32fb8a970::t_2a2aea0b18d6b9 1-206
+3-work_on_a_project/2-implementation/3-archived/retail-web/.github/skills/openspec-archive-change/SKILL.md
+  s_e807d32fb8a970::t_75c181236dad12 1-221
+3-work_on_a_project/2-implementation/3-archived/retail-web/.github/skills/openspec-explore/SKILL.md
+  s_e807d32fb8a970::t_01deee7f1b44fa 1-354
+3-work_on_a_project/2-implementation/3-archived/retail-web/.github/skills/openspec-propose/SKILL.md
+  s_e807d32fb8a970::t_bfa4df4789bfdb 1-174
+3-work_on_a_project/2-implementation/3-archived/retail-web/.github/skills/openspec-sync-specs/SKILL.md
+  s_e807d32fb8a970::t_4c29467373a5fc 1-290
+3-work_on_a_project/2-implementation/3-archived/retail-web/.github/skills/openspec-update-change/SKILL.md
+  s_e807d32fb8a970::t_8b89415f806f7d 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-web/.github/skills/openspec-verify-change/SKILL.md
+  s_e807d32fb8a970::t_33fc6cdf06accb 1-220
+3-work_on_a_project/2-implementation/3-archived/retail-web/.gitignore
+  s_e807d32fb8a970::t_4269d244a4f92c 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-web/.opencode/skills/openspec-apply-change/SKILL.md
+  s_e807d32fb8a970::t_319df5af17a73f 1-206
+3-work_on_a_project/2-implementation/3-archived/retail-web/.opencode/skills/openspec-archive-change/SKILL.md
+  s_e807d32fb8a970::t_e730cd17f34e24 1-221
+3-work_on_a_project/2-implementation/3-archived/retail-web/.opencode/skills/openspec-explore/SKILL.md
+  s_e807d32fb8a970::t_536a9d622a95c1 1-354
+3-work_on_a_project/2-implementation/3-archived/retail-web/.opencode/skills/openspec-propose/SKILL.md
+  s_e807d32fb8a970::t_d6300057b5303c 1-174
+3-work_on_a_project/2-implementation/3-archived/retail-web/.opencode/skills/openspec-sync-specs/SKILL.md
+  s_e807d32fb8a970::t_e002be55e2864b 1-290
+3-work_on_a_project/2-implementation/3-archived/retail-web/.opencode/skills/openspec-update-change/SKILL.md
+  s_e807d32fb8a970::t_ae5edfa3b07452 1-109
+3-work_on_a_project/2-implementation/3-archived/retail-web/.opencode/skills/openspec-verify-change/SKILL.md
+  s_e807d32fb8a970::t_88452c48e3b2d2 1-220
+3-work_on_a_project/2-implementation/3-archived/retail-web/AGENTS.md
+  s_e807d32fb8a970::t_ae16edf0c85134 1-39
+3-work_on_a_project/2-implementation/3-archived/retail-web/CLAUDE.md
+  s_e807d32fb8a970::t_bcc2bd01196347 1
+3-work_on_a_project/2-implementation/3-archived/retail-web/Makefile
+  s_e807d32fb8a970::t_f6a60c2219a6af 1-5
+3-work_on_a_project/2-implementation/3-archived/retail-web/docs/architecture/project-layout.md
+  s_e807d32fb8a970::t_8797bd168d7ff6 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-web/docs/architecture/screens.md
+  s_e807d32fb8a970::t_60ea97899c13ae 1-15
+3-work_on_a_project/2-implementation/3-archived/retail-web/docs/documentation-guidelines.md
+  s_e807d32fb8a970::t_891051b06a5934 1-78
+3-work_on_a_project/2-implementation/3-archived/retail-web/docs/testing/testing-strategy.md
+  s_e807d32fb8a970::t_604f8c55e12458 1-86
+3-work_on_a_project/2-implementation/3-archived/retail-web/eslint.config.mjs
+  s_e807d32fb8a970::t_e05369448fb610 1-46
+3-work_on_a_project/2-implementation/3-archived/retail-web/global.d.ts
+  s_e807d32fb8a970::t_52438e1a0a5abf 1-39
+3-work_on_a_project/2-implementation/3-archived/retail-web/next.config.ts
+  s_e807d32fb8a970::t_78a73c140df156 1-24
+3-work_on_a_project/2-implementation/3-archived/retail-web/openspec/config.yaml
+  s_e807d32fb8a970::t_08af292153db98 1-2
+3-work_on_a_project/2-implementation/3-archived/retail-web/package-lock.json
+  s_e807d32fb8a970::t_4b79681740bb6c 1-11164
+3-work_on_a_project/2-implementation/3-archived/retail-web/package.json
+  s_e807d32fb8a970::t_e5f7d6c5355acb 1-46
+3-work_on_a_project/2-implementation/3-archived/retail-web/public/products/CREDITS.md
+  s_e807d32fb8a970::t_228a845932da99 1-21
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/account/layout.module.scss
+  s_e807d32fb8a970::t_0f9026785aee75 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/account/layout.tsx
+  s_e807d32fb8a970::t_615bdac5cf40f7 1-16
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/account/orders/[id]/page.tsx
+  s_e807d32fb8a970::t_ccba21a3c98fef 1-28
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/account/orders/page.tsx
+  s_e807d32fb8a970::t_85d32a23ab34f9 1-22
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/ActionState.ts
+  s_e807d32fb8a970::t_7c3cf1346fd8ef 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/InvalidFormDataError.ts
+  s_e807d32fb8a970::t_2eb14c29decefb 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/actionStateFor.ts
+  s_e807d32fb8a970::t_3fee0825f26792 1-55
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/checkout/addSelectedVariantToCart.ts
+  s_e807d32fb8a970::t_daa796a691a344 1-32
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/checkout/confirmOrder.ts
+  s_e807d32fb8a970::t_029e89e333c6c4 1-31
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/checkout/removeCartLine.ts
+  s_e807d32fb8a970::t_a70ccb57675392 1-25
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/checkout/requiredVariantId.ts
+  s_e807d32fb8a970::t_0fce36093d0eb1 1-11
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/outfits/createOutfit.ts
+  s_e807d32fb8a970::t_070edf1db17fdc 1-27
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/outfits/deleteOutfit.ts
+  s_e807d32fb8a970::t_6259fb407c7a09 1-26
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/outfits/outfitFormFields.ts
+  s_e807d32fb8a970::t_d7ce9d63a79cfe 1-33
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/outfits/outfitMessages.ts
+  s_e807d32fb8a970::t_f3024187f10341 1-19
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/outfits/updateOutfit.ts
+  s_e807d32fb8a970::t_9b819635ad878b 1-31
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/reviews/approveReview.ts
+  s_e807d32fb8a970::t_488c9600bbdac9 1-26
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/reviews/rejectReview.ts
+  s_e807d32fb8a970::t_c0fdc198f9ee10 1-26
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/reviews/reviewFormFields.ts
+  s_e807d32fb8a970::t_5e468ffb64228f 1-36
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/reviews/reviewMessages.ts
+  s_e807d32fb8a970::t_e269433ecba728 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/reviews/submitReview.ts
+  s_e807d32fb8a970::t_77c2ad15f5e667 1-30
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/AdminNav.module.scss
+  s_e807d32fb8a970::t_d0136a9a2c58dc 1-32
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/AdminNav.tsx
+  s_e807d32fb8a970::t_25b0ababd13526 1-43
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/inventory/page.tsx
+  s_e807d32fb8a970::t_52851cde03bf78 1-23
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/layout.module.scss
+  s_e807d32fb8a970::t_af86a595a16583 1-47
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/layout.tsx
+  s_e807d32fb8a970::t_36c361a63bc3ca 1-27
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/orders/[id]/page.tsx
+  s_e807d32fb8a970::t_afa68ca7c2bcb1 1-28
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/orders/page.tsx
+  s_e807d32fb8a970::t_6140e82278ea32 1-23
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/outfits/DeleteOutfitForm.tsx
+  s_e807d32fb8a970::t_ce3954ae260bf4 1-30
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/outfits/OutfitForm.module.scss
+  s_e807d32fb8a970::t_7c0f6f11381d14 1-45
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/outfits/OutfitForm.tsx
+  s_e807d32fb8a970::t_001ff7e0dff1f8 1-127
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/outfits/[id]/page.tsx
+  s_e807d32fb8a970::t_64dd54a410f8d9 1-50
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/outfits/new/page.tsx
+  s_e807d32fb8a970::t_924544f29f3d0e 1-31
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/outfits/page.module.scss
+  s_e807d32fb8a970::t_ac53af302909fb 1-21
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/outfits/page.tsx
+  s_e807d32fb8a970::t_1b6f3ba620e172 1-31
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/outfits/productOptions.ts
+  s_e807d32fb8a970::t_5df8a06344896f 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/page.module.scss
+  s_e807d32fb8a970::t_9c215212aeef1f 1-12
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/page.tsx
+  s_e807d32fb8a970::t_e8c28ac6883407 1-42
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/reviews/ModerateReviewForm.module.scss
+  s_e807d32fb8a970::t_94f55bf8e018f6 1-10
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/reviews/ModerateReviewForm.tsx
+  s_e807d32fb8a970::t_1c6606424e320a 1-46
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/reviews/PendingReviewsList.module.scss
+  s_e807d32fb8a970::t_e834447faf8721 1-40
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/reviews/PendingReviewsList.tsx
+  s_e807d32fb8a970::t_28cdfbf591689b 1-39
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/reviews/page.tsx
+  s_e807d32fb8a970::t_715c92657031bb 1-24
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/app.scss
+  s_e807d32fb8a970::t_d889a2ab92aecb 1-61
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/checkout/CartSummary.module.scss
+  s_e807d32fb8a970::t_27861b9c3b5a95 1-71
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/checkout/CartSummary.tsx
+  s_e807d32fb8a970::t_4ed4b3677beb84 1-71
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/checkout/ConfirmOrderForm.module.scss
+  s_e807d32fb8a970::t_ec5000f353d3fe 1-4
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/checkout/ConfirmOrderForm.tsx
+  s_e807d32fb8a970::t_52559096214bb3 1-29
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/checkout/OrderConfirmation.module.scss
+  s_e807d32fb8a970::t_396274c52b2f65 1-22
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/checkout/OrderConfirmation.tsx
+  s_e807d32fb8a970::t_366ea0795df72e 1-25
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/checkout/RemoveCartLineForm.tsx
+  s_e807d32fb8a970::t_e4db1a7d235e72 1-38
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/checkout/page.module.scss
+  s_e807d32fb8a970::t_7429272f50305f 1-95
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/checkout/page.tsx
+  s_e807d32fb8a970::t_f35b2e523b894f 1-84
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/error.tsx
+  s_e807d32fb8a970::t_9b5ea864f7898a 1-28
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/global-error.tsx
+  s_e807d32fb8a970::t_0d8a3821da51e4 1-36
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/icon.svg
+  s_e807d32fb8a970::t_be04f130ad58e0 1-15
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/layout.module.scss
+  s_e807d32fb8a970::t_8f69b01615bc73 1-89
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/layout.tsx
+  s_e807d32fb8a970::t_2a2ca4150ab3e7 1-69
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/loading.tsx
+  s_e807d32fb8a970::t_68867973d657b7 1-10
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/not-found.tsx
+  s_e807d32fb8a970::t_27b1758069499d 1-18
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/page.module.scss
+  s_e807d32fb8a970::t_456de33a83a10d 1-18
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/page.tsx
+  s_e807d32fb8a970::t_17cb9575d31763 1-59
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/AddToCartForm.module.scss
+  s_e807d32fb8a970::t_7974035cae945c 1-4
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/AddToCartForm.tsx
+  s_e807d32fb8a970::t_9c8cd6375e51de 1-36
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/ProductPurchasePanel.module.scss
+  s_e807d32fb8a970::t_a2b44664097a00 1-115
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/ProductPurchasePanel.tsx
+  s_e807d32fb8a970::t_89d7780706f412 1-208
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/ReviewForm.module.scss
+  s_e807d32fb8a970::t_56a8af9d363d24 1-43
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/ReviewForm.tsx
+  s_e807d32fb8a970::t_f473b96592b1ac 1-97
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/ReviewPanel.module.scss
+  s_e807d32fb8a970::t_c1ccef7df52927 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/ReviewPanel.tsx
+  s_e807d32fb8a970::t_5d844285ee38d0 1-34
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/page.module.scss
+  s_e807d32fb8a970::t_785a867476bbab 1-59
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/page.tsx
+  s_e807d32fb8a970::t_5d164df894ffe7 1-101
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/status.module.scss
+  s_e807d32fb8a970::t_8eaf145bb27cce 1-28
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/atoms/Badge.module.scss
+  s_e807d32fb8a970::t_776f540db35684 1-83
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/atoms/Badge.tsx
+  s_e807d32fb8a970::t_43456b5dab6ff0 1-49
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/atoms/Button.module.scss
+  s_e807d32fb8a970::t_1d2ea4adc86dfd 1-127
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/atoms/Button.tsx
+  s_e807d32fb8a970::t_a35f822286eed3 1-106
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/atoms/CodelyLink.tsx
+  s_e807d32fb8a970::t_b1f208de2c2454 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/atoms/FormError.module.scss
+  s_e807d32fb8a970::t_36b1711041e019 1-11
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/atoms/FormError.tsx
+  s_e807d32fb8a970::t_92ac08ff6a718f 1-17
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/atoms/Heading.module.scss
+  s_e807d32fb8a970::t_0434af54d7c67e 1-33
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/atoms/Heading.tsx
+  s_e807d32fb8a970::t_9881f2f1bf3e5b 1-47
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/atoms/Icon.module.scss
+  s_e807d32fb8a970::t_6e4f3c8057af36 1-29
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/atoms/Icon.tsx
+  s_e807d32fb8a970::t_82f82b95786a79 1-38
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/atoms/SubmitButton.tsx
+  s_e807d32fb8a970::t_ae35220892cd34 1-14
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/generic/_base.scss
+  s_e807d32fb8a970::t_cc783708f4f3fb 1-76
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/generic/_fonts.scss
+  s_e807d32fb8a970::t_45cc4e614c341c 1-39
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/generic/_reset.scss
+  s_e807d32fb8a970::t_ecbd7b5420d3b5 1-82
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/icons/brand.svg
+  s_e807d32fb8a970::t_e10a0d911d7dc1 1-18
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/icons/cart.svg
+  s_e807d32fb8a970::t_d135858210ea85 1
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/icons/icons.tsx
+  s_e807d32fb8a970::t_f255c839e50de7 1-2
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/icons/load.svg
+  s_e807d32fb8a970::t_abb4d219d1339c 1-4
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/index.scss
+  s_e807d32fb8a970::t_1e3b72c630d974 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/molecules/Table.module.scss
+  s_e807d32fb8a970::t_6a40a47fda5d01 1-44
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/molecules/Table.tsx
+  s_e807d32fb8a970::t_f68d71c70a7e31 1-74
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/settings/_border.scss
+  s_e807d32fb8a970::t_9b9c99923752b4 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/settings/_colors.scss
+  s_e807d32fb8a970::t_c7b1494ac0b776 1-57
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/settings/_sizes.scss
+  s_e807d32fb8a970::t_51d0f0c832ba91 1-5
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/settings/_spacing.scss
+  s_e807d32fb8a970::t_1ca41c15d31afb 1-27
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/settings/_typography.scss
+  s_e807d32fb8a970::t_a6aa558891a379 1-34
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/shared/classNames.ts
+  s_e807d32fb8a970::t_703ec9a281cb20 1-25
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/tools/_colors.scss
+  s_e807d32fb8a970::t_b65a9240cf67bc 1-117
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/design-system/tools/_typography.scss
+  s_e807d32fb8a970::t_11b8acc1e190b3 1-70
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/api/RetailApi.ts
+  s_e807d32fb8a970::t_34d8bdd2a08e3f 1-300
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/api/RetailApiError.ts
+  s_e807d32fb8a970::t_5ea24e4a18c524 1-36
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/api/responses.ts
+  s_e807d32fb8a970::t_300c1d1eb36aa0 1-186
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/AdminLink.module.scss
+  s_e807d32fb8a970::t_fffffb042e3f60 1-24
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/AdminLink.tsx
+  s_e807d32fb8a970::t_687863ecfb2ec9 1-24
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/AdminOrdersTable.tsx
+  s_e807d32fb8a970::t_360713bcdfe5c6 1-62
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/CartLink.module.scss
+  s_e807d32fb8a970::t_f613d1e653e936 1-32
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/CartLink.tsx
+  s_e807d32fb8a970::t_3b09a92fd3e51c 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/CartLinkView.tsx
+  s_e807d32fb8a970::t_df6fe97eab1384 1-27
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/CatalogSummary.module.scss
+  s_e807d32fb8a970::t_ed2e702d866930 1-19
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/CatalogSummary.tsx
+  s_e807d32fb8a970::t_6bd0c01fc9c883 1-27
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/CategoryFilters.module.scss
+  s_e807d32fb8a970::t_2e3ef775889dbd 1-30
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/CategoryFilters.tsx
+  s_e807d32fb8a970::t_4a45cef3e2f85f 1-59
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/CustomerOrdersTable.tsx
+  s_e807d32fb8a970::t_9de2349dcfd2f5 1-70
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/DashboardMetrics.module.scss
+  s_e807d32fb8a970::t_6df7e17c211bed 1-17
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/DashboardMetrics.tsx
+  s_e807d32fb8a970::t_40281d6754a3ce 1-59
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/DashboardPanel.module.scss
+  s_e807d32fb8a970::t_0971fa194439f0 1-85
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/Footer.module.scss
+  s_e807d32fb8a970::t_ff92b9b16a710d 1-55
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/Footer.tsx
+  s_e807d32fb8a970::t_d92ce6973aa699 1-32
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/InventoryTable.module.scss
+  s_e807d32fb8a970::t_5188e5ad1e8cbb 1-17
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/InventoryTable.tsx
+  s_e807d32fb8a970::t_f0632927754eb7 1-55
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/LowStockPanel.tsx
+  s_e807d32fb8a970::t_e0e214096d9eb7 1-70
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/MainNav.module.scss
+  s_e807d32fb8a970::t_cd7ebafb71ee9b 1-33
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/MainNav.tsx
+  s_e807d32fb8a970::t_ab877e8ce374d7 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/MainNavLinks.tsx
+  s_e807d32fb8a970::t_25fd8a1a74ea65 1-50
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/MetricCard.module.scss
+  s_e807d32fb8a970::t_2d3187e22c7f0d 1-44
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/MetricCard.tsx
+  s_e807d32fb8a970::t_43fc2769329924 1-32
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/OrderDetail.tsx
+  s_e807d32fb8a970::t_a9a88e9179efaf 1-98
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/OutfitSuggestions.module.scss
+  s_e807d32fb8a970::t_f3ee4619991821 1-17
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/OutfitSuggestions.tsx
+  s_e807d32fb8a970::t_3f8c33e767d781 1-34
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/OutfitsTable.module.scss
+  s_e807d32fb8a970::t_6b15ce04e50ead 1-32
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/OutfitsTable.tsx
+  s_e807d32fb8a970::t_38c99fb9e0935e 1-69
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/PageHeader.module.scss
+  s_e807d32fb8a970::t_fc0dad7f2f16d1 1-48
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/PageHeader.tsx
+  s_e807d32fb8a970::t_567dff916e88b6 1-54
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductBadges.tsx
+  s_e807d32fb8a970::t_e4424cb5a67037 1-32
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductCard.module.scss
+  s_e807d32fb8a970::t_e2786410672662 1-115
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductCard.tsx
+  s_e807d32fb8a970::t_a0ec063d952ea7 1-99
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductGrid.module.scss
+  s_e807d32fb8a970::t_d68d55c931318c 1-26
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductGrid.tsx
+  s_e807d32fb8a970::t_0688cd9e77558e 1-36
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductInfo.module.scss
+  s_e807d32fb8a970::t_33a3d19ff3308c 1-59
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductInfo.tsx
+  s_e807d32fb8a970::t_46eb779c2ce732 1-58
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductPicker.module.scss
+  s_e807d32fb8a970::t_8ed2f342288ea6 1-122
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductPicker.tsx
+  s_e807d32fb8a970::t_f66af9f0fff45a 1-274
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductReviews.module.scss
+  s_e807d32fb8a970::t_3ef3a5cd6d40f2 1-56
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductReviews.tsx
+  s_e807d32fb8a970::t_376a85df2f111b 1-65
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductThumbnail.module.scss
+  s_e807d32fb8a970::t_6c9ec28914c691 1-6
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductThumbnail.tsx
+  s_e807d32fb8a970::t_e8d819598e972d 1-30
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductVisual.module.scss
+  s_e807d32fb8a970::t_67a9ebd2504eff 1-59
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductVisual.tsx
+  s_e807d32fb8a970::t_6be0f514dfaf2a 1-46
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/RecentOrdersPanel.tsx
+  s_e807d32fb8a970::t_480476f98bb641 1-52
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/StarRating.module.scss
+  s_e807d32fb8a970::t_0bfd3340cf7202 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/StarRating.tsx
+  s_e807d32fb8a970::t_5045b8863a156b 1-24
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/UserMenu.module.scss
+  s_e807d32fb8a970::t_5f057873c5b662 1-64
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/UserMenu.tsx
+  s_e807d32fb8a970::t_3e4be91a086eb2 1-9
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/UserMenuTrigger.tsx
+  s_e807d32fb8a970::t_481de93f85274f 1-89
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/orders.module.scss
+  s_e807d32fb8a970::t_f248a0c2459450 1-55
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/ui/format.ts
+  s_e807d32fb8a970::t_c12eff3d9a2e52 1-90
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/ui/productImage.ts
+  s_e807d32fb8a970::t_5e800025ac36af 1-3
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/actions/actionStateFor.spec.ts
+  s_e807d32fb8a970::t_10cf41bf124ac9 1-55
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/actions/checkout/addSelectedVariantToCart.spec.ts
+  s_e807d32fb8a970::t_574dd818303aa8 1-59
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/actions/checkout/confirmOrder.spec.ts
+  s_e807d32fb8a970::t_4d9455a2308a1f 1-49
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/actions/outfits/createOutfit.spec.ts
+  s_e807d32fb8a970::t_9b376dba048e7b 1-75
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/actions/reviews/approveReview.spec.ts
+  s_e807d32fb8a970::t_41a4ef5aacb366 1-66
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/actions/reviews/rejectReview.spec.ts
+  s_e807d32fb8a970::t_c2ab4a3a2cb911 1-64
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/actions/reviews/submitReview.spec.ts
+  s_e807d32fb8a970::t_bd6b88eb5d19f8 1-107
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/admin/AdminNav.spec.tsx
+  s_e807d32fb8a970::t_8cb70a5369b0a3 1-75
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/admin/outfits/DeleteOutfitForm.spec.tsx
+  s_e807d32fb8a970::t_d2855a3be7df66 1-36
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/admin/outfits/OutfitForm.spec.tsx
+  s_e807d32fb8a970::t_99f77b9b23da11 1-172
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/admin/reviews/ModerateReviewForm.spec.tsx
+  s_e807d32fb8a970::t_3e345ce48ace44 1-56
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/admin/reviews/PendingReviewsList.spec.tsx
+  s_e807d32fb8a970::t_7494baa7799e84 1-60
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/checkout/CartSummary.spec.tsx
+  s_e807d32fb8a970::t_8b6a49defc183d 1-56
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/checkout/ConfirmOrderForm.spec.tsx
+  s_e807d32fb8a970::t_b93aa0be049a93 1-61
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/checkout/OrderConfirmation.spec.tsx
+  s_e807d32fb8a970::t_062d730b2c4d29 1-17
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/checkout/RemoveCartLineForm.spec.tsx
+  s_e807d32fb8a970::t_d1e9c1ed39c705 1-74
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/products/[id]/AddToCartForm.spec.tsx
+  s_e807d32fb8a970::t_5b34ac20e29e28 1-65
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/products/[id]/ProductPurchasePanel.spec.tsx
+  s_e807d32fb8a970::t_bcb707ec95e2c0 1-195
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/products/[id]/ReviewForm.spec.tsx
+  s_e807d32fb8a970::t_4d769999c84d9a 1-96
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/products/[id]/ReviewPanel.spec.tsx
+  s_e807d32fb8a970::t_b887290a1bbbdb 1-72
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/design-system/atoms/Button.spec.tsx
+  s_e807d32fb8a970::t_ae26be29e9da1c 1-38
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/design-system/atoms/FormError.spec.tsx
+  s_e807d32fb8a970::t_54cd434e36639e 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/design-system/atoms/SubmitButton.spec.tsx
+  s_e807d32fb8a970::t_532be74906869a 1-41
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/api/RetailApi.spec.ts
+  s_e807d32fb8a970::t_1b778739293281 1-282
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/CheckoutResponseMother.ts
+  s_e807d32fb8a970::t_72892c36a61b89 1-57
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/InventoryResponseMother.ts
+  s_e807d32fb8a970::t_f77737c48e426e 1-22
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/LowStockReportResponseMother.ts
+  s_e807d32fb8a970::t_9e7ac01caca1ad 1-15
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/LowStockResponseMother.ts
+  s_e807d32fb8a970::t_2824a3f749a4fd 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/MoneyMother.ts
+  s_e807d32fb8a970::t_9ac9bff5097a88 1-15
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/MyOrderResponseMother.ts
+  s_e807d32fb8a970::t_04bd17e41308df 1-22
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/OrderDetailResponseMother.ts
+  s_e807d32fb8a970::t_00b55fa0c03efb 1-53
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/OrderResponseMother.ts
+  s_e807d32fb8a970::t_6da5b1eba1c597 1-22
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/OrdersSummaryResponseMother.ts
+  s_e807d32fb8a970::t_5f108ec9d12d5f 1-26
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/OutfitResponseMother.ts
+  s_e807d32fb8a970::t_60f3cfe15b72e9 1-17
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/OutfitSuggestionResponseMother.ts
+  s_e807d32fb8a970::t_08f726cc4019b5 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/OutfitSummaryResponseMother.ts
+  s_e807d32fb8a970::t_084fa2f0675e9e 1-17
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/PendingReviewResponseMother.ts
+  s_e807d32fb8a970::t_f6c240cdeed08d 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/ProductResponseMother.ts
+  s_e807d32fb8a970::t_9d8115a8d75360 1-84
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/ProductReviewsResponseMother.ts
+  s_e807d32fb8a970::t_e7c7a3d2d4e015 1-41
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/ProductVariantResponseMother.ts
+  s_e807d32fb8a970::t_0e7f7088834176 1-31
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/ReviewEligibilityResponseMother.ts
+  s_e807d32fb8a970::t_0f454095af2d0c 1-12
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/ReviewResponseMother.ts
+  s_e807d32fb8a970::t_a7a1202258ed21 1-21
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/SizeMother.ts
+  s_e807d32fb8a970::t_0004a3dbc0e762 1-11
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/AdminOrdersTable.spec.tsx
+  s_e807d32fb8a970::t_cd3b8f8943e50e 1-75
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/CartLinkView.spec.tsx
+  s_e807d32fb8a970::t_f6edaf670c44b1 1-31
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/CatalogSummary.spec.tsx
+  s_e807d32fb8a970::t_88d4fd33f52d63 1-45
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/CategoryFilters.spec.tsx
+  s_e807d32fb8a970::t_8f1620f09c8fca 1-70
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/CustomerOrdersTable.spec.tsx
+  s_e807d32fb8a970::t_d4757ed8312d09 1-75
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/DashboardMetrics.spec.tsx
+  s_e807d32fb8a970::t_4aaf0c3f221f05 1-88
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/InventoryTable.spec.tsx
+  s_e807d32fb8a970::t_0db1e403cba8ca 1-79
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/LowStockPanel.spec.tsx
+  s_e807d32fb8a970::t_3e6dba4fb16dff 1-84
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/MainNavLinks.spec.tsx
+  s_e807d32fb8a970::t_fafc514137d7b6 1-81
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/MetricCard.spec.tsx
+  s_e807d32fb8a970::t_79f18d1c8c35ce 1-21
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/OrderDetail.spec.tsx
+  s_e807d32fb8a970::t_27640d071d6bc0 1-101
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/OutfitSuggestions.spec.tsx
+  s_e807d32fb8a970::t_bc6df62a58c9f4 1-107
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/OutfitsTable.spec.tsx
+  s_e807d32fb8a970::t_312ab348e8b160 1-95
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/PageHeader.spec.tsx
+  s_e807d32fb8a970::t_1e1e36d94776c4 1-40
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_e807d32fb8a970::t_efac40f6424468 1-20
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/ProductCard.spec.tsx
+  s_e807d32fb8a970::t_56ffa92fa4c59c 1-73
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/ProductGrid.spec.tsx
+  s_e807d32fb8a970::t_f23f9b4bf3b8aa 1-49
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/ProductPicker.spec.tsx
+  s_e807d32fb8a970::t_7dda15116f1710 1-152
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/ProductReviews.spec.tsx
+  s_e807d32fb8a970::t_070521d26bffea 1-91
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/RecentOrdersPanel.spec.tsx
+  s_e807d32fb8a970::t_497c7742b762cc 1-48
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/StarRating.spec.tsx
+  s_e807d32fb8a970::t_09d2aa32221990 1-15
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/UserMenuTrigger.spec.tsx
+  s_e807d32fb8a970::t_96c40c44a0ad66 1-118
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/ui/format.spec.ts
+  s_e807d32fb8a970::t_879b1643c01ecc 1-97
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/setupFaker.ts
+  s_e807d32fb8a970::t_a2cff2f06af457 1-5
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/setupFrontendTests.ts
+  s_e807d32fb8a970::t_6adc55b2e8cdd3 1-8
+3-work_on_a_project/2-implementation/3-archived/retail-web/tsconfig.json
+  s_e807d32fb8a970::t_70a22cabc0e503 1-33
+3-work_on_a_project/2-implementation/3-archived/retail-web/vitest.config.ts
+  s_e807d32fb8a970::t_323404755c3503 1-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9406fddd2db5ffdb5a2601a08b5f1d0ee3e10224",
+  "prompts": {},
+  "sessions": {
+    "s_e807d32fb8a970": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ccac7f02-ce53-44df-904d-9a074c7d076b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
