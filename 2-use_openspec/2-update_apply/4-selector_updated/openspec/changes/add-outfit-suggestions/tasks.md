@@ -42,3 +42,10 @@
 ## 7. Integration checks
 
 - [x] 7.1 Run `make checks` and `npm run test:integration` and verify both pass
+
+## 8. Visual product picker
+
+- [ ] 8.1 Extract `productImageSrc(id)` and build `ProductThumbnail`, use it in `ProductVisual`, and verify the existing `ProductVisual`/`ProductCard` tests still pass
+- [ ] 8.2 Build `ProductPicker` (combobox + listbox, filtering by name, thumbnails, "No products match", options already in the outfit disabled and skipped by the keyboard, chosen piece with "Remove", hidden `productIds` input) with design-system tokens, and verify its frontend test covers filtering, no match, choosing by click and by keyboard, disabled options, Escape, and removing
+- [ ] 8.3 Replace the 4 selects in `OutfitForm` with `ProductPicker` slots (first 2 required, prefilled when editing, each receiving the ids chosen in the other slots), and verify the `OutfitForm` test covers submit, error and pending states, the submitted `productIds` order, and that a product chosen in one slot is disabled in the others until removed
+- [ ] 8.4 Update `/admin/outfits/new` and `/admin/outfits/[id]` in `docs/architecture/screens.md`, run `make checks`, and verify the create and edit flows in `npm run dev`

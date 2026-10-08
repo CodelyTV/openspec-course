@@ -85,6 +85,37 @@ Admins SHALL be able to create an outfit by giving it a name and choosing its pr
 - **WHEN** an admin fills in a name, picks 2 to 4 different products and saves
 - **THEN** the outfit is created and appears in the Outfits list
 
+### Requirement: Choose pieces by name with their photo
+In the outfit form, admins SHALL choose each piece by typing part of its name to filter the catalog products, with every product shown next to its photo. A product already chosen in another piece SHALL be shown as unavailable and SHALL NOT be choosable. Chosen pieces SHALL show their photo and name in the form, both when creating and when editing.
+
+#### Scenario: Filtering by name
+- **WHEN** an admin types "tee" in an empty piece slot
+- **THEN** only products whose name contains "tee" (in any case) are listed, each with its photo
+
+#### Scenario: No match
+- **WHEN** an admin types a text that no product name contains
+- **THEN** the admin sees that no products match
+
+#### Scenario: Choosing a piece
+- **WHEN** an admin chooses "Pure Function Tee" from the filtered list
+- **THEN** the slot shows "Pure Function Tee" with its photo instead of the search field
+
+#### Scenario: Product already in another piece
+- **WHEN** "Pure Function Tee" is chosen in one piece and the admin searches for "tee" in another piece
+- **THEN** "Pure Function Tee" is listed as already in this outfit and cannot be chosen
+
+#### Scenario: Removing a chosen piece
+- **WHEN** an admin removes the chosen piece from a slot
+- **THEN** the slot is empty again, lets the admin search for another product, and the removed product can be chosen in any piece again
+
+#### Scenario: Editing shows current pieces
+- **WHEN** an admin opens an existing outfit
+- **THEN** each of its pieces is shown with its photo and name, in the outfit's order
+
+#### Scenario: Keyboard only
+- **WHEN** an admin types in a slot, moves through the results with the arrow keys and presses Enter
+- **THEN** the highlighted product is chosen, skipping products already in the outfit
+
 ### Requirement: Edit outfit
 Admins SHALL be able to change an existing outfit's name and products. The same validation as creation applies.
 

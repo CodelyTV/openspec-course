@@ -19,7 +19,7 @@ See proposal.md for motivation and specs/ for the required behavior.
 **Non-Goals:**
 - Authentication or authorization for the backoffice (it is open today and stays so).
 - Reordering pieces with drag and drop; the order is the order of the form fields.
-- Searching products in the outfit form (the catalog has ~80 products; a select per piece is enough).
+- Searching products by anything other than their name (collection, category, price), or loading options from the server while typing: the ~80 products are loaded once with the page.
 - Pagination of the outfits list.
 
 ## Decisions
@@ -117,7 +117,12 @@ Order and `lowStockCount` are unchanged.
 ```
 
 - Server actions in `src/app/actions/outfits/`: `createOutfit`, `updateOutfit`, `deleteOutfit`. They read `name` and `productIds` (one select per piece, empty selects ignored) from `FormData`, call the use case, map errors with `actionStateFor` plus action-specific `UserFacingMessages`, then `revalidatePath("/", "layout")` and `redirect("/admin/outfits")`.
-- `OutfitForm` is a client component (`useActionState`) in `src/app/admin/outfits/`, with 4 product selects (the first 2 shown as required) fed by `ProductsSearcher`. Fixed 4 selects avoid client-side add/remove state and match the maximum.
+- `OutfitForm` is a client component (`useActionState`) in `src/app/admin/outfits/`, with 4 piece slots (the first 2 required) fed by `ProductsSearcher`. Fixed 4 slots avoid client-side add/remove state and match the maximum.
+- Each slot is a `ProductPicker` (client, `src/contexts/frontend/retail/sections/`), built in-house on the design-system tokens and following the ARIA combobox pattern (`role="combobox"` input + `role="listbox"`, `aria-activedescendant`; ↑/↓ to move, Enter to choose, Escape to close). Typing filters the options by name (case-insensitive, matching anywhere in the name), each option shows a thumbnail and the name, and "No products match" shows when nothing matches.
+- `OutfitForm` passes each picker the ids chosen in the other slots; those options stay listed but `aria-disabled`, marked "Already in this outfit", and are skipped by the keyboard and ignored on click. This avoids `RepeatedOutfitProductError` in the form; the domain rule stays as the safety net.
+- A chosen piece replaces the search input with its thumbnail and name plus a "Remove" button that empties the slot again. Each slot keeps a hidden `<input name="productIds">` (empty when nothing is chosen), so the server actions and their `FormData` reading don't change.
+- Thumbnails come from a new `ProductThumbnail` (`next/image`, `/products/{id}.jpg`), which reuses the image path rule from `ProductVisual` through a shared `productImageSrc(id)`. `OutfitProductOption` stays `{ id, name }`.
+- **Alternative: a combobox library (Downshift, react-select).** It would add a dependency and need its styles overridden to match Codely's look. Rejected: one combobox over ~80 items is small enough to build in-house.
 - `AdminNav` gets an "Outfits" entry. `OutfitsTable` (presentational) lives in `src/contexts/frontend/retail/sections/`.
 
 ### 7. Product page rendering
@@ -132,6 +137,7 @@ Order and `lowStockCount` are unchanged.
 - [Race between the name check and the insert] → The `unique` constraint rejects the second write; the repository maps unique-violation on `outfits.name` to `OutfitNameAlreadyExistsError` so the user still gets the friendly message.
 - [The tag marks every variant of an outfit product, even sizes that don't affect the look] → Accepted product decision: outfits reference products, not variants.
 - [The sold-out warning reflects stock when the page is loaded; a checkout that sells the last unit only shows up on reload] → Acceptable for a backoffice list.
+- [A hand-built combobox can miss accessibility details] → Frontend tests use the combobox/listbox roles and the keyboard, not CSS selectors.
 - [A product in many outfits makes the product page long] → Acceptable with today's catalog size; a cap can be added later without changing the model.
 
 ## Migration Plan
