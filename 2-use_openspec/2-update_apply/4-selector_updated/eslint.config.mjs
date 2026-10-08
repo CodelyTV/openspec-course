@@ -89,6 +89,9 @@ const boundedContextBoundaries = [
 ];
 
 export default [
+	{
+		ignores: ["next-env.d.ts"],
+	},
 	...eslintConfigCodely.course,
 	{
 		files: ["**/*.{ts,tsx}"],
