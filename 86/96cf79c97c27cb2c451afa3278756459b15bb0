@@ -1,0 +1,75 @@
+2-use_openspec/3-verify_archive/2-verified/.agents/skills/.openspec-target
+  s_e38c302ed9b80c::t_b71103dfeb3c79 1
+2-use_openspec/3-verify_archive/2-verified/.agents/skills/openspec-apply-change/SKILL.md
+  s_e38c302ed9b80c::t_4641d3e8154d2b 1-206
+2-use_openspec/3-verify_archive/2-verified/.agents/skills/openspec-archive-change/SKILL.md
+  s_e38c302ed9b80c::t_9eb3ba6759ac57 1-221
+2-use_openspec/3-verify_archive/2-verified/.agents/skills/openspec-explore/SKILL.md
+  s_e38c302ed9b80c::t_854017a817d99f 1-354
+2-use_openspec/3-verify_archive/2-verified/.agents/skills/openspec-propose/SKILL.md
+  s_e38c302ed9b80c::t_92ad559effbcba 1-174
+2-use_openspec/3-verify_archive/2-verified/.agents/skills/openspec-sync-specs/SKILL.md
+  s_e38c302ed9b80c::t_385304f2d79f83 1-290
+2-use_openspec/3-verify_archive/2-verified/.agents/skills/openspec-update-change/SKILL.md
+  s_e38c302ed9b80c::t_c3603a43dc421e 1-109
+2-use_openspec/3-verify_archive/2-verified/.agents/skills/openspec-verify-change/SKILL.md
+  s_e38c302ed9b80c::t_421c6ea211a5af 1-220
+2-use_openspec/3-verify_archive/2-verified/.claude/skills/openspec-apply-change/SKILL.md
+  s_e38c302ed9b80c::t_513f872aafca56 1-206
+2-use_openspec/3-verify_archive/2-verified/.claude/skills/openspec-archive-change/SKILL.md
+  s_e38c302ed9b80c::t_cabf8e351445ec 1-221
+2-use_openspec/3-verify_archive/2-verified/.claude/skills/openspec-explore/SKILL.md
+  s_e38c302ed9b80c::t_17be2f5a907b2c 1-354
+2-use_openspec/3-verify_archive/2-verified/.claude/skills/openspec-propose/SKILL.md
+  s_e38c302ed9b80c::t_6bd29007a457d6 1-174
+2-use_openspec/3-verify_archive/2-verified/.claude/skills/openspec-sync-specs/SKILL.md
+  s_e38c302ed9b80c::t_a87ae47d65519d 1-290
+2-use_openspec/3-verify_archive/2-verified/.claude/skills/openspec-update-change/SKILL.md
+  s_e38c302ed9b80c::t_827562d48fdcd5 1-109
+2-use_openspec/3-verify_archive/2-verified/.claude/skills/openspec-verify-change/SKILL.md
+  s_e38c302ed9b80c::t_fecee72983935f 1-220
+2-use_openspec/3-verify_archive/2-verified/.github/skills/openspec-apply-change/SKILL.md
+  s_e38c302ed9b80c::t_85fba4383df1d5 1-206
+2-use_openspec/3-verify_archive/2-verified/.github/skills/openspec-archive-change/SKILL.md
+  s_e38c302ed9b80c::t_e9c4fc1ffa5e2d 1-221
+2-use_openspec/3-verify_archive/2-verified/.github/skills/openspec-explore/SKILL.md
+  s_e38c302ed9b80c::t_5dd87d0aec77ad 1-354
+2-use_openspec/3-verify_archive/2-verified/.github/skills/openspec-propose/SKILL.md
+  s_e38c302ed9b80c::t_ef22b19215efa6 1-174
+2-use_openspec/3-verify_archive/2-verified/.github/skills/openspec-sync-specs/SKILL.md
+  s_e38c302ed9b80c::t_5f392d5f129bba 1-290
+2-use_openspec/3-verify_archive/2-verified/.github/skills/openspec-update-change/SKILL.md
+  s_e38c302ed9b80c::t_2923146a7ed3c5 1-109
+2-use_openspec/3-verify_archive/2-verified/.github/skills/openspec-verify-change/SKILL.md
+  s_e38c302ed9b80c::t_a31ff1ff49c391 1-220
+2-use_openspec/3-verify_archive/2-verified/.opencode/skills/openspec-apply-change/SKILL.md
+  s_e38c302ed9b80c::t_ee7046adda41bc 1-206
+2-use_openspec/3-verify_archive/2-verified/.opencode/skills/openspec-archive-change/SKILL.md
+  s_e38c302ed9b80c::t_8b0738ffe27861 1-221
+2-use_openspec/3-verify_archive/2-verified/.opencode/skills/openspec-explore/SKILL.md
+  s_e38c302ed9b80c::t_12d935958b18d6 1-354
+2-use_openspec/3-verify_archive/2-verified/.opencode/skills/openspec-propose/SKILL.md
+  s_e38c302ed9b80c::t_77eeeaf0569793 1-174
+2-use_openspec/3-verify_archive/2-verified/.opencode/skills/openspec-sync-specs/SKILL.md
+  s_e38c302ed9b80c::t_dc8ebb30a2fb21 1-290
+2-use_openspec/3-verify_archive/2-verified/.opencode/skills/openspec-update-change/SKILL.md
+  s_e38c302ed9b80c::t_82abe4e05e6a7c 1-109
+2-use_openspec/3-verify_archive/2-verified/.opencode/skills/openspec-verify-change/SKILL.md
+  s_e38c302ed9b80c::t_842d33d0b9cb2c 1-220
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8696cf79c97c27cb2c451afa3278756459b15bb0",
+  "prompts": {},
+  "sessions": {
+    "s_e38c302ed9b80c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "32b4322f-d29c-43e7-b7f2-2dcb551ce2b3",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
