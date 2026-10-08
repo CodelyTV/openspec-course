@@ -8,7 +8,7 @@
 - `/admin` — Admin overview: metrics, low stock (with an "In N outfits" tag) and recent orders.
 - `/admin/inventory` — Admin inventory: every variant with its stock; variants of outfit products show an "In outfit" tag.
 - `/admin/outfits` — Admin outfits: every outfit with its number of products and a warning naming its sold-out pieces.
-- `/admin/outfits/new` — Create an outfit: name and 2 to 4 products.
-- `/admin/outfits/[id]` — Edit or delete an outfit.
+- `/admin/outfits/new` — Create an outfit: name and 2 to 4 products, each chosen with a picker that filters products by name and shows their photo; products already in the outfit cannot be chosen again.
+- `/admin/outfits/[id]` — Edit or delete an outfit: same pickers as creation, prefilled with its pieces (photo and name) in order.
 - `/admin/orders` — Admin orders: every order.
 - `/admin/orders/[id]` — Admin detail of any order.

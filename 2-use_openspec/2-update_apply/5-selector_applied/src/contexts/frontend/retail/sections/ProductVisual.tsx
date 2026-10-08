@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import type { ProductResponse } from "@/contexts/backend/products/application/ProductResponse";
 
+import { productImageSrc } from "../ui/productImage";
+
 import styles from "./ProductVisual.module.scss";
 
 type ProductVisualProps = {
@@ -24,7 +26,7 @@ export function ProductVisual({
 			className={`${styles.visual} ${styles[size]} ${styles[`accent-${product.accent}`]}`}
 		>
 			<Image
-				src={`/products/${product.id}.jpg`}
+				src={productImageSrc(product.id)}
 				alt={product.name}
 				fill
 				priority={priority}

@@ -5,6 +5,10 @@ import { useActionState, useState } from "react";
 import type { OutfitResponse } from "@/contexts/backend/products/application/find-outfit/OutfitFinder";
 import { FormError } from "@/contexts/frontend/design-system/atoms/FormError";
 import { SubmitButton } from "@/contexts/frontend/design-system/atoms/SubmitButton";
+import {
+	ProductPicker,
+	type ProductPickerOption,
+} from "@/contexts/frontend/retail/sections/ProductPicker";
 
 import { initialActionState } from "../../actions/ActionState";
 import { createOutfit } from "../../actions/outfits/createOutfit";
@@ -12,7 +16,7 @@ import { updateOutfit } from "../../actions/outfits/updateOutfit";
 
 import styles from "./OutfitForm.module.scss";
 
-export type OutfitProductOption = { id: string; name: string };
+export type OutfitProductOption = ProductPickerOption;
 
 type OutfitFormProps = {
 	products: OutfitProductOption[];
@@ -27,6 +31,12 @@ function keepWhatTheAdminFilledInAfterAFailedSave(
 	event: React.FormEvent<HTMLFormElement>,
 ): void {
 	event.preventDefault();
+}
+
+function productsChosenInOtherSlots(pieces: string[], slot: number): string[] {
+	return pieces.filter(
+		(piece, index) => index !== slot && piece !== noProduct,
+	);
 }
 
 function initialPiecesOf(outfit: OutfitResponse | undefined): string[] {
@@ -86,27 +96,21 @@ export function OutfitForm({
 					const isRequired = slot < requiredPieces;
 
 					return (
-						<label key={slot} className={styles.field}>
-							{`Piece ${slot + 1}${isRequired ? "" : " (optional)"}`}
-							<select
-								className={styles.input}
-								name="productIds"
-								value={piece}
-								onChange={(event) =>
-									choosePiece(slot, event.target.value)
-								}
-								required={isRequired}
-							>
-								<option value={noProduct}>
-									Choose a product
-								</option>
-								{products.map((product) => (
-									<option key={product.id} value={product.id}>
-										{product.name}
-									</option>
-								))}
-							</select>
-						</label>
+						<ProductPicker
+							key={slot}
+							label={`Piece ${slot + 1}${isRequired ? "" : " (optional)"}`}
+							name="productIds"
+							products={products}
+							chosenProductId={piece}
+							unavailableProductIds={productsChosenInOtherSlots(
+								pieces,
+								slot,
+							)}
+							onChoose={(productId) =>
+								choosePiece(slot, productId)
+							}
+							required={isRequired}
+						/>
 					);
 				})}
 			</fieldset>

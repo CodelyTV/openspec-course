@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
@@ -37,18 +37,34 @@ function submittedFields(formData: FormData | undefined): {
 	};
 }
 
-async function fillInNewOutfit(
-	user: ReturnType<typeof userEvent.setup>,
+type User = ReturnType<typeof userEvent.setup>;
+
+async function choosePiece(
+	user: User,
+	piece: string,
+	productName: string,
 ): Promise<void> {
+	await user.type(
+		screen.getByRole("combobox", { name: piece }),
+		productName.slice(0, 4),
+	);
+	await user.click(screen.getByRole("option", { name: productName }));
+}
+
+function chosenPieceNames(): string[] {
+	return screen
+		.getAllByRole("group", { name: /^Piece \d/ })
+		.flatMap((piece) =>
+			within(piece)
+				.queryAllByRole("img")
+				.map((photo) => photo.getAttribute("alt") ?? ""),
+		);
+}
+
+async function fillInNewOutfit(user: User): Promise<void> {
 	await user.type(screen.getByLabelText("Name"), "Deploy Friday");
-	await user.selectOptions(
-		screen.getByLabelText("Piece 1"),
-		"Observability Jacket",
-	);
-	await user.selectOptions(
-		screen.getByLabelText("Piece 2"),
-		"Pure Function Tee",
-	);
+	await choosePiece(user, "Piece 1", "Observability Jacket");
+	await choosePiece(user, "Piece 2", "Pure Function Tee");
 }
 
 describe("OutfitForm should", () => {
@@ -77,10 +93,12 @@ describe("OutfitForm should", () => {
 		});
 		render(<OutfitForm products={products} outfit={outfit} />);
 
-		await user.selectOptions(
-			screen.getByLabelText("Piece 3 (optional)"),
-			"Observability Jacket",
-		);
+		expect(chosenPieceNames()).toEqual([
+			"Ubiquitous Chinos",
+			"Pure Function Tee",
+		]);
+
+		await choosePiece(user, "Piece 3 (optional)", "Observability Jacket");
 		await user.click(screen.getByRole("button", { name: "Save outfit" }));
 
 		expect(submittedFields(update.mock.lastCall?.[1])).toEqual({
@@ -105,7 +123,10 @@ describe("OutfitForm should", () => {
 			"An outfit with that name already exists.",
 		);
 		expect(screen.getByLabelText("Name")).toHaveValue("Deploy Friday");
-		expect(screen.getByLabelText("Piece 1")).toHaveValue("jacket");
+		expect(chosenPieceNames()).toEqual([
+			"Observability Jacket",
+			"Pure Function Tee",
+		]);
 	});
 
 	it("disable the button while the outfit is being saved", async () => {
@@ -122,5 +143,30 @@ describe("OutfitForm should", () => {
 				busy: true,
 			}),
 		).toBeDisabled();
+	});
+
+	it("not let a product chosen in one piece be chosen in another until it is removed", async () => {
+		const user = userEvent.setup();
+		render(<OutfitForm products={products} />);
+
+		await choosePiece(user, "Piece 1", "Pure Function Tee");
+		await user.type(
+			screen.getByRole("combobox", { name: "Piece 2" }),
+			"tee",
+		);
+
+		expect(
+			screen.getByRole("option", { name: /Pure Function Tee/ }),
+		).toHaveAttribute("aria-disabled", "true");
+
+		await user.click(
+			screen.getByRole("button", { name: "Remove Pure Function Tee" }),
+		);
+		await user.click(screen.getByRole("combobox", { name: "Piece 2" }));
+		await user.keyboard("{ArrowDown}");
+
+		expect(
+			screen.getByRole("option", { name: "Pure Function Tee" }),
+		).not.toHaveAttribute("aria-disabled");
 	});
 });
