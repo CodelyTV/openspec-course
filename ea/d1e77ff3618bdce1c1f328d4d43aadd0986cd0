@@ -1,0 +1,803 @@
+2-use_openspec/3-verify_archive/1-before/.agents/skills/.openspec-target
+  s_e38c302ed9b80c::t_86048256d8ac09 1
+2-use_openspec/3-verify_archive/1-before/.agents/skills/openspec-apply-change/SKILL.md
+  s_e38c302ed9b80c::t_191d46fc1d6ff0 1-205
+2-use_openspec/3-verify_archive/1-before/.agents/skills/openspec-archive-change/SKILL.md
+  s_e38c302ed9b80c::t_7198871c745642 1-221
+2-use_openspec/3-verify_archive/1-before/.agents/skills/openspec-explore/SKILL.md
+  s_e38c302ed9b80c::t_1e803420506de0 1-354
+2-use_openspec/3-verify_archive/1-before/.agents/skills/openspec-propose/SKILL.md
+  s_e38c302ed9b80c::t_84882644d31c88 1-174
+2-use_openspec/3-verify_archive/1-before/.agents/skills/openspec-sync-specs/SKILL.md
+  s_e38c302ed9b80c::t_2b00ec1b0d24ce 1-290
+2-use_openspec/3-verify_archive/1-before/.agents/skills/openspec-update-change/SKILL.md
+  s_e38c302ed9b80c::t_8d0df8116c23fd 1-109
+2-use_openspec/3-verify_archive/1-before/.claude/skills/openspec-apply-change/SKILL.md
+  s_e38c302ed9b80c::t_0d457cb7f2ba05 1-205
+2-use_openspec/3-verify_archive/1-before/.claude/skills/openspec-archive-change/SKILL.md
+  s_e38c302ed9b80c::t_0e3b653b730a72 1-221
+2-use_openspec/3-verify_archive/1-before/.claude/skills/openspec-explore/SKILL.md
+  s_e38c302ed9b80c::t_0cde7b265d99c6 1-354
+2-use_openspec/3-verify_archive/1-before/.claude/skills/openspec-propose/SKILL.md
+  s_e38c302ed9b80c::t_70d084613abc16 1-174
+2-use_openspec/3-verify_archive/1-before/.claude/skills/openspec-sync-specs/SKILL.md
+  s_e38c302ed9b80c::t_f4ee3d29695bf6 1-290
+2-use_openspec/3-verify_archive/1-before/.claude/skills/openspec-update-change/SKILL.md
+  s_e38c302ed9b80c::t_e925e8fe16386b 1-109
+2-use_openspec/3-verify_archive/1-before/.github/skills/openspec-apply-change/SKILL.md
+  s_e38c302ed9b80c::t_e312b5ae235351 1-205
+2-use_openspec/3-verify_archive/1-before/.github/skills/openspec-archive-change/SKILL.md
+  s_e38c302ed9b80c::t_d16f8904790423 1-221
+2-use_openspec/3-verify_archive/1-before/.github/skills/openspec-explore/SKILL.md
+  s_e38c302ed9b80c::t_df22e3d52423ac 1-354
+2-use_openspec/3-verify_archive/1-before/.github/skills/openspec-propose/SKILL.md
+  s_e38c302ed9b80c::t_2be0d99ed98e5d 1-174
+2-use_openspec/3-verify_archive/1-before/.github/skills/openspec-sync-specs/SKILL.md
+  s_e38c302ed9b80c::t_7aa5097860f33c 1-290
+2-use_openspec/3-verify_archive/1-before/.github/skills/openspec-update-change/SKILL.md
+  s_e38c302ed9b80c::t_fb83ea4820c39a 1-109
+2-use_openspec/3-verify_archive/1-before/.gitignore
+  s_e38c302ed9b80c::t_ce814671da4f1c 1-6
+2-use_openspec/3-verify_archive/1-before/.opencode/skills/openspec-apply-change/SKILL.md
+  s_e38c302ed9b80c::t_87ff4220c60762 1-205
+2-use_openspec/3-verify_archive/1-before/.opencode/skills/openspec-archive-change/SKILL.md
+  s_e38c302ed9b80c::t_822393b87ad9f6 1-221
+2-use_openspec/3-verify_archive/1-before/.opencode/skills/openspec-explore/SKILL.md
+  s_e38c302ed9b80c::t_fcc948628f7c1c 1-354
+2-use_openspec/3-verify_archive/1-before/.opencode/skills/openspec-propose/SKILL.md
+  s_e38c302ed9b80c::t_e54e8b6abbbe6d 1-174
+2-use_openspec/3-verify_archive/1-before/.opencode/skills/openspec-sync-specs/SKILL.md
+  s_e38c302ed9b80c::t_7224f650584227 1-290
+2-use_openspec/3-verify_archive/1-before/.opencode/skills/openspec-update-change/SKILL.md
+  s_e38c302ed9b80c::t_c639322c88436b 1-109
+2-use_openspec/3-verify_archive/1-before/AGENTS.md
+  s_e38c302ed9b80c::t_94ec8947d5f76a 1-42
+2-use_openspec/3-verify_archive/1-before/CLAUDE.md
+  s_e38c302ed9b80c::t_3348d9b8a748b9 1
+2-use_openspec/3-verify_archive/1-before/Makefile
+  s_e38c302ed9b80c::t_834a28567f7878 1-5
+2-use_openspec/3-verify_archive/1-before/compose.yml
+  s_e38c302ed9b80c::t_05bb7c0f7403a1 1-21
+2-use_openspec/3-verify_archive/1-before/database/schema.sql
+  s_e38c302ed9b80c::t_c85373954d6975 1-90
+2-use_openspec/3-verify_archive/1-before/database/seed.sql
+  s_e38c302ed9b80c::t_f705e5f2b6f5f5 1-188
+2-use_openspec/3-verify_archive/1-before/docs/architecture/hexagonal-architecture.md
+  s_e38c302ed9b80c::t_c43f78a86d5f20 1-111
+2-use_openspec/3-verify_archive/1-before/docs/architecture/project-layout.md
+  s_e38c302ed9b80c::t_746eb7246cdc0a 1-9
+2-use_openspec/3-verify_archive/1-before/docs/architecture/screens.md
+  s_e38c302ed9b80c::t_b32ffe08d20e62 1-14
+2-use_openspec/3-verify_archive/1-before/docs/documentation-guidelines.md
+  s_e38c302ed9b80c::t_7c0f393c8c3a56 1-79
+2-use_openspec/3-verify_archive/1-before/docs/sql-database/data-model.md
+  s_e38c302ed9b80c::t_a656b0d64f2dbf 1-19
+2-use_openspec/3-verify_archive/1-before/docs/testing/testing-strategy.md
+  s_e38c302ed9b80c::t_d5ea700560e69c 1-100
+2-use_openspec/3-verify_archive/1-before/eslint.config.mjs
+  s_e38c302ed9b80c::t_643d152f6f53ef 1-132
+2-use_openspec/3-verify_archive/1-before/global.d.ts
+  s_e38c302ed9b80c::t_9876b6576e6ea3 1-39
+2-use_openspec/3-verify_archive/1-before/next.config.ts
+  s_e38c302ed9b80c::t_c21cbfb96855e6 1-24
+2-use_openspec/3-verify_archive/1-before/openspec/changes/add-outfit-suggestions/.openspec.yaml
+  s_e38c302ed9b80c::t_446d6e8dc2da45 1-2
+2-use_openspec/3-verify_archive/1-before/openspec/changes/add-outfit-suggestions/design.md
+  s_e38c302ed9b80c::t_c7908656d533ee 1-146
+2-use_openspec/3-verify_archive/1-before/openspec/changes/add-outfit-suggestions/proposal.md
+  s_e38c302ed9b80c::t_6f71b4146f0658 1-33
+2-use_openspec/3-verify_archive/1-before/openspec/changes/add-outfit-suggestions/specs/outfit-management/spec.md
+  s_e38c302ed9b80c::t_2fbd2e9724c5e4 1-146
+2-use_openspec/3-verify_archive/1-before/openspec/changes/add-outfit-suggestions/specs/product-suggestions/spec.md
+  s_e38c302ed9b80c::t_6799cfb364148e 1-47
+2-use_openspec/3-verify_archive/1-before/openspec/changes/add-outfit-suggestions/specs/stock-monitoring/spec.md
+  s_e38c302ed9b80c::t_cba13307a6c978 1-44
+2-use_openspec/3-verify_archive/1-before/openspec/changes/add-outfit-suggestions/tasks.md
+  s_e38c302ed9b80c::t_221c69d70da4f5 1-51
+2-use_openspec/3-verify_archive/1-before/openspec/config.yaml
+  s_e38c302ed9b80c::t_8e02bc56130955 1-30
+2-use_openspec/3-verify_archive/1-before/package-lock.json
+  s_e38c302ed9b80c::t_500494205c20b5 1-11163
+2-use_openspec/3-verify_archive/1-before/package.json
+  s_e38c302ed9b80c::t_906410d2d06f96 1-52
+2-use_openspec/3-verify_archive/1-before/public/products/CREDITS.md
+  s_e38c302ed9b80c::t_d08e135e8411a3 1-21
+2-use_openspec/3-verify_archive/1-before/src/app/account/layout.module.scss
+  s_e38c302ed9b80c::t_81f9efbb3f4aa0 1-3
+2-use_openspec/3-verify_archive/1-before/src/app/account/layout.tsx
+  s_e38c302ed9b80c::t_7e3ce6c3696204 1-16
+2-use_openspec/3-verify_archive/1-before/src/app/account/orders/[id]/page.tsx
+  s_e38c302ed9b80c::t_61be07e1bcbb55 1-28
+2-use_openspec/3-verify_archive/1-before/src/app/account/orders/page.tsx
+  s_e38c302ed9b80c::t_fc4c7ce2c7244e 1-22
+2-use_openspec/3-verify_archive/1-before/src/app/actions/ActionState.ts
+  s_e38c302ed9b80c::t_566376a6dd615f 1-3
+2-use_openspec/3-verify_archive/1-before/src/app/actions/actionStateFor.ts
+  s_e38c302ed9b80c::t_0a71a49b763178 1-46
+2-use_openspec/3-verify_archive/1-before/src/app/actions/checkout/addSelectedVariantToCart.ts
+  s_e38c302ed9b80c::t_d839f15c458832 1-30
+2-use_openspec/3-verify_archive/1-before/src/app/actions/checkout/confirmOrder.ts
+  s_e38c302ed9b80c::t_cdc6dac657c200 1-32
+2-use_openspec/3-verify_archive/1-before/src/app/actions/checkout/removeCartLine.ts
+  s_e38c302ed9b80c::t_189838b72848b3 1-27
+2-use_openspec/3-verify_archive/1-before/src/app/actions/checkout/requiredVariantId.ts
+  s_e38c302ed9b80c::t_9c53c6da67d027 1-11
+2-use_openspec/3-verify_archive/1-before/src/app/actions/outfits/createOutfit.ts
+  s_e38c302ed9b80c::t_9d5d75a102af51 1-27
+2-use_openspec/3-verify_archive/1-before/src/app/actions/outfits/deleteOutfit.ts
+  s_e38c302ed9b80c::t_06fffc373804b1 1-26
+2-use_openspec/3-verify_archive/1-before/src/app/actions/outfits/outfitFormFields.ts
+  s_e38c302ed9b80c::t_9cb9dac89b1cff 1-33
+2-use_openspec/3-verify_archive/1-before/src/app/actions/outfits/outfitMessages.ts
+  s_e38c302ed9b80c::t_c0c8a9788d5b96 1-20
+2-use_openspec/3-verify_archive/1-before/src/app/actions/outfits/updateOutfit.ts
+  s_e38c302ed9b80c::t_6940c491c77b2e 1-31
+2-use_openspec/3-verify_archive/1-before/src/app/admin/AdminNav.module.scss
+  s_e38c302ed9b80c::t_6d799783f29e60 1-32
+2-use_openspec/3-verify_archive/1-before/src/app/admin/AdminNav.tsx
+  s_e38c302ed9b80c::t_2cdbe50f0df3c6 1-42
+2-use_openspec/3-verify_archive/1-before/src/app/admin/inventory/page.tsx
+  s_e38c302ed9b80c::t_5ace457f55a21c 1-23
+2-use_openspec/3-verify_archive/1-before/src/app/admin/layout.module.scss
+  s_e38c302ed9b80c::t_cb6add015e026b 1-47
+2-use_openspec/3-verify_archive/1-before/src/app/admin/layout.tsx
+  s_e38c302ed9b80c::t_0924d125cfa9f7 1-27
+2-use_openspec/3-verify_archive/1-before/src/app/admin/orders/[id]/page.tsx
+  s_e38c302ed9b80c::t_46b8c6d384b155 1-28
+2-use_openspec/3-verify_archive/1-before/src/app/admin/orders/page.tsx
+  s_e38c302ed9b80c::t_e11b3110d6adfb 1-23
+2-use_openspec/3-verify_archive/1-before/src/app/admin/outfits/DeleteOutfitForm.tsx
+  s_e38c302ed9b80c::t_d9dd04daf18b2d 1-30
+2-use_openspec/3-verify_archive/1-before/src/app/admin/outfits/OutfitForm.module.scss
+  s_e38c302ed9b80c::t_0dd29698dd60da 1-45
+2-use_openspec/3-verify_archive/1-before/src/app/admin/outfits/OutfitForm.tsx
+  s_e38c302ed9b80c::t_0193005b286009 1-127
+2-use_openspec/3-verify_archive/1-before/src/app/admin/outfits/[id]/page.tsx
+  s_e38c302ed9b80c::t_31c4ea129b11ca 1-50
+2-use_openspec/3-verify_archive/1-before/src/app/admin/outfits/new/page.tsx
+  s_e38c302ed9b80c::t_c30c5617981b36 1-31
+2-use_openspec/3-verify_archive/1-before/src/app/admin/outfits/page.module.scss
+  s_e38c302ed9b80c::t_091d7d4fe1f8d5 1-21
+2-use_openspec/3-verify_archive/1-before/src/app/admin/outfits/page.tsx
+  s_e38c302ed9b80c::t_d395fea7c74d86 1-31
+2-use_openspec/3-verify_archive/1-before/src/app/admin/outfits/productOptions.ts
+  s_e38c302ed9b80c::t_52d3f5829f239e 1-9
+2-use_openspec/3-verify_archive/1-before/src/app/admin/page.module.scss
+  s_e38c302ed9b80c::t_28bb20b78cc1fc 1-12
+2-use_openspec/3-verify_archive/1-before/src/app/admin/page.tsx
+  s_e38c302ed9b80c::t_6f6773b39ef421 1-42
+2-use_openspec/3-verify_archive/1-before/src/app/app.scss
+  s_e38c302ed9b80c::t_fb92a25dcdc292 1-61
+2-use_openspec/3-verify_archive/1-before/src/app/checkout/CartSummary.module.scss
+  s_e38c302ed9b80c::t_3e3635dd97883c 1-71
+2-use_openspec/3-verify_archive/1-before/src/app/checkout/CartSummary.tsx
+  s_e38c302ed9b80c::t_551d26fae4dcba 1-71
+2-use_openspec/3-verify_archive/1-before/src/app/checkout/ConfirmOrderForm.module.scss
+  s_e38c302ed9b80c::t_76db5a3e20cb48 1-4
+2-use_openspec/3-verify_archive/1-before/src/app/checkout/ConfirmOrderForm.tsx
+  s_e38c302ed9b80c::t_717ad604a5e737 1-29
+2-use_openspec/3-verify_archive/1-before/src/app/checkout/OrderConfirmation.module.scss
+  s_e38c302ed9b80c::t_2a427f7fde56a0 1-22
+2-use_openspec/3-verify_archive/1-before/src/app/checkout/OrderConfirmation.tsx
+  s_e38c302ed9b80c::t_2c6fd8ef7c68c9 1-25
+2-use_openspec/3-verify_archive/1-before/src/app/checkout/RemoveCartLineForm.tsx
+  s_e38c302ed9b80c::t_7a1aad6d388406 1-38
+2-use_openspec/3-verify_archive/1-before/src/app/checkout/page.module.scss
+  s_e38c302ed9b80c::t_b9d64f06430d01 1-95
+2-use_openspec/3-verify_archive/1-before/src/app/checkout/page.tsx
+  s_e38c302ed9b80c::t_7adb295da383fe 1-86
+2-use_openspec/3-verify_archive/1-before/src/app/error.tsx
+  s_e38c302ed9b80c::t_43cebb6ad78c50 1-28
+2-use_openspec/3-verify_archive/1-before/src/app/global-error.tsx
+  s_e38c302ed9b80c::t_46c0b652c39d26 1-36
+2-use_openspec/3-verify_archive/1-before/src/app/icon.svg
+  s_e38c302ed9b80c::t_9696c91a6ade26 1-15
+2-use_openspec/3-verify_archive/1-before/src/app/layout.module.scss
+  s_e38c302ed9b80c::t_98d8d265701d03 1-89
+2-use_openspec/3-verify_archive/1-before/src/app/layout.tsx
+  s_e38c302ed9b80c::t_bf9027799af640 1-69
+2-use_openspec/3-verify_archive/1-before/src/app/loading.tsx
+  s_e38c302ed9b80c::t_057c77c128bf57 1-10
+2-use_openspec/3-verify_archive/1-before/src/app/not-found.tsx
+  s_e38c302ed9b80c::t_fd8000dfcc3bb4 1-18
+2-use_openspec/3-verify_archive/1-before/src/app/page.module.scss
+  s_e38c302ed9b80c::t_6b132eab8a7566 1-18
+2-use_openspec/3-verify_archive/1-before/src/app/page.tsx
+  s_e38c302ed9b80c::t_23f16cbfea7995 1-59
+2-use_openspec/3-verify_archive/1-before/src/app/products/[id]/AddToCartForm.module.scss
+  s_e38c302ed9b80c::t_5da5bf2524534f 1-4
+2-use_openspec/3-verify_archive/1-before/src/app/products/[id]/AddToCartForm.tsx
+  s_e38c302ed9b80c::t_968b36d2a2eaec 1-36
+2-use_openspec/3-verify_archive/1-before/src/app/products/[id]/ProductPurchasePanel.module.scss
+  s_e38c302ed9b80c::t_ed2d166a7057ca 1-115
+2-use_openspec/3-verify_archive/1-before/src/app/products/[id]/ProductPurchasePanel.tsx
+  s_e38c302ed9b80c::t_81004b73ffca61 1-208
+2-use_openspec/3-verify_archive/1-before/src/app/products/[id]/page.module.scss
+  s_e38c302ed9b80c::t_27213f720774f9 1-59
+2-use_openspec/3-verify_archive/1-before/src/app/products/[id]/page.tsx
+  s_e38c302ed9b80c::t_c080dac3bf7192 1-92
+2-use_openspec/3-verify_archive/1-before/src/app/status.module.scss
+  s_e38c302ed9b80c::t_9ed807f104bb4f 1-28
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/application/add/CartVariantAdder.ts
+  s_e38c302ed9b80c::t_0d466055f34e4d 1-53
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/application/confirm/CheckoutConfirmer.ts
+  s_e38c302ed9b80c::t_f4e9d513335a50 1-76
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/application/count/CartItemCounter.ts
+  s_e38c302ed9b80c::t_fe4343a02a9f6a 1-18
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/application/remove/CartVariantRemover.ts
+  s_e38c302ed9b80c::t_5d72d4bb18a4fe 1-25
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/application/view/CheckoutViewGetter.ts
+  s_e38c302ed9b80c::t_b22574013c4a7e 1-81
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/CatalogItem.ts
+  s_e38c302ed9b80c::t_36d27e36f65433 1-56
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/CatalogItems.ts
+  s_e38c302ed9b80c::t_2f374069bb8a8b 1-18
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/Checkout.ts
+  s_e38c302ed9b80c::t_78b0b41fe6d07f 1-123
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/CheckoutCatalog.ts
+  s_e38c302ed9b80c::t_30bc80a8993323 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/CheckoutId.ts
+  s_e38c302ed9b80c::t_1aa5b0510dd8bd 1-3
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/CheckoutLine.ts
+  s_e38c302ed9b80c::t_edb1e6a7bb9c61 1-51
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/CheckoutRepository.ts
+  s_e38c302ed9b80c::t_6c0cc39bcaa611 1-11
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/OrderPlacement.ts
+  s_e38c302ed9b80c::t_3e2e0f0665bfe8 1-22
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/StockReserver.ts
+  s_e38c302ed9b80c::t_d382b47496afdf 1-5
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/errors/CatalogItemNotFoundError.ts
+  s_e38c302ed9b80c::t_b37f5522cf9342 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/errors/CheckoutConcurrentModificationError.ts
+  s_e38c302ed9b80c::t_983bbfc43d555f 1-11
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/errors/EmptyCheckoutError.ts
+  s_e38c302ed9b80c::t_10dacebab3afb6 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/errors/InvalidCheckoutLineQuantityError.ts
+  s_e38c302ed9b80c::t_3e3f004431431f 1-9
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/domain/errors/VariantOutOfStockError.ts
+  s_e38c302ed9b80c::t_09ed1228f6fd8c 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/infrastructure/OrdersOrderPlacement.ts
+  s_e38c302ed9b80c::t_aa9f046fa6a5fb 1-41
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/infrastructure/PostgresCheckoutRepository.ts
+  s_e38c302ed9b80c::t_25eb4c41fdc9a9 1-147
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/infrastructure/ProductsCheckoutCatalog.ts
+  s_e38c302ed9b80c::t_3d0109dd521c6c 1-34
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/checkout/infrastructure/ProductsStockReserver.ts
+  s_e38c302ed9b80c::t_f1d1ece14e5277 1-29
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/application/OrderResponse.ts
+  s_e38c302ed9b80c::t_7a86a2d6b224d6 1-34
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/application/find-mine/UserOrderFinder.ts
+  s_e38c302ed9b80c::t_b951c5f655f2f6 1-21
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/application/find/OrderFinder.ts
+  s_e38c302ed9b80c::t_9ddee86323f669 1-77
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/application/list-mine/UserOrdersLister.ts
+  s_e38c302ed9b80c::t_95367e7bf14661 1-36
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/application/list-recent/RecentOrdersLister.ts
+  s_e38c302ed9b80c::t_f54c687807d3aa 1-23
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/application/list/OrdersLister.ts
+  s_e38c302ed9b80c::t_0f046a52d0d005 1-23
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/application/place/OrderPlacer.ts
+  s_e38c302ed9b80c::t_46caeef1262ff3 1-57
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/application/summarize/OrdersSummaryGetter.ts
+  s_e38c302ed9b80c::t_e49be90f9e977a 1-40
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/domain/CurrencyRevenue.ts
+  s_e38c302ed9b80c::t_d21be4008e648d 1-6
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/domain/CustomerDirectory.ts
+  s_e38c302ed9b80c::t_d3e1eadccd1f5d 1-15
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/domain/Order.ts
+  s_e38c302ed9b80c::t_05733a0c36ee15 1-92
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/domain/OrderId.ts
+  s_e38c302ed9b80c::t_01219b24f99d99 1-3
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/domain/OrderLine.ts
+  s_e38c302ed9b80c::t_002061ac309575 1-59
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/domain/OrderRepository.ts
+  s_e38c302ed9b80c::t_b2bd8b42ccd9eb 1-19
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/domain/errors/EmptyOrderError.ts
+  s_e38c302ed9b80c::t_070e418e21ea46 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/domain/errors/InvalidOrderLineQuantityError.ts
+  s_e38c302ed9b80c::t_05874c6c6768ad 1-9
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/infrastructure/PostgresOrderRepository.ts
+  s_e38c302ed9b80c::t_7639dfc2b99e76 1-189
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/orders/infrastructure/UsersCustomerDirectory.ts
+  s_e38c302ed9b80c::t_e9f2b42e9ec648 1-20
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/OutfitSaveGuard.ts
+  s_e38c302ed9b80c::t_7dd791858066cf 1-48
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/ProductResponse.ts
+  s_e38c302ed9b80c::t_703cdf3779b4b4 1-55
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/categories/CategoriesLister.ts
+  s_e38c302ed9b80c::t_7ba8cf2e37f574 1-9
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/collections/CollectionsLister.ts
+  s_e38c302ed9b80c::t_1e558ee122ba33 1-9
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/create-outfit/OutfitCreator.ts
+  s_e38c302ed9b80c::t_a9c6cf6b41f80c 1-31
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/decrease-stock/NotEnoughStockError.ts
+  s_e38c302ed9b80c::t_4a8237f96d4073 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/decrease-stock/StockDecreaser.ts
+  s_e38c302ed9b80c::t_7772340b121912 1-38
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/delete-outfit/OutfitDeleter.ts
+  s_e38c302ed9b80c::t_fc0ed2f8ec7cd8 1-17
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/find-outfit/OutfitFinder.ts
+  s_e38c302ed9b80c::t_bf6a51c88be5d5 1-24
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/find-suggestions/ProductSuggestionsFinder.ts
+  s_e38c302ed9b80c::t_7d4e8f193afc9d 1-86
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/find/ProductFinder.ts
+  s_e38c302ed9b80c::t_992487e88b94d3 1-20
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/inventory/InventoryLister.ts
+  s_e38c302ed9b80c::t_ca012b26370155 1-55
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/list-outfits/OutfitsLister.ts
+  s_e38c302ed9b80c::t_7a189c26b6c2c8 1-49
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/low-stock/LowStockLister.ts
+  s_e38c302ed9b80c::t_ec2da95dd5aa7a 1-52
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/search-variants/VariantsSearcher.ts
+  s_e38c302ed9b80c::t_d4fdb4b14fd52a 1-48
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/search/ProductsSearcher.ts
+  s_e38c302ed9b80c::t_dc27ae201142ce 1-17
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/application/update-outfit/OutfitUpdater.ts
+  s_e38c302ed9b80c::t_505d7bed0348fe 1-40
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/Outfit.ts
+  s_e38c302ed9b80c::t_9d23b856b1c92a 1-75
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/OutfitId.ts
+  s_e38c302ed9b80c::t_b562858faf453b 1-3
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/OutfitRepository.ts
+  s_e38c302ed9b80c::t_a57708fdf265c5 1-22
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/Product.ts
+  s_e38c302ed9b80c::t_3ed6b23aac5980 1-128
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/ProductRepository.ts
+  s_e38c302ed9b80c::t_294a5268f2adb6 1-37
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/ProductVariant.ts
+  s_e38c302ed9b80c::t_5f7f2ec8146729 1-68
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/errors/InvalidOutfitNameError.ts
+  s_e38c302ed9b80c::t_559d032bf5c662 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/errors/InvalidOutfitSizeError.ts
+  s_e38c302ed9b80c::t_87f99d7ff8028c 1-9
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/errors/OutfitNameAlreadyExistsError.ts
+  s_e38c302ed9b80c::t_128b5a65a4e4d1 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/errors/OutfitNotFoundError.ts
+  s_e38c302ed9b80c::t_e307481b0bd82b 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/errors/OutfitProductNotFoundError.ts
+  s_e38c302ed9b80c::t_e5455f9c0fee01 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/errors/ProductNotFoundError.ts
+  s_e38c302ed9b80c::t_bebf76889b4b95 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/errors/RepeatedOutfitProductError.ts
+  s_e38c302ed9b80c::t_b16e9d8e5f6688 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/domain/errors/VariantNotFoundError.ts
+  s_e38c302ed9b80c::t_16afbcd252501a 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/infrastructure/PostgresOutfitRepository.ts
+  s_e38c302ed9b80c::t_496980ec473d9f 1-153
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/products/infrastructure/PostgresProductRepository.ts
+  s_e38c302ed9b80c::t_4714b3fff665ed 1-199
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/shared/infrastructure/CryptoIdGenerator.ts
+  s_e38c302ed9b80c::t_aeb05d7f3a060b 1-9
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/shared/infrastructure/PostgresConnection.ts
+  s_e38c302ed9b80c::t_145b124ed1e487 1-36
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/shared/infrastructure/PostgresRepository.ts
+  s_e38c302ed9b80c::t_b2daa6a76d4478 1-15
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/shared/infrastructure/PostgresUnitOfWork.ts
+  s_e38c302ed9b80c::t_8e5fcd73935a25 1-13
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/shared/infrastructure/RetailContainer.ts
+  s_e38c302ed9b80c::t_b58011a61fe46e 1-256
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/shared/infrastructure/SystemClock.ts
+  s_e38c302ed9b80c::t_0d819fd0dfe342 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/users/application/current/CurrentUserGetter.ts
+  s_e38c302ed9b80c::t_1d9f4e82eb3319 1-28
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/users/application/search-by-ids/UsersByIdsSearcher.ts
+  s_e38c302ed9b80c::t_48fd102c6879d3 1-24
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/users/domain/User.ts
+  s_e38c302ed9b80c::t_221b90f4c6433e 1-27
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/users/domain/UserRepository.ts
+  s_e38c302ed9b80c::t_5352d2c2225a74 1-11
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/users/domain/errors/UserNotFoundError.ts
+  s_e38c302ed9b80c::t_95dba12f453d17 1-8
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/users/infrastructure/FakeSessionCurrentUserProvider.ts
+  s_e38c302ed9b80c::t_0c0131611a483e 1-9
+2-use_openspec/3-verify_archive/1-before/src/contexts/backend/users/infrastructure/PostgresUserRepository.ts
+  s_e38c302ed9b80c::t_05351ab0ed02d4 1-46
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/atoms/Badge.module.scss
+  s_e38c302ed9b80c::t_b0efb2de13b16e 1-83
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/atoms/Badge.tsx
+  s_e38c302ed9b80c::t_48507e267a5c0c 1-49
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/atoms/Button.module.scss
+  s_e38c302ed9b80c::t_77ac602d7940db 1-127
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/atoms/Button.tsx
+  s_e38c302ed9b80c::t_97e09314513652 1-106
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/atoms/CodelyLink.tsx
+  s_e38c302ed9b80c::t_a3984a66795d4c 1-20
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/atoms/FormError.module.scss
+  s_e38c302ed9b80c::t_ca46cde0b8fff0 1-11
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/atoms/FormError.tsx
+  s_e38c302ed9b80c::t_6c72805e4425f1 1-17
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/atoms/Heading.module.scss
+  s_e38c302ed9b80c::t_25f1e38865ffa8 1-33
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/atoms/Heading.tsx
+  s_e38c302ed9b80c::t_7fcbfca0d41446 1-47
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/atoms/Icon.module.scss
+  s_e38c302ed9b80c::t_4b1f589f039719 1-29
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/atoms/Icon.tsx
+  s_e38c302ed9b80c::t_4f47f41e29a75d 1-38
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/atoms/SubmitButton.tsx
+  s_e38c302ed9b80c::t_d14a344b5560be 1-14
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/generic/_base.scss
+  s_e38c302ed9b80c::t_fec80456f94ffe 1-76
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/generic/_fonts.scss
+  s_e38c302ed9b80c::t_f57099c0f33a8a 1-39
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/generic/_reset.scss
+  s_e38c302ed9b80c::t_682caa6b011ed6 1-82
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/icons/brand.svg
+  s_e38c302ed9b80c::t_70ebf1c6db7eab 1-18
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/icons/cart.svg
+  s_e38c302ed9b80c::t_bbe3b3d97ce450 1
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/icons/icons.tsx
+  s_e38c302ed9b80c::t_ef1bd4e342d1f6 1-2
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/icons/load.svg
+  s_e38c302ed9b80c::t_27af9c56a5f37e 1-4
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/index.scss
+  s_e38c302ed9b80c::t_11216d3d4fef6c 1-3
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/molecules/Table.module.scss
+  s_e38c302ed9b80c::t_c2d6e1b2b75703 1-44
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/molecules/Table.tsx
+  s_e38c302ed9b80c::t_2bee94f630eeb1 1-74
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/settings/_border.scss
+  s_e38c302ed9b80c::t_834f126bed0191 1-3
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/settings/_colors.scss
+  s_e38c302ed9b80c::t_190313bbd77f9e 1-57
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/settings/_sizes.scss
+  s_e38c302ed9b80c::t_1931b925541b19 1-5
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/settings/_spacing.scss
+  s_e38c302ed9b80c::t_56b16d27f2e0b7 1-27
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/settings/_typography.scss
+  s_e38c302ed9b80c::t_eff42a4a0a45cb 1-34
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/shared/classNames.ts
+  s_e38c302ed9b80c::t_0989a9a3cde371 1-25
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/tools/_colors.scss
+  s_e38c302ed9b80c::t_502cbafd5f49da 1-117
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/design-system/tools/_typography.scss
+  s_e38c302ed9b80c::t_36549c2dca4e1a 1-70
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/AdminLink.module.scss
+  s_e38c302ed9b80c::t_349ec3fe0613be 1-24
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/AdminLink.tsx
+  s_e38c302ed9b80c::t_d33646f4f31911 1-24
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/AdminOrdersTable.tsx
+  s_e38c302ed9b80c::t_e1a68e8741b725 1-62
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/CartLink.module.scss
+  s_e38c302ed9b80c::t_1d73d2ac34dc79 1-32
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/CartLink.tsx
+  s_e38c302ed9b80c::t_3979c23a11aa5b 1-9
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/CartLinkView.tsx
+  s_e38c302ed9b80c::t_69a4098e317029 1-27
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/CatalogSummary.module.scss
+  s_e38c302ed9b80c::t_93fd3c13f2d423 1-19
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/CatalogSummary.tsx
+  s_e38c302ed9b80c::t_3db71edbdf2baa 1-27
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/CategoryFilters.module.scss
+  s_e38c302ed9b80c::t_791c446d480cdf 1-30
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/CategoryFilters.tsx
+  s_e38c302ed9b80c::t_d8caf882cca6a6 1-59
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/CustomerOrdersTable.tsx
+  s_e38c302ed9b80c::t_7fd5a0bbed84cb 1-70
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/DashboardMetrics.module.scss
+  s_e38c302ed9b80c::t_be365550f0279a 1-17
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/DashboardMetrics.tsx
+  s_e38c302ed9b80c::t_b8bd2a2aa78d92 1-57
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/DashboardPanel.module.scss
+  s_e38c302ed9b80c::t_2544aca6761040 1-85
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/Footer.module.scss
+  s_e38c302ed9b80c::t_3ea513257db938 1-55
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/Footer.tsx
+  s_e38c302ed9b80c::t_845336253eb174 1-32
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/InventoryTable.module.scss
+  s_e38c302ed9b80c::t_54ee29187f5dda 1-17
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/InventoryTable.tsx
+  s_e38c302ed9b80c::t_315e492f2db272 1-55
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/LowStockPanel.tsx
+  s_e38c302ed9b80c::t_51c51667db13c9 1-70
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/MainNav.module.scss
+  s_e38c302ed9b80c::t_67b781c814e133 1-33
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/MainNav.tsx
+  s_e38c302ed9b80c::t_d730b5c2d9c542 1-9
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/MainNavLinks.tsx
+  s_e38c302ed9b80c::t_0d58643176d0cd 1-50
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/MetricCard.module.scss
+  s_e38c302ed9b80c::t_ec951f8b6fc296 1-44
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/MetricCard.tsx
+  s_e38c302ed9b80c::t_ba33f2a73312de 1-32
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/OrderDetail.tsx
+  s_e38c302ed9b80c::t_3003ce03aa9eda 1-98
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/OutfitSuggestions.module.scss
+  s_e38c302ed9b80c::t_ce7cda2aed0840 1-17
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/OutfitSuggestions.tsx
+  s_e38c302ed9b80c::t_495580add3ce24 1-34
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/OutfitsTable.module.scss
+  s_e38c302ed9b80c::t_b0ffd1f6ce512c 1-32
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/OutfitsTable.tsx
+  s_e38c302ed9b80c::t_229b99907e5cf9 1-69
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/PageHeader.module.scss
+  s_e38c302ed9b80c::t_76ab7dbf33975e 1-48
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/PageHeader.tsx
+  s_e38c302ed9b80c::t_5605f00c08dbef 1-54
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/ProductBadges.tsx
+  s_e38c302ed9b80c::t_5555c6e39c988c 1-32
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/ProductCard.module.scss
+  s_e38c302ed9b80c::t_04e9e1fb8a87fb 1-115
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/ProductCard.tsx
+  s_e38c302ed9b80c::t_01e5e0e5c68de0 1-99
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/ProductGrid.module.scss
+  s_e38c302ed9b80c::t_51f4c106ec4e13 1-26
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/ProductGrid.tsx
+  s_e38c302ed9b80c::t_b95f221f8be9b4 1-36
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/ProductInfo.module.scss
+  s_e38c302ed9b80c::t_9adf891c5579e7 1-59
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/ProductInfo.tsx
+  s_e38c302ed9b80c::t_b90e0620ddae7f 1-58
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/ProductPicker.module.scss
+  s_e38c302ed9b80c::t_850510bd84a5d5 1-122
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/ProductPicker.tsx
+  s_e38c302ed9b80c::t_d2f44e637a76a1 1-274
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/ProductThumbnail.module.scss
+  s_e38c302ed9b80c::t_08b5137f88f27d 1-6
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/ProductThumbnail.tsx
+  s_e38c302ed9b80c::t_90676015df72ae 1-30
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/ProductVisual.module.scss
+  s_e38c302ed9b80c::t_8eb78868d51bb0 1-59
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/ProductVisual.tsx
+  s_e38c302ed9b80c::t_a228fa2116b47c 1-46
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/RecentOrdersPanel.tsx
+  s_e38c302ed9b80c::t_78302787b43aa9 1-52
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/UserMenu.module.scss
+  s_e38c302ed9b80c::t_b12ae8d044303d 1-64
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/UserMenu.tsx
+  s_e38c302ed9b80c::t_6e9777069e2349 1-9
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/UserMenuTrigger.tsx
+  s_e38c302ed9b80c::t_66f0d70afd7988 1-89
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/sections/orders.module.scss
+  s_e38c302ed9b80c::t_27fcdb647140c8 1-55
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/ui/format.ts
+  s_e38c302ed9b80c::t_ae598f21b2f792 1-82
+2-use_openspec/3-verify_archive/1-before/src/contexts/frontend/retail/ui/productImage.ts
+  s_e38c302ed9b80c::t_25cbc2b0fd500a 1-3
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/Clock.ts
+  s_e38c302ed9b80c::t_7ff0eaf44fabc1 1-3
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/CodelyError.ts
+  s_e38c302ed9b80c::t_eb9da3a7ad0e94 1-6
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/CurrentUserProvider.ts
+  s_e38c302ed9b80c::t_82d7b6c24ca003 1-5
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/DeliveryMethod.ts
+  s_e38c302ed9b80c::t_51a428eea99478 1-9
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/IdGenerator.ts
+  s_e38c302ed9b80c::t_f214006382362a 1-3
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/Money.ts
+  s_e38c302ed9b80c::t_32c24f7402d03d 1-60
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/ProductId.ts
+  s_e38c302ed9b80c::t_8c29589600f656 1-3
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/UnitOfWork.ts
+  s_e38c302ed9b80c::t_cba1a652b97fae 1-3
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/UserId.ts
+  s_e38c302ed9b80c::t_0bc8d8373f01b3 1-3
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/VariantId.ts
+  s_e38c302ed9b80c::t_5057f2aefcb7c4 1-3
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/errors/CurrencyMismatchError.ts
+  s_e38c302ed9b80c::t_6da3a24de0194e 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/errors/EmptyStringValueObjectError.ts
+  s_e38c302ed9b80c::t_22c3830bdcedfd 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/errors/InvalidArgumentError.ts
+  s_e38c302ed9b80c::t_c76461a45eb955 1-3
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/errors/InvalidLiteralError.ts
+  s_e38c302ed9b80c::t_6e1502da41a345 1-9
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/errors/InvalidMoneyAmountError.ts
+  s_e38c302ed9b80c::t_dcaad639604257 1-7
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/parseLiteral.ts
+  s_e38c302ed9b80c::t_3e133504f09a6e 1-16
+2-use_openspec/3-verify_archive/1-before/src/contexts/shared/domain/value-object/StringValueObject.ts
+  s_e38c302ed9b80c::t_0553cef26cacc8 1-15
+2-use_openspec/3-verify_archive/1-before/tests/app/admin/AdminNav.spec.tsx
+  s_e38c302ed9b80c::t_430b727e3418eb 1-64
+2-use_openspec/3-verify_archive/1-before/tests/app/admin/outfits/DeleteOutfitForm.spec.tsx
+  s_e38c302ed9b80c::t_e646d84c084e7f 1-36
+2-use_openspec/3-verify_archive/1-before/tests/app/admin/outfits/OutfitForm.spec.tsx
+  s_e38c302ed9b80c::t_473b4f248d1a39 1-172
+2-use_openspec/3-verify_archive/1-before/tests/app/checkout/CartSummary.spec.tsx
+  s_e38c302ed9b80c::t_e47470ceee3b83 1-56
+2-use_openspec/3-verify_archive/1-before/tests/app/checkout/ConfirmOrderForm.spec.tsx
+  s_e38c302ed9b80c::t_dec684b311bbbe 1-61
+2-use_openspec/3-verify_archive/1-before/tests/app/checkout/OrderConfirmation.spec.tsx
+  s_e38c302ed9b80c::t_b54cdc5142a639 1-17
+2-use_openspec/3-verify_archive/1-before/tests/app/checkout/RemoveCartLineForm.spec.tsx
+  s_e38c302ed9b80c::t_a4c09917d80be6 1-74
+2-use_openspec/3-verify_archive/1-before/tests/app/products/[id]/AddToCartForm.spec.tsx
+  s_e38c302ed9b80c::t_b6b1ff0a90c3f2 1-65
+2-use_openspec/3-verify_archive/1-before/tests/app/products/[id]/ProductPurchasePanel.spec.tsx
+  s_e38c302ed9b80c::t_2a6cca84c630d7 1-195
+2-use_openspec/3-verify_archive/1-before/tests/backend/acceptance/CheckoutConfirmation.spec.ts
+  s_e38c302ed9b80c::t_668fec2468b237 1-170
+2-use_openspec/3-verify_archive/1-before/tests/backend/checkout/application/add/CartVariantAdder.spec.ts
+  s_e38c302ed9b80c::t_1c8b056aa04701 1-121
+2-use_openspec/3-verify_archive/1-before/tests/backend/checkout/application/confirm/CheckoutConfirmer.spec.ts
+  s_e38c302ed9b80c::t_ded1ef374d1302 1-150
+2-use_openspec/3-verify_archive/1-before/tests/backend/checkout/application/count/CartItemCounter.spec.ts
+  s_e38c302ed9b80c::t_f676d425a9c13b 1-53
+2-use_openspec/3-verify_archive/1-before/tests/backend/checkout/application/remove/CartVariantRemover.spec.ts
+  s_e38c302ed9b80c::t_b62bf134f27910 1-80
+2-use_openspec/3-verify_archive/1-before/tests/backend/checkout/application/view/CheckoutViewGetter.spec.ts
+  s_e38c302ed9b80c::t_82aff03f0901ef 1-109
+2-use_openspec/3-verify_archive/1-before/tests/backend/checkout/domain/CatalogItemMother.ts
+  s_e38c302ed9b80c::t_da6b262b84682a 1-33
+2-use_openspec/3-verify_archive/1-before/tests/backend/checkout/domain/CheckoutLineMother.ts
+  s_e38c302ed9b80c::t_11ce5483edc102 1-18
+2-use_openspec/3-verify_archive/1-before/tests/backend/checkout/domain/CheckoutMother.ts
+  s_e38c302ed9b80c::t_b215b29ae9dad1 1-30
+2-use_openspec/3-verify_archive/1-before/tests/backend/checkout/infrastructure/PostgresCheckoutRepository.spec.ts
+  s_e38c302ed9b80c::t_37eb6c04753e4e 1-109
+2-use_openspec/3-verify_archive/1-before/tests/backend/orders/application/find-mine/UserOrderFinder.spec.ts
+  s_e38c302ed9b80c::t_7473942f79205c 1-46
+2-use_openspec/3-verify_archive/1-before/tests/backend/orders/application/find/OrderFinder.spec.ts
+  s_e38c302ed9b80c::t_20ecbdc3d31fed 1-106
+2-use_openspec/3-verify_archive/1-before/tests/backend/orders/application/list-mine/UserOrdersLister.spec.ts
+  s_e38c302ed9b80c::t_9d12e488b758bb 1-58
+2-use_openspec/3-verify_archive/1-before/tests/backend/orders/application/list-recent/RecentOrdersLister.spec.ts
+  s_e38c302ed9b80c::t_a84aca2b0c9f07 1-72
+2-use_openspec/3-verify_archive/1-before/tests/backend/orders/application/list/OrdersLister.spec.ts
+  s_e38c302ed9b80c::t_704e6408e1ee08 1-105
+2-use_openspec/3-verify_archive/1-before/tests/backend/orders/application/place/OrderPlacer.spec.ts
+  s_e38c302ed9b80c::t_9896675a928849 1-104
+2-use_openspec/3-verify_archive/1-before/tests/backend/orders/application/summarize/OrdersSummaryGetter.spec.ts
+  s_e38c302ed9b80c::t_8200c3a10f0d5d 1-61
+2-use_openspec/3-verify_archive/1-before/tests/backend/orders/domain/OrderLineMother.ts
+  s_e38c302ed9b80c::t_4196771041294d 1-24
+2-use_openspec/3-verify_archive/1-before/tests/backend/orders/domain/OrderMother.ts
+  s_e38c302ed9b80c::t_a82851f27ca8a3 1-49
+2-use_openspec/3-verify_archive/1-before/tests/backend/orders/infrastructure/PostgresOrderRepository.spec.ts
+  s_e38c302ed9b80c::t_08039212859d51 1-203
+2-use_openspec/3-verify_archive/1-before/tests/backend/orders/infrastructure/UsersCustomerDirectory.spec.ts
+  s_e38c302ed9b80c::t_500b54f130c611 1-30
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/categories/CategoriesLister.spec.ts
+  s_e38c302ed9b80c::t_0574a294057f0c 1-23
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/collections/CollectionsLister.spec.ts
+  s_e38c302ed9b80c::t_d6b24d58cc5a20 1-29
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/create-outfit/OutfitCreator.spec.ts
+  s_e38c302ed9b80c::t_2152472905142d 1-117
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/decrease-stock/StockDecreaser.spec.ts
+  s_e38c302ed9b80c::t_bf0f61353495f4 1-66
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/delete-outfit/OutfitDeleter.spec.ts
+  s_e38c302ed9b80c::t_488b4d4649f653 1-31
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/find-outfit/OutfitFinder.spec.ts
+  s_e38c302ed9b80c::t_76b7b63b595c65 1-37
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/find-suggestions/ProductSuggestionsFinder.spec.ts
+  s_e38c302ed9b80c::t_e002460207ed35 1-170
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/find/ProductFinder.spec.ts
+  s_e38c302ed9b80c::t_c148b63688df4d 1-127
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/inventory/InventoryLister.spec.ts
+  s_e38c302ed9b80c::t_8def98f56449fc 1-151
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/list-outfits/OutfitsLister.spec.ts
+  s_e38c302ed9b80c::t_58ca4bbfbba0a2 1-156
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/low-stock/LowStockLister.spec.ts
+  s_e38c302ed9b80c::t_9b3e4d04ef7455 1-129
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/search-variants/VariantsSearcher.spec.ts
+  s_e38c302ed9b80c::t_8d219ec54446d0 1-61
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/search/ProductsSearcher.spec.ts
+  s_e38c302ed9b80c::t_fb0a7cd3a2aaab 1-42
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/application/update-outfit/OutfitUpdater.spec.ts
+  s_e38c302ed9b80c::t_4268421256664c 1-142
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/domain/OutfitMother.ts
+  s_e38c302ed9b80c::t_1a0474af8fccde 1-51
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/domain/ProductMother.ts
+  s_e38c302ed9b80c::t_798ca0862b5e2a 1-38
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/domain/ProductVariantMother.ts
+  s_e38c302ed9b80c::t_85566db7b7fe94 1-25
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/infrastructure/PostgresOutfitRepository.spec.ts
+  s_e38c302ed9b80c::t_a599be7cdffb15 1-190
+2-use_openspec/3-verify_archive/1-before/tests/backend/products/infrastructure/PostgresProductRepository.spec.ts
+  s_e38c302ed9b80c::t_da5a210ac4550a 1-303
+2-use_openspec/3-verify_archive/1-before/tests/backend/shared/infrastructure/RetailEnvironmentArranger.ts
+  s_e38c302ed9b80c::t_119a207ae556cc 1-78
+2-use_openspec/3-verify_archive/1-before/tests/backend/shared/infrastructure/describeWithEnvironmentArranger.ts
+  s_e38c302ed9b80c::t_cb2c0d0bfc1119 1-21
+2-use_openspec/3-verify_archive/1-before/tests/backend/users/application/current/CurrentUserGetter.spec.ts
+  s_e38c302ed9b80c::t_4014b5ee98ec82 1-32
+2-use_openspec/3-verify_archive/1-before/tests/backend/users/application/search-by-ids/UsersByIdsSearcher.spec.ts
+  s_e38c302ed9b80c::t_036ca8d274d642 1-41
+2-use_openspec/3-verify_archive/1-before/tests/backend/users/domain/UserMother.ts
+  s_e38c302ed9b80c::t_2c3a022ccb4bdc 1-23
+2-use_openspec/3-verify_archive/1-before/tests/backend/users/infrastructure/PostgresUserRepository.spec.ts
+  s_e38c302ed9b80c::t_59267ad9764c92 1-78
+2-use_openspec/3-verify_archive/1-before/tests/frontend/design-system/atoms/Button.spec.tsx
+  s_e38c302ed9b80c::t_66c21429465534 1-38
+2-use_openspec/3-verify_archive/1-before/tests/frontend/design-system/atoms/FormError.spec.tsx
+  s_e38c302ed9b80c::t_7e9f05f7642952 1-20
+2-use_openspec/3-verify_archive/1-before/tests/frontend/design-system/atoms/SubmitButton.spec.tsx
+  s_e38c302ed9b80c::t_946fe8d02fdca6 1-41
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/responses/CheckoutResponseMother.ts
+  s_e38c302ed9b80c::t_77af9f53e7eda6 1-52
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/responses/InventoryResponseMother.ts
+  s_e38c302ed9b80c::t_a871f52e9e2d31 1-21
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/responses/LowStockReportResponseMother.ts
+  s_e38c302ed9b80c::t_cb2fe884e0e4a5 1-14
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/responses/LowStockResponseMother.ts
+  s_e38c302ed9b80c::t_981436658afcf0 1-20
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/responses/MyOrderResponseMother.ts
+  s_e38c302ed9b80c::t_fddb6f0b297e65 1-22
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/responses/OrderDetailResponseMother.ts
+  s_e38c302ed9b80c::t_70505e0bc02bcb 1-52
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/responses/OrderResponseMother.ts
+  s_e38c302ed9b80c::t_b0c93366038fa5 1-22
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/responses/OrdersSummaryResponseMother.ts
+  s_e38c302ed9b80c::t_ea8843c114580c 1-26
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/responses/OutfitResponseMother.ts
+  s_e38c302ed9b80c::t_135df3af1799e1 1-17
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/responses/OutfitSuggestionResponseMother.ts
+  s_e38c302ed9b80c::t_b38eeeceb486a4 1-20
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/responses/OutfitSummaryResponseMother.ts
+  s_e38c302ed9b80c::t_e7d07a8f2c973b 1-17
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/responses/ProductResponseMother.ts
+  s_e38c302ed9b80c::t_934446886eaf88 1-13
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/AdminOrdersTable.spec.tsx
+  s_e38c302ed9b80c::t_5d94d21d3a5f3b 1-75
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/CartLinkView.spec.tsx
+  s_e38c302ed9b80c::t_bb0348d82671b8 1-31
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/CatalogSummary.spec.tsx
+  s_e38c302ed9b80c::t_f49ec3467991ea 1-45
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/CategoryFilters.spec.tsx
+  s_e38c302ed9b80c::t_4979c077bc7e52 1-70
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/CustomerOrdersTable.spec.tsx
+  s_e38c302ed9b80c::t_346426c79ca43c 1-75
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/DashboardMetrics.spec.tsx
+  s_e38c302ed9b80c::t_7caa8e9b3f8b5b 1-88
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/InventoryTable.spec.tsx
+  s_e38c302ed9b80c::t_7a56a78dc91fbb 1-79
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/LowStockPanel.spec.tsx
+  s_e38c302ed9b80c::t_9d9a628a658dd1 1-84
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/MainNavLinks.spec.tsx
+  s_e38c302ed9b80c::t_5aff2e90e28840 1-81
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/MetricCard.spec.tsx
+  s_e38c302ed9b80c::t_eeeba8713d94f6 1-21
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/OrderDetail.spec.tsx
+  s_e38c302ed9b80c::t_42a3e512d2d114 1-101
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/OutfitSuggestions.spec.tsx
+  s_e38c302ed9b80c::t_01ce93fac129ed 1-109
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/OutfitsTable.spec.tsx
+  s_e38c302ed9b80c::t_fc193b471b0eb6 1-95
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/PageHeader.spec.tsx
+  s_e38c302ed9b80c::t_cadc160fef4afa 1-40
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_e38c302ed9b80c::t_e6613bd9389fbc 1-20
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/ProductCard.spec.tsx
+  s_e38c302ed9b80c::t_faf40ef13bb15a 1-75
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/ProductGrid.spec.tsx
+  s_e38c302ed9b80c::t_66271ef02b6cc3 1-49
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/ProductPicker.spec.tsx
+  s_e38c302ed9b80c::t_56c1aa5ca0099e 1-152
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/RecentOrdersPanel.spec.tsx
+  s_e38c302ed9b80c::t_07c7c0f07443ce 1-48
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/UserMenuTrigger.spec.tsx
+  s_e38c302ed9b80c::t_51229923bd1789 1-118
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/ui/format.spec.ts
+  s_e38c302ed9b80c::t_8135fa119928b2 1-85
+2-use_openspec/3-verify_archive/1-before/tests/setupFaker.ts
+  s_e38c302ed9b80c::t_b9ad960712c741 1-5
+2-use_openspec/3-verify_archive/1-before/tests/setupFrontendTests.ts
+  s_e38c302ed9b80c::t_3694e6b8a0c57d 1-8
+2-use_openspec/3-verify_archive/1-before/tests/setupTests.ts
+  s_e38c302ed9b80c::t_d9aaa22747d365 1-5
+2-use_openspec/3-verify_archive/1-before/tests/shared/Mock.ts
+  s_e38c302ed9b80c::t_7d91d64f436a6d 1-154
+2-use_openspec/3-verify_archive/1-before/tests/shared/domain/MoneyMother.ts
+  s_e38c302ed9b80c::t_65e30f1393f304 1-19
+2-use_openspec/3-verify_archive/1-before/tsconfig.json
+  s_e38c302ed9b80c::t_83d9627d292d63 1-33
+2-use_openspec/3-verify_archive/1-before/vitest.config.ts
+  s_e38c302ed9b80c::t_526d2c6de3377f 1-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ead1e77ff3618bdce1c1f328d4d43aadd0986cd0",
+  "prompts": {},
+  "sessions": {
+    "s_e38c302ed9b80c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "32b4322f-d29c-43e7-b7f2-2dcb551ce2b3",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
