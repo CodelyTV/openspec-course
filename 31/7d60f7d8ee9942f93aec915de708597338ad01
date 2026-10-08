@@ -1,0 +1,429 @@
+3-work_on_a_project/2-implementation/1-before/retail-api/.env.example
+  s_e807d32fb8a970::t_7d88adf75aae6f 1-4
+3-work_on_a_project/2-implementation/1-before/retail-api/.gitignore
+  s_e807d32fb8a970::t_f6bccf0f3fbc74 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/AGENTS.md
+  s_e807d32fb8a970::t_794a8c4b209637 1-44
+3-work_on_a_project/2-implementation/1-before/retail-api/CLAUDE.md
+  s_e807d32fb8a970::t_0cff77f65a3399 1
+3-work_on_a_project/2-implementation/1-before/retail-api/Makefile
+  s_e807d32fb8a970::t_a71c83060bdf92 1-5
+3-work_on_a_project/2-implementation/1-before/retail-api/compose.yml
+  s_e807d32fb8a970::t_e866fd6f7afb85 1-21
+3-work_on_a_project/2-implementation/1-before/retail-api/database/schema.sql
+  s_e807d32fb8a970::t_8eecdd0d255491 1-92
+3-work_on_a_project/2-implementation/1-before/retail-api/database/seed.sql
+  s_e807d32fb8a970::t_dd30767e0146f6 1-188
+3-work_on_a_project/2-implementation/1-before/retail-api/docs/architecture/hexagonal-architecture.md
+  s_e807d32fb8a970::t_bc104ba8064438 1-114
+3-work_on_a_project/2-implementation/1-before/retail-api/docs/architecture/project-layout.md
+  s_e807d32fb8a970::t_00c679a1bd4222 1-8
+3-work_on_a_project/2-implementation/1-before/retail-api/docs/documentation-guidelines.md
+  s_e807d32fb8a970::t_cd0681a48a8cb2 1-79
+3-work_on_a_project/2-implementation/1-before/retail-api/docs/http/contract.md
+  s_e807d32fb8a970::t_d8c61a449d12e9 1-46
+3-work_on_a_project/2-implementation/1-before/retail-api/docs/sql-database/data-model.md
+  s_e807d32fb8a970::t_6518d6fa7a2d19 1-19
+3-work_on_a_project/2-implementation/1-before/retail-api/docs/testing/testing-strategy.md
+  s_e807d32fb8a970::t_d6e17579541e03 1-88
+3-work_on_a_project/2-implementation/1-before/retail-api/eslint.config.mjs
+  s_e807d32fb8a970::t_def106ff584636 1-93
+3-work_on_a_project/2-implementation/1-before/retail-api/next.config.ts
+  s_e807d32fb8a970::t_be61b192032edb 1-13
+3-work_on_a_project/2-implementation/1-before/retail-api/package-lock.json
+  s_e807d32fb8a970::t_cf3bb269e755f3 1-8663
+3-work_on_a_project/2-implementation/1-before/retail-api/package.json
+  s_e807d32fb8a970::t_7d25d44bafe62c 1-43
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/categories/route.ts
+  s_e807d32fb8a970::t_424b0972e338d1 1-8
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/collections/route.ts
+  s_e807d32fb8a970::t_e04fad0de12859 1-8
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/inventory/low-stock/route.ts
+  s_e807d32fb8a970::t_ad25590f6b6a7a 1-8
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/inventory/route.ts
+  s_e807d32fb8a970::t_a0ddc37fbc7fa0 1-8
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/me/checkout/confirmation/route.ts
+  s_e807d32fb8a970::t_3f1d6163debdc6 1-8
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/me/checkout/item-count/route.ts
+  s_e807d32fb8a970::t_7a7a445cdc8be7 1-8
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/me/checkout/lines/[id]/route.ts
+  s_e807d32fb8a970::t_6f95cf476b89e3 1-14
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/me/checkout/lines/route.ts
+  s_e807d32fb8a970::t_7d5fb4c96e2419 1-16
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/me/checkout/route.ts
+  s_e807d32fb8a970::t_c69ebf948de6d3 1-8
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/me/orders/[id]/route.ts
+  s_e807d32fb8a970::t_9147bfde29022a 1-20
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/me/orders/route.ts
+  s_e807d32fb8a970::t_0c836450d194f6 1-8
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/me/route.ts
+  s_e807d32fb8a970::t_ff6ae4e4ed7034 1-8
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/orders/[id]/route.ts
+  s_e807d32fb8a970::t_a2c39e4d25116f 1-20
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/orders/recent/route.ts
+  s_e807d32fb8a970::t_e5df0cf3314c28 1-21
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/orders/route.ts
+  s_e807d32fb8a970::t_b3789526dfa946 1-8
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/orders/summary/route.ts
+  s_e807d32fb8a970::t_f95a95ceff150c 1-8
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/outfits/[id]/route.ts
+  s_e807d32fb8a970::t_f8b30e1ed9662d 1-50
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/outfits/route.ts
+  s_e807d32fb8a970::t_d057198dc6efd6 1-24
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/products/[id]/route.ts
+  s_e807d32fb8a970::t_ea8f4084f9cc0d 1-20
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/products/[id]/suggestions/route.ts
+  s_e807d32fb8a970::t_acc0219eee34c7 1-16
+3-work_on_a_project/2-implementation/1-before/retail-api/src/app/products/route.ts
+  s_e807d32fb8a970::t_0f14180a5b5838 1-15
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/application/add/CartVariantAdder.ts
+  s_e807d32fb8a970::t_76b663dd91e3eb 1-53
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/application/confirm/CheckoutConfirmer.ts
+  s_e807d32fb8a970::t_a5c0d35745a2b8 1-76
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/application/count/CartItemCounter.ts
+  s_e807d32fb8a970::t_447c6b45be6c44 1-18
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/application/remove/CartVariantRemover.ts
+  s_e807d32fb8a970::t_0b7f52dde2b4c2 1-25
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/application/view/CheckoutViewGetter.ts
+  s_e807d32fb8a970::t_fba627c667cec7 1-81
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/CatalogItem.ts
+  s_e807d32fb8a970::t_7315f591212494 1-56
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/CatalogItems.ts
+  s_e807d32fb8a970::t_6ab4f8d105e803 1-18
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/Checkout.ts
+  s_e807d32fb8a970::t_8e7d8e6808cea1 1-123
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/CheckoutCatalog.ts
+  s_e807d32fb8a970::t_240981f7bc8e12 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/CheckoutId.ts
+  s_e807d32fb8a970::t_10521cf2578c22 1-3
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/CheckoutLine.ts
+  s_e807d32fb8a970::t_ab2c85663a17bd 1-51
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/CheckoutRepository.ts
+  s_e807d32fb8a970::t_235ed037ff5d35 1-11
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/OrderPlacement.ts
+  s_e807d32fb8a970::t_8718fe4e861842 1-22
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/StockReserver.ts
+  s_e807d32fb8a970::t_3e613313f08ef1 1-5
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/errors/CatalogItemNotFoundError.ts
+  s_e807d32fb8a970::t_4ba2d44cb28a8b 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/errors/CheckoutConcurrentModificationError.ts
+  s_e807d32fb8a970::t_1810018379c091 1-11
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/errors/EmptyCheckoutError.ts
+  s_e807d32fb8a970::t_a2d6b4a858190c 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/errors/InvalidCheckoutLineQuantityError.ts
+  s_e807d32fb8a970::t_6446482c6c53ed 1-9
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/domain/errors/VariantOutOfStockError.ts
+  s_e807d32fb8a970::t_967f17ce08151c 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/infrastructure/OrdersOrderPlacement.ts
+  s_e807d32fb8a970::t_2ff2e82038841c 1-41
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/infrastructure/PostgresCheckoutRepository.ts
+  s_e807d32fb8a970::t_71c9e43aae4959 1-147
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/infrastructure/ProductsCheckoutCatalog.ts
+  s_e807d32fb8a970::t_32bcf802db5c3c 1-34
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/checkout/infrastructure/ProductsStockReserver.ts
+  s_e807d32fb8a970::t_a142ad1f976d6a 1-29
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/application/OrderResponse.ts
+  s_e807d32fb8a970::t_86b170b8bfd150 1-34
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/application/find-mine/UserOrderFinder.ts
+  s_e807d32fb8a970::t_9f50dcbd307507 1-21
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/application/find/OrderFinder.ts
+  s_e807d32fb8a970::t_a751a625e51a68 1-77
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/application/list-mine/UserOrdersLister.ts
+  s_e807d32fb8a970::t_795265b27c21b5 1-36
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/application/list-recent/RecentOrdersLister.ts
+  s_e807d32fb8a970::t_2cc515d4631098 1-23
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/application/list/OrdersLister.ts
+  s_e807d32fb8a970::t_41e41576deaf7d 1-23
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/application/place/OrderPlacer.ts
+  s_e807d32fb8a970::t_ab1236dfa7b1b9 1-57
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/application/summarize/OrdersSummaryGetter.ts
+  s_e807d32fb8a970::t_5bd84ad326ae7e 1-40
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/domain/CurrencyRevenue.ts
+  s_e807d32fb8a970::t_f36480170a2547 1-6
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/domain/CustomerDirectory.ts
+  s_e807d32fb8a970::t_4dd27593b9af32 1-15
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/domain/Order.ts
+  s_e807d32fb8a970::t_9d99c1eb303859 1-92
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/domain/OrderId.ts
+  s_e807d32fb8a970::t_164ef22f927c7c 1-3
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/domain/OrderLine.ts
+  s_e807d32fb8a970::t_e564367ed1f528 1-59
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/domain/OrderRepository.ts
+  s_e807d32fb8a970::t_f294ea9d895380 1-19
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/domain/errors/EmptyOrderError.ts
+  s_e807d32fb8a970::t_82b7e5e6e119be 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/domain/errors/InvalidOrderLineQuantityError.ts
+  s_e807d32fb8a970::t_aec394acd32661 1-9
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/domain/errors/OrderNotFoundError.ts
+  s_e807d32fb8a970::t_115a6a64190b40 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/infrastructure/PostgresOrderRepository.ts
+  s_e807d32fb8a970::t_b6b647b32817c5 1-189
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/orders/infrastructure/UsersCustomerDirectory.ts
+  s_e807d32fb8a970::t_59d4a231fd5242 1-20
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/OutfitSaveGuard.ts
+  s_e807d32fb8a970::t_23aa26f465d170 1-48
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/ProductResponse.ts
+  s_e807d32fb8a970::t_96c4f3a963187a 1-55
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/categories/CategoriesLister.ts
+  s_e807d32fb8a970::t_cec3ecfad63897 1-9
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/collections/CollectionsLister.ts
+  s_e807d32fb8a970::t_3b84e38edb5bc5 1-9
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/create-outfit/OutfitCreator.ts
+  s_e807d32fb8a970::t_f0d42975df91ac 1-31
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/decrease-stock/NotEnoughStockError.ts
+  s_e807d32fb8a970::t_ca5640161f2d88 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/decrease-stock/StockDecreaser.ts
+  s_e807d32fb8a970::t_0fcbd9859ce953 1-38
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/delete-outfit/OutfitDeleter.ts
+  s_e807d32fb8a970::t_84b2bd601a5b42 1-17
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/find-outfit/OutfitFinder.ts
+  s_e807d32fb8a970::t_e813ebdcdd2e3f 1-24
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/find-suggestions/ProductSuggestionsFinder.ts
+  s_e807d32fb8a970::t_4a6288630ff27f 1-86
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/find/ProductFinder.ts
+  s_e807d32fb8a970::t_2157acd8910967 1-20
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/inventory/InventoryLister.ts
+  s_e807d32fb8a970::t_fa09d15167b212 1-55
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/list-outfits/OutfitsLister.ts
+  s_e807d32fb8a970::t_20c9478f3ad988 1-49
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/low-stock/LowStockLister.ts
+  s_e807d32fb8a970::t_517eecc325b5a0 1-52
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/search-variants/VariantsSearcher.ts
+  s_e807d32fb8a970::t_b8ffbc6a12c044 1-48
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/search/ProductsSearcher.ts
+  s_e807d32fb8a970::t_6003b408226695 1-17
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/application/update-outfit/OutfitUpdater.ts
+  s_e807d32fb8a970::t_dd1541d30867db 1-40
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/Outfit.ts
+  s_e807d32fb8a970::t_f7eed7812cf623 1-75
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/OutfitId.ts
+  s_e807d32fb8a970::t_7f7f1446326e77 1-3
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/OutfitRepository.ts
+  s_e807d32fb8a970::t_881f83de4a6d4a 1-22
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/Product.ts
+  s_e807d32fb8a970::t_c1628ab5ecbbb9 1-128
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/ProductRepository.ts
+  s_e807d32fb8a970::t_fbc5257e513f01 1-37
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/ProductVariant.ts
+  s_e807d32fb8a970::t_19b5a510a60ac0 1-68
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/errors/InvalidOutfitNameError.ts
+  s_e807d32fb8a970::t_9713776ddbed82 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/errors/InvalidOutfitSizeError.ts
+  s_e807d32fb8a970::t_6642aa1e3c0058 1-9
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/errors/OutfitNameAlreadyExistsError.ts
+  s_e807d32fb8a970::t_0d185f39eee56f 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/errors/OutfitNotFoundError.ts
+  s_e807d32fb8a970::t_3478794e497f92 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/errors/OutfitProductNotFoundError.ts
+  s_e807d32fb8a970::t_98192a3dc8aa80 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/errors/ProductNotFoundError.ts
+  s_e807d32fb8a970::t_ae6f0826cb8d1c 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/errors/RepeatedOutfitProductError.ts
+  s_e807d32fb8a970::t_ba5cc2d7eed845 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/domain/errors/VariantNotFoundError.ts
+  s_e807d32fb8a970::t_fc87387188801c 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/infrastructure/PostgresOutfitRepository.ts
+  s_e807d32fb8a970::t_0f5aeb25dd9148 1-157
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/products/infrastructure/PostgresProductRepository.ts
+  s_e807d32fb8a970::t_88350e19a2ba31 1-199
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/shared/infrastructure/CryptoIdGenerator.ts
+  s_e807d32fb8a970::t_564ec7cf8aa38b 1-9
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/shared/infrastructure/PostgresConnection.ts
+  s_e807d32fb8a970::t_503586c70691cb 1-36
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/shared/infrastructure/PostgresRepository.ts
+  s_e807d32fb8a970::t_601ef19be19d16 1-15
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/shared/infrastructure/PostgresUnitOfWork.ts
+  s_e807d32fb8a970::t_16b0ce551ef6d5 1-13
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/shared/infrastructure/RetailContainer.ts
+  s_e807d32fb8a970::t_de8a44c6118d3d 1-256
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/shared/infrastructure/SystemClock.ts
+  s_e807d32fb8a970::t_cba4fc90f5868a 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/shared/infrastructure/http/httpErrorResponse.ts
+  s_e807d32fb8a970::t_957f90bffee1be 1-74
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/shared/infrastructure/http/requestBody.ts
+  s_e807d32fb8a970::t_8fcafe56d2f95c 1-42
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/shared/infrastructure/http/withErrorHandling.ts
+  s_e807d32fb8a970::t_325e2c13d0f80d 1-18
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/users/application/current/CurrentUserGetter.ts
+  s_e807d32fb8a970::t_19b991a73abc49 1-28
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/users/application/search-by-ids/UsersByIdsSearcher.ts
+  s_e807d32fb8a970::t_d4551379df7559 1-24
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/users/domain/User.ts
+  s_e807d32fb8a970::t_9d1ffaf4e86ed2 1-27
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/users/domain/UserRepository.ts
+  s_e807d32fb8a970::t_e033d7cb2163da 1-11
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/users/domain/errors/UserNotFoundError.ts
+  s_e807d32fb8a970::t_627832dbebaa75 1-8
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/users/infrastructure/FakeSessionCurrentUserProvider.ts
+  s_e807d32fb8a970::t_03b1a275af4b57 1-9
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/backend/users/infrastructure/PostgresUserRepository.ts
+  s_e807d32fb8a970::t_8d26820209aee1 1-46
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/Clock.ts
+  s_e807d32fb8a970::t_e6ab0531c65d21 1-3
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/CodelyError.ts
+  s_e807d32fb8a970::t_cd386f69ac4801 1-6
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/CurrentUserProvider.ts
+  s_e807d32fb8a970::t_06cb5bc4fac5c5 1-5
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/DeliveryMethod.ts
+  s_e807d32fb8a970::t_89b4e9e9368369 1-9
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/IdGenerator.ts
+  s_e807d32fb8a970::t_a2eccef6b4701c 1-3
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/Money.ts
+  s_e807d32fb8a970::t_edae3a103e2509 1-60
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/ProductId.ts
+  s_e807d32fb8a970::t_8b78dffb96256f 1-3
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/UnitOfWork.ts
+  s_e807d32fb8a970::t_00edce06358745 1-3
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/UserId.ts
+  s_e807d32fb8a970::t_ec37092608309c 1-3
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/VariantId.ts
+  s_e807d32fb8a970::t_09f030817ad91d 1-3
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/errors/CurrencyMismatchError.ts
+  s_e807d32fb8a970::t_bffa0d4c699971 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/errors/EmptyStringValueObjectError.ts
+  s_e807d32fb8a970::t_97a468d29f072f 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/errors/InvalidArgumentError.ts
+  s_e807d32fb8a970::t_eb76a3cd57ebad 1-3
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/errors/InvalidLiteralError.ts
+  s_e807d32fb8a970::t_0bbcee80b7d93c 1-9
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/errors/InvalidMoneyAmountError.ts
+  s_e807d32fb8a970::t_49bafc5b68fb53 1-7
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/parseLiteral.ts
+  s_e807d32fb8a970::t_46689e79008f3c 1-16
+3-work_on_a_project/2-implementation/1-before/retail-api/src/contexts/shared/domain/value-object/StringValueObject.ts
+  s_e807d32fb8a970::t_333d25aff88254 1-15
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/app/me/checkout/confirmation/route.spec.ts
+  s_e807d32fb8a970::t_e574dd22da809a 1-70
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/app/orders/[id]/route.spec.ts
+  s_e807d32fb8a970::t_0808d2c4fcfb37 1-49
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/app/orders/recent/route.spec.ts
+  s_e807d32fb8a970::t_dff4368261d833 1-48
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/app/outfits/route.spec.ts
+  s_e807d32fb8a970::t_0fcd9389a561a0 1-89
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/app/products/[id]/route.spec.ts
+  s_e807d32fb8a970::t_e079854d3d7f58 1-51
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/acceptance/CheckoutConfirmation.spec.ts
+  s_e807d32fb8a970::t_40276b914c1021 1-170
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/checkout/application/add/CartVariantAdder.spec.ts
+  s_e807d32fb8a970::t_6a3e82defb9866 1-121
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/checkout/application/confirm/CheckoutConfirmer.spec.ts
+  s_e807d32fb8a970::t_f6405ff0b5be5f 1-150
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/checkout/application/count/CartItemCounter.spec.ts
+  s_e807d32fb8a970::t_b3000c4ac2b1a3 1-53
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/checkout/application/remove/CartVariantRemover.spec.ts
+  s_e807d32fb8a970::t_f283b196fb67e4 1-80
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/checkout/application/view/CheckoutViewGetter.spec.ts
+  s_e807d32fb8a970::t_282890b66658c1 1-109
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/checkout/domain/CatalogItemMother.ts
+  s_e807d32fb8a970::t_4a51bc49d1f3c5 1-33
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/checkout/domain/CheckoutLineMother.ts
+  s_e807d32fb8a970::t_3af5affa9892ae 1-18
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/checkout/domain/CheckoutMother.ts
+  s_e807d32fb8a970::t_9a24d9b0e51332 1-30
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/checkout/infrastructure/PostgresCheckoutRepository.spec.ts
+  s_e807d32fb8a970::t_88874dbae080c1 1-109
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/orders/application/find-mine/UserOrderFinder.spec.ts
+  s_e807d32fb8a970::t_4fe921debecf0d 1-46
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/orders/application/find/OrderDetailResponseMother.ts
+  s_e807d32fb8a970::t_cca903448cf765 1-52
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/orders/application/find/OrderFinder.spec.ts
+  s_e807d32fb8a970::t_db1ffa3ddabdc8 1-106
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/orders/application/list-mine/UserOrdersLister.spec.ts
+  s_e807d32fb8a970::t_9c98ccceb15cb4 1-58
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/orders/application/list-recent/RecentOrdersLister.spec.ts
+  s_e807d32fb8a970::t_c5dcccb2968086 1-72
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/orders/application/list/OrdersLister.spec.ts
+  s_e807d32fb8a970::t_0681544e80d6a4 1-105
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/orders/application/place/OrderPlacer.spec.ts
+  s_e807d32fb8a970::t_9c96e18105ea68 1-104
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/orders/application/summarize/OrdersSummaryGetter.spec.ts
+  s_e807d32fb8a970::t_391a511d7e956b 1-61
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/orders/domain/OrderLineMother.ts
+  s_e807d32fb8a970::t_693146939aaa1f 1-24
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/orders/domain/OrderMother.ts
+  s_e807d32fb8a970::t_0b7699031d85b1 1-49
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/orders/infrastructure/PostgresOrderRepository.spec.ts
+  s_e807d32fb8a970::t_901670f838a0de 1-203
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/orders/infrastructure/UsersCustomerDirectory.spec.ts
+  s_e807d32fb8a970::t_4aeee30c5d2a1f 1-30
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/categories/CategoriesLister.spec.ts
+  s_e807d32fb8a970::t_0ca91a0c85b0b9 1-23
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/collections/CollectionsLister.spec.ts
+  s_e807d32fb8a970::t_21228d0b1f7019 1-29
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/create-outfit/OutfitCreator.spec.ts
+  s_e807d32fb8a970::t_a9d06e1e62a0a7 1-117
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/decrease-stock/StockDecreaser.spec.ts
+  s_e807d32fb8a970::t_2fff61712851ba 1-66
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/delete-outfit/OutfitDeleter.spec.ts
+  s_e807d32fb8a970::t_2894d903b0c641 1-31
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/find-outfit/OutfitFinder.spec.ts
+  s_e807d32fb8a970::t_f5a940e2fdde5e 1-37
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/find-suggestions/ProductSuggestionsFinder.spec.ts
+  s_e807d32fb8a970::t_b622e0331955a0 1-170
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/find/ProductFinder.spec.ts
+  s_e807d32fb8a970::t_7bec682b5450ee 1-127
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/inventory/InventoryLister.spec.ts
+  s_e807d32fb8a970::t_9dec4ceb8a9f29 1-151
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/list-outfits/OutfitsLister.spec.ts
+  s_e807d32fb8a970::t_b59c3e52c60fca 1-156
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/low-stock/LowStockLister.spec.ts
+  s_e807d32fb8a970::t_feb628e1068f20 1-129
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/search-variants/VariantsSearcher.spec.ts
+  s_e807d32fb8a970::t_a1d03f07af842c 1-61
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/search/ProductsSearcher.spec.ts
+  s_e807d32fb8a970::t_06ff91e66e69d1 1-42
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/application/update-outfit/OutfitUpdater.spec.ts
+  s_e807d32fb8a970::t_445cbf0cf37f7a 1-142
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/domain/OutfitMother.ts
+  s_e807d32fb8a970::t_b7ea0da635a1cf 1-51
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/domain/Product.spec.ts
+  s_e807d32fb8a970::t_a5032bd0401702 1-29
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/domain/ProductMother.ts
+  s_e807d32fb8a970::t_afe98b0b081897 1-38
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/domain/ProductVariantMother.ts
+  s_e807d32fb8a970::t_b2ae6e9edd42f4 1-25
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/infrastructure/PostgresOutfitRepository.spec.ts
+  s_e807d32fb8a970::t_84fa4a67394687 1-206
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/products/infrastructure/PostgresProductRepository.spec.ts
+  s_e807d32fb8a970::t_35b305248b2d20 1-303
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/shared/infrastructure/RetailEnvironmentArranger.ts
+  s_e807d32fb8a970::t_1015f3a804e215 1-78
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/shared/infrastructure/describeWithEnvironmentArranger.ts
+  s_e807d32fb8a970::t_d6df082e478d7f 1-21
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/users/application/current/CurrentUserGetter.spec.ts
+  s_e807d32fb8a970::t_74e420d09c80e7 1-32
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/users/application/search-by-ids/UsersByIdsSearcher.spec.ts
+  s_e807d32fb8a970::t_8735142b436a50 1-41
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/users/domain/UserMother.ts
+  s_e807d32fb8a970::t_120fa82e4fd810 1-23
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/backend/users/infrastructure/PostgresUserRepository.spec.ts
+  s_e807d32fb8a970::t_137199f32f3ae5 1-78
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/setupFaker.ts
+  s_e807d32fb8a970::t_608f8bd153278d 1-5
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/setupTests.ts
+  s_e807d32fb8a970::t_3d78accb60292e 1-5
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/shared/Mock.ts
+  s_e807d32fb8a970::t_31684df6199f81 1-154
+3-work_on_a_project/2-implementation/1-before/retail-api/tests/shared/domain/MoneyMother.ts
+  s_e807d32fb8a970::t_04a408d9582076 1-19
+3-work_on_a_project/2-implementation/1-before/retail-api/tsconfig.json
+  s_e807d32fb8a970::t_9fe3fae16d5384 1-33
+3-work_on_a_project/2-implementation/1-before/retail-api/vitest.config.ts
+  s_e807d32fb8a970::t_1b1a350519f3c0 1-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "317d60f7d8ee9942f93aec915de708597338ad01",
+  "prompts": {},
+  "sessions": {
+    "s_e807d32fb8a970": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ccac7f02-ce53-44df-904d-9a074c7d076b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
