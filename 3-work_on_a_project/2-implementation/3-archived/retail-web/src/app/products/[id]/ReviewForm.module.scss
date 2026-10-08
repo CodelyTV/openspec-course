@@ -1,0 +1,43 @@
+.form {
+	display: grid;
+	margin-top: 20px;
+	gap: 16px;
+	max-width: 560px;
+}
+
+.rating {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.legend {
+	margin-bottom: 6px;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.star {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.field {
+	display: grid;
+	gap: 6px;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.input {
+	padding: 10px 12px;
+	font: inherit;
+	font-weight: 400;
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-sm);
+}

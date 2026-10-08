@@ -1,0 +1,40 @@
+.list {
+	display: grid;
+	padding: 0;
+	gap: 16px;
+	list-style: none;
+}
+
+.review {
+	display: grid;
+	padding: 20px;
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+}
+
+.title {
+	margin-top: 8px;
+	font-size: 1.125rem;
+	font-weight: 700;
+}
+
+.body {
+	margin-top: 8px;
+	line-height: 1.6;
+	white-space: pre-line;
+}
+
+.meta {
+	margin: 8px 0 16px;
+	color: var(--codely-gray);
+	font-size: 0.875rem;
+}
+
+.empty {
+	padding: 24px;
+	color: var(--codely-gray);
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+}

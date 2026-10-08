@@ -1,0 +1,56 @@
+.section {
+	margin-top: 32px;
+	padding: 24px;
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+}
+
+.heading {
+	margin: 8px 0 16px;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.summary {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.count,
+.empty,
+.meta {
+	color: var(--codely-gray);
+}
+
+.list {
+	display: grid;
+	margin-top: 24px;
+	padding: 0;
+	gap: 16px;
+	list-style: none;
+}
+
+.review {
+	padding-top: 16px;
+	border-top: 1px solid var(--border);
+}
+
+.title {
+	margin-top: 8px;
+	font-size: 1.125rem;
+	font-weight: 700;
+}
+
+.body {
+	margin-top: 8px;
+	line-height: 1.6;
+	white-space: pre-line;
+}
+
+.meta {
+	margin-top: 8px;
+	font-size: 0.875rem;
+}

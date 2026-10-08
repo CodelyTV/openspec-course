@@ -1,0 +1,8 @@
+default_permissions = "multi-repo"
+
+[permissions.multi-repo]
+extends = ":workspace"
+
+[permissions.multi-repo.workspace_roots]
+"../retail-api" = true
+"../retail-web" = true

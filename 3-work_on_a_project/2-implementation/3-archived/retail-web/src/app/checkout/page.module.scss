@@ -1,0 +1,95 @@
+.layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: 24px;
+	padding-bottom: 56px;
+}
+
+.main {
+	display: grid;
+	gap: 24px;
+}
+
+.card {
+	padding: 24px;
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+}
+
+.cardTitle {
+	margin-top: 8px;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.lineName {
+	font-weight: 700;
+}
+
+.lineMeta {
+	margin-top: 4px;
+	color: var(--codely-gray);
+	font-size: 0.875rem;
+}
+
+.delivery {
+	display: flex;
+	margin-top: 20px;
+	align-items: center;
+	gap: 12px;
+	padding: 16px;
+	border: 2px solid var(--codely-blue);
+	border-radius: var(--radius-sm);
+	background: var(--surface-strong);
+}
+
+.deliveryDot {
+	width: 12px;
+	height: 12px;
+	background: var(--codely-green);
+	border-radius: 999px;
+}
+
+.summary {
+	align-self: start;
+	padding: 24px;
+	color: var(--codely-white);
+	background: var(--codely-blue);
+	border-radius: var(--radius-md);
+}
+
+.summaryEyebrow {
+	color: var(--codely-gray-light);
+	font-family: var(--font-sans);
+	font-size: 0.74rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.summaryTotal {
+	margin-top: 16px;
+	font-size: 2.25rem;
+	font-weight: 700;
+}
+
+.summaryDetail {
+	margin-top: 12px;
+	color: var(--codely-gray-light);
+	font-size: 0.875rem;
+	line-height: 1.6;
+}
+
+.summaryActions {
+	display: grid;
+	margin-top: 32px;
+	gap: 12px;
+}
+
+@media (min-width: 1024px) {
+	.layout {
+		grid-template-columns: 1.25fr 0.75fr;
+		align-items: start;
+	}
+}
