@@ -1,0 +1,831 @@
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.agents/skills/.openspec-target
+  s_3808b338bb0c9d::t_cd085ea71a1cd4 1
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.agents/skills/codely-openspec_spec-create_from_code/SKILL.md
+  s_3808b338bb0c9d::t_3c28f0466167eb 1-108
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.agents/skills/codely-openspec_spec-create_from_code/resources/evidence-guidelines.md
+  s_3808b338bb0c9d::t_e9bd15d55e2aad 1-69
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.agents/skills/codely-openspec_spec-create_from_code/resources/spec-format.md
+  s_3808b338bb0c9d::t_b2d1b79bea9cd4 1-59
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.agents/skills/openspec-apply-change/SKILL.md
+  s_3808b338bb0c9d::t_ebadc62ea0b048 1-206
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.agents/skills/openspec-archive-change/SKILL.md
+  s_3808b338bb0c9d::t_33c615254d5fe2 1-221
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.agents/skills/openspec-explore/SKILL.md
+  s_3808b338bb0c9d::t_b892fcd841eb4d 1-354
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.agents/skills/openspec-propose/SKILL.md
+  s_3808b338bb0c9d::t_d740f3a28dd5f0 1-174
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.agents/skills/openspec-sync-specs/SKILL.md
+  s_3808b338bb0c9d::t_77175528d1329a 1-290
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.agents/skills/openspec-update-change/SKILL.md
+  s_3808b338bb0c9d::t_3e3b7b0c98adbc 1-109
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.agents/skills/openspec-verify-change/SKILL.md
+  s_3808b338bb0c9d::t_344804ae7a9fda 1-220
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.claude/skills/codely-openspec_spec-create_from_code
+  s_3808b338bb0c9d::t_fb7aa75fdf29ae 1
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.claude/skills/openspec-apply-change/SKILL.md
+  s_3808b338bb0c9d::t_985a198661ae4c 1-206
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.claude/skills/openspec-archive-change/SKILL.md
+  s_3808b338bb0c9d::t_5838298016e8a6 1-221
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.claude/skills/openspec-explore/SKILL.md
+  s_3808b338bb0c9d::t_95b841d5615b74 1-354
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.claude/skills/openspec-propose/SKILL.md
+  s_3808b338bb0c9d::t_d8be2603a1ba59 1-174
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.claude/skills/openspec-sync-specs/SKILL.md
+  s_3808b338bb0c9d::t_1f05780433d4e7 1-290
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.claude/skills/openspec-update-change/SKILL.md
+  s_3808b338bb0c9d::t_2e6d201426b9bf 1-109
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.claude/skills/openspec-verify-change/SKILL.md
+  s_3808b338bb0c9d::t_fbfeb6a2d2f641 1-220
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.github/skills/openspec-apply-change/SKILL.md
+  s_3808b338bb0c9d::t_5dff3bf3b88980 1-206
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.github/skills/openspec-archive-change/SKILL.md
+  s_3808b338bb0c9d::t_e0ec5543b2e0a6 1-221
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.github/skills/openspec-explore/SKILL.md
+  s_3808b338bb0c9d::t_c100fe5dfa8c85 1-354
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.github/skills/openspec-propose/SKILL.md
+  s_3808b338bb0c9d::t_5143a36e8ef9f2 1-174
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.github/skills/openspec-sync-specs/SKILL.md
+  s_3808b338bb0c9d::t_9a1bf849b59a3d 1-290
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.github/skills/openspec-update-change/SKILL.md
+  s_3808b338bb0c9d::t_5a9720980c86da 1-109
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.github/skills/openspec-verify-change/SKILL.md
+  s_3808b338bb0c9d::t_659f2c344f8004 1-220
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.gitignore
+  s_3808b338bb0c9d::t_cf39778eebd207 1-6
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.opencode/skills/openspec-apply-change/SKILL.md
+  s_3808b338bb0c9d::t_e20bdc205d29c3 1-206
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.opencode/skills/openspec-archive-change/SKILL.md
+  s_3808b338bb0c9d::t_fc0c383de09456 1-221
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.opencode/skills/openspec-explore/SKILL.md
+  s_3808b338bb0c9d::t_cc8bfe9ce753b7 1-354
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.opencode/skills/openspec-propose/SKILL.md
+  s_3808b338bb0c9d::t_44274ae6a2b4fa 1-174
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.opencode/skills/openspec-sync-specs/SKILL.md
+  s_3808b338bb0c9d::t_c85c730c3ad5e5 1-290
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.opencode/skills/openspec-update-change/SKILL.md
+  s_3808b338bb0c9d::t_f1405060ffa349 1-109
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/.opencode/skills/openspec-verify-change/SKILL.md
+  s_3808b338bb0c9d::t_4de0abf9d75cd8 1-220
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/AGENTS.md
+  s_3808b338bb0c9d::t_7354da9ec7ea45 1-42
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/CLAUDE.md
+  s_3808b338bb0c9d::t_7852592240c593 1
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/Makefile
+  s_3808b338bb0c9d::t_445b77d6634b0e 1-5
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/compose.yml
+  s_3808b338bb0c9d::t_751309e7874941 1-21
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/database/schema.sql
+  s_3808b338bb0c9d::t_107f64e62604ff 1-92
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/database/seed.sql
+  s_3808b338bb0c9d::t_7a49a5d807f730 1-188
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/docs/architecture/hexagonal-architecture.md
+  s_3808b338bb0c9d::t_8763c2a1f5bec9 1-111
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/docs/architecture/project-layout.md
+  s_3808b338bb0c9d::t_086c026710068b 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/docs/architecture/screens.md
+  s_3808b338bb0c9d::t_dcf84ff5f967af 1-14
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/docs/documentation-guidelines.md
+  s_3808b338bb0c9d::t_90ac32fa35a911 1-79
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/docs/sql-database/data-model.md
+  s_3808b338bb0c9d::t_db82df95e1c653 1-19
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/docs/testing/testing-strategy.md
+  s_3808b338bb0c9d::t_15bf183f9b80cb 1-100
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/eslint.config.mjs
+  s_3808b338bb0c9d::t_b6b476f8079331 1-132
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/global.d.ts
+  s_3808b338bb0c9d::t_8786c35f4a347b 1-39
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/next.config.ts
+  s_3808b338bb0c9d::t_63b9711a22cd32 1-24
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/openspec/changes/archive/2026-10-08-add-outfit-suggestions/.openspec.yaml
+  s_3808b338bb0c9d::t_ceacdff2ab9fec 1-2
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/openspec/changes/archive/2026-10-08-add-outfit-suggestions/design.md
+  s_3808b338bb0c9d::t_c733a760fab79d 1-149
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/openspec/changes/archive/2026-10-08-add-outfit-suggestions/proposal.md
+  s_3808b338bb0c9d::t_6db1459c18d2e9 1-33
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/openspec/changes/archive/2026-10-08-add-outfit-suggestions/specs/outfit-management/spec.md
+  s_3808b338bb0c9d::t_51a7873a9c2a24 1-150
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/openspec/changes/archive/2026-10-08-add-outfit-suggestions/specs/product-suggestions/spec.md
+  s_3808b338bb0c9d::t_0d99dce2130d51 1-47
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/openspec/changes/archive/2026-10-08-add-outfit-suggestions/specs/stock-monitoring/spec.md
+  s_3808b338bb0c9d::t_5406929ce6f309 1-44
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/openspec/changes/archive/2026-10-08-add-outfit-suggestions/tasks.md
+  s_3808b338bb0c9d::t_de5bde0e52421f 1-51
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/openspec/config.yaml
+  s_3808b338bb0c9d::t_02b6635d8cabef 1-30
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/openspec/specs/outfit-management/spec.md
+  s_3808b338bb0c9d::t_4adc392dc0bf75 1-150
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/openspec/specs/product-detail/spec.md
+  s_3808b338bb0c9d::t_e47e8ebab1954a 1-130
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/openspec/specs/product-suggestions/spec.md
+  s_3808b338bb0c9d::t_7ebe5558e38ea4 1-47
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/openspec/specs/stock-monitoring/spec.md
+  s_3808b338bb0c9d::t_17fa2834d25cd8 1-44
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/package-lock.json
+  s_3808b338bb0c9d::t_666c9446e9c219 1-11163
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/package.json
+  s_3808b338bb0c9d::t_7a8eb751255daf 1-52
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/public/products/CREDITS.md
+  s_3808b338bb0c9d::t_21029ce272c041 1-21
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/skills-lock.json
+  s_3808b338bb0c9d::t_2519020992cd5e 1-11
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/account/layout.module.scss
+  s_3808b338bb0c9d::t_5380dc4aab9533 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/account/layout.tsx
+  s_3808b338bb0c9d::t_81d4b5ec50145b 1-16
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/account/orders/[id]/page.tsx
+  s_3808b338bb0c9d::t_4be617afa56fe8 1-28
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/account/orders/page.tsx
+  s_3808b338bb0c9d::t_311251b77171bd 1-22
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/actions/ActionState.ts
+  s_3808b338bb0c9d::t_34c7eb8c441290 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/actions/actionStateFor.ts
+  s_3808b338bb0c9d::t_79935a64629c75 1-46
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/actions/checkout/addSelectedVariantToCart.ts
+  s_3808b338bb0c9d::t_9afc2b079b61c7 1-30
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/actions/checkout/confirmOrder.ts
+  s_3808b338bb0c9d::t_e9d82a0b3f046b 1-32
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/actions/checkout/removeCartLine.ts
+  s_3808b338bb0c9d::t_6c423e74df96b8 1-27
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/actions/checkout/requiredVariantId.ts
+  s_3808b338bb0c9d::t_01dac5e8428a8e 1-11
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/actions/outfits/createOutfit.ts
+  s_3808b338bb0c9d::t_f4742615fd09a4 1-27
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/actions/outfits/deleteOutfit.ts
+  s_3808b338bb0c9d::t_ca0e7707758325 1-26
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/actions/outfits/outfitFormFields.ts
+  s_3808b338bb0c9d::t_4f4eb1cccbbc32 1-33
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/actions/outfits/outfitMessages.ts
+  s_3808b338bb0c9d::t_5cda8934ebedf1 1-20
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/actions/outfits/updateOutfit.ts
+  s_3808b338bb0c9d::t_1ad71500dfc7d8 1-31
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/AdminNav.module.scss
+  s_3808b338bb0c9d::t_8a640056d33318 1-32
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/AdminNav.tsx
+  s_3808b338bb0c9d::t_adb943a3bbcadb 1-42
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/inventory/page.tsx
+  s_3808b338bb0c9d::t_b02999a13226c3 1-23
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/layout.module.scss
+  s_3808b338bb0c9d::t_9d48eaea333063 1-47
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/layout.tsx
+  s_3808b338bb0c9d::t_fd4824c5e3eb36 1-27
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/orders/[id]/page.tsx
+  s_3808b338bb0c9d::t_c5000696dcea7a 1-28
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/orders/page.tsx
+  s_3808b338bb0c9d::t_f4dc7b86313674 1-23
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/outfits/DeleteOutfitForm.tsx
+  s_3808b338bb0c9d::t_fe68da272c6a35 1-30
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/outfits/OutfitForm.module.scss
+  s_3808b338bb0c9d::t_c6112c16c08592 1-45
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/outfits/OutfitForm.tsx
+  s_3808b338bb0c9d::t_67b4d71b31dda8 1-127
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/outfits/[id]/page.tsx
+  s_3808b338bb0c9d::t_6a44aeddc5c038 1-50
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/outfits/new/page.tsx
+  s_3808b338bb0c9d::t_6bf86038a26330 1-31
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/outfits/page.module.scss
+  s_3808b338bb0c9d::t_4ea0705c961edf 1-21
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/outfits/page.tsx
+  s_3808b338bb0c9d::t_265c98bfc9028c 1-31
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/outfits/productOptions.ts
+  s_3808b338bb0c9d::t_e6353d14b6fa5e 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/page.module.scss
+  s_3808b338bb0c9d::t_da287161caffcd 1-12
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/admin/page.tsx
+  s_3808b338bb0c9d::t_e10c0391f4e04f 1-42
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/app.scss
+  s_3808b338bb0c9d::t_4c5d7e3a1e688b 1-61
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/checkout/CartSummary.module.scss
+  s_3808b338bb0c9d::t_133bf0c453d371 1-71
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/checkout/CartSummary.tsx
+  s_3808b338bb0c9d::t_bd739783c7bbe2 1-71
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/checkout/ConfirmOrderForm.module.scss
+  s_3808b338bb0c9d::t_164fc21f53b15d 1-4
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/checkout/ConfirmOrderForm.tsx
+  s_3808b338bb0c9d::t_5e9f5a514ea605 1-29
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/checkout/OrderConfirmation.module.scss
+  s_3808b338bb0c9d::t_9ba04b62b017c0 1-22
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/checkout/OrderConfirmation.tsx
+  s_3808b338bb0c9d::t_d87d36ac3c7595 1-25
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/checkout/RemoveCartLineForm.tsx
+  s_3808b338bb0c9d::t_2538e080779b13 1-38
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/checkout/page.module.scss
+  s_3808b338bb0c9d::t_205a9a81238bc8 1-95
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/checkout/page.tsx
+  s_3808b338bb0c9d::t_ac3afbb664ee3a 1-86
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/error.tsx
+  s_3808b338bb0c9d::t_a5c04931a0c750 1-28
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/global-error.tsx
+  s_3808b338bb0c9d::t_3c9015b3d60df4 1-36
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/icon.svg
+  s_3808b338bb0c9d::t_f992faab4a20cf 1-15
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/layout.module.scss
+  s_3808b338bb0c9d::t_c6cfa36b659d6f 1-89
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/layout.tsx
+  s_3808b338bb0c9d::t_60a87134c6d8a1 1-69
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/loading.tsx
+  s_3808b338bb0c9d::t_2b2c5154ce45b0 1-10
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/not-found.tsx
+  s_3808b338bb0c9d::t_ab93401195c0ec 1-18
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/page.module.scss
+  s_3808b338bb0c9d::t_7dfec7297139c8 1-18
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/page.tsx
+  s_3808b338bb0c9d::t_4468f19099290e 1-59
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/products/[id]/AddToCartForm.module.scss
+  s_3808b338bb0c9d::t_449825c297050f 1-4
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/products/[id]/AddToCartForm.tsx
+  s_3808b338bb0c9d::t_c1823e371061d7 1-36
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/products/[id]/ProductPurchasePanel.module.scss
+  s_3808b338bb0c9d::t_8a839fa2bcbeb7 1-115
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/products/[id]/ProductPurchasePanel.tsx
+  s_3808b338bb0c9d::t_16213a3218de9e 1-208
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/products/[id]/page.module.scss
+  s_3808b338bb0c9d::t_02953d7d9d9e58 1-59
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/products/[id]/page.tsx
+  s_3808b338bb0c9d::t_6ddf45852541f7 1-92
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/app/status.module.scss
+  s_3808b338bb0c9d::t_7998ab111684df 1-28
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/application/add/CartVariantAdder.ts
+  s_3808b338bb0c9d::t_1fe258bf7b856a 1-53
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/application/confirm/CheckoutConfirmer.ts
+  s_3808b338bb0c9d::t_1c88798a571372 1-76
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/application/count/CartItemCounter.ts
+  s_3808b338bb0c9d::t_baa99f32b44f8e 1-18
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/application/remove/CartVariantRemover.ts
+  s_3808b338bb0c9d::t_8b9ab7b9de4658 1-25
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/application/view/CheckoutViewGetter.ts
+  s_3808b338bb0c9d::t_2960c834fa018f 1-81
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/CatalogItem.ts
+  s_3808b338bb0c9d::t_65f6dc5703d2a7 1-56
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/CatalogItems.ts
+  s_3808b338bb0c9d::t_5a29f0b361b6ab 1-18
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/Checkout.ts
+  s_3808b338bb0c9d::t_6dc2c4f2e1817b 1-123
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/CheckoutCatalog.ts
+  s_3808b338bb0c9d::t_f83ee7d27902f3 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/CheckoutId.ts
+  s_3808b338bb0c9d::t_b986ed38a41480 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/CheckoutLine.ts
+  s_3808b338bb0c9d::t_9d844317de8b34 1-51
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/CheckoutRepository.ts
+  s_3808b338bb0c9d::t_9015af282753fb 1-11
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/OrderPlacement.ts
+  s_3808b338bb0c9d::t_c37e5c2248d6d6 1-22
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/StockReserver.ts
+  s_3808b338bb0c9d::t_7a509432029f01 1-5
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/errors/CatalogItemNotFoundError.ts
+  s_3808b338bb0c9d::t_7c6e91c0430608 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/errors/CheckoutConcurrentModificationError.ts
+  s_3808b338bb0c9d::t_a10060037830e4 1-11
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/errors/EmptyCheckoutError.ts
+  s_3808b338bb0c9d::t_501c85a78ec03c 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/errors/InvalidCheckoutLineQuantityError.ts
+  s_3808b338bb0c9d::t_caf41cf9e3c9a0 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/domain/errors/VariantOutOfStockError.ts
+  s_3808b338bb0c9d::t_8f3d1ad76bc67d 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/infrastructure/OrdersOrderPlacement.ts
+  s_3808b338bb0c9d::t_56e7864c806300 1-41
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/infrastructure/PostgresCheckoutRepository.ts
+  s_3808b338bb0c9d::t_3ff77a26274c1a 1-147
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/infrastructure/ProductsCheckoutCatalog.ts
+  s_3808b338bb0c9d::t_01d81f2c6d4393 1-34
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/checkout/infrastructure/ProductsStockReserver.ts
+  s_3808b338bb0c9d::t_97cfdce003ffd7 1-29
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/application/OrderResponse.ts
+  s_3808b338bb0c9d::t_a674a03efaffe8 1-34
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/application/find-mine/UserOrderFinder.ts
+  s_3808b338bb0c9d::t_4ab349a3bb78c6 1-21
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/application/find/OrderFinder.ts
+  s_3808b338bb0c9d::t_6b2587eb30a0e9 1-77
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/application/list-mine/UserOrdersLister.ts
+  s_3808b338bb0c9d::t_de5b9ba1138bc1 1-36
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/application/list-recent/RecentOrdersLister.ts
+  s_3808b338bb0c9d::t_d1be84e61e44e7 1-23
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/application/list/OrdersLister.ts
+  s_3808b338bb0c9d::t_e1aa089c645547 1-23
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/application/place/OrderPlacer.ts
+  s_3808b338bb0c9d::t_31e5de8e4a0932 1-57
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/application/summarize/OrdersSummaryGetter.ts
+  s_3808b338bb0c9d::t_f072aacd6118b1 1-40
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/domain/CurrencyRevenue.ts
+  s_3808b338bb0c9d::t_257822c29915c1 1-6
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/domain/CustomerDirectory.ts
+  s_3808b338bb0c9d::t_88f28eafc94a43 1-15
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/domain/Order.ts
+  s_3808b338bb0c9d::t_b30b8710a3411f 1-92
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/domain/OrderId.ts
+  s_3808b338bb0c9d::t_2bde19d8e4339a 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/domain/OrderLine.ts
+  s_3808b338bb0c9d::t_550164dc9b7656 1-59
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/domain/OrderRepository.ts
+  s_3808b338bb0c9d::t_4293216cb57ccc 1-19
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/domain/errors/EmptyOrderError.ts
+  s_3808b338bb0c9d::t_fd8dbbba8ce66f 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/domain/errors/InvalidOrderLineQuantityError.ts
+  s_3808b338bb0c9d::t_4f928035286b2e 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/infrastructure/PostgresOrderRepository.ts
+  s_3808b338bb0c9d::t_d97f29d242e52a 1-189
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/orders/infrastructure/UsersCustomerDirectory.ts
+  s_3808b338bb0c9d::t_6afc1ba950a264 1-20
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/OutfitSaveGuard.ts
+  s_3808b338bb0c9d::t_cb00ba3c2fb0d6 1-48
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/ProductResponse.ts
+  s_3808b338bb0c9d::t_c0416665fe596b 1-55
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/categories/CategoriesLister.ts
+  s_3808b338bb0c9d::t_5eff292d49b48b 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/collections/CollectionsLister.ts
+  s_3808b338bb0c9d::t_a58cde83888e8b 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/create-outfit/OutfitCreator.ts
+  s_3808b338bb0c9d::t_243ca58d301de7 1-31
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/decrease-stock/NotEnoughStockError.ts
+  s_3808b338bb0c9d::t_14e10c579efeeb 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/decrease-stock/StockDecreaser.ts
+  s_3808b338bb0c9d::t_fe5bc4418bad9a 1-38
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/delete-outfit/OutfitDeleter.ts
+  s_3808b338bb0c9d::t_de1eb6f98e414c 1-17
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/find-outfit/OutfitFinder.ts
+  s_3808b338bb0c9d::t_7f6e3ba45bcc39 1-24
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/find-suggestions/ProductSuggestionsFinder.ts
+  s_3808b338bb0c9d::t_d084175d5a1649 1-86
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/find/ProductFinder.ts
+  s_3808b338bb0c9d::t_582213f8d74456 1-20
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/inventory/InventoryLister.ts
+  s_3808b338bb0c9d::t_944030289f1453 1-55
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/list-outfits/OutfitsLister.ts
+  s_3808b338bb0c9d::t_0ba34ba33df0cf 1-49
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/low-stock/LowStockLister.ts
+  s_3808b338bb0c9d::t_c497cf3de8521c 1-52
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/search-variants/VariantsSearcher.ts
+  s_3808b338bb0c9d::t_9608aa34845817 1-48
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/search/ProductsSearcher.ts
+  s_3808b338bb0c9d::t_4de551e1b84e39 1-17
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/application/update-outfit/OutfitUpdater.ts
+  s_3808b338bb0c9d::t_7949440a2e4d71 1-40
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/Outfit.ts
+  s_3808b338bb0c9d::t_13dc4685badfac 1-75
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/OutfitId.ts
+  s_3808b338bb0c9d::t_9fa74e716049e4 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/OutfitRepository.ts
+  s_3808b338bb0c9d::t_90599aafb16d12 1-22
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/Product.ts
+  s_3808b338bb0c9d::t_aaa324e9ed38a1 1-128
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/ProductRepository.ts
+  s_3808b338bb0c9d::t_0a31fed8586998 1-37
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/ProductVariant.ts
+  s_3808b338bb0c9d::t_410a0afb789991 1-68
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/errors/InvalidOutfitNameError.ts
+  s_3808b338bb0c9d::t_b5f0dd382b7987 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/errors/InvalidOutfitSizeError.ts
+  s_3808b338bb0c9d::t_c95c07a144bf53 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/errors/OutfitNameAlreadyExistsError.ts
+  s_3808b338bb0c9d::t_d8079b4c380d20 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/errors/OutfitNotFoundError.ts
+  s_3808b338bb0c9d::t_f5f4971f5fecb5 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/errors/OutfitProductNotFoundError.ts
+  s_3808b338bb0c9d::t_82d797e0a9bd4a 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/errors/ProductNotFoundError.ts
+  s_3808b338bb0c9d::t_fba8b28ab4353f 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/errors/RepeatedOutfitProductError.ts
+  s_3808b338bb0c9d::t_4e6002ce8e2b34 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/domain/errors/VariantNotFoundError.ts
+  s_3808b338bb0c9d::t_be9083aa92bb2a 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/infrastructure/PostgresOutfitRepository.ts
+  s_3808b338bb0c9d::t_0436c5fb4086bb 1-157
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/products/infrastructure/PostgresProductRepository.ts
+  s_3808b338bb0c9d::t_388a96b0602963 1-199
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/shared/infrastructure/CryptoIdGenerator.ts
+  s_3808b338bb0c9d::t_79afae9c44a37f 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/shared/infrastructure/PostgresConnection.ts
+  s_3808b338bb0c9d::t_cf5c988d2e1486 1-36
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/shared/infrastructure/PostgresRepository.ts
+  s_3808b338bb0c9d::t_6db79926efaf31 1-15
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/shared/infrastructure/PostgresUnitOfWork.ts
+  s_3808b338bb0c9d::t_111e2055d72003 1-13
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/shared/infrastructure/RetailContainer.ts
+  s_3808b338bb0c9d::t_979bda918ed501 1-256
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/shared/infrastructure/SystemClock.ts
+  s_3808b338bb0c9d::t_c58f0d05d27926 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/users/application/current/CurrentUserGetter.ts
+  s_3808b338bb0c9d::t_3701b7841a0366 1-28
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/users/application/search-by-ids/UsersByIdsSearcher.ts
+  s_3808b338bb0c9d::t_a529c1da0c589f 1-24
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/users/domain/User.ts
+  s_3808b338bb0c9d::t_fea951feb0eda4 1-27
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/users/domain/UserRepository.ts
+  s_3808b338bb0c9d::t_da9f5770c77f7c 1-11
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/users/domain/errors/UserNotFoundError.ts
+  s_3808b338bb0c9d::t_ab552ea67bdd10 1-8
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/users/infrastructure/FakeSessionCurrentUserProvider.ts
+  s_3808b338bb0c9d::t_54de765161bee2 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/backend/users/infrastructure/PostgresUserRepository.ts
+  s_3808b338bb0c9d::t_9c585f85e940e4 1-46
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/atoms/Badge.module.scss
+  s_3808b338bb0c9d::t_9ca68189a18b6c 1-83
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/atoms/Badge.tsx
+  s_3808b338bb0c9d::t_309e423db78014 1-49
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/atoms/Button.module.scss
+  s_3808b338bb0c9d::t_a22461bc20809a 1-127
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/atoms/Button.tsx
+  s_3808b338bb0c9d::t_dc1774f52d7bb0 1-106
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/atoms/CodelyLink.tsx
+  s_3808b338bb0c9d::t_b8b709b8ddc75b 1-20
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/atoms/FormError.module.scss
+  s_3808b338bb0c9d::t_ae3205f302d7da 1-11
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/atoms/FormError.tsx
+  s_3808b338bb0c9d::t_b438d8682708bb 1-17
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/atoms/Heading.module.scss
+  s_3808b338bb0c9d::t_80e3a80463b4be 1-33
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/atoms/Heading.tsx
+  s_3808b338bb0c9d::t_8b48b84861017e 1-47
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/atoms/Icon.module.scss
+  s_3808b338bb0c9d::t_10a8013f922843 1-29
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/atoms/Icon.tsx
+  s_3808b338bb0c9d::t_b64da09e5a9d0b 1-38
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/atoms/SubmitButton.tsx
+  s_3808b338bb0c9d::t_deef742df8f21f 1-14
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/generic/_base.scss
+  s_3808b338bb0c9d::t_d86e16d2b83c9b 1-76
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/generic/_fonts.scss
+  s_3808b338bb0c9d::t_5517a9aab0a38f 1-39
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/generic/_reset.scss
+  s_3808b338bb0c9d::t_f42a791c3fe18f 1-82
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/icons/brand.svg
+  s_3808b338bb0c9d::t_57b62f94473a02 1-18
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/icons/cart.svg
+  s_3808b338bb0c9d::t_d0a825ef2057b3 1
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/icons/icons.tsx
+  s_3808b338bb0c9d::t_ebb86741d6d6a0 1-2
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/icons/load.svg
+  s_3808b338bb0c9d::t_e3c4754f34f94a 1-4
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/index.scss
+  s_3808b338bb0c9d::t_9a0fe051cf3b89 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/molecules/Table.module.scss
+  s_3808b338bb0c9d::t_3a5bbbc040f244 1-44
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/molecules/Table.tsx
+  s_3808b338bb0c9d::t_79ecc26a953a41 1-74
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/settings/_border.scss
+  s_3808b338bb0c9d::t_157d615ee4232f 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/settings/_colors.scss
+  s_3808b338bb0c9d::t_b8b6a11f640548 1-57
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/settings/_sizes.scss
+  s_3808b338bb0c9d::t_8e0b37a0bf23fe 1-5
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/settings/_spacing.scss
+  s_3808b338bb0c9d::t_e60f3a408e871d 1-27
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/settings/_typography.scss
+  s_3808b338bb0c9d::t_f80b4580392478 1-34
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/shared/classNames.ts
+  s_3808b338bb0c9d::t_08cbda984a53fe 1-25
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/tools/_colors.scss
+  s_3808b338bb0c9d::t_2292cc67c85419 1-117
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/design-system/tools/_typography.scss
+  s_3808b338bb0c9d::t_3825800b0673b3 1-70
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/AdminLink.module.scss
+  s_3808b338bb0c9d::t_4b29e1221716cd 1-24
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/AdminLink.tsx
+  s_3808b338bb0c9d::t_69a0cf75572d1f 1-24
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/AdminOrdersTable.tsx
+  s_3808b338bb0c9d::t_c86f53d913a626 1-62
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/CartLink.module.scss
+  s_3808b338bb0c9d::t_80ce434d445d84 1-32
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/CartLink.tsx
+  s_3808b338bb0c9d::t_2b8c1c824dd4f7 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/CartLinkView.tsx
+  s_3808b338bb0c9d::t_fd5b7e11fba583 1-27
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/CatalogSummary.module.scss
+  s_3808b338bb0c9d::t_fb4521c6752a71 1-19
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/CatalogSummary.tsx
+  s_3808b338bb0c9d::t_81d223f4df0b97 1-27
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/CategoryFilters.module.scss
+  s_3808b338bb0c9d::t_8f712307a9f5b1 1-30
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/CategoryFilters.tsx
+  s_3808b338bb0c9d::t_50408b9b34aff6 1-59
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/CustomerOrdersTable.tsx
+  s_3808b338bb0c9d::t_73285669e6e5c5 1-70
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/DashboardMetrics.module.scss
+  s_3808b338bb0c9d::t_b9d8b6d563c9f2 1-17
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/DashboardMetrics.tsx
+  s_3808b338bb0c9d::t_f7aa0be41e936a 1-57
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/DashboardPanel.module.scss
+  s_3808b338bb0c9d::t_d256db8778b39b 1-85
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/Footer.module.scss
+  s_3808b338bb0c9d::t_7e936fbf76ebae 1-55
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/Footer.tsx
+  s_3808b338bb0c9d::t_59117b72293525 1-32
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/InventoryTable.module.scss
+  s_3808b338bb0c9d::t_dd6ce9f2803d57 1-17
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/InventoryTable.tsx
+  s_3808b338bb0c9d::t_886b6798331a7f 1-55
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/LowStockPanel.tsx
+  s_3808b338bb0c9d::t_cecf71741ddd1c 1-70
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/MainNav.module.scss
+  s_3808b338bb0c9d::t_daf6d6382ba4ca 1-33
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/MainNav.tsx
+  s_3808b338bb0c9d::t_fafe09187b0ffd 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/MainNavLinks.tsx
+  s_3808b338bb0c9d::t_918cf948324fff 1-50
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/MetricCard.module.scss
+  s_3808b338bb0c9d::t_c5291c0577cb7c 1-44
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/MetricCard.tsx
+  s_3808b338bb0c9d::t_78b085fab84cea 1-32
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/OrderDetail.tsx
+  s_3808b338bb0c9d::t_a33310b01707b8 1-98
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/OutfitSuggestions.module.scss
+  s_3808b338bb0c9d::t_6d7ea46338dc6f 1-17
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/OutfitSuggestions.tsx
+  s_3808b338bb0c9d::t_a8985d078e2de4 1-34
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/OutfitsTable.module.scss
+  s_3808b338bb0c9d::t_5623b116323771 1-32
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/OutfitsTable.tsx
+  s_3808b338bb0c9d::t_a3b3bab4eb258f 1-69
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/PageHeader.module.scss
+  s_3808b338bb0c9d::t_f535e6f42556bd 1-48
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/PageHeader.tsx
+  s_3808b338bb0c9d::t_d8009aa427d479 1-54
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/ProductBadges.tsx
+  s_3808b338bb0c9d::t_c9f4e69831bdbf 1-31
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/ProductCard.module.scss
+  s_3808b338bb0c9d::t_4e0fdce2b23984 1-115
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/ProductCard.tsx
+  s_3808b338bb0c9d::t_0e7c82cf0d8a50 1-99
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/ProductGrid.module.scss
+  s_3808b338bb0c9d::t_8df656f44ac2cf 1-26
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/ProductGrid.tsx
+  s_3808b338bb0c9d::t_14e026cd083867 1-36
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/ProductInfo.module.scss
+  s_3808b338bb0c9d::t_36d45d3aea3814 1-59
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/ProductInfo.tsx
+  s_3808b338bb0c9d::t_89962aa02f6597 1-46
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/ProductPicker.module.scss
+  s_3808b338bb0c9d::t_dd93dd313e4c5f 1-122
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/ProductPicker.tsx
+  s_3808b338bb0c9d::t_683d26da024518 1-274
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/ProductThumbnail.module.scss
+  s_3808b338bb0c9d::t_d4c019e160c778 1-6
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/ProductThumbnail.tsx
+  s_3808b338bb0c9d::t_0cb9d653aed16a 1-30
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/ProductVisual.module.scss
+  s_3808b338bb0c9d::t_781aa916348c3c 1-59
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/ProductVisual.tsx
+  s_3808b338bb0c9d::t_0b7380162a6496 1-46
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/RecentOrdersPanel.tsx
+  s_3808b338bb0c9d::t_f0db0b3299004c 1-52
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/UserMenu.module.scss
+  s_3808b338bb0c9d::t_11d59509d7cfdf 1-64
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/UserMenu.tsx
+  s_3808b338bb0c9d::t_4d3dfe03b268e0 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/UserMenuTrigger.tsx
+  s_3808b338bb0c9d::t_20abe857a5f2bc 1-89
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/sections/orders.module.scss
+  s_3808b338bb0c9d::t_787322028459b2 1-55
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/ui/format.ts
+  s_3808b338bb0c9d::t_7cf9d73a19021c 1-82
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/frontend/retail/ui/productImage.ts
+  s_3808b338bb0c9d::t_b66e36ce784d8f 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/Clock.ts
+  s_3808b338bb0c9d::t_a12e157fd11b0a 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/CodelyError.ts
+  s_3808b338bb0c9d::t_603c9c8d7b56f6 1-6
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/CurrentUserProvider.ts
+  s_3808b338bb0c9d::t_6960dc5e0c2531 1-5
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/DeliveryMethod.ts
+  s_3808b338bb0c9d::t_68b4794883fd6e 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/IdGenerator.ts
+  s_3808b338bb0c9d::t_fd6af96c8e7bc7 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/Money.ts
+  s_3808b338bb0c9d::t_ba989418bb0aa8 1-60
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/ProductId.ts
+  s_3808b338bb0c9d::t_f35622be7adec8 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/UnitOfWork.ts
+  s_3808b338bb0c9d::t_802e31bc6eeb72 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/UserId.ts
+  s_3808b338bb0c9d::t_c46d315b75c4e8 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/VariantId.ts
+  s_3808b338bb0c9d::t_13074c7a0fb2ec 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/errors/CurrencyMismatchError.ts
+  s_3808b338bb0c9d::t_d2d214f8412798 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/errors/EmptyStringValueObjectError.ts
+  s_3808b338bb0c9d::t_f43fedb04d8fa4 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/errors/InvalidArgumentError.ts
+  s_3808b338bb0c9d::t_563b61b78335b0 1-3
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/errors/InvalidLiteralError.ts
+  s_3808b338bb0c9d::t_cb209734d644d8 1-9
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/errors/InvalidMoneyAmountError.ts
+  s_3808b338bb0c9d::t_70cd1c9156d872 1-7
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/parseLiteral.ts
+  s_3808b338bb0c9d::t_2b4fd6252473fc 1-16
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/src/contexts/shared/domain/value-object/StringValueObject.ts
+  s_3808b338bb0c9d::t_1e9b37db8f4674 1-15
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/app/admin/AdminNav.spec.tsx
+  s_3808b338bb0c9d::t_1bd9411f9e4331 1-64
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/app/admin/outfits/DeleteOutfitForm.spec.tsx
+  s_3808b338bb0c9d::t_c6b1241ac9a95a 1-36
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/app/admin/outfits/OutfitForm.spec.tsx
+  s_3808b338bb0c9d::t_74c1d70e76167b 1-172
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/app/checkout/CartSummary.spec.tsx
+  s_3808b338bb0c9d::t_4ae5b5cd896b87 1-56
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/app/checkout/ConfirmOrderForm.spec.tsx
+  s_3808b338bb0c9d::t_1e56d08f6ef764 1-61
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/app/checkout/OrderConfirmation.spec.tsx
+  s_3808b338bb0c9d::t_5291a4f6419b03 1-17
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/app/checkout/RemoveCartLineForm.spec.tsx
+  s_3808b338bb0c9d::t_7ee08815daefc7 1-74
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/app/products/[id]/AddToCartForm.spec.tsx
+  s_3808b338bb0c9d::t_c0a726a5b9e79e 1-65
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/app/products/[id]/ProductPurchasePanel.spec.tsx
+  s_3808b338bb0c9d::t_59ec5f4d132bea 1-195
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/acceptance/CheckoutConfirmation.spec.ts
+  s_3808b338bb0c9d::t_134294783cea3f 1-170
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/checkout/application/add/CartVariantAdder.spec.ts
+  s_3808b338bb0c9d::t_daeeb39ad416c0 1-121
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/checkout/application/confirm/CheckoutConfirmer.spec.ts
+  s_3808b338bb0c9d::t_38ebea855b3be1 1-150
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/checkout/application/count/CartItemCounter.spec.ts
+  s_3808b338bb0c9d::t_18d2023f0c99e3 1-53
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/checkout/application/remove/CartVariantRemover.spec.ts
+  s_3808b338bb0c9d::t_7ebe0721081da3 1-80
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/checkout/application/view/CheckoutViewGetter.spec.ts
+  s_3808b338bb0c9d::t_7f2c2fad4fd84e 1-109
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/checkout/domain/CatalogItemMother.ts
+  s_3808b338bb0c9d::t_498ebadcb47c4d 1-33
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/checkout/domain/CheckoutLineMother.ts
+  s_3808b338bb0c9d::t_65d63a2c55eb69 1-18
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/checkout/domain/CheckoutMother.ts
+  s_3808b338bb0c9d::t_699f879a3416f3 1-30
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/checkout/infrastructure/PostgresCheckoutRepository.spec.ts
+  s_3808b338bb0c9d::t_d754120919b703 1-109
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/orders/application/find-mine/UserOrderFinder.spec.ts
+  s_3808b338bb0c9d::t_9d053abde0abfc 1-46
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/orders/application/find/OrderFinder.spec.ts
+  s_3808b338bb0c9d::t_bd5f2fc697b4dd 1-106
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/orders/application/list-mine/UserOrdersLister.spec.ts
+  s_3808b338bb0c9d::t_8b2b71507b1c81 1-58
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/orders/application/list-recent/RecentOrdersLister.spec.ts
+  s_3808b338bb0c9d::t_e1bd1af74edfe9 1-72
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/orders/application/list/OrdersLister.spec.ts
+  s_3808b338bb0c9d::t_fe44c18b5a205a 1-105
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/orders/application/place/OrderPlacer.spec.ts
+  s_3808b338bb0c9d::t_c91452367963b6 1-104
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/orders/application/summarize/OrdersSummaryGetter.spec.ts
+  s_3808b338bb0c9d::t_13e993d5d4828e 1-61
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/orders/domain/OrderLineMother.ts
+  s_3808b338bb0c9d::t_a6d1ae83a58adb 1-24
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/orders/domain/OrderMother.ts
+  s_3808b338bb0c9d::t_84b09a3ae9c08b 1-49
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/orders/infrastructure/PostgresOrderRepository.spec.ts
+  s_3808b338bb0c9d::t_c246013ccf3f10 1-203
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/orders/infrastructure/UsersCustomerDirectory.spec.ts
+  s_3808b338bb0c9d::t_392d6a71bb7806 1-30
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/categories/CategoriesLister.spec.ts
+  s_3808b338bb0c9d::t_1a96fc678a84fe 1-23
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/collections/CollectionsLister.spec.ts
+  s_3808b338bb0c9d::t_a616ebaa194116 1-29
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/create-outfit/OutfitCreator.spec.ts
+  s_3808b338bb0c9d::t_25c0b8f16b7e1a 1-117
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/decrease-stock/StockDecreaser.spec.ts
+  s_3808b338bb0c9d::t_aa456094b2e11c 1-66
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/delete-outfit/OutfitDeleter.spec.ts
+  s_3808b338bb0c9d::t_dee946d8e2094a 1-31
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/find-outfit/OutfitFinder.spec.ts
+  s_3808b338bb0c9d::t_a71975ab13bb3c 1-37
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/find-suggestions/ProductSuggestionsFinder.spec.ts
+  s_3808b338bb0c9d::t_b86c396ad393d6 1-170
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/find/ProductFinder.spec.ts
+  s_3808b338bb0c9d::t_d175c506762953 1-127
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/inventory/InventoryLister.spec.ts
+  s_3808b338bb0c9d::t_b2008f44d3499d 1-151
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/list-outfits/OutfitsLister.spec.ts
+  s_3808b338bb0c9d::t_19f6f3061ef1d6 1-156
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/low-stock/LowStockLister.spec.ts
+  s_3808b338bb0c9d::t_70f3e96864e1ec 1-129
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/search-variants/VariantsSearcher.spec.ts
+  s_3808b338bb0c9d::t_745e9385a48e4c 1-61
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/search/ProductsSearcher.spec.ts
+  s_3808b338bb0c9d::t_7d1f29ff7dc8d8 1-42
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/application/update-outfit/OutfitUpdater.spec.ts
+  s_3808b338bb0c9d::t_34e6ac5381e563 1-142
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/domain/OutfitMother.ts
+  s_3808b338bb0c9d::t_f2807be10b910b 1-51
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/domain/Product.spec.ts
+  s_3808b338bb0c9d::t_afb60abc665cd8 1-29
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/domain/ProductMother.ts
+  s_3808b338bb0c9d::t_9f228e09373380 1-38
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/domain/ProductVariantMother.ts
+  s_3808b338bb0c9d::t_34c31f6068a909 1-25
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/infrastructure/PostgresOutfitRepository.spec.ts
+  s_3808b338bb0c9d::t_fda4ed45138838 1-206
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/products/infrastructure/PostgresProductRepository.spec.ts
+  s_3808b338bb0c9d::t_6726c783fc08d0 1-303
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/shared/infrastructure/RetailEnvironmentArranger.ts
+  s_3808b338bb0c9d::t_8746c0f6fabc17 1-78
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/shared/infrastructure/describeWithEnvironmentArranger.ts
+  s_3808b338bb0c9d::t_31784a26b675e9 1-21
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/users/application/current/CurrentUserGetter.spec.ts
+  s_3808b338bb0c9d::t_28dfd5c2701388 1-32
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/users/application/search-by-ids/UsersByIdsSearcher.spec.ts
+  s_3808b338bb0c9d::t_b68f39a7ceccf0 1-41
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/users/domain/UserMother.ts
+  s_3808b338bb0c9d::t_bc2a8891501db1 1-23
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/backend/users/infrastructure/PostgresUserRepository.spec.ts
+  s_3808b338bb0c9d::t_57828840c63dd9 1-78
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/design-system/atoms/Button.spec.tsx
+  s_3808b338bb0c9d::t_c4083999869ce9 1-38
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/design-system/atoms/FormError.spec.tsx
+  s_3808b338bb0c9d::t_062ff3ec140a59 1-20
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/design-system/atoms/SubmitButton.spec.tsx
+  s_3808b338bb0c9d::t_3a665498e1dfab 1-41
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/responses/CheckoutResponseMother.ts
+  s_3808b338bb0c9d::t_03357872e40eff 1-52
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/responses/InventoryResponseMother.ts
+  s_3808b338bb0c9d::t_e2153fcc802384 1-21
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/responses/LowStockReportResponseMother.ts
+  s_3808b338bb0c9d::t_a950de6040a89b 1-14
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/responses/LowStockResponseMother.ts
+  s_3808b338bb0c9d::t_5fe23261ec7334 1-20
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/responses/MyOrderResponseMother.ts
+  s_3808b338bb0c9d::t_805bd07d4d271d 1-22
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/responses/OrderDetailResponseMother.ts
+  s_3808b338bb0c9d::t_9a826bd92b8a08 1-52
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/responses/OrderResponseMother.ts
+  s_3808b338bb0c9d::t_dc95bd376e158e 1-22
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/responses/OrdersSummaryResponseMother.ts
+  s_3808b338bb0c9d::t_cec9db355d3321 1-26
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/responses/OutfitResponseMother.ts
+  s_3808b338bb0c9d::t_8aaea24fa03f9f 1-17
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/responses/OutfitSuggestionResponseMother.ts
+  s_3808b338bb0c9d::t_a6268d846e4ec1 1-20
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/responses/OutfitSummaryResponseMother.ts
+  s_3808b338bb0c9d::t_ff188e045be6fd 1-17
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/responses/ProductResponseMother.ts
+  s_3808b338bb0c9d::t_a750c96ea54d8d 1-13
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/AdminOrdersTable.spec.tsx
+  s_3808b338bb0c9d::t_d930257c72017b 1-75
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/CartLinkView.spec.tsx
+  s_3808b338bb0c9d::t_cd9beeaa7c924f 1-31
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/CatalogSummary.spec.tsx
+  s_3808b338bb0c9d::t_b738043c828029 1-45
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/CategoryFilters.spec.tsx
+  s_3808b338bb0c9d::t_ff970474103ff9 1-70
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/CustomerOrdersTable.spec.tsx
+  s_3808b338bb0c9d::t_bf054687f4e984 1-75
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/DashboardMetrics.spec.tsx
+  s_3808b338bb0c9d::t_8deebd7aa646a9 1-88
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/InventoryTable.spec.tsx
+  s_3808b338bb0c9d::t_2048ecc465d0b4 1-79
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/LowStockPanel.spec.tsx
+  s_3808b338bb0c9d::t_09b3f74c69ea34 1-84
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/MainNavLinks.spec.tsx
+  s_3808b338bb0c9d::t_636ec1e47ecd35 1-81
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/MetricCard.spec.tsx
+  s_3808b338bb0c9d::t_152607fc4313f9 1-21
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/OrderDetail.spec.tsx
+  s_3808b338bb0c9d::t_6f4cbcf6beedb5 1-101
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/OutfitSuggestions.spec.tsx
+  s_3808b338bb0c9d::t_e626898c4bdc45 1-109
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/OutfitsTable.spec.tsx
+  s_3808b338bb0c9d::t_d38a8ce5167856 1-95
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/PageHeader.spec.tsx
+  s_3808b338bb0c9d::t_e822d6cd3659db 1-40
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_3808b338bb0c9d::t_eee9cc78df70b8 1-22
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/ProductCard.spec.tsx
+  s_3808b338bb0c9d::t_4f72234dd5dc7f 1-75
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/ProductGrid.spec.tsx
+  s_3808b338bb0c9d::t_10a95dc2da9d48 1-49
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/ProductPicker.spec.tsx
+  s_3808b338bb0c9d::t_ead53c4aae303d 1-152
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/RecentOrdersPanel.spec.tsx
+  s_3808b338bb0c9d::t_c35b02eb7d206c 1-48
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/sections/UserMenuTrigger.spec.tsx
+  s_3808b338bb0c9d::t_73112359d4d033 1-118
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/frontend/retail/ui/format.spec.ts
+  s_3808b338bb0c9d::t_b8c813d68b8b2d 1-85
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/setupFaker.ts
+  s_3808b338bb0c9d::t_e577e8c5c94655 1-5
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/setupFrontendTests.ts
+  s_3808b338bb0c9d::t_0c15308f9407ea 1-8
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/setupTests.ts
+  s_3808b338bb0c9d::t_3acb3f0b292bf1 1-5
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/shared/Mock.ts
+  s_3808b338bb0c9d::t_84af831eac8007 1-154
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tests/shared/domain/MoneyMother.ts
+  s_3808b338bb0c9d::t_6915068feca799 1-19
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/tsconfig.json
+  s_3808b338bb0c9d::t_cb244a6996df4b 1-33
+4-spec_existing_code/1-spec_before_changing/2-specs_generated/vitest.config.ts
+  s_3808b338bb0c9d::t_a9749508569d26 1-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a7749021036e2ba49fd0b510092f7e8beccb75f5",
+  "prompts": {},
+  "sessions": {
+    "s_3808b338bb0c9d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8e43efcc-974b-485a-b6b0-3a72db71cb89",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
