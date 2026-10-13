@@ -1,0 +1,29 @@
+3-work_on_a_project/2-implementation/2-proposed/retail-specs/openspec/changes/add-product-reviews/.openspec.yaml
+  s_7097cc4d72a66b::t_c61d47cb95ee5f 2
+3-work_on_a_project/2-implementation/2-proposed/retail-specs/openspec/changes/add-product-reviews/design.md
+  s_7097cc4d72a66b::t_f3d86833ee8a7d 7-11,16-18,21-25,29,31,33-34,36,38,40-45,47,49,51-53,55-57,59,65,71,74,76,79-82,84,86-105,109-110,116-123,125-129,131-133,135,137-140,144-149,153-155
+3-work_on_a_project/2-implementation/2-proposed/retail-specs/openspec/changes/add-product-reviews/proposal.md
+  s_7097cc4d72a66b::t_26dae0c0520d23 5,9-14,19-20,23-24,28-30
+3-work_on_a_project/2-implementation/2-proposed/retail-specs/openspec/changes/add-product-reviews/specs/product-reviews/spec.md
+  s_7097cc4d72a66b::t_a5763280356a28 5,9-10,12-14,16-18,20-22,24-26,28-30,32-33,35-37,39-41,43-44,46-48,50-52,54-56,58-59,61-63,65-66,68-70,72-73,75-85,87-88,90-92,94-96,98-99,101-103,105-107,109-110,112-114,116-118,120-122
+3-work_on_a_project/2-implementation/2-proposed/retail-specs/openspec/changes/add-product-reviews/specs/review-moderation/spec.md
+  s_7097cc4d72a66b::t_6395058d89cd8d 5,9-10,12-14,16-18,20-26,29,31-33,36,38-40,43,45-47,49,51
+3-work_on_a_project/2-implementation/2-proposed/retail-specs/openspec/changes/add-product-reviews/tasks.md
+  s_7097cc4d72a66b::t_8de57a824a0fbc 3-48,52-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "11dd0f2190d7fb34a2ffbc31b6835c48af3b5046",
+  "prompts": {},
+  "sessions": {
+    "s_7097cc4d72a66b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6e02f6fc-8830-47dd-9f70-604d42389949",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
