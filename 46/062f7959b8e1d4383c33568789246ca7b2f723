@@ -1,0 +1,23 @@
+3-work_on_a_project/2-implementation/1-before/retail-specs/openspec/config.yaml
+  s_7097cc4d72a66b::t_386d99f0ee25f3 10-18,20-30
+3-work_on_a_project/2-implementation/2-proposed/retail-specs/openspec/config.yaml
+  s_7097cc4d72a66b::t_f1f3039eca882c 10-18,20-30
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/config.yaml
+  s_7097cc4d72a66b::t_7bb5e10553dc07 10-18,20-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "46062f7959b8e1d4383c33568789246ca7b2f723",
+  "prompts": {},
+  "sessions": {
+    "s_7097cc4d72a66b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6e02f6fc-8830-47dd-9f70-604d42389949",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
