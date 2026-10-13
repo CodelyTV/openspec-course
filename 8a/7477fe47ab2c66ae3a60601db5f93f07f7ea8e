@@ -1,0 +1,219 @@
+3-work_on_a_project/2-implementation/3-archived/retail-api/AGENTS.md
+  s_7097cc4d72a66b::t_761662a6c841c1 22
+3-work_on_a_project/2-implementation/3-archived/retail-api/database/schema.sql
+  s_7097cc4d72a66b::t_5e0ae1aa3d286e 98,104,107,109
+3-work_on_a_project/2-implementation/3-archived/retail-api/database/seed.sql
+  s_7097cc4d72a66b::t_8487ec097287d7 190,192-198
+3-work_on_a_project/2-implementation/3-archived/retail-api/docs/architecture/project-layout.md
+  s_7097cc4d72a66b::t_331690f1f05653 4
+3-work_on_a_project/2-implementation/3-archived/retail-api/docs/http/contract.md
+  s_7097cc4d72a66b::t_fc424ba9d885af 12-13,22-53
+3-work_on_a_project/2-implementation/3-archived/retail-api/docs/sql-database/data-model.md
+  s_7097cc4d72a66b::t_00c700d35eb82e 11
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/me/reviews/eligibility/route.ts
+  s_7097cc4d72a66b::t_e03920497ab066 3,7-9,11-13,15-23
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/me/reviews/route.ts
+  s_7097cc4d72a66b::t_fd15a89dd64b68 12-17
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/app/products/[id]/reviews/route.ts
+  s_7097cc4d72a66b::t_4a363a4b181317 13
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/application/check-purchase/ProductPurchaseChecker.ts
+  s_7097cc4d72a66b::t_38dc7016247ef0 1,6,9,11,13
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/orders/domain/Order.ts
+  s_7097cc4d72a66b::t_4ef847e236f26f 4,78-81
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/approve/ReviewApprover.ts
+  s_7097cc4d72a66b::t_a9ba7baf0f8cde 2,8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/check-eligibility/ReviewEligibilityChecker.ts
+  s_7097cc4d72a66b::t_70ed578673b9ed 8,22-25,27-28,31-33,35-37
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/findReviewToModerate.ts
+  s_7097cc4d72a66b::t_a1fc87349d3cad 1,3-4,6-10,12-16
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/get-product-reviews/ProductReviewsGetter.ts
+  s_7097cc4d72a66b::t_e0c67239904b9f 4,6-14,19,22,28,35-39,41,45-47,50,52-59
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/list-pending/PendingReviewsLister.ts
+  s_7097cc4d72a66b::t_b9f4091250a784 1,4-5,8-12,16-19,23-25,27-36
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/reject/ReviewRejecter.ts
+  s_7097cc4d72a66b::t_702bb057bb3fcb 2,8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/application/submit/ReviewSubmitter.ts
+  s_7097cc4d72a66b::t_26a725e8e92155 8,11,13,20,26-34,36-37,40-48,51-57,60-62,65-68
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/PurchaseHistory.ts
+  s_7097cc4d72a66b::t_9a211cfa53a291 5
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/Review.ts
+  s_7097cc4d72a66b::t_48c34112e74d97 4-5,9,11-12,17,26-28,34,36,43,45-50,53-63,66-71,81,83,107,109,119,125
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/ReviewRating.ts
+  s_7097cc4d72a66b::t_2873ae01b56471 14-18
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/ReviewRepository.ts
+  s_7097cc4d72a66b::t_47e3c9025b8635 12,14
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/ReviewStatus.ts
+  s_7097cc4d72a66b::t_de4cf40968c544 1,3,5,7-8
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/ReviewedProducts.ts
+  s_7097cc4d72a66b::t_cc7196fdfe8726 1-5
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/ReviewerDirectory.ts
+  s_7097cc4d72a66b::t_fe6938653ec712 3-14
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/errors/InvalidReviewBodyError.ts
+  s_7097cc4d72a66b::t_5d5daf4305f62b 5-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/errors/InvalidReviewRatingError.ts
+  s_7097cc4d72a66b::t_e892649edbd064 4,6
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/errors/InvalidReviewTitleError.ts
+  s_7097cc4d72a66b::t_e68b38daee1215 5-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/errors/ReviewAlreadyExistsError.ts
+  s_7097cc4d72a66b::t_1be47464f62186 5
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/errors/ReviewAlreadyModeratedError.ts
+  s_7097cc4d72a66b::t_f2b02fe4026bab 4-5
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/domain/errors/ReviewedProductNotFoundError.ts
+  s_7097cc4d72a66b::t_d69ee51809df62 1-7
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/infrastructure/OrdersPurchaseHistory.ts
+  s_7097cc4d72a66b::t_7450d1f68527ea 1,5,9,14-18
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/infrastructure/PostgresReviewRepository.ts
+  s_7097cc4d72a66b::t_06bdee856a0db0 8-9,12,28,30,43-44,46,48-49,55-58,61,63,70-71,82,89-133,138,141,144,151
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/infrastructure/ProductsReviewedProducts.ts
+  s_7097cc4d72a66b::t_005a28b4938d84 1-2,4,6-9,11-12,14
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/reviews/infrastructure/UsersReviewerDirectory.ts
+  s_7097cc4d72a66b::t_04c729c5578fd5 4,6,11-14,16-18
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/shared/infrastructure/RetailContainer.ts
+  s_7097cc4d72a66b::t_f676f79c883608 12,40,46-47,209-210,260,263-264,271,286-290,294-297
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/shared/infrastructure/http/httpErrorResponse.ts
+  s_7097cc4d72a66b::t_b7404e534f02fb 19,39-40
+3-work_on_a_project/2-implementation/3-archived/retail-api/src/contexts/backend/shared/infrastructure/http/requestBody.ts
+  s_7097cc4d72a66b::t_89d13d3d4ac016 32
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/me/reviews/eligibility/route.spec.ts
+  s_7097cc4d72a66b::t_aa1dbf209eabe0 3-4,6,18,20-21,25-27,29,32-33,35-47
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/me/reviews/route.spec.ts
+  s_7097cc4d72a66b::t_a2411e848ac062 10,25,27-28,39,43-48,52-68,70-72,75-77,83-89,96
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/products/[id]/reviews/route.spec.ts
+  s_7097cc4d72a66b::t_08c7dd896a3500 4,6,9,13-14,20-22,24-26,30-31
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/reviews/[id]/approval/route.spec.ts
+  s_7097cc4d72a66b::t_a2824608ac698b 20,31,37-41,43,45-48
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/reviews/[id]/rejection/route.spec.ts
+  s_7097cc4d72a66b::t_f5b8574e261ca3 20,31,37-41,43,45-48
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/app/reviews/pending/route.spec.ts
+  s_7097cc4d72a66b::t_941e11156a37d0 6,20-23,25,33
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/acceptance/ProductReview.spec.ts
+  s_7097cc4d72a66b::t_e2922a3f3fc729 1-2,4-13,15-23,25-30,32-37,39-136,139-148,150-151
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/orders/application/check-purchase/ProductPurchaseChecker.spec.ts
+  s_7097cc4d72a66b::t_9f016aaaf8c506 3,12,14-15,17,20-21,26-27,29,35,37-38,41,44-64,66
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/approve/ReviewApprover.spec.ts
+  s_7097cc4d72a66b::t_6481f07767076c 17-18,20,22-24,26,30-38,43
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/check-eligibility/ReviewEligibilityChecker.spec.ts
+  s_7097cc4d72a66b::t_8690053f37e2e0 22,25-27,30-31,33-34,36-38,42-47,50-52,55-56,64,66-67,70
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/get-product-reviews/ProductReviewsGetter.spec.ts
+  s_7097cc4d72a66b::t_438e1b49fb5fa6 3-7,10,15,17-18,20-29,31-41,43-46,49,51,53,55-66,70,72-75,78,84,86,88-89,92,94,96
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/get-product-reviews/ProductReviewsResponseMother.ts
+  s_7097cc4d72a66b::t_f41637ba68e8ab 1-37
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/list-pending/PendingReviewResponseMother.ts
+  s_7097cc4d72a66b::t_5984c93a758fe4 1-23
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/list-pending/PendingReviewsLister.spec.ts
+  s_7097cc4d72a66b::t_116d529a3f9574 4-7,15-16,18-26,28-31,33-35,37-40,44-51,54-57,59-61,66,68
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/reject/ReviewRejecter.spec.ts
+  s_7097cc4d72a66b::t_ccd66af637d431 17-18,20,22-24,26,30-38,43
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/application/submit/ReviewSubmitter.spec.ts
+  s_7097cc4d72a66b::t_05efcd66eeaa58 1,3,9,11-15,29,36,42-45,47-56,61,64-66,69-76,78-85,87-93,95-99,102-113,115,117-124,127,129-134,136-141,143-169,172-174,176-189,191-192,194-198,201-241,243-257,260,262-265,268-270
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/domain/ReviewMother.ts
+  s_7097cc4d72a66b::t_bb5e6d409425ee 7-11,13,40,42-48
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/infrastructure/PostgresReviewRepository.spec.ts
+  s_7097cc4d72a66b::t_d45f05a8dd447e 1,4,19-21,27-32,45-48,51-62,66-68,73-75,81-84,86-89,91-98,100-102,104-106,110-111,114-116,120-123,125-127,129-133,135,137,139-141,145,147-149,156-157,162-182
+3-work_on_a_project/2-implementation/3-archived/retail-api/tests/backend/reviews/infrastructure/UsersReviewerDirectory.spec.ts
+  s_7097cc4d72a66b::t_17bc40f180b8b3 3,10,12,14,18-21,23-24
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-13-add-product-reviews/.openspec.yaml
+  s_7097cc4d72a66b::t_085e2e056388c6 2
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-13-add-product-reviews/design.md
+  s_7097cc4d72a66b::t_5cbeb5c7ead853 7-11,16-18,21-25,29,31,33-34,36,38,40-45,47,49,51-53,55-57,59,65,71,74,76,79-82,84,86-105,109-110,116-123,125-129,131-133,135,137-140,144-149,153-155
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-13-add-product-reviews/proposal.md
+  s_7097cc4d72a66b::t_12ad4f7c37ad0a 5,9-14,19-20,23-24,28-30
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-13-add-product-reviews/specs/product-reviews/spec.md
+  s_7097cc4d72a66b::t_7c95a365896b6a 5,9-10,12-14,16-18,20-22,24-26,28-30,32-33,35-37,39-41,43-44,46-48,50-52,54-56,58-59,61-63,65-66,68-70,72-73,75-85,87-88,90-92,94-96,98-99,101-103,105-107,109-110,112-114,116-118,120-122
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-13-add-product-reviews/specs/review-moderation/spec.md
+  s_7097cc4d72a66b::t_83a03e8f986fc7 5,9-10,12-14,16-18,20-26,29,31-33,36,38-40,43,45-47,49,51
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/changes/archive/2026-10-13-add-product-reviews/tasks.md
+  s_7097cc4d72a66b::t_857e28c000180c 3-48,52-54
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/specs/product-reviews/spec.md
+  s_7097cc4d72a66b::t_31344bc3a80b23 5,9-10,12-14,16-18,20-22,24-26,28-30,32-33,35-37,39-41,43-44,46-48,50-52,54-56,58-59,61-63,65-66,68-70,72-73,75-85,87-88,90-92,94-96,98-99,101-103,105-107,109-110,112-114,116-118,120-122
+3-work_on_a_project/2-implementation/3-archived/retail-specs/openspec/specs/review-moderation/spec.md
+  s_7097cc4d72a66b::t_86f039b6de4bfd 5,9-10,12-14,16-18,20-26,29,31-33,36,38-40,43,45-47,49,51
+3-work_on_a_project/2-implementation/3-archived/retail-web/docs/architecture/screens.md
+  s_7097cc4d72a66b::t_ea8ebe3b307fa3 4,13
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/reviews/approveReview.ts
+  s_7097cc4d72a66b::t_b09724cbdec560 11,20
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/reviews/rejectReview.ts
+  s_7097cc4d72a66b::t_1dc61916b9801d 11,20
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/reviews/reviewFormFields.ts
+  s_7097cc4d72a66b::t_82d9d94b94d94c 3-10,20-25,27-28,31,35-41,44-50,52-55
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/reviews/reviewMessages.ts
+  s_7097cc4d72a66b::t_273eaeb9b42ba9 4,7,11-15,17-21,23-26
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/actions/reviews/submitReview.ts
+  s_7097cc4d72a66b::t_a8e91e2ba5a747 10,18-19,24
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/reviews/ModerateReviewForm.module.scss
+  s_7097cc4d72a66b::t_d5f4f11dc7f15d 4,7
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/reviews/ModerateReviewForm.tsx
+  s_7097cc4d72a66b::t_c3318159c8b872 19,23,30-32,35
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/admin/reviews/page.tsx
+  s_7097cc4d72a66b::t_414343340cc06f 5,7,20-26
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/ReviewForm.module.scss
+  s_7097cc4d72a66b::t_b25eb8f266c10f 5-9,21-22,31,45
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/ReviewForm.tsx
+  s_7097cc4d72a66b::t_846c8c551c3c94 3,13,43-45,49,52,58,63,68,72,74,81
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/ReviewPanel.module.scss
+  s_7097cc4d72a66b::t_0c924c1cc8ca6d 1,3-5,7
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/ReviewPanel.tsx
+  s_7097cc4d72a66b::t_71f56b1e32cd5c 1,9,16,19,21,27-28
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/app/products/[id]/page.tsx
+  s_7097cc4d72a66b::t_448cac0ee56b20 47,78
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/api/RetailApi.ts
+  s_7097cc4d72a66b::t_d8762d51a224e5 55-56,63,68-79
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/api/responses.ts
+  s_7097cc4d72a66b::t_1d4d6b3d5d7a6c 156,161,168,172,176-177,180,184
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/PendingReviewsList.module.scss
+  s_7097cc4d72a66b::t_7afc42b1a5ebce 4,8,10,17-30
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/PendingReviewsList.tsx
+  s_7097cc4d72a66b::t_80307f2c20b0c7 1-2,5-7,11-15,18-19,21,25,27-28,30-38,43-46,50
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductReviews.module.scss
+  s_7097cc4d72a66b::t_cd30ee87597414 11,13,19-20,25-28,44-46
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ProductReviews.tsx
+  s_7097cc4d72a66b::t_2bb11d82066c7f 3,5,7,12-15,19-20,24-28,33,35-40,52
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ReviewStars.module.scss
+  s_7097cc4d72a66b::t_6f304d7e533fd3 2-3,5,9
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/sections/ReviewStars.tsx
+  s_7097cc4d72a66b::t_d35b0e33af1c34 1,3,7,11,14-16
+3-work_on_a_project/2-implementation/3-archived/retail-web/src/contexts/frontend/retail/ui/format.ts
+  s_7097cc4d72a66b::t_38fd1ac9395555 84-89
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/actions/reviews/moderateReview.spec.ts
+  s_7097cc4d72a66b::t_945840e5900039 5,11-14,18,21,23,28-35,38-40,45,49,54,59,65-66,69
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/actions/reviews/submitReview.spec.ts
+  s_7097cc4d72a66b::t_158430728ecd89 29,31-32,41-46,48-72,79,84,89-104
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/admin/AdminNav.spec.tsx
+  s_7097cc4d72a66b::t_d5ea5b6cf65651 56-57,62,66-67,72
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/admin/reviews/ModerateReviewForm.spec.tsx
+  s_7097cc4d72a66b::t_3a21fb4510cc9e 22,27,33,38,44-45,49,55-67
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/products/[id]/ReviewForm.spec.tsx
+  s_7097cc4d72a66b::t_21ec7422da8c58 14-21,24,26-30,36-39,41-45,47-50,52-76,79,82,84,86,89,91-92,96,99,101
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/app/products/[id]/ReviewPanel.spec.tsx
+  s_7097cc4d72a66b::t_31ee9e3b2c7efc 12,19-20,28,30,34,37-39,44
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/api/RetailApi.spec.ts
+  s_7097cc4d72a66b::t_bb8dd39c884ac9 172-174,177-179,183-184,188,190,192,196,199-204,208-215,221-227,229-239,242-244,246-249,252-271,273-279,281-286
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/PendingReviewResponseMother.ts
+  s_7097cc4d72a66b::t_95ced77a15b34c 5,12,17-23
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/ProductReviewResponseMother.ts
+  s_7097cc4d72a66b::t_0664b74cd8c6f2 3,5,7-10,14-16
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/responses/ProductReviewsResponseMother.ts
+  s_7097cc4d72a66b::t_74f71ded36c3d5 1,3,5-7,25-26,30
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/PendingReviewsList.spec.tsx
+  s_7097cc4d72a66b::t_548e59a116cc76 2,4,6,9,14-20,22,27-28,30-33,35-38,40,43,45-57,59,63,66-69
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/sections/ProductReviews.spec.tsx
+  s_7097cc4d72a66b::t_ab4e89be8e712b 6,10,14-15,20,22,25,29-40,45-46,48-54,56-57,60,67-71,74,79,84-85
+3-work_on_a_project/2-implementation/3-archived/retail-web/tests/frontend/retail/ui/format.spec.ts
+  s_7097cc4d72a66b::t_b6ff7fa9de446d 14,83,88-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8a7477fe47ab2c66ae3a60601db5f93f07f7ea8e",
+  "prompts": {},
+  "sessions": {
+    "s_7097cc4d72a66b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6e02f6fc-8830-47dd-9f70-604d42389949",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
