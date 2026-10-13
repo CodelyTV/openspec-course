@@ -1,0 +1,122 @@
+@use "../../design-system/settings/colors";
+
+.picker {
+	display: grid;
+	gap: 6px;
+}
+
+.label {
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.search {
+	position: relative;
+}
+
+.input {
+	width: 100%;
+	padding: 10px 12px;
+	font: inherit;
+	background: var(--codely-white);
+	border: 1px solid colors.$input-border;
+	border-radius: var(--radius-sm);
+
+	&:focus {
+		border-color: colors.$input-active;
+		outline: 2px solid colors.$input-active;
+		outline-offset: -1px;
+	}
+}
+
+.popup {
+	position: absolute;
+	inset: calc(100% + 4px) 0 auto;
+	z-index: 10;
+	overflow: hidden;
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+	box-shadow: 0 8px 24px rgb(26 34 51 / 12%);
+}
+
+.listbox {
+	max-height: 280px;
+	margin: 0;
+	padding: 4px;
+	overflow-y: auto;
+	list-style: none;
+}
+
+.option {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	padding: 6px 8px;
+	cursor: pointer;
+	border-radius: var(--radius-sm);
+
+	&:hover,
+	&.active {
+		background: var(--surface-strong);
+	}
+
+	&.unavailable {
+		color: colors.$state-disabled;
+		cursor: not-allowed;
+
+		&:hover {
+			background: transparent;
+		}
+	}
+}
+
+.optionName {
+	flex: 1;
+	font-size: 0.9rem;
+}
+
+.note {
+	color: colors.$text-secondary;
+	font-size: 0.75rem;
+	font-style: italic;
+}
+
+.noMatch {
+	padding: 12px;
+	color: colors.$text-secondary;
+	font-size: 0.9rem;
+}
+
+.chosen {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	padding: 6px 8px 6px 6px;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-sm);
+}
+
+.chosenName {
+	flex: 1;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.remove {
+	padding: 4px 8px;
+	color: colors.$text-secondary;
+	font: inherit;
+	font-size: 0.8rem;
+	font-weight: 700;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	border-radius: var(--radius-sm);
+
+	&:hover,
+	&:focus-visible {
+		color: colors.$state-error;
+	}
+}
