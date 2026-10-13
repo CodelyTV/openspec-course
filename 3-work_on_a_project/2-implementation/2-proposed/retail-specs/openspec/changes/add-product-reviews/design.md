@@ -4,171 +4,152 @@
 
 See proposal.md for motivation and specs/ for the required behavior.
 
-- **Repos touched**: both.
-  - `retail-api` owns the data and the rules (who can review, one review per customer and product, moderation), so it gets the new table, a new bounded context and the endpoints.
-  - `retail-web` has no database or business logic: it only renders the reviews section and form on the product page and the moderation page in `/admin`, calling the new endpoints through `RetailApi`.
-- `retail-api` contexts today: `products`, `checkout`, `orders`, `users`. Contexts collaborate through consumer-owned ports adapted to the provider's `application/` use cases; ESLint enforces it with the `backendContexts` list in `eslint.config.mjs`.
-- Purchases live in `orders`: `OrderRepository.searchByUser(userId)` returns the user's orders with their lines, and each `OrderLine` snapshots `productId` and `productName`.
-- The current user is resolved inside the API (`CurrentUserProvider`, faked by `FakeSessionCurrentUserProvider`); `/me/**` endpoints never receive a user id. The backoffice has no authentication.
-- Schema changes go into `database/schema.sql` (no migrations tool) and are applied with `db:reset` / `db:test:reset`.
-- `retail-web` server actions return an `ActionState` and map API error `type`s to user-facing messages through `actionStateFor`; response types are copied from the contract into `responses.ts`.
+- `retail-api` has four bounded contexts (`products`, `checkout`, `orders`, `users`). ESLint enforces the boundaries through a `backendContexts` list in `eslint.config.mjs`. Contexts collaborate only through consumer-owned ports adapted to the provider's `application/` use cases (e.g. `orders` → `UsersCustomerDirectory` → `UsersByIdsSearcher`).
+- There is no authentication. The current customer is `FakeSessionCurrentUserProvider` (`user-a1c92f04`), and `/me/**` endpoints resolve it inside the API. The backoffice is open.
+- Orders store their lines with a plain `product_id` (no FK), and `Order` exposes `lines: OrderLine[]` with `productId`. `OrderRepository.searchByUser(userId)` already exists. The only order status is `confirmed`.
+- There is no migrations tool: schema changes go into `database/schema.sql` and are re-applied with `db:reset` / `db:test:reset`.
+- `retail-web` reaches the API only through `RetailApi`. Server actions return `ActionState` (`{ error }`) and map `RetailApiError.type` with `actionStateFor` plus per-action `UserFacingMessages`. Pages are not tested: logic lives in the API or in tested components.
 
 ## Goals / Non-Goals
 
 **Goals:**
-- Keep every review rule in `retail-api` use cases and the `Review` aggregate, unit-tested; `retail-web` only shows what the API decides (including whether to show the form).
-- Reach Orders and Users only through ports adapted to their use cases, without new cycles between contexts.
-- Pin the new endpoints and error types in `docs/http/contract.md` before `retail-web` consumes them.
+- Keep every review rule (content, buyers only, one per customer, pending first, moderated once) in the `reviews` domain and use cases, unit-tested.
+- Have the API decide what the product page shows for the current customer (form, awaiting moderation, already reviewed, nothing), so the page stays thin.
+- Reuse the admin write-flow pattern from outfits (server action + `actionStateFor` + `revalidatePath`).
 
 **Non-Goals:**
-- Editing or deleting a review by its author, or re-moderating an already moderated review.
-- Pagination or sorting options for reviews on the product page or in the moderation queue.
-- Notifications (to the customer when a review is moderated, or to staff when one is submitted).
-- Showing the average rating outside the product page (catalog cards, search).
-- Authentication or roles for the backoffice (it is open today and stays so).
-- Replies, helpful votes, photos or reporting abusive reviews.
+- Authentication or roles for staff. The backoffice stays open, as it is today.
+- Editing, deleting or re-moderating reviews, by authors or by staff. Staff can't see past decisions either: no history screen.
+- Pagination of reviews or of the moderation queue, rating filters, sorting options or "helpful" votes.
+- Showing a rating summary outside the product page (cards, grids, search).
+- Notifying customers about moderation outcomes.
 
 ## Decisions
 
-### 1. Product decisions
+### 1. A new `reviews` bounded context
 
-Taken without the user, recorded here so they can be challenged in the plan PR:
+`Review` (aggregate), `ReviewId`, `ReviewRating`, `ReviewStatus`, `ReviewRepository` and the domain errors live in `src/contexts/backend/reviews/`. `reviews` is added to `backendContexts` in `eslint.config.mjs`.
 
-- **Who can review**: any customer with at least one order containing the product, whatever the variant or date. There is a single order status (`confirmed`), so no delivery check.
-- **One review per customer and product, forever**: a rejected review still counts, so a customer cannot spam the queue by resubmitting. No editing or deleting.
-- **Content limits**: rating 1–5 whole stars; title 1–100 characters; body 1–2000 characters, both trimmed.
-- **Moderation is one-shot**: only pending reviews can be approved or rejected. The queue only shows pending reviews, oldest first (first come, first served).
-- **Public data**: the author's name as stored in `users` and the review date. No email.
-- **Average**: over approved reviews only, rounded to one decimal; with none, no average is shown.
-- **Product page order**: newest approved review first, all of them (no pagination; review volume is low with today's catalog).
+- **Alternative: inside `products` (like outfits).** Outfits went to `products` because `products`' own listers needed them. Reviews need orders (purchase check) and users (author names), and no product use case needs reviews. Putting them in `products` would make `products` depend on `orders`, while `checkout` already depends on both. Rejected.
+- **Alternative: inside `orders`.** Reviews are about the product, not the order, and the product page would depend on the orders context. Rejected.
 
-### 2. A new `reviews` bounded context in retail-api
+`reviews` depends on the others only through its own ports (§3). Nothing depends on `reviews`, so there is no cycle.
 
-`src/contexts/backend/reviews/` with `domain/`, `application/` and `infrastructure/`, added to `backendContexts` in `eslint.config.mjs`.
+### 2. Domain model
 
-- **Alternative: inside `products`.** Reviews would need Orders and Users, adding a dependency from the catalog to orders and mixing moderation with catalog code. Rejected.
-- Reviews have their own lifecycle (pending → approved/rejected) and nobody else depends on them, so a separate context depends on `orders` and `users` without creating cycles.
+- `Review.create(id, productId, authorId, productName, rating, title, body, createdAt)` validates and starts as `pending`. `ReviewRating` accepts integers 1–5 (`InvalidReviewRatingError`). Title and body are trimmed and must be non-blank and at most 100 / 2000 characters (`InvalidReviewTitleError`, `InvalidReviewBodyError`). The messages name the field and the limit.
+- `review.approve()` / `review.reject()` move a `pending` review to `approved` / `rejected`. Anything else throws `ReviewAlreadyModeratedError`. `ReviewStatus` is a literal union parsed with `parseLiteral`, like `OrderStatus`.
+- `Review.fromPrimitives` does not validate, like `Outfit`, so later rule changes don't break stored reviews.
+- `ProductId` and `UserId` come from the shared kernel. `ReviewId` stays local.
+- `createdAt` comes from `Clock` and the id from `IdGenerator`, so tests stay deterministic.
+- `productName` is copied when the review is written, following the "copy at the time it happens" rule. The queue can then show it with no products lookup, and it survives catalog changes.
 
-`ReviewId` stays local to `reviews`; `ProductId` and `UserId` come from the shared kernel.
+### 3. Ports to other contexts
 
-### 3. Domain model
-
-- `Review` aggregate: `id`, `productId`, `userId`, `productName`, `authorName`, `rating`, `title`, `body`, `status` (`pending | approved | rejected`), `createdAt`.
-  - `Review.submit(...)` validates content and starts as `pending`. Value objects `ReviewRating`, `ReviewTitle`, `ReviewBody` throw `InvalidReviewRatingError`, `InvalidReviewTitleError`, `InvalidReviewBodyError`.
-  - `approve()` / `reject()` throw `ReviewAlreadyModeratedError` unless the review is pending.
-  - `fromPrimitives` does not validate.
-- `productName` and `authorName` are **snapshots** taken when the review is submitted, following the "copy data when it happens" rule of `docs/architecture/hexagonal-architecture.md`. The moderation queue and the product page then read one table, without calling other contexts.
-- `ReviewRepository` port: `save`, `search(id)`, `searchByUserAndProduct(userId, productId)`, `searchApprovedByProduct(productId)` (newest first), `searchPending()` (oldest first).
-- Consumer-owned ports and their adapters:
-  - `PurchaseHistory.purchasedProduct(userId, productId): Promise<PurchasedProduct | null>` (`{ productId, productName }`) → `OrdersPurchaseHistory` over a new Orders use case `PurchasedProductFinder` (`orders/application/find-purchased-product/`). It uses the existing `OrderRepository.searchByUser` and returns the line's snapshotted name from the most recent order containing the product, or `null`. No new SQL in Orders.
-  - `ReviewAuthors.nameOf(userId): Promise<string>` → `UsersReviewAuthors` over the existing `UsersByIdsSearcher`.
-- Errors: `ProductNotPurchasedError`, `ReviewAlreadyExistsError`, `ReviewNotFoundError`, `ReviewAlreadyModeratedError` plus the three content errors.
-- **Alternative: resolve product and author names when listing**, like `OrdersLister` does with `CustomerDirectory`. It needs two cross-context calls on every product page view, for data that does not need to stay live. Rejected.
-
-### 4. Use cases (retail-api)
-
-| Use case | Folder | Behavior |
+| Port (reviews/domain) | Adapter (reviews/infrastructure) | Provider use case |
 |---|---|---|
-| `ReviewSubmitter` | `application/submit/` | Current user → `PurchaseHistory` (`ProductNotPurchasedError` when `null`) → `searchByUserAndProduct` (`ReviewAlreadyExistsError`) → `ReviewAuthors` → `Review.submit` with id from `IdGenerator` and date from `Clock` → `save` |
-| `ReviewEligibilityChecker` | `application/check-eligibility/` | Current user's review for the product, else whether they bought it; returns `ReviewEligibilityResponse` |
-| `ProductReviewsFinder` | `application/find-for-product/` | Approved reviews newest first, `reviewCount` and `averageRating` (one decimal, `null` when none) |
-| `PendingReviewsLister` | `application/list-pending/` | Pending reviews oldest first |
-| `ReviewApprover` | `application/approve/` | `search` (`ReviewNotFoundError`) → `approve()` → `save` |
-| `ReviewRejecter` | `application/reject/` | `search` (`ReviewNotFoundError`) → `reject()` → `save` |
+| `PurchaseHistory.hasBought(userId, productId): boolean` | `OrdersPurchaseHistory` | new `orders` `ProductPurchaseChecker` (`application/check-purchase/`): `searchByUser(userId)` and `order.includesProduct(productId)` |
+| `ReviewedProducts.nameOf(productId): string \| null` | `ProductsReviewedProducts` | existing `ProductFinder` |
+| `ReviewerDirectory.namesOf(userIds): ReviewerNames` | `UsersReviewerDirectory` | existing `UsersByIdsSearcher` |
 
-All registered in `RetailContainer`, together with `PostgresReviewRepository`, `OrdersPurchaseHistory`, `UsersReviewAuthors` and `PurchasedProductFinder`.
+- `Order.includesProduct(productId)` is the single definition of "this order contains the product", covering any variant. It is unit-tested through `ProductPurchaseChecker`.
+- Author names are joined when reading, like `CustomerDirectory` in `orders`, because users can't change their name today. A missing user falls back to the user id inside `ReviewerNames`, as `CustomerNames` does.
+- **Alternative: a SQL join from `reviews` to `orders`/`users`.** It would break the context boundaries. Rejected.
 
-### 5. Persistence
+### 4. Persistence
 
 ```sql
 create table reviews (
 	id text primary key,
 	product_id text not null,
-	user_id text not null references users(id) on delete cascade,
+	user_id text not null references users(id),
 	product_name text not null,
-	author_name text not null,
 	rating integer not null check (rating between 1 and 5),
 	title text not null,
 	body text not null,
 	status text not null default 'pending' check (status in ('pending', 'approved', 'rejected')),
-	created_at timestamptz not null default now(),
-	unique (user_id, product_id)
+	created_at timestamptz not null
 );
 
+create unique index reviews_product_id_user_id_key on reviews(product_id, user_id);
 create index reviews_product_id_status_idx on reviews(product_id, status);
+create index reviews_status_created_at_idx on reviews(status, created_at);
 ```
 
-- `unique (user_id, product_id)` is the safety net for "one review per customer and product" when two submissions race; `PostgresReviewRepository` maps the unique violation to `ReviewAlreadyExistsError`.
-- `product_id` has no foreign key, like `order_lines`: reviews hold a snapshot and the product page of a removed product no longer exists anyway.
-- `seed.sql` gets a few reviews on products the seeded users bought: approved ones on two or three products (to see the average), plus pending reviews for the queue. The faked current user (`user-a1c92f04`) keeps at least one bought product without a review, so the form can be tried locally.
+- `product_id` has no FK, like `order_lines`. Reviews are history written by customers, so removing a product from the catalog must not fail or cascade over them.
+- The unique index on `(product_id, user_id)` backs up the "one review per customer" check in the use case. `PostgresReviewRepository` maps a unique violation to `ReviewAlreadyExistsError`, like outfit names.
+- Repository: `save`, `search(id)`, `searchByProductAndAuthor(productId, userId)`, `searchApprovedByProduct(productId)` (newest first), `searchPending()` (oldest first). Ordering and status filtering happen in SQL.
+- Moderation saves with `update ... where id = $id and status = 'pending'`. If no row changed, it throws `ReviewAlreadyModeratedError`, so two concurrent moderations can't both win.
 
-### 6. HTTP contract changes (retail-api)
+### 5. Use cases
 
-New endpoints, documented in `docs/http/contract.md`:
+| Use case | Folder | Returns |
+|---|---|---|
+| `ReviewSubmitter` | `application/submit/` | `void` |
+| `ReviewEligibilityChecker` | `application/check-eligibility/` | `{ status: "can-review" \| "pending-review" \| "already-reviewed" \| "not-purchased" }` |
+| `ProductReviewsGetter` | `application/get-product-reviews/` | `ProductReviewsResponse` |
+| `PendingReviewsLister` | `application/list-pending/` | `PendingReviewResponse[]` |
+| `ReviewApprover` | `application/approve/` | `void` |
+| `ReviewRejecter` | `application/reject/` | `void` |
+
+- `ReviewSubmitter.submit(productId, rating, title, body)` takes the author from `CurrentUserProvider`. It checks in this order:
+  1. Content: `Review.create` validates it.
+  2. Purchase: `ProductNotPurchasedError`.
+  3. Existing review: `ReviewAlreadyExistsError`.
+  4. Product name: `ReviewedProductNotFoundError` when the catalog no longer has the product.
+- `ReviewEligibilityChecker.check(productId)` uses the current user. No purchase gives `not-purchased`. A purchase with no review gives `can-review`. A pending review gives `pending-review`, and an approved or rejected one gives `already-reviewed`. The customer is never told whether their review was rejected.
+- `ProductReviewsResponse = { averageRating: number | null; reviewCount: number; reviews: { id, rating, title, body, authorName, createdAt }[] }`. It covers approved reviews only, newest first. `averageRating` is rounded to one decimal, and is `null` when there are none. The average is computed in the use case from the approved reviews it already loads.
+- `PendingReviewResponse = { id, productId, productName, authorName, rating, title, body, createdAt }`, oldest first.
+- `ReviewApprover.approve(id)` / `ReviewRejecter.reject(id)` throw `ReviewNotFoundError` or `ReviewAlreadyModeratedError`.
+
+### 6. HTTP contract
 
 | Method + path | Use case | Request | Success |
 |---|---|---|---|
-| `GET /products/{id}/reviews` | `ProductReviewsFinder` | | 200 `ProductReviewsResponse` (no reviews and `averageRating: null` for an unknown product) |
-| `GET /me/products/{id}/review-eligibility` | `ReviewEligibilityChecker` | | 200 `ReviewEligibilityResponse` |
+| `GET /products/{id}/reviews` | `ProductReviewsGetter` | | 200 `ProductReviewsResponse` |
+| `GET /me/reviews/eligibility?productId=` | `ReviewEligibilityChecker` | required `productId` | 200 `ReviewEligibilityResponse` |
 | `POST /me/reviews` | `ReviewSubmitter` | `{ productId: string, rating: number, title: string, body: string }` | 201, empty body |
 | `GET /reviews/pending` | `PendingReviewsLister` | | 200 `PendingReviewResponse[]` |
 | `POST /reviews/{id}/approval` | `ReviewApprover` | empty body | 204 |
 | `POST /reviews/{id}/rejection` | `ReviewRejecter` | empty body | 204 |
 
-```ts
-type ReviewResponse = { id: string; authorName: string; rating: number; title: string; body: string; createdAt: string };
-type ProductReviewsResponse = { averageRating: number | null; reviewCount: number; reviews: ReviewResponse[] };
-type ReviewEligibilityResponse = { status: "can-review" | "not-purchased" | "awaiting-moderation" | "already-reviewed" };
-type PendingReviewResponse = ReviewResponse & { productId: string; productName: string };
-```
+New error types: 403 `ProductNotPurchasedError` (a new status row); 404 `ReviewNotFoundError`, `ReviewedProductNotFoundError`; 409 `ReviewAlreadyExistsError`, `ReviewAlreadyModeratedError`; 422 `InvalidReviewRatingError`, `InvalidReviewTitleError`, `InvalidReviewBodyError`.
 
-New error types in `httpErrorResponse.ts` and the contract's error table:
+- Approval and rejection are action sub-resources (`POST .../approval`), following `POST /me/checkout/confirmation`, and not a generic `PATCH status`. Each maps to one use case and one intent.
+- **Alternative: let the web compute eligibility** from `/me/orders` plus reviews. It would move a business rule into `retail-web` and need extra endpoints. Rejected.
 
-| Status | `type` |
-|---|---|
-| 403 (new status) | `ProductNotPurchasedError` |
-| 404 | `ReviewNotFoundError` |
-| 409 | `ReviewAlreadyExistsError`, `ReviewAlreadyModeratedError` |
-| 422 | `InvalidReviewRatingError`, `InvalidReviewTitleError`, `InvalidReviewBodyError` |
+### 7. Product page (`retail-web`)
 
-- `POST /me/reviews` needs a `requiredNumber(body, field)` helper in `requestBody.ts` (400 `InvalidArgumentError` when `rating` is not a number). Whether it is a whole number from 1 to 5 is a domain rule (422).
-- `ProductNotPurchasedError` is 403 because the request is valid but this customer is not allowed to do it. A 422 would hide that difference from the client.
-- Moderation uses two action resources (`/approval`, `/rejection`) like `/me/checkout/confirmation`. **Alternative: `PATCH /reviews/{id}` with `{ status }`.** It would let clients set any status, including back to `pending`. Rejected.
-- `/reviews/pending` is not under `/me`: it is a backoffice endpoint, like `/orders`.
-- No existing endpoint changes: no breaking change for `retail-web`.
+`src/app/products/[id]/page.tsx` also fetches `productReviewsGetter.get(id)` and `reviewEligibilityChecker.check(id)`, then renders below the product details and above the suggestions:
 
-### 7. Product page (retail-web)
-
-- `src/app/products/[id]/page.tsx` fetches `productReviewsFinder.find` and `reviewEligibilityChecker.check` in parallel with the suggestions and renders a "Reviews" section below the purchase area, above the suggestions.
-- `ProductReviews` (presentational, `src/contexts/frontend/retail/sections/`) renders the average ("4.3 out of 5", stars), the count ("3 reviews"), the list (rating, title, body, author, date via `formatLongDate`) and the "No reviews yet" empty state. Stars come from a small `StarRating` component with an `aria-label` such as "4 out of 5 stars".
-- `ReviewPanel` (`src/app/products/[id]/`) picks what to show from `ReviewEligibilityResponse`:
-  - `can-review` → `ReviewForm`;
-  - `awaiting-moderation` → "Thanks! Your review is awaiting moderation.";
-  - `already-reviewed` → "You already reviewed this product.";
+- `ProductReviews` (presentational, `src/contexts/frontend/retail/sections/`): heading "Reviews", summary ("4.3 out of 5 · 3 reviews") or "No reviews yet", and the list. Each review shows stars (with an accessible label "4 out of 5 stars"), title, body, author and formatted date.
+- `ReviewPanel` (`src/app/products/[id]/`) picks the view from the eligibility status:
+  - `can-review` → `ReviewForm`.
+  - `pending-review` → "Thanks! Your review is awaiting moderation."
+  - `already-reviewed` → "You have already reviewed this product."
   - `not-purchased` → nothing.
-- `ReviewForm` is a client component (`useActionState(submitReview)`) with a radio group for the 1–5 stars, a title input (`maxLength=100`), a body textarea (`maxLength=2000`), a hidden `productId`, and `FormError` + `SubmitButton`. React resets uncontrolled forms after a form action, so the fields are controlled state: an error keeps what the customer typed.
-- `submitReview` (`src/app/actions/reviews/`) reads the fields from `FormData` (`InvalidFormDataError` when missing), calls `reviewSubmitter.submit`, then `revalidatePath` of the product page. The page re-renders with `awaiting-moderation`, so the form is replaced without a redirect. `reviewMessages.ts` maps every review error type to the messages of the specs.
-- **Alternative: decide whether to show the form in the page** from `/me/orders`. It would duplicate the "bought it and has no review" rule in `retail-web`. Rejected: the eligibility endpoint keeps it in the API.
+- `ReviewForm` is a client component (`useActionState`) with a 1–5 star radio group (`fieldset` + `legend`, required), title (`maxLength=100`) and body (`maxLength=2000`) fields, `SubmitButton` and `FormError`.
+- The `submitReview` server action (`src/app/actions/reviews/`) reads the fields from `FormData` (with `InvalidFormDataError` for a missing or non-numeric rating). It calls the API, maps errors with `reviewMessages`, and on success calls `revalidatePath("/products/[id]", "page")`. The re-rendered page gets `pending-review` and shows the awaiting-moderation message, so the form needs no client-side success state.
+- **Alternative: a success flag in `ActionState`.** It would duplicate a state the API already returns and get lost on reload. Rejected.
 
-### 8. Moderation page (retail-web)
+### 8. Backoffice moderation (`retail-web`)
 
-- `/admin/reviews` (`src/app/admin/reviews/page.tsx`) lists `pendingReviewsLister.list()` with `PendingReviewsList`: product name, author, date, stars, title, body and an empty state ("No reviews to moderate").
-- Each review has a `ModerateReviewForm` (client, `useActionState`) with "Approve" and "Reject" buttons.
-  - They post to `approveReview` / `rejectReview` (`src/app/actions/reviews/`), which call the API and then `revalidatePath("/", "layout")`, so the queue and the product page refresh.
-  - `ReviewAlreadyModeratedError` and `ReviewNotFoundError` show their message next to the review.
-- `AdminNav` gets a "Reviews" entry. `docs/architecture/screens.md` documents `/admin/reviews` and the product page section.
+- `/admin/reviews` (`src/app/admin/reviews/page.tsx`) fetches `pendingReviewsLister.list()` and renders `PendingReviewsList` (presentational, in `sections/`): one card per review with product name (linking to the product page), author, date, stars, title and body. The empty state is "No reviews awaiting moderation."
+- Each card has a client `ModerateReviewForm` (`src/app/admin/reviews/`) with "Approve" and "Reject" buttons. They submit to the `approveReview` / `rejectReview` server actions (hidden `reviewId`), which map `ReviewNotFoundError` and `ReviewAlreadyModeratedError` to messages and call `revalidatePath("/", "layout")`. That refreshes the queue and the product page.
+- `AdminNav` gets `{ href: "/admin/reviews", label: "Reviews" }` after "Outfits".
+- Cards, not the shared `Table`: review bodies are long text and don't fit table cells.
 
 ## Risks / Trade-offs
 
-- [Approve and reject arriving at the same instant both read `pending`, and the last write wins] → Acceptable for a small backoffice. The sequential case (spec scenario) is caught by the aggregate. If it matters later, `save` can become a guarded `update ... where status = 'pending'`.
-- [Snapshotted author and product names go stale after a rename] → Accepted, as with order lines; reviews describe the product as bought.
-- [Full author names are public on the product page] → Users are fake and there is no profile setting; revisit when real accounts exist.
-- [Loading every approved review and averaging in memory] → Fine at today's volume. It can move to SQL (`avg`, `count`) behind the same use case without changing the contract.
-- [The backoffice has no authentication, so anyone can moderate] → Same as every `/admin` page today; out of scope.
-- [`PurchasedProductFinder` loads all of a user's orders to answer one question] → Users have few orders. A dedicated query can replace it without changing the port.
+- [Every customer is the same faked user, so in dev only one customer can review and the "already reviewed" path appears quickly] → Seed reviews come from other users, and the seed leaves the fake user with bought-but-unreviewed products. The tests mock `CurrentUserProvider`.
+- [The product page makes two more API calls] → Both are single indexed queries. They run in parallel with `Promise.all` and the suggestions call.
+- [Loading all approved reviews to compute the average doesn't scale to thousands of reviews per product] → Fine for today's catalog. A SQL aggregate and pagination can come later without changing the response.
+- [The open backoffice means anyone can moderate] → Same exposure as outfits and orders today. Auth is out of scope.
+- [The product name copy goes stale if the product is renamed] → The queue is short-lived, and the product page shows the live product anyway.
+- [Race between the existing-review check and the insert] → The unique index rejects the second insert, and the repository maps it to `ReviewAlreadyExistsError`.
 
 ## Migration Plan
 
-- Merge the retail-api PR first (contract, table, endpoints), then retail-web.
-- Add the table and seed reviews, then run `npm run db:reset` and `npm run db:test:reset` in retail-api. No data to migrate.
-- Rollback: revert the retail-web PR, then the retail-api one, and reset the database. Existing endpoints are untouched, so the old web keeps working against the new API.
+- Add the `reviews` table to `database/schema.sql`. Add seed reviews to `database/seed.sql`: approved, pending and rejected ones by other users, plus a pending one by `user-a1c92f04` on a product they bought, while leaving them at least one bought product with no review. Run `npm run db:reset` and `npm run db:test:reset`.
+- Merge and deploy `retail-api` first: the new endpoints are additive. Then merge `retail-web`.
+- Rollback: revert the `retail-web` PR (the page stops calling the new endpoints), then the `retail-api` PR, and reset the database.

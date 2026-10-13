@@ -2,46 +2,50 @@
 
 ## Purpose
 
-Lets staff decide from the backoffice which customer reviews become public, by approving or rejecting each new review once.
+Lets staff decide from the backoffice which customer reviews go public, so only reviews that were checked appear on the product page.
 
 ## ADDED Requirements
 
-### Requirement: Pending reviews queue
-The backoffice SHALL have a Reviews section, reachable from the admin navigation, that lists every pending review, oldest first, with its product name, author name, date, rating, title and body. Approved and rejected reviews SHALL NOT be listed.
+### Requirement: Moderation queue
+The backoffice SHALL have a "Reviews" section at `/admin/reviews`, reachable from a "Reviews" entry in the admin navigation, that lists every pending review, oldest first. Each entry SHALL show the product's name, the author's name, the date, the rating, the title and the body.
 
-#### Scenario: Pending reviews exist
-- **WHEN** staff open the Reviews section and there are pending reviews submitted yesterday and today
-- **THEN** both are listed with their product name, author name, date, rating, title and body, yesterday's first
+#### Scenario: Pending reviews oldest first
+- **WHEN** staff open `/admin/reviews` with pending reviews written on 3 October and 1 October
+- **THEN** the 1 October review is listed first and the 3 October review second, each with product name, author name, date, rating, title and body
 
-#### Scenario: Moderated reviews are not listed
-- **WHEN** staff open the Reviews section and a review was already approved and another rejected
-- **THEN** neither of them is listed
+#### Scenario: Only pending reviews are listed
+- **WHEN** staff open `/admin/reviews` and there are pending, approved and rejected reviews
+- **THEN** only the pending reviews are listed
 
-#### Scenario: Nothing to moderate
-- **WHEN** staff open the Reviews section and there are no pending reviews
-- **THEN** staff see an empty state saying there are no reviews to moderate
+#### Scenario: Empty queue
+- **WHEN** staff open `/admin/reviews` and no review is pending
+- **THEN** the section says there are no reviews awaiting moderation
+
+#### Scenario: Navigation entry
+- **WHEN** staff view any backoffice page
+- **THEN** the admin navigation shows a "Reviews" entry linking to `/admin/reviews`, marked as current while they are in that section
 
 ### Requirement: Approve a review
-Staff SHALL be able to approve a pending review. An approved review SHALL leave the queue and SHALL be shown on its product page and counted in its average rating.
+Staff SHALL be able to approve a pending review. An approved review SHALL leave the queue and appear on its product page.
 
-#### Scenario: Approving a review
-- **WHEN** staff approve a pending 5-star review of "Pure Function Tee"
-- **THEN** the review leaves the Reviews section and is shown on the "Pure Function Tee" product page, counted in its average rating
+#### Scenario: Approve
+- **WHEN** staff approve a pending review from the queue
+- **THEN** the review is no longer listed in the queue, and it appears in its product page "Reviews" section and counts towards its rating summary
 
 ### Requirement: Reject a review
-Staff SHALL be able to reject a pending review. A rejected review SHALL leave the queue, SHALL NOT be shown to customers and SHALL NOT count in the average rating. It SHALL still prevent its author from reviewing that product again.
+Staff SHALL be able to reject a pending review. A rejected review SHALL leave the queue and SHALL never be shown to customers.
 
-#### Scenario: Rejecting a review
-- **WHEN** staff reject a pending review of "Pure Function Tee"
-- **THEN** the review leaves the Reviews section, is not shown on the "Pure Function Tee" product page and does not count in its average rating
+#### Scenario: Reject
+- **WHEN** staff reject a pending review from the queue
+- **THEN** the review is no longer listed in the queue and does not appear on its product page nor count towards its rating summary
 
 ### Requirement: A review is moderated once
-Only pending reviews SHALL be approved or rejected. Approving or rejecting a review that was already moderated, or that does not exist, SHALL fail without changing any review.
+A review SHALL be approved or rejected only once. Approving or rejecting a review that is no longer pending SHALL fail without changing it.
 
-#### Scenario: Review moderated in the meantime
-- **WHEN** two staff members have the queue open and one approves a review that the other then tries to reject
-- **THEN** the review stays approved and the second staff member is told the review was already moderated
+#### Scenario: Already moderated in another tab
+- **WHEN** staff approve or reject a review that was already approved or rejected (for example, from a stale page)
+- **THEN** the review keeps its status and staff see an error saying the review was already moderated
 
-#### Scenario: Review no longer exists
+#### Scenario: Unknown review
 - **WHEN** staff approve or reject a review that does not exist
-- **THEN** no review changes and staff are told the review no longer exists
+- **THEN** nothing changes and staff see an error saying the review was not found
