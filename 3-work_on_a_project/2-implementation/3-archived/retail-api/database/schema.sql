@@ -95,15 +95,15 @@ create table order_lines (
 create table reviews (
 	id text primary key,
 	product_id text not null,
-	user_id text not null references users(id) on delete cascade,
+	user_id text not null references users(id),
 	product_name text not null,
-	author_name text not null,
 	rating integer not null check (rating between 1 and 5),
 	title text not null,
 	body text not null,
 	status text not null default 'pending' check (status in ('pending', 'approved', 'rejected')),
-	created_at timestamptz not null default now(),
-	unique (user_id, product_id)
+	created_at timestamptz not null
 );
 
+create unique index reviews_product_id_user_id_key on reviews(product_id, user_id);
 create index reviews_product_id_status_idx on reviews(product_id, status);
+create index reviews_status_created_at_idx on reviews(status, created_at);

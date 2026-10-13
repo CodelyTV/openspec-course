@@ -1,8 +1,13 @@
-import type { ReviewSubmission } from "@/contexts/frontend/retail/api/responses";
-
 import { InvalidFormDataError } from "../InvalidFormDataError";
 
-function requiredField(formData: FormData, field: string): string {
+export type ReviewFormFields = {
+	productId: string;
+	rating: number;
+	title: string;
+	body: string;
+};
+
+function requiredText(formData: FormData, field: string): string {
 	const value = formData.get(field);
 
 	if (typeof value !== "string") {
@@ -12,25 +17,41 @@ function requiredField(formData: FormData, field: string): string {
 	return value;
 }
 
-function requiredNonEmptyField(formData: FormData, field: string): string {
-	const value = requiredField(formData, field);
+function requiredRating(formData: FormData): number {
+	const rating = formData.get("rating");
+	const isNumericRating =
+		typeof rating === "string" &&
+		rating.trim().length > 0 &&
+		!Number.isNaN(Number(rating));
 
-	if (value.length === 0) {
-		throw new InvalidFormDataError(`${field} is required`);
+	if (!isNumericRating) {
+		throw new InvalidFormDataError("rating must be a number");
 	}
 
-	return value;
+	return Number(rating);
 }
 
 export function requiredReviewId(formData: FormData): string {
-	return requiredNonEmptyField(formData, "id");
+	const reviewId = requiredText(formData, "reviewId");
+
+	if (reviewId.length === 0) {
+		throw new InvalidFormDataError("reviewId is required");
+	}
+
+	return reviewId;
 }
 
-export function reviewSubmissionOf(formData: FormData): ReviewSubmission {
+export function reviewFormFields(formData: FormData): ReviewFormFields {
+	const productId = requiredText(formData, "productId");
+
+	if (productId.length === 0) {
+		throw new InvalidFormDataError("productId is required");
+	}
+
 	return {
-		productId: requiredNonEmptyField(formData, "productId"),
-		rating: Number(requiredNonEmptyField(formData, "rating")),
-		title: requiredField(formData, "title"),
-		body: requiredField(formData, "body"),
+		productId,
+		rating: requiredRating(formData),
+		title: requiredText(formData, "title"),
+		body: requiredText(formData, "body"),
 	};
 }

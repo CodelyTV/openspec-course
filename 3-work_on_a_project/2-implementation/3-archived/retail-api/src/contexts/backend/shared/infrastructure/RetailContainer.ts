@@ -9,9 +9,9 @@ import { OrdersOrderPlacement } from "@/contexts/backend/checkout/infrastructure
 import { PostgresCheckoutRepository } from "@/contexts/backend/checkout/infrastructure/PostgresCheckoutRepository";
 import { ProductsCheckoutCatalog } from "@/contexts/backend/checkout/infrastructure/ProductsCheckoutCatalog";
 import { ProductsStockReserver } from "@/contexts/backend/checkout/infrastructure/ProductsStockReserver";
+import { ProductPurchaseChecker } from "@/contexts/backend/orders/application/check-purchase/ProductPurchaseChecker";
 import { OrderFinder } from "@/contexts/backend/orders/application/find/OrderFinder";
 import { UserOrderFinder } from "@/contexts/backend/orders/application/find-mine/UserOrderFinder";
-import { PurchasedProductFinder } from "@/contexts/backend/orders/application/find-purchased-product/PurchasedProductFinder";
 import { OrdersLister } from "@/contexts/backend/orders/application/list/OrdersLister";
 import { UserOrdersLister } from "@/contexts/backend/orders/application/list-mine/UserOrdersLister";
 import { RecentOrdersLister } from "@/contexts/backend/orders/application/list-recent/RecentOrdersLister";
@@ -37,13 +37,14 @@ import { PostgresOutfitRepository } from "@/contexts/backend/products/infrastruc
 import { PostgresProductRepository } from "@/contexts/backend/products/infrastructure/PostgresProductRepository";
 import { ReviewApprover } from "@/contexts/backend/reviews/application/approve/ReviewApprover";
 import { ReviewEligibilityChecker } from "@/contexts/backend/reviews/application/check-eligibility/ReviewEligibilityChecker";
-import { ProductReviewsFinder } from "@/contexts/backend/reviews/application/find-for-product/ProductReviewsFinder";
+import { ProductReviewsGetter } from "@/contexts/backend/reviews/application/get-product-reviews/ProductReviewsGetter";
 import { PendingReviewsLister } from "@/contexts/backend/reviews/application/list-pending/PendingReviewsLister";
 import { ReviewRejecter } from "@/contexts/backend/reviews/application/reject/ReviewRejecter";
 import { ReviewSubmitter } from "@/contexts/backend/reviews/application/submit/ReviewSubmitter";
 import { OrdersPurchaseHistory } from "@/contexts/backend/reviews/infrastructure/OrdersPurchaseHistory";
 import { PostgresReviewRepository } from "@/contexts/backend/reviews/infrastructure/PostgresReviewRepository";
-import { UsersReviewAuthors } from "@/contexts/backend/reviews/infrastructure/UsersReviewAuthors";
+import { ProductsReviewedProducts } from "@/contexts/backend/reviews/infrastructure/ProductsReviewedProducts";
+import { UsersReviewerDirectory } from "@/contexts/backend/reviews/infrastructure/UsersReviewerDirectory";
 import { CurrentUserGetter } from "@/contexts/backend/users/application/current/CurrentUserGetter";
 import { UsersByIdsSearcher } from "@/contexts/backend/users/application/search-by-ids/UsersByIdsSearcher";
 import { FakeSessionCurrentUserProvider } from "@/contexts/backend/users/infrastructure/FakeSessionCurrentUserProvider";
@@ -205,8 +206,8 @@ class RetailContainer {
 		);
 	}
 
-	get purchasedProductFinder(): PurchasedProductFinder {
-		return new PurchasedProductFinder(this.orderRepository);
+	get productPurchaseChecker(): ProductPurchaseChecker {
+		return new ProductPurchaseChecker(this.orderRepository);
 	}
 
 	private get checkoutCatalog(): ProductsCheckoutCatalog {
@@ -256,18 +257,18 @@ class RetailContainer {
 	}
 
 	private get purchaseHistory(): OrdersPurchaseHistory {
-		return new OrdersPurchaseHistory(this.purchasedProductFinder);
+		return new OrdersPurchaseHistory(this.productPurchaseChecker);
 	}
 
-	private get reviewAuthors(): UsersReviewAuthors {
-		return new UsersReviewAuthors(this.usersByIdsSearcher);
+	private get reviewerDirectory(): UsersReviewerDirectory {
+		return new UsersReviewerDirectory(this.usersByIdsSearcher);
 	}
 
 	get reviewSubmitter(): ReviewSubmitter {
 		return new ReviewSubmitter(
 			this.reviewRepository,
 			this.purchaseHistory,
-			this.reviewAuthors,
+			new ProductsReviewedProducts(this.productFinder),
 			this.currentUserProviderInstance,
 			this.idGenerator,
 			this.clock,
@@ -282,12 +283,18 @@ class RetailContainer {
 		);
 	}
 
-	get productReviewsFinder(): ProductReviewsFinder {
-		return new ProductReviewsFinder(this.reviewRepository);
+	get productReviewsGetter(): ProductReviewsGetter {
+		return new ProductReviewsGetter(
+			this.reviewRepository,
+			this.reviewerDirectory,
+		);
 	}
 
 	get pendingReviewsLister(): PendingReviewsLister {
-		return new PendingReviewsLister(this.reviewRepository);
+		return new PendingReviewsLister(
+			this.reviewRepository,
+			this.reviewerDirectory,
+		);
 	}
 
 	get reviewApprover(): ReviewApprover {

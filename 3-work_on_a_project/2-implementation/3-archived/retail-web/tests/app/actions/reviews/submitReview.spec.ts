@@ -26,10 +26,10 @@ function reviewForm(fields: Record<string, string>): FormData {
 }
 
 const validFields = {
-	productId: "pure-function-tee",
+	productId: "hoodie",
 	rating: "4",
-	title: "Fits great",
-	body: "Soft cotton.",
+	title: "Warm and comfy",
+	body: "Thick fabric and a relaxed fit.",
 };
 
 describe("submitReview should", () => {
@@ -38,39 +38,70 @@ describe("submitReview should", () => {
 
 		expect(
 			await submitReview(initialActionState, reviewForm(validFields)),
-		).toEqual(initialActionState);
-		expect(submit).toHaveBeenCalledWith({
-			productId: "pure-function-tee",
-			rating: 4,
-			title: "Fits great",
-			body: "Soft cotton.",
-		});
-		expect(revalidatePath).toHaveBeenCalledWith(
-			"/products/pure-function-tee",
+		).toEqual({ error: null });
+		expect(submit).toHaveBeenCalledWith(
+			"hoodie",
+			4,
+			"Warm and comfy",
+			"Thick fabric and a relaxed fit.",
 		);
+		expect(revalidatePath).toHaveBeenCalledWith("/products/[id]", "page");
 	});
 
 	it.each([
+		["the rating is missing", { ...validFields, rating: "" }],
+		["the rating is not a number", { ...validFields, rating: "four" }],
+		["the product is missing", { ...validFields, productId: "" }],
+	])(
+		"reject the form before calling the API when %s",
+		async (_case, fields) => {
+			expect(
+				await submitReview(initialActionState, reviewForm(fields)),
+			).toEqual({ error: invalidRequestMessage });
+			expect(submit).not.toHaveBeenCalled();
+			expect(revalidatePath).not.toHaveBeenCalled();
+		},
+	);
+
+	it("reject a form without title or body before calling the API", async () => {
+		const { title: _title, ...withoutTitle } = validFields;
+
+		expect(
+			await submitReview(initialActionState, reviewForm(withoutTitle)),
+		).toEqual({ error: invalidRequestMessage });
+		expect(submit).not.toHaveBeenCalled();
+	});
+
+	it.each([
+		[
+			"InvalidReviewRatingError",
+			422,
+			"Choose a rating between 1 and 5 stars.",
+		],
+		[
+			"InvalidReviewTitleError",
+			422,
+			"The title is required and can be at most 100 characters long.",
+		],
+		[
+			"InvalidReviewBodyError",
+			422,
+			"The review text is required and can be at most 2000 characters long.",
+		],
 		[
 			"ProductNotPurchasedError",
 			403,
 			"Only customers who bought this product can review it.",
 		],
-		["ReviewAlreadyExistsError", 409, "You already reviewed this product."],
 		[
-			"InvalidReviewRatingError",
-			422,
-			"The rating must be between 1 and 5 stars.",
+			"ReviewAlreadyExistsError",
+			409,
+			"You have already reviewed this product.",
 		],
 		[
-			"InvalidReviewTitleError",
-			422,
-			"The title must have between 1 and 100 characters.",
-		],
-		[
-			"InvalidReviewBodyError",
-			422,
-			"The review must have between 1 and 2000 characters.",
+			"ReviewedProductNotFoundError",
+			404,
+			"This product is no longer available.",
 		],
 	])(
 		"explain why the review was rejected with %s",
@@ -83,25 +114,6 @@ describe("submitReview should", () => {
 				await submitReview(initialActionState, reviewForm(validFields)),
 			).toEqual({ error: message });
 			expect(revalidatePath).not.toHaveBeenCalled();
-		},
-	);
-
-	it.each(["productId", "rating"] as const)(
-		"reject a form without %s before calling the API",
-		async (missingField) => {
-			const fieldsWithoutTheMissingOne = Object.fromEntries(
-				Object.entries(validFields).filter(
-					([name]) => name !== missingField,
-				),
-			);
-
-			expect(
-				await submitReview(
-					initialActionState,
-					reviewForm(fieldsWithoutTheMissingOne),
-				),
-			).toEqual({ error: invalidRequestMessage });
-			expect(submit).not.toHaveBeenCalled();
 		},
 	);
 });

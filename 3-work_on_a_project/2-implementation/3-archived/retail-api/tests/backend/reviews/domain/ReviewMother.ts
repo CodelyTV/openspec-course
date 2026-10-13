@@ -4,8 +4,13 @@ import {
 	Review,
 	type ReviewPrimitives,
 } from "@/contexts/backend/reviews/domain/Review";
+import {
+	maxReviewRating,
+	minReviewRating,
+} from "@/contexts/backend/reviews/domain/ReviewRating";
+import { reviewStatuses } from "@/contexts/backend/reviews/domain/ReviewStatus";
 
-const referenceDate = new Date("2026-09-28T12:00:00.000Z");
+const referenceDate = new Date("2026-10-01T12:00:00.000Z");
 
 export class ReviewMother {
 	static create(overrides: Partial<ReviewPrimitives> = {}): Review {
@@ -32,17 +37,15 @@ export class ReviewMother {
 			productId: faker.helpers
 				.slugify(faker.commerce.productName())
 				.toLowerCase(),
-			userId: `user-${faker.string.alphanumeric(8)}`,
+			authorId: `user-${faker.string.alphanumeric(8)}`,
 			productName: faker.commerce.productName(),
-			authorName: faker.person.fullName(),
-			rating: faker.number.int({ min: 1, max: 5 }),
-			title: faker.lorem.words({ min: 1, max: 6 }),
-			body: faker.lorem.sentences({ min: 1, max: 3 }),
-			status: faker.helpers.arrayElement([
-				"pending",
-				"approved",
-				"rejected",
-			]),
+			rating: faker.number.int({
+				min: minReviewRating,
+				max: maxReviewRating,
+			}),
+			title: faker.lorem.sentence({ min: 2, max: 6 }),
+			body: faker.lorem.paragraph(),
+			status: faker.helpers.arrayElement(reviewStatuses),
 			createdAt: faker.date
 				.recent({ refDate: referenceDate })
 				.toISOString(),

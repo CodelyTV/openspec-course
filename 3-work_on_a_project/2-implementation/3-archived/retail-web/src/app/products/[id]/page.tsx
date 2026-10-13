@@ -44,7 +44,7 @@ export default async function ProductPage({
 
 	const [suggestions, productReviews, reviewEligibility] = await Promise.all([
 		retailApi.productSuggestionsFinder.find(product.id),
-		retailApi.productReviewsFinder.find(product.id),
+		retailApi.productReviewsGetter.get(product.id),
 		retailApi.reviewEligibilityChecker.check(product.id),
 	]);
 
@@ -75,7 +75,7 @@ export default async function ProductPage({
 			<ProductReviews productReviews={productReviews}>
 				<ReviewPanel
 					productId={product.id}
-					eligibility={reviewEligibility}
+					eligibility={reviewEligibility.status}
 				/>
 			</ProductReviews>
 

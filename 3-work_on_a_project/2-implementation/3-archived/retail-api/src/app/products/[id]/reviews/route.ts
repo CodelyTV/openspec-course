@@ -10,7 +10,7 @@ export const GET = withErrorHandling(
 		const { id } = await params;
 
 		return Response.json(
-			await retailContainer.productReviewsFinder.find(id),
+			await retailContainer.productReviewsGetter.get(id),
 		);
 	},
 );

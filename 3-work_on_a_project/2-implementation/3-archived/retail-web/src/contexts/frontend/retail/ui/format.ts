@@ -77,14 +77,14 @@ export function formatProductCount(count: number): string {
 	return `${count} ${count === 1 ? "product" : "products"}`;
 }
 
-export function formatOutfitMembership(outfitCount: number): string {
-	return `In ${outfitCount} ${outfitCount === 1 ? "outfit" : "outfits"}`;
-}
-
 export function formatReviewCount(count: number): string {
 	return `${count} ${count === 1 ? "review" : "reviews"}`;
 }
 
-export function formatRating(rating: number): string {
-	return `${rating} out of 5`;
+export function formatStarRating(rating: number): string {
+	return `${rating} out of 5 stars`;
+}
+
+export function formatOutfitMembership(outfitCount: number): string {
+	return `In ${outfitCount} ${outfitCount === 1 ? "outfit" : "outfits"}`;
 }

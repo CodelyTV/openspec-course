@@ -7,24 +7,21 @@ import { retailApi } from "@/contexts/frontend/retail/api/RetailApi";
 import { type ActionState, initialActionState } from "../ActionState";
 import { actionStateFor } from "../actionStateFor";
 
-import { reviewSubmissionOf } from "./reviewFormFields";
+import { reviewFormFields } from "./reviewFormFields";
 import { reviewMessages } from "./reviewMessages";
 
 export async function submitReview(
 	_previousState: ActionState,
 	formData: FormData,
 ): Promise<ActionState> {
-	let productId: string;
-
 	try {
-		const review = reviewSubmissionOf(formData);
-		productId = review.productId;
-		await retailApi.reviewSubmitter.submit(review);
+		const { productId, rating, title, body } = reviewFormFields(formData);
+		await retailApi.reviewSubmitter.submit(productId, rating, title, body);
 	} catch (error) {
 		return actionStateFor(error, reviewMessages);
 	}
 
-	revalidatePath(`/products/${encodeURIComponent(productId)}`);
+	revalidatePath("/products/[id]", "page");
 
 	return initialActionState;
 }

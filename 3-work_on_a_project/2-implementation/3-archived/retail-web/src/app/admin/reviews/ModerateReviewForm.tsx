@@ -16,27 +16,23 @@ export function ModerateReviewForm({
 }: {
 	reviewId: string;
 }): React.JSX.Element {
-	const [approvalState, approveAction] = useActionState(
+	const [approvalState, approve] = useActionState(
 		approveReview,
 		initialActionState,
 	);
-	const [rejectionState, rejectAction] = useActionState(
+	const [rejectionState, reject] = useActionState(
 		rejectReview,
 		initialActionState,
 	);
 
 	return (
 		<form className={styles.form}>
-			<input type="hidden" name="id" value={reviewId} />
-			<div className={styles.actions}>
-				<SubmitButton size="small" formAction={approveAction}>
+			<input type="hidden" name="reviewId" value={reviewId} />
+			<div className={styles.buttons}>
+				<SubmitButton size="small" formAction={approve}>
 					Approve
 				</SubmitButton>
-				<SubmitButton
-					size="small"
-					mode="danger"
-					formAction={rejectAction}
-				>
+				<SubmitButton size="small" mode="danger" formAction={reject}>
 					Reject
 				</SubmitButton>
 			</div>

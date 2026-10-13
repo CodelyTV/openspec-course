@@ -3,48 +3,11 @@ import { describe, expect, it } from "vitest";
 
 import { ProductReviews } from "@/contexts/frontend/retail/sections/ProductReviews";
 
+import { ProductReviewResponseMother } from "../responses/ProductReviewResponseMother";
 import { ProductReviewsResponseMother } from "../responses/ProductReviewsResponseMother";
-import { ReviewResponseMother } from "../responses/ReviewResponseMother";
 
 describe("ProductReviews should", () => {
-	it("show every approved review with its rating, title, body, author and date in the given order", () => {
-		render(
-			<ProductReviews
-				productReviews={ProductReviewsResponseMother.create({
-					reviews: [
-						ReviewResponseMother.create({
-							title: "Fits great",
-							body: "Soft cotton and a clean drape.",
-							rating: 5,
-							authorName: "Ana López",
-							createdAt: "2026-09-27T10:00:00.000Z",
-						}),
-						ReviewResponseMother.create({
-							title: "Runs large",
-							rating: 3,
-							authorName: "Bob Martin",
-							createdAt: "2026-09-26T10:00:00.000Z",
-						}),
-					],
-				})}
-			/>,
-		);
-
-		const reviews = within(
-			screen.getByRole("list", { name: "Approved reviews" }),
-		).getAllByRole("article");
-
-		expect(
-			reviews.map((review) => review.getAttribute("aria-label")),
-		).toEqual(["Fits great", "Runs large"]);
-		expect(
-			within(reviews[0]).getByRole("img", { name: "5 out of 5 stars" }),
-		).toBeInTheDocument();
-		expect(reviews[0]).toHaveTextContent("Soft cotton and a clean drape.");
-		expect(reviews[0]).toHaveTextContent("Ana López · 27 September 2026");
-	});
-
-	it("show the average rating and the number of approved reviews", () => {
+	it("summarize the average rating and the number of reviews", () => {
 		render(
 			<ProductReviews
 				productReviews={ProductReviewsResponseMother.create({
@@ -54,38 +17,71 @@ describe("ProductReviews should", () => {
 			/>,
 		);
 
-		expect(screen.getByText("4.3 out of 5")).toBeInTheDocument();
-		expect(
-			screen.getByRole("img", { name: "4.3 out of 5 stars" }),
-		).toBeInTheDocument();
-		expect(screen.getByText("3 reviews")).toBeInTheDocument();
+		const section = screen.getByRole("region", { name: "Reviews" });
+
+		expect(section).toHaveTextContent("4.3 out of 5 · 3 reviews");
 	});
 
-	it("say there are no reviews yet and show no average when there are no approved reviews", () => {
+	it("show every review in the order received with its rating, title, body, author and date", () => {
+		render(
+			<ProductReviews
+				productReviews={ProductReviewsResponseMother.create({
+					reviews: [
+						ProductReviewResponseMother.create({
+							rating: 4,
+							title: "Warm and comfy",
+							body: "Thick fabric and a relaxed fit.",
+							authorName: "Ada Lovelace",
+							createdAt: "2026-10-05T10:00:00.000Z",
+						}),
+						ProductReviewResponseMother.create({
+							title: "Runs small",
+						}),
+					],
+				})}
+			/>,
+		);
+
+		const reviews = screen.getAllByRole("article");
+
+		expect(
+			reviews.map((review) => review.getAttribute("aria-label")),
+		).toEqual(["Warm and comfy", "Runs small"]);
+		expect(
+			within(reviews[0]).getByRole("img", { name: "4 out of 5 stars" }),
+		).toBeInTheDocument();
+		expect(
+			within(reviews[0]).getByRole("heading", { name: "Warm and comfy" }),
+		).toBeInTheDocument();
+		expect(reviews[0]).toHaveTextContent("Thick fabric and a relaxed fit.");
+		expect(reviews[0]).toHaveTextContent("Ada Lovelace · 5 October 2026");
+	});
+
+	it("say there are no reviews yet, with no average", () => {
 		render(
 			<ProductReviews
 				productReviews={ProductReviewsResponseMother.empty()}
 			/>,
 		);
 
-		expect(screen.getByText("No reviews yet")).toBeInTheDocument();
-		expect(screen.queryByText(/out of 5/)).not.toBeInTheDocument();
-		expect(screen.queryByRole("list")).not.toBeInTheDocument();
+		const section = screen.getByRole("region", { name: "Reviews" });
+
+		expect(section).toHaveTextContent("No reviews yet");
+		expect(section).not.toHaveTextContent("out of 5");
+		expect(screen.queryByRole("article")).not.toBeInTheDocument();
 	});
 
-	it("show what it is given next to the reviews, such as the review form", () => {
+	it("show what it is given next to the summary", () => {
 		render(
 			<ProductReviews
 				productReviews={ProductReviewsResponseMother.empty()}
 			>
-				<p>Review form</p>
+				<p>Thanks! Your review is awaiting moderation.</p>
 			</ProductReviews>,
 		);
 
 		expect(
-			within(screen.getByRole("region", { name: "Reviews" })).getByText(
-				"Review form",
-			),
-		).toBeInTheDocument();
+			screen.getByRole("region", { name: "Reviews" }),
+		).toHaveTextContent("Thanks! Your review is awaiting moderation.");
 	});
 });

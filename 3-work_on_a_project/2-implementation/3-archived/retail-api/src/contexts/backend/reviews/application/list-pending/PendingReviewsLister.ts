@@ -1,26 +1,38 @@
-import type { Review } from "../../domain/Review";
+import type { ReviewerDirectory } from "../../domain/ReviewerDirectory";
 import type { ReviewRepository } from "../../domain/ReviewRepository";
-import { type ReviewResponse, toReviewResponse } from "../ReviewResponse";
 
-export type PendingReviewResponse = ReviewResponse & {
+export type PendingReviewResponse = {
+	id: string;
 	productId: string;
 	productName: string;
+	authorName: string;
+	rating: number;
+	title: string;
+	body: string;
+	createdAt: string;
 };
 
-function toPendingReviewResponse(review: Review): PendingReviewResponse {
-	return {
-		...toReviewResponse(review),
-		productId: review.productId.value,
-		productName: review.productName,
-	};
-}
-
 export class PendingReviewsLister {
-	constructor(private readonly repository: ReviewRepository) {}
+	constructor(
+		private readonly repository: ReviewRepository,
+		private readonly reviewerDirectory: ReviewerDirectory,
+	) {}
 
 	async list(): Promise<PendingReviewResponse[]> {
 		const pendingReviews = await this.repository.searchPending();
+		const reviewerNames = await this.reviewerDirectory.namesOf(
+			pendingReviews.map((review) => review.authorId),
+		);
 
-		return pendingReviews.map(toPendingReviewResponse);
+		return pendingReviews.map((review) => ({
+			id: review.id.value,
+			productId: review.productId.value,
+			productName: review.productName,
+			authorName: reviewerNames.nameOf(review.authorId),
+			rating: review.rating.value,
+			title: review.title,
+			body: review.body,
+			createdAt: review.createdAt.toISOString(),
+		}));
 	}
 }

@@ -19,7 +19,6 @@ import type {
 	ProductReviewsResponse,
 	ProductSuggestionsResponse,
 	ReviewEligibilityResponse,
-	ReviewSubmission,
 } from "./responses";
 import { RetailApiError } from "./RetailApiError";
 
@@ -53,21 +52,31 @@ export class RetailApi {
 			this.get(`/products/${pathSegment(productId)}/suggestions`),
 	};
 
-	readonly productReviewsFinder = {
-		find: (productId: string): Promise<ProductReviewsResponse> =>
+	readonly productReviewsGetter = {
+		get: (productId: string): Promise<ProductReviewsResponse> =>
 			this.get(`/products/${pathSegment(productId)}/reviews`),
 	};
 
 	readonly reviewEligibilityChecker = {
 		check: (productId: string): Promise<ReviewEligibilityResponse> =>
 			this.get(
-				`/me/products/${pathSegment(productId)}/review-eligibility`,
+				`/me/reviews/eligibility?${new URLSearchParams({ productId })}`,
 			),
 	};
 
 	readonly reviewSubmitter = {
-		submit: async (review: ReviewSubmission): Promise<void> => {
-			await this.request("POST", "/me/reviews", review);
+		submit: async (
+			productId: string,
+			rating: number,
+			title: string,
+			body: string,
+		): Promise<void> => {
+			await this.request("POST", "/me/reviews", {
+				productId,
+				rating,
+				title,
+				body,
+			});
 		},
 	};
 

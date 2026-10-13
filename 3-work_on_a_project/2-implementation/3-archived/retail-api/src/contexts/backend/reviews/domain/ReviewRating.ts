@@ -11,7 +11,11 @@ export class ReviewRating {
 			value <= maxReviewRating;
 
 		if (!isWholeNumberOfStarsInRange) {
-			throw new InvalidReviewRatingError(value);
+			throw new InvalidReviewRatingError(
+				value,
+				minReviewRating,
+				maxReviewRating,
+			);
 		}
 	}
 }

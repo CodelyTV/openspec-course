@@ -153,34 +153,33 @@ export type OrdersSummaryResponse = {
 
 export type CurrentUserResponse = { id: string; name: string; email: string };
 
-export type ReviewResponse = {
+export type ProductReviewResponse = {
 	id: string;
-	authorName: string;
 	rating: number;
 	title: string;
 	body: string;
+	authorName: string;
 	createdAt: string;
 };
 
 export type ProductReviewsResponse = {
 	averageRating: number | null;
 	reviewCount: number;
-	reviews: ReviewResponse[];
+	reviews: ProductReviewResponse[];
 };
 
 export type ReviewEligibilityStatus =
-	"can-review" | "not-purchased" | "awaiting-moderation" | "already-reviewed";
+	"can-review" | "pending-review" | "already-reviewed" | "not-purchased";
 
 export type ReviewEligibilityResponse = { status: ReviewEligibilityStatus };
 
-export type PendingReviewResponse = ReviewResponse & {
+export type PendingReviewResponse = {
+	id: string;
 	productId: string;
 	productName: string;
-};
-
-export type ReviewSubmission = {
-	productId: string;
+	authorName: string;
 	rating: number;
 	title: string;
 	body: string;
+	createdAt: string;
 };

@@ -2,9 +2,8 @@ import { describe, expect, it, vi } from "vitest";
 
 import { GET } from "@/app/reviews/pending/route";
 import type { PendingReviewsLister } from "@/contexts/backend/reviews/application/list-pending/PendingReviewsLister";
-import { toReviewResponse } from "@/contexts/backend/reviews/application/ReviewResponse";
 
-import { ReviewMother } from "../../../backend/reviews/domain/ReviewMother";
+import { PendingReviewResponseMother } from "../../../backend/reviews/application/list-pending/PendingReviewResponseMother";
 import { Mock } from "../../../shared/Mock";
 
 const pendingReviewsLister = Mock.create<PendingReviewsLister>();
@@ -18,16 +17,12 @@ vi.mock("@/contexts/backend/shared/infrastructure/RetailContainer", () => ({
 }));
 
 describe("GET /reviews/pending should", () => {
-	it("respond with the pending reviews", async () => {
-		const review = ReviewMother.pending();
-		const pendingReviews = [
-			{
-				...toReviewResponse(review),
-				productId: review.productId.value,
-				productName: review.productName,
-			},
+	it("respond with the reviews awaiting moderation", async () => {
+		const pending = [
+			PendingReviewResponseMother.create(),
+			PendingReviewResponseMother.create(),
 		];
-		pendingReviewsLister.listShouldReturn(pendingReviews);
+		pendingReviewsLister.listShouldReturn(pending);
 
 		const response = await GET(
 			new Request("http://localhost/reviews/pending"),
@@ -35,6 +30,6 @@ describe("GET /reviews/pending should", () => {
 		);
 
 		expect(response.status).toBe(200);
-		expect(await response.json()).toEqual(pendingReviews);
+		expect(await response.json()).toEqual(pending);
 	});
 });

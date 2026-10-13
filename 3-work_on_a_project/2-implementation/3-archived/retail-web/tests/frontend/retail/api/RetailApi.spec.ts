@@ -169,88 +169,121 @@ describe("RetailApi should", () => {
 		);
 	});
 
-	it("find the approved reviews of a product", async () => {
-		const productReviews = ProductReviewsResponseMother.create();
-		respondWith(200, productReviews);
+	it("get the approved reviews of a product", async () => {
+		const reviews = ProductReviewsResponseMother.create();
+		respondWith(200, reviews);
 
 		expect(
-			await apiWithIncomingHeaders().productReviewsFinder.find(
-				"pure-function-tee",
-			),
-		).toEqual(productReviews);
-		expect(lastRequest().url).toBe(
-			`${baseUrl}/products/pure-function-tee/reviews`,
-		);
+			await apiWithIncomingHeaders().productReviewsGetter.get("a/b"),
+		).toEqual(reviews);
+		expect(lastRequest().url).toBe(`${baseUrl}/products/a%2Fb/reviews`);
 		expect(lastRequest().init.method).toBe("GET");
-		expect(lastRequest().init.body).toBeUndefined();
 	});
 
-	it("check whether the current user can review a product", async () => {
-		const eligibility =
-			ReviewEligibilityResponseMother.create("can-review");
-		respondWith(200, eligibility);
+	it("check whether the current customer can review a product", async () => {
+		respondWith(200, ReviewEligibilityResponseMother.create("can-review"));
 
 		expect(
 			await apiWithIncomingHeaders().reviewEligibilityChecker.check(
-				"pure-function-tee",
+				"hoodie & co",
 			),
-		).toEqual(eligibility);
+		).toEqual({ status: "can-review" });
 		expect(lastRequest().url).toBe(
-			`${baseUrl}/me/products/pure-function-tee/review-eligibility`,
+			`${baseUrl}/me/reviews/eligibility?productId=hoodie+%26+co`,
 		);
-		expect(lastRequest().init.method).toBe("GET");
-		expect(lastRequest().init.body).toBeUndefined();
 	});
 
-	it("send the review submitted by the current user as JSON", async () => {
+	it("submit a review as JSON", async () => {
 		respondWith(201);
-		const review = {
-			productId: "pure-function-tee",
-			rating: 4,
-			title: "Fits great",
-			body: "Soft cotton.",
-		};
 
-		await apiWithIncomingHeaders().reviewSubmitter.submit(review);
+		await apiWithIncomingHeaders().reviewSubmitter.submit(
+			"hoodie",
+			4,
+			"Warm and comfy",
+			"Thick fabric.",
+		);
 
 		expect(lastRequest().url).toBe(`${baseUrl}/me/reviews`);
 		expect(lastRequest().init.method).toBe("POST");
-		expect(lastRequest().init.body).toBe(JSON.stringify(review));
+		expect(lastRequest().init.body).toBe(
+			JSON.stringify({
+				productId: "hoodie",
+				rating: 4,
+				title: "Warm and comfy",
+				body: "Thick fabric.",
+			}),
+		);
 		expect(lastRequestHeaders().get("content-type")).toBe(
 			"application/json",
 		);
 	});
 
-	it("list the pending reviews", async () => {
-		const pendingReviews = [PendingReviewResponseMother.create()];
-		respondWith(200, pendingReviews);
+	it("fail with the review error the API responded with", async () => {
+		respondWith(403, {
+			error: {
+				type: "ProductNotPurchasedError",
+				message: "not purchased",
+			},
+		});
+
+		await expect(
+			apiWithIncomingHeaders().reviewSubmitter.submit(
+				"hoodie",
+				4,
+				"Warm and comfy",
+				"Thick fabric.",
+			),
+		).rejects.toMatchObject({
+			status: 403,
+			type: "ProductNotPurchasedError",
+		});
+	});
+
+	it("list the reviews awaiting moderation", async () => {
+		const pending = [PendingReviewResponseMother.create()];
+		respondWith(200, pending);
 
 		expect(
 			await apiWithIncomingHeaders().pendingReviewsLister.list(),
-		).toEqual(pendingReviews);
+		).toEqual(pending);
 		expect(lastRequest().url).toBe(`${baseUrl}/reviews/pending`);
-		expect(lastRequest().init.method).toBe("GET");
-		expect(lastRequest().init.body).toBeUndefined();
 	});
 
-	it("approve a review without a body", async () => {
-		respondWith(204);
+	it.each([
+		["approve", "approval"],
+		["reject", "rejection"],
+	] as const)(
+		"%s a review with an empty POST",
+		async (decision, subresource) => {
+			respondWith(204);
+			const api = apiWithIncomingHeaders();
 
-		await apiWithIncomingHeaders().reviewApprover.approve("review-1");
+			await (decision === "approve"
+				? api.reviewApprover.approve("review/1")
+				: api.reviewRejecter.reject("review/1"));
 
-		expect(lastRequest().url).toBe(`${baseUrl}/reviews/review-1/approval`);
-		expect(lastRequest().init.method).toBe("POST");
-		expect(lastRequest().init.body).toBeUndefined();
-	});
+			expect(lastRequest().url).toBe(
+				`${baseUrl}/reviews/review%2F1/${subresource}`,
+			);
+			expect(lastRequest().init.method).toBe("POST");
+			expect(lastRequest().init.body).toBeUndefined();
+		},
+	);
 
-	it("reject a review without a body", async () => {
-		respondWith(204);
+	it("fail with a moderation error the API responded with", async () => {
+		respondWith(409, {
+			error: {
+				type: "ReviewAlreadyModeratedError",
+				message: "already moderated",
+			},
+		});
 
-		await apiWithIncomingHeaders().reviewRejecter.reject("review-1");
-
-		expect(lastRequest().url).toBe(`${baseUrl}/reviews/review-1/rejection`);
-		expect(lastRequest().init.method).toBe("POST");
-		expect(lastRequest().init.body).toBeUndefined();
+		await expect(
+			apiWithIncomingHeaders().reviewApprover.approve("review-1"),
+		).rejects.toMatchObject({
+			status: 409,
+			type: "ReviewAlreadyModeratedError",
+		});
 	});
 
 	it("fail with the error type and status the API responded with", async () => {

@@ -1,52 +1,43 @@
 import type { ProductReviewsResponse } from "@/contexts/frontend/retail/api/responses";
-import {
-	formatLongDate,
-	formatRating,
-	formatReviewCount,
-} from "@/contexts/frontend/retail/ui/format";
 
-import { StarRating } from "./StarRating";
+import { formatLongDate, formatReviewCount } from "../ui/format";
+
+import { ReviewStars } from "./ReviewStars";
 
 import styles from "./ProductReviews.module.scss";
-
-type ProductReviewsProps = {
-	productReviews: ProductReviewsResponse;
-	children?: React.ReactNode;
-};
 
 export function ProductReviews({
 	productReviews,
 	children,
-}: ProductReviewsProps): React.JSX.Element {
+}: {
+	productReviews: ProductReviewsResponse;
+	children?: React.ReactNode;
+}): React.JSX.Element {
 	const { averageRating, reviewCount, reviews } = productReviews;
 
 	return (
-		<section className={styles.section} aria-labelledby="reviews-heading">
-			<p className="eyebrow">Customer feedback</p>
-			<h2 id="reviews-heading" className={styles.heading}>
+		<section className={styles.section} aria-labelledby="product-reviews">
+			<h2 id="product-reviews" className={styles.heading}>
 				Reviews
 			</h2>
 
-			{averageRating === null ? (
-				<p className={styles.empty}>No reviews yet</p>
-			) : (
-				<p className={styles.summary}>
-					<StarRating rating={averageRating} />
-					<strong>{formatRating(averageRating)}</strong>
-					<span className={styles.count}>
-						{formatReviewCount(reviewCount)}
-					</span>
-				</p>
-			)}
+			<p className={styles.summary}>
+				{averageRating === null
+					? "No reviews yet"
+					: `${averageRating} out of 5 · ${formatReviewCount(reviewCount)}`}
+			</p>
 
 			{children}
 
 			{reviews.length > 0 ? (
-				<ul className={styles.list} aria-label="Approved reviews">
+				<ol className={styles.list}>
 					{reviews.map((review) => (
-						<li key={review.id} className={styles.review}>
-							<article aria-label={review.title}>
-								<StarRating rating={review.rating} />
+						<li key={review.id}>
+							<article
+								className={styles.review}
+								aria-label={review.title}
+							>
+								<ReviewStars rating={review.rating} />
 								<h3 className={styles.title}>{review.title}</h3>
 								<p className={styles.body}>{review.body}</p>
 								<p className={styles.meta}>
@@ -58,7 +49,7 @@ export function ProductReviews({
 							</article>
 						</li>
 					))}
-				</ul>
+				</ol>
 			) : null}
 		</section>
 	);

@@ -1,27 +1,21 @@
-import { parseLiteral } from "@/contexts/shared/domain/parseLiteral";
 import { ProductId } from "@/contexts/shared/domain/ProductId";
 import { UserId } from "@/contexts/shared/domain/UserId";
 
+import { InvalidReviewBodyError } from "./errors/InvalidReviewBodyError";
+import { InvalidReviewTitleError } from "./errors/InvalidReviewTitleError";
 import { ReviewAlreadyModeratedError } from "./errors/ReviewAlreadyModeratedError";
-import { ReviewBody } from "./ReviewBody";
 import { ReviewId } from "./ReviewId";
 import { ReviewRating } from "./ReviewRating";
-import { ReviewTitle } from "./ReviewTitle";
+import type { ReviewStatus } from "./ReviewStatus";
 
-export const reviewStatuses = ["pending", "approved", "rejected"] as const;
-
-export type ReviewStatus = (typeof reviewStatuses)[number];
-
-export function parseReviewStatus(value: string): ReviewStatus {
-	return parseLiteral("review status", reviewStatuses, value);
-}
+export const maxReviewTitleLength = 100;
+export const maxReviewBodyLength = 2000;
 
 export type ReviewPrimitives = {
 	id: string;
 	productId: string;
-	userId: string;
+	authorId: string;
 	productName: string;
-	authorName: string;
 	rating: number;
 	title: string;
 	body: string;
@@ -29,44 +23,52 @@ export type ReviewPrimitives = {
 	createdAt: string;
 };
 
-export type ReviewSubmission = {
-	productId: ProductId;
-	userId: UserId;
-	productName: string;
-	authorName: string;
-	rating: number;
-	title: string;
-	body: string;
-};
+function isNonBlankWithinLength(text: string, maxLength: number): boolean {
+	return text.length > 0 && text.length <= maxLength;
+}
 
 export class Review {
 	constructor(
 		readonly id: ReviewId,
 		readonly productId: ProductId,
-		readonly userId: UserId,
+		readonly authorId: UserId,
 		readonly productName: string,
-		readonly authorName: string,
-		readonly rating: number,
+		readonly rating: ReviewRating,
 		readonly title: string,
 		readonly body: string,
 		readonly status: ReviewStatus,
 		readonly createdAt: Date,
 	) {}
 
-	static submit(
+	static create(
 		id: ReviewId,
-		submission: ReviewSubmission,
+		productId: ProductId,
+		authorId: UserId,
+		productName: string,
+		rating: ReviewRating,
+		title: string,
+		body: string,
 		createdAt: Date,
 	): Review {
+		const trimmedTitle = title.trim();
+		const trimmedBody = body.trim();
+
+		if (!isNonBlankWithinLength(trimmedTitle, maxReviewTitleLength)) {
+			throw new InvalidReviewTitleError(maxReviewTitleLength);
+		}
+
+		if (!isNonBlankWithinLength(trimmedBody, maxReviewBodyLength)) {
+			throw new InvalidReviewBodyError(maxReviewBodyLength);
+		}
+
 		return new Review(
 			id,
-			submission.productId,
-			submission.userId,
-			submission.productName,
-			submission.authorName,
-			new ReviewRating(submission.rating).value,
-			new ReviewTitle(submission.title).value,
-			new ReviewBody(submission.body).value,
+			productId,
+			authorId,
+			productName,
+			rating,
+			trimmedTitle,
+			trimmedBody,
 			"pending",
 			createdAt,
 		);
@@ -76,10 +78,9 @@ export class Review {
 		return new Review(
 			new ReviewId(primitives.id),
 			new ProductId(primitives.productId),
-			new UserId(primitives.userId),
+			new UserId(primitives.authorId),
 			primitives.productName,
-			primitives.authorName,
-			primitives.rating,
+			new ReviewRating(primitives.rating),
 			primitives.title,
 			primitives.body,
 			primitives.status,
@@ -103,10 +104,9 @@ export class Review {
 		return {
 			id: this.id.value,
 			productId: this.productId.value,
-			userId: this.userId.value,
+			authorId: this.authorId.value,
 			productName: this.productName,
-			authorName: this.authorName,
-			rating: this.rating,
+			rating: this.rating.value,
 			title: this.title,
 			body: this.body,
 			status: this.status,
@@ -116,15 +116,14 @@ export class Review {
 
 	private moderatedAs(status: Exclude<ReviewStatus, "pending">): Review {
 		if (!this.isPending()) {
-			throw new ReviewAlreadyModeratedError(this.id.value, this.status);
+			throw new ReviewAlreadyModeratedError(this.id.value);
 		}
 
 		return new Review(
 			this.id,
 			this.productId,
-			this.userId,
+			this.authorId,
 			this.productName,
-			this.authorName,
 			this.rating,
 			this.title,
 			this.body,

@@ -19,7 +19,7 @@ make checks              # lint:fix + build + test
 
 - HTTP JSON API built with Next.js 16 route handlers only (no pages or UI), Hexagonal Architecture, DDD. Its only client is the `retail-web` server.
 - Route handlers in `src/app/**/route.ts`, kept thin: parse input, call one use case through `retailContainer`, map errors with `withErrorHandling` (`src/contexts/backend/shared/infrastructure/http/`).
-- Backend business logic in `src/contexts/backend/`, split by bounded context (`products`, `checkout`, `orders`, `users`, `reviews`), each with `domain/application/infrastructure`.
+- Backend business logic in `src/contexts/backend/`, split by bounded context (`products`, `checkout`, `orders`, `users`), each with `domain/application/infrastructure`.
 - Shared kernel (cross-context identifiers and generic primitives) in `src/contexts/shared/domain/`.
 - Contexts collaborate through consumer-owned ports adapted to the provider's `application/` use cases; never import another context's `domain/` or `infrastructure/` (enforced by ESLint).
 

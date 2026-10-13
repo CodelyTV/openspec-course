@@ -8,7 +8,7 @@ import { type ActionState, initialActionState } from "../ActionState";
 import { actionStateFor } from "../actionStateFor";
 
 import { requiredReviewId } from "./reviewFormFields";
-import { reviewMessages } from "./reviewMessages";
+import { moderationMessages } from "./reviewMessages";
 
 export async function rejectReview(
 	_previousState: ActionState,
@@ -17,7 +17,7 @@ export async function rejectReview(
 	try {
 		await retailApi.reviewRejecter.reject(requiredReviewId(formData));
 	} catch (error) {
-		return actionStateFor(error, reviewMessages);
+		return actionStateFor(error, moderationMessages);
 	}
 
 	revalidatePath("/", "layout");

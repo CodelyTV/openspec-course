@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
-import { initialActionState } from "@/app/actions/ActionState";
 import { submitReview } from "@/app/actions/reviews/submitReview";
 import { ReviewForm } from "@/app/products/[id]/ReviewForm";
 
@@ -12,79 +11,94 @@ vi.mock("@/app/actions/reviews/submitReview", () => ({
 
 const submit = vi.mocked(submitReview);
 
-type User = ReturnType<typeof userEvent.setup>;
+type UserEvent = ReturnType<typeof userEvent.setup>;
 
-async function fillInReview(
-	user: User,
-	review: { stars: string; title: string; body: string },
-): Promise<void> {
-	await user.click(screen.getByRole("radio", { name: review.stars }));
-	if (review.title.length > 0) {
-		await user.type(
-			screen.getByRole("textbox", { name: "Title" }),
-			review.title,
-		);
-	}
+async function writeReview(user: UserEvent): Promise<void> {
+	await user.click(screen.getByRole("radio", { name: "4 stars" }));
+	await user.type(
+		screen.getByRole("textbox", { name: "Title" }),
+		"Warm and comfy",
+	);
 	await user.type(
 		screen.getByRole("textbox", { name: "Review" }),
-		review.body,
+		"Thick fabric and a relaxed fit.",
 	);
+	await user.click(screen.getByRole("button", { name: "Submit review" }));
+}
+
+function submittedForm(): FormData | undefined {
+	return submit.mock.lastCall?.[1];
 }
 
 describe("ReviewForm should", () => {
 	it("submit the rating, title and body of the review for the product", async () => {
 		const user = userEvent.setup();
-		submit.mockResolvedValue(initialActionState);
-		render(<ReviewForm productId="pure-function-tee" />);
+		submit.mockResolvedValue({ error: null });
+		render(<ReviewForm productId="hoodie" />);
 
-		await fillInReview(user, {
-			stars: "4 stars",
-			title: "Fits great",
-			body: "Soft cotton.",
+		await writeReview(user);
+
+		expect(Object.fromEntries(submittedForm() ?? [])).toEqual({
+			productId: "hoodie",
+			rating: "4",
+			title: "Warm and comfy",
+			body: "Thick fabric and a relaxed fit.",
 		});
-		await user.click(screen.getByRole("button", { name: "Submit review" }));
-
-		const submitted = submit.mock.lastCall?.[1];
-		expect(submitted?.get("productId")).toBe("pure-function-tee");
-		expect(submitted?.get("rating")).toBe("4");
-		expect(submitted?.get("title")).toBe("Fits great");
-		expect(submitted?.get("body")).toBe("Soft cotton.");
 	});
 
-	it("show the error and keep what the customer wrote when the review is rejected", async () => {
+	it("offer a required rating from 1 to 5 stars", () => {
+		render(<ReviewForm productId="hoodie" />);
+
+		const ratingGroup = screen.getByRole("group", { name: "Rating" });
+		const stars = screen.getAllByRole("radio");
+
+		expect(ratingGroup).toBeInTheDocument();
+		expect(stars.map((star) => star.getAttribute("value"))).toEqual([
+			"1",
+			"2",
+			"3",
+			"4",
+			"5",
+		]);
+		expect(stars[0]).toBeRequired();
+	});
+
+	it("limit the title to 100 characters and the body to 2000", () => {
+		render(<ReviewForm productId="hoodie" />);
+
+		expect(screen.getByRole("textbox", { name: "Title" })).toHaveAttribute(
+			"maxLength",
+			"100",
+		);
+		expect(screen.getByRole("textbox", { name: "Review" })).toHaveAttribute(
+			"maxLength",
+			"2000",
+		);
+	});
+
+	it("show why the review could not be submitted, keeping what was written", async () => {
 		const user = userEvent.setup();
 		submit.mockResolvedValue({
-			error: "The title must have between 1 and 100 characters.",
+			error: "You have already reviewed this product.",
 		});
-		render(<ReviewForm productId="pure-function-tee" />);
+		render(<ReviewForm productId="hoodie" />);
 
-		await fillInReview(user, {
-			stars: "2 stars",
-			title: "",
-			body: "Too tight.",
-		});
-		await user.click(screen.getByRole("button", { name: "Submit review" }));
+		await writeReview(user);
 
 		expect(await screen.findByRole("alert")).toHaveTextContent(
-			"The title must have between 1 and 100 characters.",
+			"You have already reviewed this product.",
 		);
-		expect(screen.getByRole("radio", { name: "2 stars" })).toBeChecked();
-		expect(screen.getByRole("textbox", { name: "Review" })).toHaveValue(
-			"Too tight.",
+		expect(screen.getByRole("textbox", { name: "Title" })).toHaveValue(
+			"Warm and comfy",
 		);
 	});
 
-	it("disable the submit button while the review is being sent", async () => {
+	it("disable the button while the review is being submitted", async () => {
 		const user = userEvent.setup();
 		submit.mockReturnValue(new Promise(() => {}));
-		render(<ReviewForm productId="pure-function-tee" />);
+		render(<ReviewForm productId="hoodie" />);
 
-		await fillInReview(user, {
-			stars: "5 stars",
-			title: "Great",
-			body: "Love it.",
-		});
-		await user.click(screen.getByRole("button", { name: "Submit review" }));
+		await writeReview(user);
 
 		expect(
 			await screen.findByRole("button", {

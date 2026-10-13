@@ -17,7 +17,7 @@ vi.mock("@/contexts/backend/shared/infrastructure/RetailContainer", () => ({
 	},
 }));
 
-async function postApproval(id: string): Promise<Response> {
+async function approveReview(id: string): Promise<Response> {
 	return POST(
 		new Request(`http://localhost/reviews/${id}/approval`, {
 			method: "POST",
@@ -28,33 +28,23 @@ async function postApproval(id: string): Promise<Response> {
 
 describe("POST /reviews/{id}/approval should", () => {
 	it("approve the review and respond 204", async () => {
-		const response = await postApproval("review-1");
+		const response = await approveReview("review-1");
 
 		expect(response.status).toBe(204);
 		reviewApprover.expectApproveToHaveBeenCalledWith("review-1");
 	});
 
-	it("respond 404 with a ReviewNotFoundError when the review does not exist", async () => {
-		vi.mocked(reviewApprover.approve).mockRejectedValue(
-			new ReviewNotFoundError("ghost"),
-		);
+	it.each([
+		[new ReviewNotFoundError("review-1"), 404],
+		[new ReviewAlreadyModeratedError("review-1"), 409],
+	])("respond with the status of a %s", async (error, status) => {
+		vi.mocked(reviewApprover.approve).mockRejectedValue(error);
 
-		const response = await postApproval("ghost");
+		const response = await approveReview("review-1");
 
-		expect(response.status).toBe(404);
-		expect((await response.json()).error.type).toBe("ReviewNotFoundError");
-	});
-
-	it("respond 409 with a ReviewAlreadyModeratedError when the review was already moderated", async () => {
-		vi.mocked(reviewApprover.approve).mockRejectedValue(
-			new ReviewAlreadyModeratedError("review-1", "rejected"),
-		);
-
-		const response = await postApproval("review-1");
-
-		expect(response.status).toBe(409);
-		expect((await response.json()).error.type).toBe(
-			"ReviewAlreadyModeratedError",
-		);
+		expect(response.status).toBe(status);
+		expect(await response.json()).toEqual({
+			error: { type: error.name, message: error.message },
+		});
 	});
 });

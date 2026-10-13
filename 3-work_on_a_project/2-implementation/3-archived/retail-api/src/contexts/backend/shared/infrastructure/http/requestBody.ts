@@ -29,7 +29,7 @@ export function requiredString(body: RequestBody, field: string): string {
 export function requiredNumber(body: RequestBody, field: string): number {
 	const value = body[field];
 
-	if (typeof value !== "number" || !Number.isFinite(value)) {
+	if (typeof value !== "number") {
 		throw new InvalidArgumentError(`${field} must be a number`);
 	}
 

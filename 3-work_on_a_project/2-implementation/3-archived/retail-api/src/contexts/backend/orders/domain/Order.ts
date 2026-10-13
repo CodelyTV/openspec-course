@@ -1,6 +1,7 @@
 import type { DeliveryMethod } from "@/contexts/shared/domain/DeliveryMethod";
 import { Money, type MoneyPrimitives } from "@/contexts/shared/domain/Money";
 import { parseLiteral } from "@/contexts/shared/domain/parseLiteral";
+import type { ProductId } from "@/contexts/shared/domain/ProductId";
 import { UserId } from "@/contexts/shared/domain/UserId";
 
 import { EmptyOrderError } from "./errors/EmptyOrderError";
@@ -72,6 +73,10 @@ export class Order {
 			Money.fromPrimitives(primitives.subtotal),
 			primitives.lines.map(OrderLine.fromPrimitives),
 		);
+	}
+
+	includesProduct(productId: ProductId): boolean {
+		return this.lines.some((line) => line.productId === productId.value);
 	}
 
 	items(): number {

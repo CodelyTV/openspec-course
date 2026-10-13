@@ -7,6 +7,7 @@ import { InvalidReviewRatingError } from "@/contexts/backend/reviews/domain/erro
 import { InvalidReviewTitleError } from "@/contexts/backend/reviews/domain/errors/InvalidReviewTitleError";
 import { ProductNotPurchasedError } from "@/contexts/backend/reviews/domain/errors/ProductNotPurchasedError";
 import { ReviewAlreadyExistsError } from "@/contexts/backend/reviews/domain/errors/ReviewAlreadyExistsError";
+import { ReviewedProductNotFoundError } from "@/contexts/backend/reviews/domain/errors/ReviewedProductNotFoundError";
 
 import { Mock } from "../../../shared/Mock";
 
@@ -21,10 +22,10 @@ vi.mock("@/contexts/backend/shared/infrastructure/RetailContainer", () => ({
 }));
 
 const validReview = {
-	productId: "pure-function-tee",
+	productId: "hoodie",
 	rating: 4,
-	title: "Fits great",
-	body: "Soft cotton and a clean drape.",
+	title: "Warm and comfy",
+	body: "Thick fabric and a relaxed fit.",
 };
 
 async function postReview(body: string): Promise<Response> {
@@ -35,75 +36,64 @@ async function postReview(body: string): Promise<Response> {
 }
 
 describe("POST /me/reviews should", () => {
-	it("submit the review of the current user and respond 201", async () => {
+	it("submit the review of the current customer and respond 201", async () => {
 		const response = await postReview(JSON.stringify(validReview));
 
 		expect(response.status).toBe(201);
-		expect(await response.text()).toBe("");
-		reviewSubmitter.expectSubmitToHaveBeenCalledWith(validReview);
-	});
-
-	it("respond 400 with an InvalidArgumentError when the body is not valid JSON", async () => {
-		const response = await postReview("not json");
-
-		expect(response.status).toBe(400);
-		expect((await response.json()).error.type).toBe("InvalidArgumentError");
-		reviewSubmitter.expectSubmitNotToHaveBeenCalled();
+		reviewSubmitter.expectSubmitToHaveBeenCalledWith(
+			"hoodie",
+			4,
+			"Warm and comfy",
+			"Thick fabric and a relaxed fit.",
+		);
 	});
 
 	it.each([
-		["a string", "4"],
-		["missing", undefined],
-		["null", null],
+		["the body is not valid JSON", "not json"],
+		[
+			"the rating is not a number",
+			JSON.stringify({ ...validReview, rating: "4" }),
+		],
+		[
+			"the productId is missing",
+			JSON.stringify({ ...validReview, productId: undefined }),
+		],
+		[
+			"the title is not a string",
+			JSON.stringify({ ...validReview, title: 42 }),
+		],
+		[
+			"the body is missing",
+			JSON.stringify({ ...validReview, body: undefined }),
+		],
 	])(
-		"respond 400 with an InvalidArgumentError when rating is %s",
-		async (_case, rating) => {
-			const response = await postReview(
-				JSON.stringify({ ...validReview, rating }),
-			);
+		"respond 400 with an InvalidArgumentError when %s",
+		async (_case, body) => {
+			const response = await postReview(body);
 
 			expect(response.status).toBe(400);
-			expect(await response.json()).toEqual({
-				error: {
-					type: "InvalidArgumentError",
-					message: "rating must be a number",
-				},
-			});
+			expect((await response.json()).error.type).toBe(
+				"InvalidArgumentError",
+			);
 			reviewSubmitter.expectSubmitNotToHaveBeenCalled();
 		},
 	);
 
-	it("respond 400 with an InvalidArgumentError when title is not a string", async () => {
-		const response = await postReview(
-			JSON.stringify({ ...validReview, title: 7 }),
-		);
-
-		expect(response.status).toBe(400);
-		expect((await response.json()).error.type).toBe("InvalidArgumentError");
-	});
-
 	it.each([
-		[
-			"ProductNotPurchasedError",
-			403,
-			new ProductNotPurchasedError("pure-function-tee"),
-		],
-		[
-			"ReviewAlreadyExistsError",
-			409,
-			new ReviewAlreadyExistsError("pure-function-tee"),
-		],
-		["InvalidReviewRatingError", 422, new InvalidReviewRatingError(6)],
-		["InvalidReviewTitleError", 422, new InvalidReviewTitleError(100)],
-		["InvalidReviewBodyError", 422, new InvalidReviewBodyError(2000)],
-	])("respond with a %s and status %d", async (type, status, error) => {
+		[new ProductNotPurchasedError("hoodie"), 403],
+		[new ReviewedProductNotFoundError("hoodie"), 404],
+		[new ReviewAlreadyExistsError("hoodie"), 409],
+		[new InvalidReviewRatingError(6, 1, 5), 422],
+		[new InvalidReviewTitleError(100), 422],
+		[new InvalidReviewBodyError(2000), 422],
+	])("respond with the status of a %s", async (error, status) => {
 		vi.mocked(reviewSubmitter.submit).mockRejectedValue(error);
 
 		const response = await postReview(JSON.stringify(validReview));
 
 		expect(response.status).toBe(status);
 		expect(await response.json()).toEqual({
-			error: { type, message: error.message },
+			error: { type: error.name, message: error.message },
 		});
 	});
 });

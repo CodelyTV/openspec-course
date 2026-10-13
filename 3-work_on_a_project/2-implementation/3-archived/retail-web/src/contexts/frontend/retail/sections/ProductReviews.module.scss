@@ -1,41 +1,31 @@
 .section {
 	margin-top: 32px;
-	padding: 24px;
-	background: var(--codely-white);
-	border: 1px solid var(--border);
-	border-radius: var(--radius-md);
 }
 
 .heading {
-	margin: 8px 0 16px;
 	font-size: 1.5rem;
 	font-weight: 700;
 }
 
 .summary {
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 12px;
-}
-
-.count,
-.empty,
-.meta {
+	margin-top: 8px;
 	color: var(--codely-gray);
+	font-weight: 700;
 }
 
 .list {
 	display: grid;
-	margin-top: 24px;
-	padding: 0;
 	gap: 16px;
+	margin-top: 20px;
+	padding: 0;
 	list-style: none;
 }
 
 .review {
-	padding-top: 16px;
-	border-top: 1px solid var(--border);
+	padding: 20px;
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
 }
 
 .title {
@@ -51,6 +41,7 @@
 }
 
 .meta {
-	margin-top: 8px;
-	font-size: 0.875rem;
+	margin-top: 12px;
+	color: var(--codely-gray);
+	font-size: 0.85rem;
 }

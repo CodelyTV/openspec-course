@@ -1,23 +1,20 @@
-import type { PurchasedProductFinder } from "@/contexts/backend/orders/application/find-purchased-product/PurchasedProductFinder";
+import type { ProductPurchaseChecker } from "@/contexts/backend/orders/application/check-purchase/ProductPurchaseChecker";
 import type { ProductId } from "@/contexts/shared/domain/ProductId";
 import type { UserId } from "@/contexts/shared/domain/UserId";
 
-import {
-	type PurchasedProduct,
-	PurchaseHistory,
-} from "../domain/PurchaseHistory";
+import { PurchaseHistory } from "../domain/PurchaseHistory";
 
 export class OrdersPurchaseHistory extends PurchaseHistory {
 	constructor(
-		private readonly purchasedProductFinder: PurchasedProductFinder,
+		private readonly productPurchaseChecker: ProductPurchaseChecker,
 	) {
 		super();
 	}
 
-	async purchasedProduct(
-		userId: UserId,
-		productId: ProductId,
-	): Promise<PurchasedProduct | null> {
-		return this.purchasedProductFinder.find(userId.value, productId.value);
+	async hasBought(userId: UserId, productId: ProductId): Promise<boolean> {
+		return this.productPurchaseChecker.hasBought(
+			userId.value,
+			productId.value,
+		);
 	}
 }

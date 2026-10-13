@@ -19,60 +19,55 @@ describe("ReviewEligibilityChecker should", () => {
 		purchaseHistory,
 		currentUserProvider,
 	);
-	const customerId = new UserId("user-ana");
+	const userId = new UserId("user-aibuilder");
 
 	beforeEach(() => {
-		currentUserProvider.currentUserIdShouldReturn(customerId);
-		repository.searchByUserAndProductShouldReturn(null);
-		purchaseHistory.purchasedProductShouldReturn(null);
+		currentUserProvider.currentUserIdShouldReturn(userId);
+		purchaseHistory.hasBoughtShouldReturn(true);
+		repository.searchByProductAndAuthorShouldReturn(null);
 	});
 
-	it("let a customer who bought the product and has not reviewed it review it", async () => {
-		purchaseHistory.purchasedProductShouldReturn({
-			productId: "pure-function-tee",
-			productName: "Pure Function Tee",
-		});
+	it("say the current customer did not buy the product", async () => {
+		purchaseHistory.hasBoughtShouldReturn(false);
 
-		expect(await checker.check("pure-function-tee")).toEqual({
-			status: "can-review",
-		});
-		purchaseHistory.expectPurchasedProductToHaveBeenCalledWith(
-			customerId,
-			new ProductId("pure-function-tee"),
-		);
-	});
-
-	it("not let a customer who did not buy the product review it", async () => {
-		expect(await checker.check("pure-function-tee")).toEqual({
+		expect(await checker.check("hoodie")).toEqual({
 			status: "not-purchased",
 		});
+		purchaseHistory.expectHasBoughtToHaveBeenCalledWith(
+			userId,
+			new ProductId("hoodie"),
+		);
 	});
 
-	it("tell a customer whose review is pending that it awaits moderation", async () => {
-		repository.searchByUserAndProductShouldReturn(
-			ReviewMother.pending({ userId: customerId.value }),
+	it("let the current customer review a product they bought and never reviewed", async () => {
+		expect(await checker.check("hoodie")).toEqual({ status: "can-review" });
+		repository.expectSearchByProductAndAuthorToHaveBeenCalledWith(
+			new ProductId("hoodie"),
+			userId,
+		);
+	});
+
+	it("say the review of the current customer is awaiting moderation", async () => {
+		repository.searchByProductAndAuthorShouldReturn(
+			ReviewMother.pending({ authorId: userId.value }),
 		);
 
-		expect(await checker.check("pure-function-tee")).toEqual({
-			status: "awaiting-moderation",
+		expect(await checker.check("hoodie")).toEqual({
+			status: "pending-review",
 		});
-		repository.expectSearchByUserAndProductToHaveBeenCalledWith(
-			customerId,
-			new ProductId("pure-function-tee"),
-		);
 	});
 
 	it.each([
 		["approved", ReviewMother.approved],
 		["rejected", ReviewMother.rejected],
 	])(
-		"tell a customer whose review was %s that they already reviewed the product",
+		"say the current customer already reviewed the product when their review was %s",
 		async (_status, moderatedReview) => {
-			repository.searchByUserAndProductShouldReturn(
-				moderatedReview({ userId: customerId.value }),
+			repository.searchByProductAndAuthorShouldReturn(
+				moderatedReview({ authorId: userId.value }),
 			);
 
-			expect(await checker.check("pure-function-tee")).toEqual({
+			expect(await checker.check("hoodie")).toEqual({
 				status: "already-reviewed",
 			});
 		},

@@ -14,22 +14,33 @@ describe("ReviewRejecter should", () => {
 	const rejecter = new ReviewRejecter(repository);
 
 	it("reject a pending review", async () => {
-		const review = ReviewMother.pending();
-		repository.searchShouldReturn(review);
+		const primitives = ReviewMother.createPrimitives({ status: "pending" });
+		repository.searchShouldReturn(ReviewMother.create(primitives));
 
-		await rejecter.reject(review.id.value);
+		await rejecter.reject(primitives.id);
 
-		repository.expectSearchToHaveBeenCalledWith(review.id);
-		repository.expectSaveToHaveBeenCalledWith(
-			ReviewMother.rejected(review.toPrimitives()),
+		repository.expectSearchToHaveBeenCalledWith(
+			new ReviewId(primitives.id),
 		);
+		repository.expectSaveToHaveBeenCalledWith(
+			ReviewMother.create({ ...primitives, status: "rejected" }),
+		);
+	});
+
+	it("fail with a ReviewNotFoundError when the review does not exist", async () => {
+		repository.searchShouldReturn(null);
+
+		await expect(rejecter.reject("ghost")).rejects.toBeInstanceOf(
+			ReviewNotFoundError,
+		);
+		repository.expectSaveNotToHaveBeenCalled();
 	});
 
 	it.each([
 		["approved", ReviewMother.approved],
 		["rejected", ReviewMother.rejected],
 	])(
-		"not reject a review that was already %s",
+		"fail with a ReviewAlreadyModeratedError when the review was already %s",
 		async (_status, moderatedReview) => {
 			const review = moderatedReview();
 			repository.searchShouldReturn(review);
@@ -40,14 +51,4 @@ describe("ReviewRejecter should", () => {
 			repository.expectSaveNotToHaveBeenCalled();
 		},
 	);
-
-	it("not reject a review that does not exist", async () => {
-		repository.searchShouldReturn(null);
-
-		await expect(rejecter.reject("ghost")).rejects.toBeInstanceOf(
-			ReviewNotFoundError,
-		);
-		repository.expectSearchToHaveBeenCalledWith(new ReviewId("ghost"));
-		repository.expectSaveNotToHaveBeenCalled();
-	});
 });

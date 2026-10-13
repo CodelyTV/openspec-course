@@ -1,11 +1,10 @@
-import type {
-	ProductReviewsResponse,
-	ReviewResponse,
-} from "@/contexts/frontend/retail/api/responses";
+import type { ProductReviewsResponse } from "@/contexts/frontend/retail/api/responses";
 
-import { ReviewResponseMother } from "./ReviewResponseMother";
+import { ProductReviewResponseMother } from "./ProductReviewResponseMother";
 
-function averageOf(reviews: ReviewResponse[]): number | null {
+function averageRatingOf(
+	reviews: ProductReviewsResponse["reviews"],
+): number | null {
 	if (reviews.length === 0) {
 		return null;
 	}
@@ -23,12 +22,12 @@ export class ProductReviewsResponseMother {
 		overrides: Partial<ProductReviewsResponse> = {},
 	): ProductReviewsResponse {
 		const reviews = overrides.reviews ?? [
-			ReviewResponseMother.create(),
-			ReviewResponseMother.create(),
+			ProductReviewResponseMother.create(),
+			ProductReviewResponseMother.create(),
 		];
 
 		return {
-			averageRating: averageOf(reviews),
+			averageRating: averageRatingOf(reviews),
 			reviewCount: reviews.length,
 			...overrides,
 			reviews,

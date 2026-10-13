@@ -9,12 +9,12 @@ import { retailContainer } from "@/contexts/backend/shared/infrastructure/Retail
 export const POST = withErrorHandling(async (request: Request) => {
 	const body = await jsonBodyOf(request);
 
-	await retailContainer.reviewSubmitter.submit({
-		productId: requiredString(body, "productId"),
-		rating: requiredNumber(body, "rating"),
-		title: requiredString(body, "title"),
-		body: requiredString(body, "body"),
-	});
+	await retailContainer.reviewSubmitter.submit(
+		requiredString(body, "productId"),
+		requiredNumber(body, "rating"),
+		requiredString(body, "title"),
+		requiredString(body, "body"),
+	);
 
 	return new Response(null, { status: 201 });
 });

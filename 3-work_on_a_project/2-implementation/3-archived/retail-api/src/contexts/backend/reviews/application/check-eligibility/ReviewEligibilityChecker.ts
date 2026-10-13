@@ -2,17 +2,12 @@ import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserPr
 import { ProductId } from "@/contexts/shared/domain/ProductId";
 
 import type { PurchaseHistory } from "../../domain/PurchaseHistory";
-import type { Review } from "../../domain/Review";
 import type { ReviewRepository } from "../../domain/ReviewRepository";
 
 export type ReviewEligibilityStatus =
-	"can-review" | "not-purchased" | "awaiting-moderation" | "already-reviewed";
+	"can-review" | "pending-review" | "already-reviewed" | "not-purchased";
 
 export type ReviewEligibilityResponse = { status: ReviewEligibilityStatus };
-
-function statusOfExisting(review: Review): ReviewEligibilityStatus {
-	return review.isPending() ? "awaiting-moderation" : "already-reviewed";
-}
 
 export class ReviewEligibilityChecker {
 	constructor(
@@ -24,21 +19,21 @@ export class ReviewEligibilityChecker {
 	async check(productId: string): Promise<ReviewEligibilityResponse> {
 		const userId = await this.currentUserProvider.currentUserId();
 		const product = new ProductId(productId);
+		const [hasBoughtTheProduct, review] = await Promise.all([
+			this.purchaseHistory.hasBought(userId, product),
+			this.repository.searchByProductAndAuthor(product, userId),
+		]);
 
-		const existingReview = await this.repository.searchByUserAndProduct(
-			userId,
-			product,
-		);
-
-		if (existingReview) {
-			return { status: statusOfExisting(existingReview) };
+		if (!hasBoughtTheProduct) {
+			return { status: "not-purchased" };
 		}
 
-		const purchasedProduct = await this.purchaseHistory.purchasedProduct(
-			userId,
-			product,
-		);
+		if (review === null) {
+			return { status: "can-review" };
+		}
 
-		return { status: purchasedProduct ? "can-review" : "not-purchased" };
+		return {
+			status: review.isPending() ? "pending-review" : "already-reviewed",
+		};
 	}
 }

@@ -9,9 +9,9 @@ export abstract class ReviewRepository {
 
 	abstract search(id: ReviewId): Promise<Review | null>;
 
-	abstract searchByUserAndProduct(
-		userId: UserId,
+	abstract searchByProductAndAuthor(
 		productId: ProductId,
+		authorId: UserId,
 	): Promise<Review | null>;
 
 	abstract searchApprovedByProduct(productId: ProductId): Promise<Review[]>;

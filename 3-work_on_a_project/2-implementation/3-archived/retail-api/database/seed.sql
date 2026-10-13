@@ -187,15 +187,12 @@ where o.id in (select id from seeded_orders);
 
 drop table seeded_orders;
 
-insert into reviews (id, product_id, user_id, product_name, author_name, rating, title, body, status, created_at)
+insert into reviews (id, product_id, user_id, product_name, rating, title, body, status, created_at)
 values
-	('5d7c1e2a-3f84-4b6d-9a0e-1c2b3d4e5f60', 'domain-event-tee', 'user-4d6f8c11', 'Domain Event Tee', 'Javier Ferrer', 5, 'My new everyday tee', 'Heavy cotton that keeps its shape after many washes. I ordered a second one in navy.', 'approved', now() - interval '20 days'),
-	('8e2f4a6b-1c3d-4e5f-8a7b-9c0d1e2f3a41', 'domain-event-tee', 'user-9b2e5a77', 'Domain Event Tee', 'Rafa Gómez', 4, 'Relaxed and comfy', 'The relaxed body is great for working from home. It runs slightly large, so consider sizing down.', 'approved', now() - interval '12 days'),
-	('b3a9d0c2-7e61-4f58-a4b3-2d1e0f9c8b72', 'domain-event-tee', 'user-a1c92f04', 'Domain Event Tee', 'AI Builder', 4, 'Solid staple', 'Good fabric and a clean fit. The white one needs a careful wash.', 'approved', now() - interval '5 days'),
-	('c6e1f3a5-9b2d-4c7e-8f01-3a4b5c6d7e83', 'pure-function-tee', 'user-9b2e5a77', 'Pure Function Tee', 'Rafa Gómez', 5, 'No side effects', 'Soft, light and it fits exactly as expected every single time.', 'approved', now() - interval '9 days'),
-	('d4b2c6e8-0a1f-4b3d-9e5c-7f8a9b0c1d94', 'pure-function-tee', 'user-4d6f8c11', 'Pure Function Tee', 'Javier Ferrer', 4, 'Great drape', 'Nice drape and a comfortable collar. I would love more colours.', 'approved', now() - interval '3 days'),
-	('e7f8a9b0-2c3d-4e1f-a5b6-8c9d0e1f2a05', 'value-object-shirt', 'user-7e3b19a2', 'Value Object Shirt', 'Pablo Rodríguez', 3, 'Nice but stiff', 'Looks sharp, but the poplin felt stiff until the third wash.', 'approved', now() - interval '15 days'),
-	('f1a2b3c4-5d6e-4f70-8b9a-0c1d2e3f4a16', 'aggregate-hoodie', 'user-7e3b19a2', 'Aggregate Hoodie', 'Pablo Rodríguez', 5, 'Softest hoodie I own', 'The brushed interior is incredibly soft and the loose fit is perfect for layering.', 'pending', now() - interval '2 days'),
-	('0a9b8c7d-6e5f-4a3b-9c2d-1e0f9a8b7c27', 'idempotent-shirt', 'user-4d6f8c11', 'Idempotent Shirt', 'Javier Ferrer', 2, 'Too tight in the shoulders', 'Lovely fabric, but the shoulders are narrow for a regular fit.', 'pending', now() - interval '1 day'),
-	('1b2c3d4e-5f6a-4b7c-8d9e-0f1a2b3c4d38', 'event-storm-knit', 'user-a1c92f04', 'Event Storm Knit', 'AI Builder', 4, 'Cosy during long workshops', 'Warm without being bulky, and the texture looks great on camera.', 'pending', now() - interval '6 hours'),
-	('2c3d4e5f-6a7b-4c8d-9e0f-1a2b3c4d5e49', 'null-pointer-tee', 'user-9b2e5a77', 'Null Pointer Tee', 'Rafa Gómez', 1, 'Buy it now!!!', 'Visit my shop for cheaper tees.', 'rejected', now() - interval '10 days');
+	('5b0d9a3e-2f61-4c8e-9a17-c34e8f1d6b20', 'bounded-context-trousers', 'user-7e3b19a2', 'Bounded Context Trousers', 5, 'My new everyday trousers', 'The elastic waist makes them comfortable for long days at the desk, and they still look sharp enough for a meetup.', 'approved', now() - interval '1 day'),
+	('a3c71f58-6d24-4b9e-8e05-7f2b1c9d4a63', 'bounded-context-trousers', 'user-4d6f8c11', 'Bounded Context Trousers', 4, 'Great fit, runs a bit long', 'Really comfortable fabric and a relaxed fit. I had to roll them up a bit, so consider a shorter length if you are under 1.75 m.', 'approved', now() - interval '30 days'),
+	('e8f42b17-90c3-4d5a-b6e1-2a9c7d3f0b84', 'bounded-context-trousers', 'user-9b2e5a77', 'Bounded Context Trousers', 2, 'Colour faded quickly', 'The cut is nice, but the khaki faded after a few washes. I expected it to last longer for the price.', 'approved', now() - interval '40 days'),
+	('1d9e6c04-7a85-4f3b-a2d8-5c0e9b1f7a36', 'pure-function-tee', 'user-4d6f8c11', 'Pure Function Tee', 4, 'Soft and well made', 'Nice weight and a clean drape. It kept its shape after several washes.', 'approved', now() - interval '20 days'),
+	('c6a28e93-3b17-4e0f-9d54-8f1a2c7b6e05', 'observability-jacket', 'user-9b2e5a77', 'Observability Jacket', 5, 'Kept me dry all weekend', 'Wore it hiking in the rain for two days and stayed completely dry. The hood fits well over a cap.', 'pending', now() - interval '3 days'),
+	('7f13b5d2-c8e4-4a96-b0f7-1e6d3a9c2b58', 'hexagonal-overshirt', 'user-7e3b19a2', 'Hexagonal Overshirt', 1, 'Buy it now at my store!!!', 'Check out my website for cheaper overshirts and free shipping!!!', 'rejected', now() - interval '15 days'),
+	('9a4e0c7b-15d6-4f28-8b3a-6d2f9e1c5a70', 'aggregate-hoodie', 'user-a1c92f04', 'Aggregate Hoodie', 5, 'Coziest hoodie I own', 'Brushed interior, roomy fit and the hood has a nice structure. I wear it every weekend.', 'pending', now() - interval '2 days');

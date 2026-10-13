@@ -53,6 +53,16 @@ describe("AdminNav should", () => {
 		);
 	});
 
+	it("mark the reviews panel as current in the moderation queue", () => {
+		givenTheUserIsOn("/admin/reviews");
+
+		render(<AdminNav />);
+
+		expect(screen.getByRole("link", { current: "page" })).toHaveTextContent(
+			"Reviews",
+		);
+	});
+
 	it("mark the outfits panel as current while editing an outfit", () => {
 		givenTheUserIsOn("/admin/outfits/outfit-1");
 
@@ -60,16 +70,6 @@ describe("AdminNav should", () => {
 
 		expect(screen.getByRole("link", { current: "page" })).toHaveTextContent(
 			"Outfits",
-		);
-	});
-
-	it("mark the reviews panel as current on the moderation queue", () => {
-		givenTheUserIsOn("/admin/reviews");
-
-		render(<AdminNav />);
-
-		expect(screen.getByRole("link", { current: "page" })).toHaveTextContent(
-			"Reviews",
 		);
 	});
 });

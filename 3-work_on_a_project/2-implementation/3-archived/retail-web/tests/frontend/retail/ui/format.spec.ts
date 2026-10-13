@@ -9,9 +9,9 @@ import {
 	formatOptionalMoney,
 	formatOutfitMembership,
 	formatProductCount,
-	formatRating,
 	formatReviewCount,
 	formatShortDate,
+	formatStarRating,
 	formatStatus,
 	formatUnits,
 	variantLabel,
@@ -80,18 +80,17 @@ describe("format", () => {
 		expect(formatProductCount(4)).toBe("4 products");
 	});
 
-	it("tells how many outfits a product belongs to", () => {
-		expect(formatOutfitMembership(1)).toBe("In 1 outfit");
-		expect(formatOutfitMembership(2)).toBe("In 2 outfits");
-	});
-
-	it("formats the number of reviews in singular or plural", () => {
+	it("uses the singular for a single review", () => {
 		expect(formatReviewCount(1)).toBe("1 review");
 		expect(formatReviewCount(3)).toBe("3 reviews");
 	});
 
-	it("formats a rating out of 5", () => {
-		expect(formatRating(4.3)).toBe("4.3 out of 5");
-		expect(formatRating(5)).toBe("5 out of 5");
+	it("tells a star rating out of five", () => {
+		expect(formatStarRating(4)).toBe("4 out of 5 stars");
+	});
+
+	it("tells how many outfits a product belongs to", () => {
+		expect(formatOutfitMembership(1)).toBe("In 1 outfit");
+		expect(formatOutfitMembership(2)).toBe("In 2 outfits");
 	});
 });

@@ -16,6 +16,7 @@ import { InvalidReviewTitleError } from "@/contexts/backend/reviews/domain/error
 import { ProductNotPurchasedError } from "@/contexts/backend/reviews/domain/errors/ProductNotPurchasedError";
 import { ReviewAlreadyExistsError } from "@/contexts/backend/reviews/domain/errors/ReviewAlreadyExistsError";
 import { ReviewAlreadyModeratedError } from "@/contexts/backend/reviews/domain/errors/ReviewAlreadyModeratedError";
+import { ReviewedProductNotFoundError } from "@/contexts/backend/reviews/domain/errors/ReviewedProductNotFoundError";
 import { ReviewNotFoundError } from "@/contexts/backend/reviews/domain/errors/ReviewNotFoundError";
 import { UserNotFoundError } from "@/contexts/backend/users/domain/errors/UserNotFoundError";
 import { EmptyStringValueObjectError } from "@/contexts/shared/domain/errors/EmptyStringValueObjectError";
@@ -35,10 +36,11 @@ const httpErrors: readonly HttpError[] = [
 	[InvalidMoneyAmountError, "InvalidMoneyAmountError", 400],
 	[ProductNotPurchasedError, "ProductNotPurchasedError", 403],
 	[OutfitNotFoundError, "OutfitNotFoundError", 404],
+	[ReviewNotFoundError, "ReviewNotFoundError", 404],
+	[ReviewedProductNotFoundError, "ReviewedProductNotFoundError", 404],
 	[UserNotFoundError, "UserNotFoundError", 404],
 	[ProductNotFoundError, "ProductNotFoundError", 404],
 	[OrderNotFoundError, "OrderNotFoundError", 404],
-	[ReviewNotFoundError, "ReviewNotFoundError", 404],
 	[VariantOutOfStockError, "VariantOutOfStockError", 409],
 	[
 		CheckoutConcurrentModificationError,

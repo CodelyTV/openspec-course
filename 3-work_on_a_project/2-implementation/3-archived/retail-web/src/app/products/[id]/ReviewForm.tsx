@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState } from "react";
 
 import { FormError } from "@/contexts/frontend/design-system/atoms/FormError";
 import { SubmitButton } from "@/contexts/frontend/design-system/atoms/SubmitButton";
@@ -10,19 +10,14 @@ import { submitReview } from "../../actions/reviews/submitReview";
 
 import styles from "./ReviewForm.module.scss";
 
-const starOptions = [1, 2, 3, 4, 5];
+const ratings = [1, 2, 3, 4, 5];
 const maxTitleLength = 100;
 const maxBodyLength = 2000;
-const noRating = "";
 
 function keepWhatTheCustomerWroteAfterAFailedSubmit(
 	event: React.FormEvent<HTMLFormElement>,
 ): void {
 	event.preventDefault();
-}
-
-function starsLabel(stars: number): string {
-	return `${stars} ${stars === 1 ? "star" : "stars"}`;
 }
 
 export function ReviewForm({
@@ -34,9 +29,6 @@ export function ReviewForm({
 		submitReview,
 		initialActionState,
 	);
-	const [rating, setRating] = useState(noRating);
-	const [title, setTitle] = useState("");
-	const [body, setBody] = useState("");
 
 	return (
 		<form
@@ -48,49 +40,45 @@ export function ReviewForm({
 			<input type="hidden" name="productId" value={productId} />
 
 			<fieldset className={styles.rating}>
-				<legend className={styles.legend}>Rating</legend>
-				{starOptions.map((stars) => (
-					<label key={stars} className={styles.star}>
+				<legend className={styles.label}>Rating</legend>
+				{ratings.map((rating) => (
+					<label key={rating} className={styles.star}>
 						<input
 							type="radio"
 							name="rating"
-							value={stars}
-							checked={rating === String(stars)}
-							onChange={(event) => setRating(event.target.value)}
+							value={rating}
 							required
 						/>
-						{starsLabel(stars)}
+						{rating === 1 ? "1 star" : `${rating} stars`}
 					</label>
 				))}
 			</fieldset>
 
 			<label className={styles.field}>
-				Title
+				<span className={styles.label}>Title</span>
 				<input
 					className={styles.input}
 					name="title"
-					value={title}
 					maxLength={maxTitleLength}
-					onChange={(event) => setTitle(event.target.value)}
+					required
 				/>
 			</label>
 
 			<label className={styles.field}>
-				Review
+				<span className={styles.label}>Review</span>
 				<textarea
 					className={styles.input}
 					name="body"
-					value={body}
-					rows={4}
+					rows={5}
 					maxLength={maxBodyLength}
-					onChange={(event) => setBody(event.target.value)}
+					required
 				/>
 			</label>
 
 			<FormError message={state.error} />
 
 			<div>
-				<SubmitButton>Submit review</SubmitButton>
+				<SubmitButton size="small">Submit review</SubmitButton>
 			</div>
 		</form>
 	);
