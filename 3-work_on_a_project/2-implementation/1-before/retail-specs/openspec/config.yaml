@@ -4,24 +4,27 @@ context: |
   Language: English
   All artifacts must be written in English.
   Keep OpenSpec structural headings and SHALL/MUST keywords in English.
-
 githubCopilot:
   cloudAgent: false
 
-rules:
-  design:
-    - State which repos the change touches (retail-api, retail-web) and why.
-    - When the HTTP contract changes, describe the new or changed endpoints and update ../retail-api/docs/http/contract.md as a task.
-  tasks:
-    - Group tasks by repo, with one `## retail-api` or `## retail-web` section per touched repo, and number tasks inside each section (1.1, 1.2...).
-    - Omit the section for a repo the change does not touch.
-    - When both repos are touched, put retail-api first so the contract exists before retail-web consumes it.
-    - End each repo section with a task to run that repo's checks (npm run typecheck, npm run lint, npm run test).
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always state what is out of scope
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
 
-operations:
-  apply:
-    guidance:
-      - Each `## retail-api` / `## retail-web` section in tasks.md maps to the sibling repo ../retail-api or ../retail-web; edit code there, never in retail-specs.
-      - Before editing a repo, read its AGENTS.md (../<repo>/AGENTS.md); it is not loaded automatically.
-      - Work on a git branch named after the change in every touched repo.
-      - Before marking a repo's tasks done, run its checks from the repo root (npm run typecheck, npm run lint, npm run test) and fix failures.
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing
