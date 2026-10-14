@@ -42,8 +42,3 @@ docs/
 └── testing/
     └── testing-strategy.md
 ```
-
-# Planning
-
-- Specs and changes live in the `retail-specs` OpenSpec store (sibling folder `../retail-specs`). This repo's `openspec/` is only a pointer to that store, so OpenSpec commands run here act on `retail-specs`.
-- For work that spans repos, open the agent in `../retail-specs` and plan there.

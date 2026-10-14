@@ -1,6 +1,6 @@
 # retail-specs
 
-Planning repo (OpenSpec store `retail-specs`) for the retail system. Plan every change here, including changes that only touch one code repo; the code repos' `openspec/` folders only point back to this store.
+OpenSpec planning repo for the retail system. Plan every change here; the code repos have no OpenSpec setup of their own.
 
 # Repos
 
@@ -17,7 +17,3 @@ Before editing a repo, read its `AGENTS.md`: it holds that repo's commands, arch
 2. Open a PR in retail-specs with the plan (proposal, design, specs, tasks) and merge it early.
 3. Open one PR per touched code repo; link the PRs to each other and to the plan.
 4. Once every code PR is merged to main, archive the change and open a final PR in retail-specs with the archive.
-
-# Setup
-
-`bin/setup` registers this store on your machine. `bin/update` refreshes the OpenSpec skills here and in both code repos.
