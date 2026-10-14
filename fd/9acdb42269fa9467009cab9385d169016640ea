@@ -1,0 +1,53 @@
+3-work_on_a_project/3-single_repo_changes/2-linked/retail-api/.claude/settings.json
+  s_7097cc4d72a66b::t_a89b2839639342 1-5
+3-work_on_a_project/3-single_repo_changes/2-linked/retail-api/.codex/config.toml
+  s_7097cc4d72a66b::t_cb300164b7ada2 1-7
+3-work_on_a_project/3-single_repo_changes/2-linked/retail-api/opencode.json
+  s_7097cc4d72a66b::t_2a69f0bb33e82d 1-8
+3-work_on_a_project/3-single_repo_changes/2-linked/retail-web/.claude/settings.json
+  s_7097cc4d72a66b::t_2634e529a2da7b 1-5
+3-work_on_a_project/3-single_repo_changes/2-linked/retail-web/.codex/config.toml
+  s_7097cc4d72a66b::t_2ee16a9d6165a5 1-7
+3-work_on_a_project/3-single_repo_changes/2-linked/retail-web/opencode.json
+  s_7097cc4d72a66b::t_78b1ca2ac0e567 1-8
+3-work_on_a_project/3-single_repo_changes/3-proposed/retail-api/.claude/settings.json
+  s_7097cc4d72a66b::t_a9457a20c6db93 1-5
+3-work_on_a_project/3-single_repo_changes/3-proposed/retail-api/.codex/config.toml
+  s_7097cc4d72a66b::t_b3681ea4ddbcd4 1-7
+3-work_on_a_project/3-single_repo_changes/3-proposed/retail-api/opencode.json
+  s_7097cc4d72a66b::t_785bd7be9f12cc 1-8
+3-work_on_a_project/3-single_repo_changes/3-proposed/retail-web/.claude/settings.json
+  s_7097cc4d72a66b::t_c37955d18ebb98 1-5
+3-work_on_a_project/3-single_repo_changes/3-proposed/retail-web/.codex/config.toml
+  s_7097cc4d72a66b::t_06d6e6283180d8 1-7
+3-work_on_a_project/3-single_repo_changes/3-proposed/retail-web/opencode.json
+  s_7097cc4d72a66b::t_eae58120e3d3d1 1-8
+3-work_on_a_project/3-single_repo_changes/4-archived/retail-api/.claude/settings.json
+  s_7097cc4d72a66b::t_ae2cc68b0039e9 1-5
+3-work_on_a_project/3-single_repo_changes/4-archived/retail-api/.codex/config.toml
+  s_7097cc4d72a66b::t_6ec30aa9e1048b 1-7
+3-work_on_a_project/3-single_repo_changes/4-archived/retail-api/opencode.json
+  s_7097cc4d72a66b::t_cfe8db4b45f9fe 1-8
+3-work_on_a_project/3-single_repo_changes/4-archived/retail-web/.claude/settings.json
+  s_7097cc4d72a66b::t_39679c65cb1db2 1-5
+3-work_on_a_project/3-single_repo_changes/4-archived/retail-web/.codex/config.toml
+  s_7097cc4d72a66b::t_8439a7797c2185 1-7
+3-work_on_a_project/3-single_repo_changes/4-archived/retail-web/opencode.json
+  s_7097cc4d72a66b::t_6ba69bbcb0ad0e 1-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fd9acdb42269fa9467009cab9385d169016640ea",
+  "prompts": {},
+  "sessions": {
+    "s_7097cc4d72a66b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6e02f6fc-8830-47dd-9f70-604d42389949",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
