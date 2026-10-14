@@ -1,0 +1,59 @@
+.main {
+	padding: 40px 0;
+}
+
+.media {
+	align-self: start;
+}
+
+.details {
+	align-self: start;
+	padding: 24px;
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+}
+
+@media (min-width: 860px) {
+	.details {
+		position: sticky;
+		top: 96px;
+	}
+}
+
+.name {
+	margin-top: 12px;
+	font-size: 2.5rem;
+	font-weight: 700;
+	line-height: 1.1;
+}
+
+.description {
+	margin-top: 16px;
+	color: var(--codely-gray);
+	font-size: 1.125rem;
+	line-height: 1.6;
+}
+
+.badges {
+	display: flex;
+	margin-top: 20px;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.price {
+	margin-top: 32px;
+	font-size: 1.875rem;
+	font-weight: 700;
+}
+
+.related {
+	margin-top: 32px;
+}
+
+.sectionHeading {
+	margin: 8px 0 20px;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
