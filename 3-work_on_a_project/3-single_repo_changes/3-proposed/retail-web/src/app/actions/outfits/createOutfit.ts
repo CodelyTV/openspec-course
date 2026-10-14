@@ -1,0 +1,27 @@
+"use server";
+
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+
+import { retailApi } from "@/contexts/frontend/retail/api/RetailApi";
+
+import type { ActionState } from "../ActionState";
+import { actionStateFor } from "../actionStateFor";
+
+import { outfitFormFields } from "./outfitFormFields";
+import { outfitMessages } from "./outfitMessages";
+
+export async function createOutfit(
+	_previousState: ActionState,
+	formData: FormData,
+): Promise<ActionState> {
+	try {
+		const { name, productIds } = outfitFormFields(formData);
+		await retailApi.outfitCreator.create(name, productIds);
+	} catch (error) {
+		return actionStateFor(error, outfitMessages);
+	}
+
+	revalidatePath("/", "layout");
+	redirect("/admin/outfits");
+}

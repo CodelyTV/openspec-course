@@ -1,0 +1,45 @@
+.form {
+	display: grid;
+	gap: 20px;
+	max-width: 560px;
+	padding: 24px;
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+}
+
+.field {
+	display: grid;
+	gap: 6px;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.input {
+	padding: 10px 12px;
+	font: inherit;
+	font-weight: 400;
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-sm);
+}
+
+.pieces {
+	display: grid;
+	gap: 12px;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.legend {
+	margin-bottom: 4px;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.hint {
+	color: var(--codely-gray);
+	font-size: 0.8rem;
+	font-weight: 400;
+}
