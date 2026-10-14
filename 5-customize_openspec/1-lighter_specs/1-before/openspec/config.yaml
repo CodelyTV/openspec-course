@@ -1,0 +1,14 @@
+schema: spec-driven
+
+context: |
+  Language: English
+  All artifacts must be written in English.
+  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+
+rules:
+  specs:
+    - "Each requirement is one or two sentences with SHALL describing one behaviour."
+    - "Each requirement has one scenario written as a single line instead of WHEN/THEN bullets: `- Given ..., when ..., then ...`. Add more scenarios only for distinct edge cases."
+
+githubCopilot:
+  cloudAgent: false
