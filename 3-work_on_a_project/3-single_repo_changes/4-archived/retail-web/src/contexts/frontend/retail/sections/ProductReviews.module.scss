@@ -1,0 +1,87 @@
+.section {
+	margin-top: 32px;
+}
+
+.heading {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.summary {
+	margin-top: 8px;
+	color: var(--codely-gray);
+	font-weight: 700;
+}
+
+.breakdown {
+	display: grid;
+	gap: 6px;
+	max-width: 360px;
+	margin-top: 12px;
+	padding: 0;
+	list-style: none;
+}
+
+.breakdownRow {
+	display: grid;
+	grid-template-columns: 3rem 1fr 2.5rem;
+	gap: 12px;
+	align-items: center;
+	font-size: 0.9rem;
+}
+
+.breakdownStars {
+	color: var(--codely-gray);
+	white-space: nowrap;
+}
+
+.breakdownBar {
+	height: 10px;
+	overflow: hidden;
+	background: var(--border);
+	border-radius: var(--radius-md);
+}
+
+.breakdownBarFill {
+	display: block;
+	height: 100%;
+	background: var(--codely-blue);
+}
+
+.breakdownCount {
+	color: var(--codely-gray);
+	text-align: right;
+}
+
+.list {
+	display: grid;
+	gap: 16px;
+	margin-top: 20px;
+	padding: 0;
+	list-style: none;
+}
+
+.review {
+	padding: 20px;
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+}
+
+.title {
+	margin-top: 8px;
+	font-size: 1.125rem;
+	font-weight: 700;
+}
+
+.body {
+	margin-top: 8px;
+	line-height: 1.6;
+	white-space: pre-line;
+}
+
+.meta {
+	margin-top: 12px;
+	color: var(--codely-gray);
+	font-size: 0.85rem;
+}

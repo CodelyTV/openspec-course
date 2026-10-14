@@ -1,0 +1,57 @@
+$primary-green: #3cff64;
+$primary-blue: #1a2233;
+$primary-gray: #787676;
+$primary-grayLight: #b1b1b1;
+$primary-grayLighter: #efefef;
+$primary-white: #fff;
+$secondary-violet: #7026f4;
+$secondary-yellow: #fef878;
+$secondary-pink: #e0a4bf;
+$hover-green: rgb(60 255 100 / 70%);
+$hover-blue: rgb(26 34 51 / 75%);
+$hover-white: rgb(255 255 255 / 70%);
+$error-red: #f83d32;
+
+$brand: $primary-green;
+
+$cta-primary: $primary-green;
+$cta-primary-hover: $hover-green;
+$cta-secondary: $primary-blue;
+$cta-secondary-hover: $hover-blue;
+
+$bg-primary: $primary-green;
+$bg-darkTheme: $primary-blue;
+$bg-selection: $secondary-yellow;
+$bg: $primary-grayLighter;
+$border: $primary-grayLighter;
+
+$text-primary: $primary-blue;
+$text-secondary: $primary-gray;
+$text-secondary-darkTheme: $primary-grayLight;
+$text-tertiary: $secondary-violet;
+
+$product-alt1: $primary-green;
+$product-alt2: $secondary-violet;
+$product-alt3: $secondary-yellow;
+$product-alt4: $secondary-pink;
+
+$white: $primary-white;
+$white-hover: rgb(255 255 255 / 70%);
+
+$state-active: $primary-green;
+$state-error: $error-red;
+$state-error-background: rgba($error-red, 0.1);
+$state-disabled: $primary-grayLight;
+$state-disabled-bg: $primary-grayLighter;
+
+$input-active: $secondary-violet;
+$input-default: $primary-gray;
+$input-border: $primary-grayLight;
+
+$checbox-active: $primary-blue;
+$checkbox-disabled: $primary-grayLight;
+$checkbox-disabled-bg: $primary-grayLighter;
+
+$surface: #f7f7f4;
+$surface-strong: #eef0e9;
+$surface-border: #d9dbd4;
