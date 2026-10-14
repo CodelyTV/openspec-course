@@ -1,0 +1,35 @@
+3-work_on_a_project/3-single_repo_changes/2-linked/retail-specs/AGENTS.md
+  s_7097cc4d72a66b::t_6853330589bbed 20-23
+3-work_on_a_project/3-single_repo_changes/2-linked/retail-specs/bin/register-store
+  s_7097cc4d72a66b::t_f8f1075bdc50f4 1-7
+3-work_on_a_project/3-single_repo_changes/2-linked/retail-specs/bin/update-openspec
+  s_7097cc4d72a66b::t_597fe4ebdb4d7f 1-8
+3-work_on_a_project/3-single_repo_changes/3-proposed/retail-specs/AGENTS.md
+  s_7097cc4d72a66b::t_fcf7b80975d5a2 20-23
+3-work_on_a_project/3-single_repo_changes/3-proposed/retail-specs/bin/register-store
+  s_7097cc4d72a66b::t_71aadc807dde24 1-7
+3-work_on_a_project/3-single_repo_changes/3-proposed/retail-specs/bin/update-openspec
+  s_7097cc4d72a66b::t_7c7a00fa3a164d 1-8
+3-work_on_a_project/3-single_repo_changes/4-archived/retail-specs/AGENTS.md
+  s_7097cc4d72a66b::t_59fa9ed20a4ddb 20-23
+3-work_on_a_project/3-single_repo_changes/4-archived/retail-specs/bin/register-store
+  s_7097cc4d72a66b::t_e860ccba6436d9 1-7
+3-work_on_a_project/3-single_repo_changes/4-archived/retail-specs/bin/update-openspec
+  s_7097cc4d72a66b::t_96e57b0728e926 1-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f7a7e4d22d1e937b696884544d316957ebc9cc95",
+  "prompts": {},
+  "sessions": {
+    "s_7097cc4d72a66b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6e02f6fc-8830-47dd-9f70-604d42389949",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
