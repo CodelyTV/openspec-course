@@ -1,0 +1,23 @@
+3-work_on_a_project/2-implementation/1-before/retail-specs/AGENTS.md
+  s_7097cc4d72a66b::t_4967e27d694fec 3
+3-work_on_a_project/2-implementation/2-proposed/retail-specs/AGENTS.md
+  s_7097cc4d72a66b::t_453f694b5d850c 3
+3-work_on_a_project/2-implementation/3-archived/retail-specs/AGENTS.md
+  s_7097cc4d72a66b::t_153a2295b64757 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "42e1fb2f38cd2522d3e885661193fd456d65ce88",
+  "prompts": {},
+  "sessions": {
+    "s_7097cc4d72a66b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6e02f6fc-8830-47dd-9f70-604d42389949",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
