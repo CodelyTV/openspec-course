@@ -17,3 +17,7 @@ Before editing a repo, read its `AGENTS.md`: it holds that repo's commands, arch
 2. Open a PR in retail-specs with the plan (proposal, design, specs, tasks) and merge it early.
 3. Open one PR per touched code repo; link the PRs to each other and to the plan.
 4. Once every code PR is merged to main, archive the change and open a final PR in retail-specs with the archive.
+
+# Setup
+
+Clone `retail-specs`, `retail-api` and `retail-web` side by side, then run `bin/register-store` once per machine. `bin/update-openspec` refreshes the OpenSpec skills here and in both code repos.
