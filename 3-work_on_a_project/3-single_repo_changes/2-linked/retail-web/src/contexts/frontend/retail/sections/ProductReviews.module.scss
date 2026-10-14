@@ -1,0 +1,47 @@
+.section {
+	margin-top: 32px;
+}
+
+.heading {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.summary {
+	margin-top: 8px;
+	color: var(--codely-gray);
+	font-weight: 700;
+}
+
+.list {
+	display: grid;
+	gap: 16px;
+	margin-top: 20px;
+	padding: 0;
+	list-style: none;
+}
+
+.review {
+	padding: 20px;
+	background: var(--codely-white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+}
+
+.title {
+	margin-top: 8px;
+	font-size: 1.125rem;
+	font-weight: 700;
+}
+
+.body {
+	margin-top: 8px;
+	line-height: 1.6;
+	white-space: pre-line;
+}
+
+.meta {
+	margin-top: 12px;
+	color: var(--codely-gray);
+	font-size: 0.85rem;
+}

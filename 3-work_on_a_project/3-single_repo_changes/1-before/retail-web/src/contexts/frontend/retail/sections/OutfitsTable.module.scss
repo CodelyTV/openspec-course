@@ -1,0 +1,32 @@
+.link {
+	font-weight: 700;
+
+	&:hover {
+		color: var(--codely-gray);
+	}
+}
+
+.soldOutWarning {
+	padding: 2px 10px;
+	color: var(--codely-blue);
+	font-size: 0.8rem;
+	font-weight: 700;
+	white-space: normal;
+	background: var(--codely-yellow);
+	border-radius: 999px;
+}
+
+.inStock {
+	color: var(--codely-gray);
+	font-size: 0.85rem;
+}
+
+.empty {
+	display: grid;
+	justify-items: start;
+	gap: 12px;
+	padding: 32px;
+	background: var(--codely-white);
+	border: 1px dashed var(--border);
+	border-radius: var(--radius-md);
+}

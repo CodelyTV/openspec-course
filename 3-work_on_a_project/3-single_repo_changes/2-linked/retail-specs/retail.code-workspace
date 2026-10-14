@@ -1,0 +1,7 @@
+{
+  "folders": [
+    { "name": "retail-specs", "path": "." },
+    { "name": "retail-api", "path": "../retail-api" },
+    { "name": "retail-web", "path": "../retail-web" }
+  ]
+}
