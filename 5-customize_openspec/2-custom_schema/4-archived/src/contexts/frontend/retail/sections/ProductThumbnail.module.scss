@@ -1,0 +1,6 @@
+.thumbnail {
+	flex-shrink: 0;
+	object-fit: cover;
+	background: var(--surface-strong);
+	border-radius: var(--radius-sm);
+}

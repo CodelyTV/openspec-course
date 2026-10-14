@@ -1,0 +1,9 @@
+schema: codely-spec-plan
+
+context: |
+  Language: English
+  All artifacts must be written in English.
+  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+
+githubCopilot:
+  cloudAgent: false
