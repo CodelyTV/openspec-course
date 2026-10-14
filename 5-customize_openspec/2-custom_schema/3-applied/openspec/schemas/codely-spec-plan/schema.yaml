@@ -1,0 +1,48 @@
+name: codely-spec-plan
+version: 1
+description: Codely workflow - lean specs → a single plan.md that is also the task list
+artifacts:
+  - id: specs
+    generates: "specs/**/*.md"
+    description: Lean behaviour specs, one per capability
+    template: spec.md
+    instruction: |
+      Define WHAT the system does: observable behaviour only. No class names, libraries or implementation steps.
+
+      0. Explore the codebase with subagents and read AGENTS.md and the docs relevant to the change. Reuse these findings for the plan.
+      1. Find the capabilities this change touches: run `openspec list --specs` and read the related ones with `openspec show "<spec-id>" --type spec`. Reuse existing capability paths. Name new ones in kebab-case after a durable behaviour (`order-cancellation`, not `add-cancel-button`).
+      2. Write one `specs/<capability-path>/spec.md` per capability, one file at a time.
+      3. Group requirements under `## ADDED`, `## MODIFIED`, `## REMOVED` or `## RENAMED Requirements`. A new capability starts with `## Purpose`: one or two sentences, 50+ characters.
+      4. Each requirement is `### Requirement: <name>` plus one or two sentences with SHALL describing one behaviour.
+      5. Each requirement has one `#### Scenario: <name>` with a single line: `- Given ..., when ..., then ...`. Add more scenarios only for distinct edge cases.
+      6. MODIFIED copies the whole existing requirement and keeps every existing scenario name. Their bodies can be rewritten in the format above.
+
+      No behaviour change (refactor, tooling, docs)? Set `skip_specs: true` in the change's `.openspec.yaml` instead of inventing requirements.
+    requires: []
+
+  - id: plan
+    generates: plan.md
+    description: Goal, context and vertical slice phases with the tasks to implement the specs
+    template: plan.md
+    instruction: |
+      Plan how to implement the specs. Keep it short: it is reviewed together with the specs.
+
+      - Goal: 1-3 sentences on what gets built and why it matters.
+      - Decisions: the choices and assumptions not stated in the request, and what is out of scope. One line each.
+      - Context: up to 8 files, folders or docs that the phases change or copy patterns from, linked with repository root paths (`/src/...`).
+      - Phases: one phase per group of requirements that delivers value on its own. Each phase is a vertical slice (UI, logic and persistence together) that builds and passes verification alone, and never leaves the system in a wrong business state. Phase 1 must produce something the user can run or see.
+      - Contracts of each phase: application services, ports and repositories with their method signatures, domain events with their attributes, database schemas, UI copy, and test suites with their test cases in the project's naming convention. Every scenario is covered by a test case, unless the project's testing strategy excludes that layer. Signatures only, no explanations. Omit contract types without changes.
+      - Each phase ends with the task "Verify typecheck, lint and every test suite with the project's verification commands. Fix issues if any."
+      - Only phase tasks are checkboxes: every `- [ ]` in this file counts as a task.
+      - Write in English and do not use the `—` character.
+    requires:
+      - specs
+
+apply:
+  requires: [plan]
+  tracks: plan.md
+  instruction: |
+    Implement the phases in order and check off each task as you finish it.
+    Run the verification task of a phase before starting the next one.
+    Stop only on a blocker or a verification failure you cannot fix.
+    When done, add `implemented_by` (same shape as `created_by`) and `last_implementation_at` to the frontmatter, rewrite the Next step, and suggest one conventional commit message per phase. Do not commit.

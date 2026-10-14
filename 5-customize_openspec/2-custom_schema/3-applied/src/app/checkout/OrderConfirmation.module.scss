@@ -1,0 +1,22 @@
+.confirmation {
+	padding: 20px;
+	color: var(--codely-blue);
+	background: var(--codely-green);
+	border-radius: var(--radius-md);
+}
+
+.confirmationTitle {
+	font-size: 1.125rem;
+	font-weight: 700;
+}
+
+.confirmationDetail {
+	margin-top: 6px;
+	font-size: 0.95rem;
+}
+
+.orderLink {
+	font-weight: 700;
+	text-decoration: underline;
+	overflow-wrap: anywhere;
+}
