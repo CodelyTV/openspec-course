@@ -49,6 +49,6 @@
 
 ## Workflow follow-up
 
-- Branch `add-product-reviews` in `retail-specs`, `retail-api` and `retail-web`. Open and merge the plan PR in `retail-specs` early.
-- Open one PR per code repo, linked to each other and to the plan. Merge `retail-api` before `retail-web`.
+- Branch `add-product-reviews` in `retail-specs`, `retail-api` and `retail-web`.
+- Open one PR per code repo, linked to each other. Merge `retail-api` before `retail-web`.
 - Once both are merged, archive the change and open the archive PR in `retail-specs`.

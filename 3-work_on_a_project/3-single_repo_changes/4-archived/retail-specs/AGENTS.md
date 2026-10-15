@@ -14,9 +14,8 @@ Before editing a repo, read its `AGENTS.md`: it holds that repo's commands, arch
 # Git flow
 
 1. Use the change name as the branch name in every repo the change touches.
-2. Open a PR in retail-specs with the plan (proposal, design, specs, tasks) and merge it early.
-3. Open one PR per touched code repo; link the PRs to each other and to the plan.
-4. Once every code PR is merged to main, archive the change and open a final PR in retail-specs with the archive.
+2. Open one PR per touched code repo and link the PRs to each other.
+3. Once every code PR is merged to main, archive the change and open a final PR in retail-specs with the archive.
 
 # Setup
 
