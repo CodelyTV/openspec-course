@@ -21,7 +21,7 @@ The product page only shows what the store says about a product. Customers decid
 
 ### Modified Capabilities
 
-None. The product page suggestions (`product-suggestions`) stay as they are; reviews are a separate section.
+None.
 
 ## Impact
 
