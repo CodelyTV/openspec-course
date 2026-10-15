@@ -1,0 +1,63 @@
+3-work_on_a_project/2-implementation/2-setup/retail-api/AGENTS.md
+  s_7097cc4d72a66b::t_6494271f17333d 1-44
+3-work_on_a_project/2-implementation/2-setup/retail-specs/AGENTS.md
+  s_efc26c6589bd3d::t_fb7593c8600843 1-18
+3-work_on_a_project/2-implementation/2-setup/retail-web/AGENTS.md
+  s_7097cc4d72a66b::t_26bfe80fcbfefb 1-34
+3-work_on_a_project/2-implementation/3-proposed/retail-api/AGENTS.md
+  s_7097cc4d72a66b::t_7119c069c342de 1-44
+3-work_on_a_project/2-implementation/3-proposed/retail-specs/AGENTS.md
+  s_efc26c6589bd3d::t_892ee68b203adc 1-18
+3-work_on_a_project/2-implementation/3-proposed/retail-specs/openspec/changes/add-product-reviews/tasks.md
+  s_efc26c6589bd3d::t_6da07b01d17f22 1-54
+3-work_on_a_project/2-implementation/3-proposed/retail-web/AGENTS.md
+  s_7097cc4d72a66b::t_7be74dfe01c01f 1-34
+3-work_on_a_project/2-implementation/4-archived/retail-api/AGENTS.md
+  s_7097cc4d72a66b::t_5dd8fb1d75d511 1-44
+3-work_on_a_project/2-implementation/4-archived/retail-specs/AGENTS.md
+  s_efc26c6589bd3d::t_e49d4d6ce1cb4d 1-18
+3-work_on_a_project/2-implementation/4-archived/retail-specs/openspec/changes/archive/2026-10-13-add-product-reviews/tasks.md
+  s_efc26c6589bd3d::t_f8f3e4737e00f5 1-54
+3-work_on_a_project/2-implementation/4-archived/retail-web/AGENTS.md
+  s_7097cc4d72a66b::t_5379dbfc91d858 1-34
+3-work_on_a_project/3-single_repo_changes/1-before/retail-specs/AGENTS.md
+  s_efc26c6589bd3d::t_8b0eb2163f2fa4 17-18
+3-work_on_a_project/3-single_repo_changes/1-before/retail-specs/openspec/changes/archive/2026-10-13-add-product-reviews/tasks.md
+  s_efc26c6589bd3d::t_96494e5ad693aa 52-53
+3-work_on_a_project/3-single_repo_changes/2-linked/retail-specs/AGENTS.md
+  s_efc26c6589bd3d::t_008b726c7236e5 17-18
+3-work_on_a_project/3-single_repo_changes/2-linked/retail-specs/openspec/changes/archive/2026-10-13-add-product-reviews/tasks.md
+  s_efc26c6589bd3d::t_77e46301436dd9 52-53
+3-work_on_a_project/3-single_repo_changes/3-proposed/retail-specs/AGENTS.md
+  s_efc26c6589bd3d::t_be5ca4ed18bb75 17-18
+3-work_on_a_project/3-single_repo_changes/3-proposed/retail-specs/openspec/changes/archive/2026-10-13-add-product-reviews/tasks.md
+  s_efc26c6589bd3d::t_0117ced6e4000a 52-53
+3-work_on_a_project/3-single_repo_changes/4-archived/retail-specs/AGENTS.md
+  s_efc26c6589bd3d::t_1269129515c251 17-18
+3-work_on_a_project/3-single_repo_changes/4-archived/retail-specs/openspec/changes/archive/2026-10-13-add-product-reviews/tasks.md
+  s_efc26c6589bd3d::t_537d96fd53c875 52-53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c60beb19654a6464907086ad41ed5c1e163774e8",
+  "prompts": {},
+  "sessions": {
+    "s_7097cc4d72a66b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6e02f6fc-8830-47dd-9f70-604d42389949",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    },
+    "s_efc26c6589bd3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "27a10a7a-79b8-4d6c-873b-32c57972e3d9",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
