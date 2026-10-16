@@ -12,7 +12,7 @@
 .rating {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 12px;
+	gap: 4px;
 	margin: 0;
 	padding: 0;
 	border: none;
@@ -20,15 +20,49 @@
 
 .label {
 	width: 100%;
+	margin-bottom: 4px;
 	font-size: 0.9rem;
 	font-weight: 700;
 }
 
 .star {
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	font-size: 0.9rem;
+	position: relative;
+	font-size: 1.75rem;
+	line-height: 1;
+	color: var(--border);
+	cursor: pointer;
+	transition: color 0.1s ease;
+}
+
+.star:has(.starInput:checked),
+.star:has(~ .star .starInput:checked),
+.rating:hover .star:hover,
+.rating:hover .star:has(~ .star:hover) {
+	color: var(--codely-blue);
+}
+
+.rating:hover .star:hover ~ .star {
+	color: var(--border);
+}
+
+.star:has(.starInput:focus-visible) {
+	outline: 2px solid var(--codely-blue);
+	outline-offset: 2px;
+	border-radius: var(--radius-sm);
+}
+
+.starInput,
+.starName {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	white-space: nowrap;
+	clip-path: inset(50%);
+}
+
+.starInput {
+	opacity: 0;
 }
 
 .field {

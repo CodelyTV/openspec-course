@@ -44,12 +44,16 @@ export function ReviewForm({
 				{ratings.map((rating) => (
 					<label key={rating} className={styles.star}>
 						<input
+							className={styles.starInput}
 							type="radio"
 							name="rating"
 							value={rating}
 							required
 						/>
-						{rating === 1 ? "1 star" : `${rating} stars`}
+						<span aria-hidden="true">★</span>
+						<span className={styles.starName}>
+							{rating === 1 ? "1 star" : `${rating} stars`}
+						</span>
 					</label>
 				))}
 			</fieldset>
