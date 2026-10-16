@@ -3,7 +3,9 @@ import Link from "next/link";
 import type { OrderResponse } from "@/contexts/backend/orders/application/OrderResponse";
 import { Table } from "@/contexts/frontend/design-system/molecules/Table";
 
-import { formatMoney, formatShortDate, formatStatus } from "../ui/format";
+import { formatMoney, formatShortDate } from "../ui/format";
+
+import { OrderStatusPill } from "./OrderStatusPill";
 
 import styles from "./orders.module.scss";
 
@@ -41,11 +43,7 @@ export function AdminOrdersTable({
 				{ header: "Units", cell: (order) => order.items },
 				{
 					header: "Status",
-					cell: (order) => (
-						<span className={styles.status}>
-							{formatStatus(order.status)}
-						</span>
-					),
+					cell: (order) => <OrderStatusPill status={order.status} />,
 				},
 				{
 					header: "Total",
