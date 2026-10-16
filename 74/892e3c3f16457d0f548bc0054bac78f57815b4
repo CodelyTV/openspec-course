@@ -1,0 +1,41 @@
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/frontend/retail/sections/AdminOrdersTable.tsx
+  s_4efc3907cb11b6::t_56c3a088856c79 6-8,46
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/frontend/retail/sections/CustomerOrdersTable.tsx
+  s_4efc3907cb11b6::t_e47645f25145d0 12-13,53
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/frontend/retail/sections/OrderStatusPill.tsx
+  s_4efc3907cb11b6::t_3c6c9d884532b5 1-21
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/frontend/retail/sections/orders.module.scss
+  s_4efc3907cb11b6::t_8ea72aff0796a7 1-2,17-20
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/frontend/retail/sections/AdminOrdersTable.tsx
+  s_6e1fde459fe867::t_d01122de4f4806 6-8,46
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/frontend/retail/sections/CustomerOrdersTable.tsx
+  s_6e1fde459fe867::t_bfcbdb9e92b06d 12-13,53
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/frontend/retail/sections/OrderStatusPill.tsx
+  s_6e1fde459fe867::t_17772a83c319f6 1-21
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/frontend/retail/sections/orders.module.scss
+  s_6e1fde459fe867::t_ad5aa37c98e0cb 1-2,17-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "74892e3c3f16457d0f548bc0054bac78f57815b4",
+  "prompts": {},
+  "sessions": {
+    "s_4efc3907cb11b6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "46c22c75-9214-4ad4-bab9-438e026456c1",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    },
+    "s_6e1fde459fe867": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d507ed80-56ce-45e7-9454-a3130ea58242",
+        "model": "unknown"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
