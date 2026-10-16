@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
 
 import type {
 	OrderDetailLineResponse,
@@ -15,6 +14,7 @@ import {
 	variantLabel,
 } from "../ui/format";
 
+import { CancelOrderForm } from "./CancelOrderForm";
 import { PageHeader } from "./PageHeader";
 
 import styles from "./orders.module.scss";
@@ -22,7 +22,6 @@ import styles from "./orders.module.scss";
 type OrderDetailProps = {
 	order: OrderDetailResponse;
 	audience: "customer" | "admin";
-	cancelForm?: ReactNode;
 };
 
 const backLinks = {
@@ -37,10 +36,9 @@ function lineKey(line: OrderDetailLineResponse): string {
 export function OrderDetail({
 	order,
 	audience,
-	cancelForm,
 }: OrderDetailProps): React.JSX.Element {
 	const backLink = backLinks[audience];
-	const canBeCancelledByTheCustomer =
+	const canBeCancelled =
 		audience === "customer" && order.status === "confirmed";
 	const facts = [
 		audience === "admin"
@@ -76,7 +74,7 @@ export function OrderDetail({
 				))}
 			</dl>
 
-			{canBeCancelledByTheCustomer && cancelForm}
+			{canBeCancelled && <CancelOrderForm orderId={order.id} />}
 
 			<Table
 				label="Order lines"

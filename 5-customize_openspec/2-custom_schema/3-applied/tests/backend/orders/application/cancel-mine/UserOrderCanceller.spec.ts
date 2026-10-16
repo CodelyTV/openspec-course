@@ -2,7 +2,6 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { UserOrderCanceller } from "@/contexts/backend/orders/application/cancel-mine/UserOrderCanceller";
 import { OrderNotFoundError } from "@/contexts/backend/orders/domain/errors/OrderNotFoundError";
-import { OrderId } from "@/contexts/backend/orders/domain/OrderId";
 import type { OrderRepository } from "@/contexts/backend/orders/domain/OrderRepository";
 import type { StockReleaser } from "@/contexts/backend/orders/domain/StockReleaser";
 import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
@@ -10,6 +9,7 @@ import type { UnitOfWork } from "@/contexts/shared/domain/UnitOfWork";
 import { UserId } from "@/contexts/shared/domain/UserId";
 
 import { Mock } from "../../../../shared/Mock";
+import { OrderLineMother } from "../../domain/OrderLineMother";
 import { OrderMother } from "../../domain/OrderMother";
 
 describe("UserOrderCanceller should", () => {
@@ -30,56 +30,91 @@ describe("UserOrderCanceller should", () => {
 		vi.mocked(unitOfWork.run).mockImplementation((work) => work());
 	});
 
-	it("cancel a confirmed order of the current customer and release its units", async () => {
+	it("cancel an order placed by the current user and release its lines", async () => {
 		const order = OrderMother.create({
-			id: "order-1",
 			userId: currentUserId.value,
-			status: "confirmed",
+			lines: [
+				OrderLineMother.createPrimitives({
+					variantId: "a",
+					quantity: 1,
+				}),
+				OrderLineMother.createPrimitives({
+					variantId: "b",
+					quantity: 2,
+				}),
+			],
 		});
-		repository.searchLockingItShouldReturn(order);
+		repository.searchShouldReturn(order);
+		repository.cancelShouldReturn(true);
 
-		await canceller.cancel("order-1");
+		await canceller.cancel(order.id.value);
 
-		repository.expectSearchLockingItToHaveBeenCalledWith(
-			new OrderId("order-1"),
-		);
+		repository.expectCancelToHaveBeenCalledWith(order.id);
 		stockReleaser.expectReleaseToHaveBeenCalledWith(order.lines);
-		repository.expectUpdateStatusToHaveBeenCalledWith(order.cancel());
 	});
 
-	it("do nothing when the order is already cancelled", async () => {
-		repository.searchLockingItShouldReturn(
-			OrderMother.create({
-				userId: currentUserId.value,
-				status: "cancelled",
-			}),
-		);
+	it("cancel an order placed long ago", async () => {
+		const order = OrderMother.create({
+			userId: currentUserId.value,
+			createdAt: "2025-01-01T00:00:00.000Z",
+		});
+		repository.searchShouldReturn(order);
+		repository.cancelShouldReturn(true);
 
-		await canceller.cancel("order-1");
+		await canceller.cancel(order.id.value);
 
-		stockReleaser.expectReleaseNotToHaveBeenCalled();
-		repository.expectUpdateStatusNotToHaveBeenCalled();
+		repository.expectCancelToHaveBeenCalledWith(order.id);
+		stockReleaser.expectReleaseToHaveBeenCalledWith(order.lines);
 	});
 
-	it("fail with order not found when the order belongs to another customer", async () => {
-		repository.searchLockingItShouldReturn(
-			OrderMother.create({ userId: "user-someone-else" }),
-		);
+	it("cancel and release the stock only within the unit of work", async () => {
+		const order = OrderMother.create({ userId: currentUserId.value });
+		repository.searchShouldReturn(order);
+		vi.mocked(unitOfWork.run).mockResolvedValue(undefined);
 
-		await expect(canceller.cancel("order-1")).rejects.toEqual(
-			new OrderNotFoundError("order-1"),
-		);
+		await canceller.cancel(order.id.value);
+
+		repository.expectCancelNotToHaveBeenCalled();
 		stockReleaser.expectReleaseNotToHaveBeenCalled();
-		repository.expectUpdateStatusNotToHaveBeenCalled();
 	});
 
-	it("fail with order not found when the order does not exist", async () => {
-		repository.searchLockingItShouldReturn(null);
+	it("not release stock when the order was already cancelled", async () => {
+		const order = OrderMother.create({ userId: currentUserId.value });
+		repository.searchShouldReturn(order);
+		repository.cancelShouldReturn(false);
 
-		await expect(canceller.cancel("missing")).rejects.toEqual(
-			new OrderNotFoundError("missing"),
-		);
+		await canceller.cancel(order.id.value);
+
 		stockReleaser.expectReleaseNotToHaveBeenCalled();
-		repository.expectUpdateStatusNotToHaveBeenCalled();
+	});
+
+	it("not touch an order it reads as already cancelled", async () => {
+		const order = OrderMother.cancelled({ userId: currentUserId.value });
+		repository.searchShouldReturn(order);
+
+		await canceller.cancel(order.id.value);
+
+		repository.expectCancelNotToHaveBeenCalled();
+		stockReleaser.expectReleaseNotToHaveBeenCalled();
+	});
+
+	it("throw not found for an order placed by another user without touching it", async () => {
+		const order = OrderMother.create({ userId: "user-someone-else" });
+		repository.searchShouldReturn(order);
+
+		await expect(canceller.cancel(order.id.value)).rejects.toBeInstanceOf(
+			OrderNotFoundError,
+		);
+		repository.expectCancelNotToHaveBeenCalled();
+		stockReleaser.expectReleaseNotToHaveBeenCalled();
+	});
+
+	it("throw not found when the order does not exist", async () => {
+		repository.searchShouldReturn(null);
+
+		await expect(canceller.cancel("missing")).rejects.toBeInstanceOf(
+			OrderNotFoundError,
+		);
+		repository.expectCancelNotToHaveBeenCalled();
 	});
 });

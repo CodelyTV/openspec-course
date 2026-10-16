@@ -19,11 +19,8 @@ created_by:
 
 ## Decisions
 
-- <!-- choice, assumption or out of scope item -->
-
-## Context
-
-- [`<!-- path -->`](/<!-- path -->): <!-- why it matters -->
+- <!-- choice or assumption (instead of <discarded alternative>, when not obvious) -->
+- Out of scope: <!-- what this change does not do -->
 
 ## Phases
 
@@ -33,10 +30,18 @@ created_by:
 
 **Contracts**
 
-- <!-- Contract type -->: <!-- contract -->
+```<!-- project language -->
+<!-- Contract type, as a comment -->
+<!-- signature -->
+```
+
+**Tests**
+
+- `<!-- test suite -->`
+  - <!-- test case --> (<!-- scenario it covers -->)
 
 - [ ] <!-- task -->
-- [ ] Verify typecheck, lint and every test suite with the project's verification commands. Fix issues if any.
+- [ ] Verify typecheck, lint and every test suite with the project's verification commands, and check the phase's behaviour in the running app. Fix issues if any.
 
 ## Next step
 

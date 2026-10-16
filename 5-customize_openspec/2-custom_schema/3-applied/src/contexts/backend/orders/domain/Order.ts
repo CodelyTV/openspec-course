@@ -75,6 +75,10 @@ export class Order {
 	}
 
 	cancel(): Order {
+		if (this.isCancelled()) {
+			return this;
+		}
+
 		return new Order(
 			this.id,
 			this.userId,

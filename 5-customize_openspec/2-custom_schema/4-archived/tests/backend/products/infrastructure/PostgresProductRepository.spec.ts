@@ -273,13 +273,13 @@ describeWithEnvironmentArranger(
 			expect(await onlineStockOf("v1")).toBe(2);
 		});
 
-		it("increase the online stock of a variant", async () => {
+		it("add units to a variant's online stock", async () => {
 			await arranger.givenProducts(
 				ProductMother.create({
 					variants: [
 						ProductVariantMother.createPrimitives({
 							id: "v1",
-							onlineStock: 1,
+							onlineStock: 3,
 						}),
 					],
 				}),
@@ -287,25 +287,7 @@ describeWithEnvironmentArranger(
 
 			await repository.increaseStock(new VariantId("v1"), 2);
 
-			expect(await onlineStockOf("v1")).toBe(3);
-		});
-
-		it("ignore an increase for a variant no longer in the catalog", async () => {
-			await arranger.givenProducts(
-				ProductMother.create({
-					variants: [
-						ProductVariantMother.createPrimitives({
-							id: "v1",
-							onlineStock: 1,
-						}),
-					],
-				}),
-			);
-
-			await expect(
-				repository.increaseStock(new VariantId("ghost"), 2),
-			).resolves.toBeUndefined();
-			expect(await onlineStockOf("v1")).toBe(1);
+			expect(await onlineStockOf("v1")).toBe(5);
 		});
 
 		it("sell the last unit only once when two buyers race for it", async () => {

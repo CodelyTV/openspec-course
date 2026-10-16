@@ -13,11 +13,9 @@ export abstract class OrderRepository {
 
 	abstract search(id: OrderId): Promise<Order | null>;
 
-	abstract searchLockingIt(id: OrderId): Promise<Order | null>;
-
-	abstract updateStatus(order: Order): Promise<void>;
-
 	abstract searchByUser(userId: UserId): Promise<Order[]>;
+
+	abstract cancel(id: OrderId): Promise<boolean>;
 
 	abstract revenuePerCurrency(): Promise<CurrencyRevenue[]>;
 }

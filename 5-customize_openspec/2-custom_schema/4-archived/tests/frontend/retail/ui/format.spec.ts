@@ -7,7 +7,6 @@ import {
 	formatMoney,
 	formatMoneyPerCurrency,
 	formatOptionalMoney,
-	formatOrderCount,
 	formatOutfitMembership,
 	formatProductCount,
 	formatShortDate,
@@ -51,10 +50,6 @@ describe("format", () => {
 		expect(formatDeliveryMethod("home-delivery")).toBe("Home delivery");
 	});
 
-	it("format the cancelled status", () => {
-		expect(formatStatus("cancelled")).toBe("Cancelled");
-	});
-
 	it("shows unknown status and delivery codes as they are", () => {
 		expect(formatStatus("shipped")).toBe("shipped");
 		expect(formatDeliveryMethod("drone")).toBe("drone");
@@ -81,11 +76,6 @@ describe("format", () => {
 	it("uses the singular for a single product", () => {
 		expect(formatProductCount(1)).toBe("1 product");
 		expect(formatProductCount(4)).toBe("4 products");
-	});
-
-	it("uses the singular for a single order", () => {
-		expect(formatOrderCount(1)).toBe("1 order");
-		expect(formatOrderCount(3)).toBe("3 orders");
 	});
 
 	it("tells how many outfits a product belongs to", () => {

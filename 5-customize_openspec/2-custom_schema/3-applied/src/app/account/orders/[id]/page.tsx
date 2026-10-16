@@ -4,8 +4,6 @@ import { notFound } from "next/navigation";
 import { retailContainer } from "@/contexts/backend/shared/infrastructure/RetailContainer";
 import { OrderDetail } from "@/contexts/frontend/retail/sections/OrderDetail";
 
-import { CancelOrderForm } from "./CancelOrderForm";
-
 type AccountOrderDetailPageProps = {
 	params: Promise<{ id: string }>;
 };
@@ -26,11 +24,5 @@ export default async function AccountOrderDetailPage({
 		notFound();
 	}
 
-	return (
-		<OrderDetail
-			order={order}
-			audience="customer"
-			cancelForm={<CancelOrderForm orderId={order.id} />}
-		/>
-	);
+	return <OrderDetail order={order} audience="customer" />;
 }

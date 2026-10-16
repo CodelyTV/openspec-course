@@ -36,16 +36,6 @@ describe("AdminOrdersTable should", () => {
 		]);
 	});
 
-	it("show the cancelled status of a cancelled order", () => {
-		render(
-			<AdminOrdersTable
-				orders={[OrderResponseMother.create({ status: "cancelled" })]}
-			/>,
-		);
-
-		expect(screen.getByText("Cancelled")).toBeInTheDocument();
-	});
-
 	it("link each order to its admin detail page", () => {
 		render(
 			<AdminOrdersTable

@@ -111,19 +111,21 @@ export class PostgresOrderRepository
 	}
 
 	async search(id: OrderId): Promise<Order | null> {
-		return this.searchById(id, { lockUntilTransactionEnds: false });
-	}
+		const order = (
+			await this.sql<OrderRow[]>`
+				select id, user_id, created_at, status, delivery_method, subtotal_amount, currency
+				from orders
+				where id = ${id.value}
+			`
+		).at(0);
 
-	async searchLockingIt(id: OrderId): Promise<Order | null> {
-		return this.searchById(id, { lockUntilTransactionEnds: true });
-	}
+		if (!order) {
+			return null;
+		}
 
-	async updateStatus(order: Order): Promise<void> {
-		await this.sql`
-			update orders
-			set status = ${order.status}
-			where id = ${order.id.value}
-		`;
+		const [found] = await this.withLines([order]);
+
+		return found;
 	}
 
 	async searchByUser(userId: UserId): Promise<Order[]> {
@@ -135,6 +137,16 @@ export class PostgresOrderRepository
 		`;
 
 		return this.withLines(orderRows);
+	}
+
+	async cancel(id: OrderId): Promise<boolean> {
+		const result = await this.sql`
+			update orders
+			set status = 'cancelled'
+			where id = ${id.value} and status = 'confirmed'
+		`;
+
+		return result.count === 1;
 	}
 
 	async revenuePerCurrency(): Promise<CurrencyRevenue[]> {
@@ -149,29 +161,6 @@ export class PostgresOrderRepository
 			revenue: new Money(row.revenue_amount, parseCurrency(row.currency)),
 			ordersCount: row.orders_count,
 		}));
-	}
-
-	private async searchById(
-		id: OrderId,
-		{ lockUntilTransactionEnds }: { lockUntilTransactionEnds: boolean },
-	): Promise<Order | null> {
-		const sql = this.sql;
-		const order = (
-			await sql<OrderRow[]>`
-				select id, user_id, created_at, status, delivery_method, subtotal_amount, currency
-				from orders
-				where id = ${id.value}
-				${lockUntilTransactionEnds ? sql`for update` : sql``}
-			`
-		).at(0);
-
-		if (!order) {
-			return null;
-		}
-
-		const [found] = await this.withLines([order]);
-
-		return found;
 	}
 
 	private async withLines(orderRows: OrderRow[]): Promise<Order[]> {

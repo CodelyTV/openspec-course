@@ -1,8 +1,8 @@
 import type { CurrentUserProvider } from "@/contexts/shared/domain/CurrentUserProvider";
 import type { UnitOfWork } from "@/contexts/shared/domain/UnitOfWork";
-import type { UserId } from "@/contexts/shared/domain/UserId";
 
 import { OrderNotFoundError } from "../../domain/errors/OrderNotFoundError";
+import type { Order } from "../../domain/Order";
 import { OrderId } from "../../domain/OrderId";
 import type { OrderRepository } from "../../domain/OrderRepository";
 import type { StockReleaser } from "../../domain/StockReleaser";
@@ -16,24 +16,41 @@ export class UserOrderCanceller {
 	) {}
 
 	async cancel(id: string): Promise<void> {
-		const currentUserId = await this.currentUserProvider.currentUserId();
-
-		await this.unitOfWork.run(() => this.cancelOrderOf(id, currentUserId));
-	}
-
-	private async cancelOrderOf(id: string, userId: UserId): Promise<void> {
-		const order = await this.repository.searchLockingIt(new OrderId(id));
-		const belongsToTheUser = order?.userId.equals(userId) ?? false;
-
-		if (!order || !belongsToTheUser) {
-			throw new OrderNotFoundError(id);
-		}
+		const order = await this.searchOwnOrder(id);
 
 		if (order.isCancelled()) {
 			return;
 		}
 
-		await this.stockReleaser.release(order.lines);
-		await this.repository.updateStatus(order.cancel());
+		await this.unitOfWork.run(async () => {
+			const movedFromConfirmedToCancelled = await this.repository.cancel(
+				order.id,
+			);
+
+			if (movedFromConfirmedToCancelled) {
+				await this.stockReleaser.release(order.lines);
+			}
+		});
+	}
+
+	private async searchOwnOrder(id: string): Promise<Order> {
+		const isBlankId = id.trim().length === 0;
+
+		if (isBlankId) {
+			throw new OrderNotFoundError(id);
+		}
+
+		const [order, currentUserId] = await Promise.all([
+			this.repository.search(new OrderId(id)),
+			this.currentUserProvider.currentUserId(),
+		]);
+
+		const belongsToCurrentUser = order?.userId.equals(currentUserId);
+
+		if (!order || !belongsToCurrentUser) {
+			throw new OrderNotFoundError(id);
+		}
+
+		return order;
 	}
 }

@@ -1,7 +1,7 @@
 ---
 name: "add-order-cancellation"
-description: "Customers cancel their confirmed orders from My orders, the units go back into stock and admins see the cancelled status."
-created_at: "2026-10-14T15:11:53Z"
+description: "Customers cancel their own confirmed orders and the units go back into stock."
+created_at: "2026-10-16T00:00:00Z"
 
 created_by:
   tool: "Claude Code"
@@ -11,88 +11,90 @@ created_by:
     reasoning_effort: "low"
 ---
 
-# Order cancellation
+# Customers cancel their own orders
 
 ## Goal
 
-Customers can cancel a confirmed order with one click from `/account/orders/[id]`, and its units go back into online stock in the same transaction, so sold units become available again. Admins see the "Cancelled" status in `/admin/orders` and the admin order detail.
+Customers can cancel a confirmed order from `/account/orders/[id]` in one click. Its units return to online stock, and the "Cancelled" status shows in every customer and admin order view.
 
 ## Decisions
 
-- Any confirmed order can be cancelled at any time, with one click and no confirmation dialog.
-- Cancelling an already cancelled order is a no-op without error and returns no units again.
-- A missing order and another customer's order both fail with `OrderNotFoundError`, shown as "This order was not found.".
-- Admins cannot cancel: only the customer detail renders the "Cancel order" form.
-- The status change and the stock increase run in one `UnitOfWork`, locking the order row, so concurrent cancellations return the units once.
-- Lines whose variant is no longer in the catalog are skipped (the guarded update touches 0 rows) and do not block the cancellation.
-- After cancelling, the customer stays on the order detail (revalidate, no redirect).
-- `orders.status` is already free text: no schema change, only the new `cancelled` value, documented in the data model.
-- Admin orders description changes from "N confirmed orders." to "N orders." because it would be wrong with cancelled orders.
-- Seed data keeps every order confirmed.
-- Out of scope: admin overview revenue metrics (cancelled orders still count), restock alert notifications, refunds, partial cancellations.
-
-## Context
-
-- [`src/contexts/backend/orders/domain/Order.ts`](/src/contexts/backend/orders/domain/Order.ts): order statuses and the aggregate to cancel.
-- [`src/contexts/backend/orders/infrastructure/PostgresOrderRepository.ts`](/src/contexts/backend/orders/infrastructure/PostgresOrderRepository.ts): needs a locking read and a status update.
-- [`src/contexts/backend/checkout/application/confirm/CheckoutConfirmer.ts`](/src/contexts/backend/checkout/application/confirm/CheckoutConfirmer.ts): `UnitOfWork` pattern across contexts.
-- [`src/contexts/backend/checkout/infrastructure/ProductsStockReserver.ts`](/src/contexts/backend/checkout/infrastructure/ProductsStockReserver.ts): consumer-owned port over a Products use case, copied for releasing stock.
-- [`src/contexts/backend/products/application/decrease-stock/StockDecreaser.ts`](/src/contexts/backend/products/application/decrease-stock/StockDecreaser.ts): pattern for `StockIncreaser`.
-- [`src/app/admin/outfits/DeleteOutfitForm.tsx`](/src/app/admin/outfits/DeleteOutfitForm.tsx) and [`src/app/actions/checkout/removeCartLine.ts`](/src/app/actions/checkout/removeCartLine.ts): one-click form and server action without redirect.
-- [`src/contexts/frontend/retail/sections/OrderDetail.tsx`](/src/contexts/frontend/retail/sections/OrderDetail.tsx) and [`src/contexts/frontend/retail/ui/format.ts`](/src/contexts/frontend/retail/ui/format.ts): order detail and status labels.
-- [`tests/backend/acceptance/CheckoutConfirmation.spec.ts`](/tests/backend/acceptance/CheckoutConfirmation.spec.ts): acceptance test pattern for the cancellation flow.
+- New `cancelled` value in `orderStatuses`; `orders.status` is free `text`, so no schema migration is needed.
+- `Order.cancel()` returns a new cancelled `Order` and returns itself unchanged when already cancelled (instead of throwing), so the no-op rule lives in the domain.
+- The repository transitions the status with a conditional `update ... where status = 'confirmed'` that reports whether it changed anything; stock is released only when it did. This keeps double clicks and parallel tabs from restocking twice (instead of read, check, save).
+- The status update and the stock release run in one transaction, so a failed restock never leaves a cancelled order without its units back.
+- Ownership reuses `UserOrderFinder` semantics: an order of another user or a missing id raises `OrderNotFoundError`, which the server action turns into `notFound()`.
+- Orders reach stock through a consumer-owned `StockReleaser` port in `orders/domain`, adapted in `orders/infrastructure` to a new `products` application use case `StockIncreaser` (mirrors `checkout`'s `StockReserver` / `ProductsStockReserver` over `StockDecreaser`).
+- The cancel button is a plain `<form action>` with a server action, no client confirmation and no pending error state.
+- Out of scope: admin revenue metrics (`revenuePerCurrency` and dashboard summary keep counting cancelled orders), restock alerts triggered by released stock, admin cancellation, refunds.
 
 ## Phases
 
-### Phase 1: Customers cancel an order and its units return to stock
+### Phase 1: Customer cancels an order and stock is restored
 
-A customer cancels a confirmed order from its detail, sees it as "Cancelled" in the detail and in My orders, and the variants get their units back.
-
-**Contracts**
-
-- Domain: `orderStatuses = ["confirmed", "cancelled"]`, `Order.cancel(): Order`, `Order.isCancelled(): boolean`, `OrderNotFoundError(orderId: string)`
-- Port: `OrderRepository.searchLockingIt(id: OrderId): Promise<Order | null>`, `OrderRepository.updateStatus(order: Order): Promise<void>`
-- Port: `StockReleaser.release(lines: OrderLine[]): Promise<void>` (orders domain), adapter `ProductsStockReleaser(stockIncreaser: StockIncreaser)`
-- Application service: `StockIncreaser(repository: ProductRepository).increase(increases: StockIncrease[]): Promise<void>`, `StockIncrease = { variantId: string; quantity: number }`
-- Repository: `ProductRepository.increaseStock(variantId: VariantId, quantity: number): Promise<void>`
-- Application service: `UserOrderCanceller(repository: OrderRepository, stockReleaser: StockReleaser, currentUserProvider: CurrentUserProvider, unitOfWork: UnitOfWork).cancel(id: string): Promise<void>`, registered as `retailContainer.userOrderCanceller`
-- Server action: `cancelOrder(_previousState: ActionState, formData: FormData): Promise<ActionState>`, `requiredOrderId(formData: FormData): string`
-- UI: `CancelOrderForm({ orderId: string })`, `OrderDetail({ order, audience, cancelForm?: ReactNode })` rendering `cancelForm` only for `audience="customer"` and status `confirmed`
-- UI copy: "Cancel order", "Cancelled", "This order was not found."
-- Test suite `UserOrderCanceller should`: "cancel a confirmed order of the current customer and release its units", "do nothing when the order is already cancelled", "fail with order not found when the order belongs to another customer", "fail with order not found when the order does not exist"
-- Test suite `StockIncreaser should`: "increase the online stock of every variant"
-- Test suite `PostgresProductRepository should`: "increase the online stock of a variant", "ignore an increase for a variant no longer in the catalog"
-- Test suite `PostgresOrderRepository should`: "update the status of an order", "find an order locking it"
-- Test suite `Order cancellation across orders and products should`: "return the units of a cancelled order to stock", "return the units only once when the order is cancelled twice", "cancel an order with a variant no longer in the catalog"
-- Test suite `CancelOrderForm should`: "send the order id when clicking Cancel order", "disable the button while cancelling", "show the error when the order was not found"
-- Test suite `OrderDetail should`: "show the cancel form to the customer of a confirmed order", "show the cancelled status and no cancel form to the customer of a cancelled order"
-- Test suite `CustomerOrdersTable should`: "show the cancelled status of a cancelled order"
-- Test suite `format should`: "format the cancelled status"
-
-- [ ] Add the `cancelled` status, `Order.cancel()`, `Order.isCancelled()`, `OrderNotFoundError` and `OrderRepository.searchLockingIt`/`updateStatus` with their Postgres implementation and integration tests
-- [ ] Add `ProductRepository.increaseStock` (guarded update tolerating 0 rows) and the `StockIncreaser` use case with its unit and integration tests
-- [ ] Add the `StockReleaser` port, the `ProductsStockReleaser` adapter and the `UserOrderCanceller` use case in one `UnitOfWork`, register it in `RetailContainer`, and cover it with unit tests and the `OrderCancellation.spec.ts` acceptance test
-- [ ] Add the `cancelOrder` server action (maps `OrderNotFoundError` to "This order was not found.", revalidates, no redirect) and `CancelOrderForm` with its frontend tests
-- [ ] Add the `cancelForm` slot to `OrderDetail`, render `CancelOrderForm` from `/account/orders/[id]`, add the "Cancelled" label to `format.ts` and cover `OrderDetail`, `CustomerOrdersTable` and `format`
-- [ ] Document the `cancelled` status and the stock release in `docs/sql-database/data-model.md` and the cancel button in `docs/architecture/screens.md` for `/account/orders/[id]`
-- [ ] Verify typecheck, lint and every test suite with the project's verification commands. Fix issues if any.
-
-### Phase 2: Admins see cancelled orders
-
-The admin orders list and the admin order detail show cancelled orders as "Cancelled" without any way to cancel, and the list description counts every order.
+The customer sees a "Cancel order" button on a confirmed order, clicks it, and the order shows "Cancelled" in their pages and in admin; the variants regain the units.
 
 **Contracts**
 
-- UI copy: "<N> orders." ("1 order." for a single order) in `/admin/orders`, with `formatOrderCount(count: number): string`
-- Test suite `AdminOrdersTable should`: "show the cancelled status of a cancelled order"
-- Test suite `OrderDetail should`: "show the cancelled status to admins", "show no cancel form to admins of a confirmed order"
+```ts
+// Domain (orders)
+export const orderStatuses = ["confirmed", "cancelled"] as const;
+class Order { cancel(): Order; isCancelled(): boolean }
+class OrderNotFoundError extends Error { constructor(id: string) }
 
-- [ ] Change the `/admin/orders` description to "N orders." and cover the cancelled status in `AdminOrdersTable` and the admin `OrderDetail`, including no cancel form for admins
-- [ ] Update `docs/architecture/screens.md` for `/admin/orders` and `/admin/orders/[id]` to mention the "Cancelled" status
-- [ ] Verify typecheck, lint and every test suite with the project's verification commands. Fix issues if any.
+// Ports and repositories (orders)
+abstract class OrderRepository { abstract cancel(id: OrderId): Promise<boolean> } // true when it moved confirmed -> cancelled
+abstract class StockReleaser { abstract release(lines: OrderLine[]): Promise<void> }
+
+// Application services
+class UserOrderCanceller { cancel(id: string): Promise<void> } // orders/application/cancel-mine
+class StockIncreaser { increase(increases: StockIncrease[]): Promise<void> } // products/application/increase-stock
+type StockIncrease = { variantId: string; quantity: number };
+
+// Ports and repositories (products)
+abstract class ProductRepository { abstract increaseStock(variantId: VariantId, quantity: number): Promise<void> }
+
+// Server action
+export async function cancelOrder(orderId: string): Promise<void> // src/app/actions/orders/cancelOrder.ts
+
+// UI copy
+"Cancel order" (button), "Cancelled" (status label)
+```
+
+**Tests**
+
+- `tests/backend/orders/domain/Order.spec.ts` (`Order should`)
+  - cancel a confirmed order (Cancel a confirmed order)
+  - keep an already cancelled order unchanged (Repeated cancellation)
+- `tests/backend/orders/application/cancel-mine/UserOrderCanceller.spec.ts` (`UserOrderCanceller should`)
+  - cancel an order placed by the current user and release its lines (Cancel a confirmed order, Order with several lines)
+  - cancel an order placed long ago (Old confirmed order)
+  - not release stock when the order was already cancelled (Repeated cancellation)
+  - throw not found for an order placed by another user without touching it (Another customer's order)
+  - throw not found when the order does not exist (Another customer's order)
+- `tests/backend/products/application/increase-stock/StockIncreaser.spec.ts` (`StockIncreaser should`)
+  - increase the stock of every variant (Stock restored, Order with several lines)
+- `tests/backend/orders/infrastructure/PostgresOrderRepository.spec.ts`
+  - cancel a confirmed order and report the change (Cancel a confirmed order)
+  - report no change when cancelling an already cancelled order (Repeated cancellation)
+- `tests/backend/products/infrastructure/PostgresProductRepository.spec.ts`
+  - add units to a variant's online stock (Stock restored)
+- `tests/frontend/retail/sections/OrderDetail.spec.tsx`
+  - show the cancel button on a confirmed customer order (Cancel a confirmed order)
+  - hide the cancel button on a cancelled order (Cancelled order has no cancel action)
+  - hide the cancel button for admins and show "Cancelled" (Admin sees a cancelled order)
+
+- [ ] Add `cancelled` to `orderStatuses` and `Order.cancel()` / `isCancelled()` in `src/contexts/backend/orders/domain/Order.ts`, plus `OrderNotFoundError` next to `EmptyOrderError`; extend `OrderMother` with a cancelled variant.
+- [ ] Add `increaseStock` to `ProductRepository` and `PostgresProductRepository` (copy `decreaseStockIfEnoughUnitsLeft`), and `StockIncreaser` in `products/application/increase-stock` (copy `StockDecreaser`, keeping the stable variant order against deadlocks).
+- [ ] Add `cancel(id)` to `OrderRepository` and `PostgresOrderRepository` as a conditional status update returning whether a row changed.
+- [ ] Add the `StockReleaser` port in `orders/domain` and `ProductsStockReleaser` in `orders/infrastructure` over `StockIncreaser` (copy `checkout/infrastructure/ProductsStockReserver.ts`).
+- [ ] Add `UserOrderCanceller` in `orders/application/cancel-mine`: load the order, check it belongs to `CurrentUserProvider` (as `UserOrderFinder` does), call `repository.cancel` and `stockReleaser.release` inside one transaction, only when the status changed. Wire it in `RetailContainer`.
+- [ ] Add the `cancelOrder` server action in `src/app/actions/orders/` (copy `actions/checkout/confirmOrder.ts`): map `OrderNotFoundError` to `notFound()`, then `revalidatePath("/", "layout")`.
+- [ ] Add the "Cancelled" label to `statusLabels` in `src/contexts/frontend/retail/ui/format.ts`, and a "Cancel order" form in `OrderDetail` rendered only for `audience="customer"` and `status === "confirmed"` (copy the form pattern in `src/app/admin/outfits/DeleteOutfitForm.tsx`).
+- [ ] Verify typecheck, lint and every test suite with the project's verification commands, and check the phase's behaviour in the running app. Fix issues if any.
 
 ## Next step
 
 Run `/openspec-apply-change` to implement every phase.
 
-Cancelled orders roll back to the shelf faster than Turbotuga 🐢 💨 on a Friday deploy, cheered on by [Codely](https://codely.com).
+Cancelled orders head back to the shelf faster than Turbotuga™ on a downhill 🐢 💨 ([Codely](https://codely.com))

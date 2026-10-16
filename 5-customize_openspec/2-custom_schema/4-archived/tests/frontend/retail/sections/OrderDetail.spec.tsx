@@ -1,5 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import { OrderDetail } from "@/contexts/frontend/retail/sections/OrderDetail";
 
@@ -8,15 +8,13 @@ import {
 	OrderDetailResponseMother,
 } from "../responses/OrderDetailResponseMother";
 
+vi.mock("@/app/actions/orders/cancelOrder", () => ({
+	cancelOrder: vi.fn(),
+}));
+
 function factShown(label: string): string | null | undefined {
 	return screen.getByText(label, { selector: "dt" }).nextElementSibling
 		?.textContent;
-}
-
-const cancelForm = <button type="button">Cancel order</button>;
-
-function cancelButton(): HTMLElement | null {
-	return screen.queryByRole("button", { name: "Cancel order" });
 }
 
 describe("OrderDetail should", () => {
@@ -88,55 +86,6 @@ describe("OrderDetail should", () => {
 		expect(screen.getByRole("cell", { name: "US$60" })).toBeInTheDocument();
 	});
 
-	it("show the cancel form to the customer of a confirmed order", () => {
-		render(
-			<OrderDetail
-				order={order}
-				audience="customer"
-				cancelForm={cancelForm}
-			/>,
-		);
-
-		expect(cancelButton()).toBeInTheDocument();
-	});
-
-	it("show the cancelled status and no cancel form to the customer of a cancelled order", () => {
-		render(
-			<OrderDetail
-				order={{ ...order, status: "cancelled" }}
-				audience="customer"
-				cancelForm={cancelForm}
-			/>,
-		);
-
-		expect(factShown("Status")).toBe("Cancelled");
-		expect(cancelButton()).not.toBeInTheDocument();
-	});
-
-	it("show the cancelled status to admins", () => {
-		render(
-			<OrderDetail
-				order={{ ...order, status: "cancelled" }}
-				audience="admin"
-			/>,
-		);
-
-		expect(factShown("Status")).toBe("Cancelled");
-	});
-
-	it("show no cancel form to admins of a confirmed order", () => {
-		render(
-			<OrderDetail
-				order={order}
-				audience="admin"
-				cancelForm={cancelForm}
-			/>,
-		);
-
-		expect(factShown("Status")).toBe("Confirmed");
-		expect(cancelButton()).not.toBeInTheDocument();
-	});
-
 	it("link the customer back to their orders", () => {
 		render(<OrderDetail order={order} audience="customer" />);
 
@@ -152,5 +101,49 @@ describe("OrderDetail should", () => {
 			"href",
 			"/admin/orders",
 		);
+	});
+
+	it("show the cancel button on a confirmed customer order", () => {
+		render(<OrderDetail order={order} audience="customer" />);
+
+		expect(
+			screen.getByRole("button", { name: "Cancel order" }),
+		).toBeInTheDocument();
+	});
+
+	it("hide the cancel button on a cancelled order", () => {
+		render(
+			<OrderDetail
+				order={{ ...order, status: "cancelled" }}
+				audience="customer"
+			/>,
+		);
+
+		expect(factShown("Status")).toBe("Cancelled");
+		expect(
+			screen.queryByRole("button", { name: "Cancel order" }),
+		).not.toBeInTheDocument();
+	});
+
+	it('hide the cancel button for admins and show "Cancelled"', () => {
+		render(
+			<OrderDetail
+				order={{ ...order, status: "cancelled" }}
+				audience="admin"
+			/>,
+		);
+
+		expect(factShown("Status")).toBe("Cancelled");
+		expect(
+			screen.queryByRole("button", { name: "Cancel order" }),
+		).not.toBeInTheDocument();
+	});
+
+	it("hide the cancel button for admins on a confirmed order", () => {
+		render(<OrderDetail order={order} audience="admin" />);
+
+		expect(
+			screen.queryByRole("button", { name: "Cancel order" }),
+		).not.toBeInTheDocument();
 	});
 });

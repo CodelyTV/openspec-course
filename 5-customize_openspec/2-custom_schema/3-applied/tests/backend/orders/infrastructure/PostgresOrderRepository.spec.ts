@@ -67,33 +67,6 @@ describeWithEnvironmentArranger(
 			).toBeNull();
 		});
 
-		it("update the status of an order", async () => {
-			await seedUsers();
-			const order = OrderMother.create({
-				userId: "user-aibuilder",
-				status: "confirmed",
-			});
-			await repository.save(order);
-
-			await repository.updateStatus(order.cancel());
-
-			expect((await repository.search(order.id))?.toPrimitives()).toEqual(
-				{ ...order.toPrimitives(), status: "cancelled" },
-			);
-		});
-
-		it("find an order locking it", async () => {
-			await seedUsers();
-			const order = OrderMother.create({ userId: "user-aibuilder" });
-			await repository.save(order);
-
-			const found = await connection.transaction(() =>
-				repository.searchLockingIt(order.id),
-			);
-
-			expect(found?.toPrimitives()).toEqual(order.toPrimitives());
-		});
-
 		it("list saved orders newest first", async () => {
 			await seedUsers();
 			const older = OrderMother.create({
@@ -187,6 +160,35 @@ describeWithEnvironmentArranger(
 			expect(orders.map((order) => order.toPrimitives())).toEqual([
 				ownOrder.toPrimitives(),
 			]);
+		});
+
+		it("cancel a confirmed order and report the change", async () => {
+			await seedUsers();
+			const order = OrderMother.create({
+				userId: "user-aibuilder",
+				status: "confirmed",
+			});
+			await repository.save(order);
+
+			const changed = await repository.cancel(order.id);
+
+			expect(changed).toBe(true);
+			expect((await repository.search(order.id))?.isCancelled()).toBe(
+				true,
+			);
+		});
+
+		it("report no change when cancelling an already cancelled order", async () => {
+			await seedUsers();
+			const order = OrderMother.cancelled({ userId: "user-aibuilder" });
+			await repository.save(order);
+
+			const changed = await repository.cancel(order.id);
+
+			expect(changed).toBe(false);
+			expect((await repository.search(order.id))?.isCancelled()).toBe(
+				true,
+			);
 		});
 
 		it("sum the revenue and count the orders of each currency, sorted by currency", async () => {

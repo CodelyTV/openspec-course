@@ -78,10 +78,6 @@ export function formatProductCount(count: number): string {
 	return `${count} ${count === 1 ? "product" : "products"}`;
 }
 
-export function formatOrderCount(count: number): string {
-	return `${count} ${count === 1 ? "order" : "orders"}`;
-}
-
 export function formatOutfitMembership(outfitCount: number): string {
 	return `In ${outfitCount} ${outfitCount === 1 ? "outfit" : "outfits"}`;
 }
