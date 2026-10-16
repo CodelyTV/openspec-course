@@ -1,0 +1,105 @@
+2-use_openspec/1-explore_propose/1-before/database/seed.sql
+  s_f7ab57fc1e38b1::t_9257a0bf7b40b8 10,17
+2-use_openspec/1-explore_propose/1-before/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_69b10a4d6bd6de 8-10,13
+2-use_openspec/1-explore_propose/2-proposed/database/seed.sql
+  s_f7ab57fc1e38b1::t_90b81fbddb503a 10,17
+2-use_openspec/1-explore_propose/2-proposed/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_1be7a15b6119ac 8-10,13
+2-use_openspec/2-update_apply/1-before/database/seed.sql
+  s_f7ab57fc1e38b1::t_e2c8e8b3f0f804 10,17
+2-use_openspec/2-update_apply/1-before/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_5d0b1e718700a6 8-10,13
+2-use_openspec/2-update_apply/2-updated/database/seed.sql
+  s_f7ab57fc1e38b1::t_d1886ca416f0ae 10,17
+2-use_openspec/2-update_apply/2-updated/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_ca04a0fdf70643 8-10,13
+2-use_openspec/2-update_apply/3-applied/haiku/database/seed.sql
+  s_f7ab57fc1e38b1::t_6b1ec8adea3741 10,17
+2-use_openspec/2-update_apply/3-applied/haiku/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_1a5dd954189326 8-10,13
+2-use_openspec/2-update_apply/3-applied/luna/database/seed.sql
+  s_f7ab57fc1e38b1::t_c568ab17d73ee2 10,17
+2-use_openspec/2-update_apply/3-applied/luna/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_807a94289d9906 8-10,13
+2-use_openspec/2-update_apply/3-applied/opus/database/seed.sql
+  s_f7ab57fc1e38b1::t_6f3151c3e24e4a 10,17
+2-use_openspec/2-update_apply/3-applied/opus/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_9adb5a0e93e987 8-10,13
+2-use_openspec/2-update_apply/3-applied/sol/database/seed.sql
+  s_f7ab57fc1e38b1::t_6f54b69ae45636 10,17
+2-use_openspec/2-update_apply/3-applied/sol/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_59072fed0abe67 8-10,13
+2-use_openspec/2-update_apply/3-applied/sonnet/database/seed.sql
+  s_f7ab57fc1e38b1::t_e4fb405b2ba900 10,17
+2-use_openspec/2-update_apply/3-applied/sonnet/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_9ed7b593e9d310 8-10,13
+2-use_openspec/2-update_apply/4-selector_updated/database/seed.sql
+  s_f7ab57fc1e38b1::t_d0b688ac5e8774 10,17
+2-use_openspec/2-update_apply/4-selector_updated/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_2d3cc74d60b3c4 8-10,13
+2-use_openspec/2-update_apply/5-selector_applied/database/seed.sql
+  s_f7ab57fc1e38b1::t_ce4352e5991c3e 10,17
+2-use_openspec/2-update_apply/5-selector_applied/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_32ae307189a7ac 8-10,13
+2-use_openspec/3-verify_archive/1-before/database/seed.sql
+  s_f7ab57fc1e38b1::t_37a17645c557eb 10,17
+2-use_openspec/3-verify_archive/1-before/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_e4fc4e1ff05f0f 8-10,13
+2-use_openspec/3-verify_archive/2-verified/database/seed.sql
+  s_f7ab57fc1e38b1::t_37fbe3e9281f10 10,17
+2-use_openspec/3-verify_archive/2-verified/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_e0f6e01b17ab1b 8-10,13
+2-use_openspec/3-verify_archive/3-archived/database/seed.sql
+  s_f7ab57fc1e38b1::t_94789c3868c017 10,17
+2-use_openspec/3-verify_archive/3-archived/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_f15b856bafcf57 8-10,13
+3-work_on_a_project/2-implementation/1-before/retail-api/database/seed.sql
+  s_f7ab57fc1e38b1::t_a940f21f744a32 10,17
+3-work_on_a_project/2-implementation/1-before/retail-web/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_9b748a475120a7 8-10,13
+3-work_on_a_project/2-implementation/2-setup/retail-api/database/seed.sql
+  s_f7ab57fc1e38b1::t_ffe779ecb36597 10,17
+3-work_on_a_project/2-implementation/2-setup/retail-web/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_14e0d191c19f7a 8-10,13
+3-work_on_a_project/2-implementation/3-proposed/retail-api/database/seed.sql
+  s_f7ab57fc1e38b1::t_be63007b200ec0 10,17
+3-work_on_a_project/2-implementation/3-proposed/retail-web/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_5ef196d19a0b68 8-10,13
+3-work_on_a_project/2-implementation/4-archived/retail-api/database/seed.sql
+  s_f7ab57fc1e38b1::t_09fb156ab05a0e 10,17
+3-work_on_a_project/2-implementation/4-archived/retail-web/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_7630539e341abe 8-10,13
+3-work_on_a_project/3-single_repo_changes/1-before/retail-api/database/seed.sql
+  s_f7ab57fc1e38b1::t_5b49c0c5c35169 10,17
+3-work_on_a_project/3-single_repo_changes/1-before/retail-web/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_636296c55ef549 8-10,13
+3-work_on_a_project/3-single_repo_changes/2-linked/retail-api/database/seed.sql
+  s_f7ab57fc1e38b1::t_2f21d84e0bb4a6 10,17
+3-work_on_a_project/3-single_repo_changes/2-linked/retail-web/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_f590b570c915dd 8-10,13
+3-work_on_a_project/3-single_repo_changes/3-proposed/retail-api/database/seed.sql
+  s_f7ab57fc1e38b1::t_d80229f35f692b 10,17
+3-work_on_a_project/3-single_repo_changes/3-proposed/retail-web/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_dabe5720727c07 8-10,13
+3-work_on_a_project/3-single_repo_changes/4-archived/retail-api/database/seed.sql
+  s_f7ab57fc1e38b1::t_cdd863afe00faa 10,17
+3-work_on_a_project/3-single_repo_changes/4-archived/retail-web/tests/frontend/retail/sections/ProductBadges.spec.tsx
+  s_f7ab57fc1e38b1::t_6674e55000f9e5 8-10,13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "52b2a8cd36e79b8d7bb311646972d7204b963aad",
+  "prompts": {},
+  "sessions": {
+    "s_f7ab57fc1e38b1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "650c47f5-4a81-49c1-bdaf-a93b1a8acb39",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
