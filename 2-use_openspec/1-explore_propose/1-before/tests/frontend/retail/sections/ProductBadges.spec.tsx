@@ -5,10 +5,12 @@ import { ProductBadges } from "@/contexts/frontend/retail/sections/ProductBadges
 
 describe("ProductBadges should", () => {
 	it("show every badge of the product, including unknown ones", () => {
-		render(<ProductBadges badges={["New", "Low stock", "Bestseller"]} />);
+		render(
+			<ProductBadges badges={["New", "Limited edition", "Bestseller"]} />,
+		);
 
 		expect(screen.getByText("New")).toBeInTheDocument();
-		expect(screen.getByText("Low stock")).toBeInTheDocument();
+		expect(screen.getByText("Limited edition")).toBeInTheDocument();
 		expect(screen.getByText("Bestseller")).toBeInTheDocument();
 	});
 

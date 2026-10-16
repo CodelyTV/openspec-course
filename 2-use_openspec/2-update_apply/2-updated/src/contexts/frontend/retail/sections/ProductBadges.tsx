@@ -5,7 +5,6 @@ import {
 
 const colorByBadge: Record<string, BadgeColor> = {
 	New: "alt-1",
-	"Low stock": "alt-3",
 	"Limited edition": "alt-4",
 };
 

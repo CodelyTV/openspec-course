@@ -7,14 +7,14 @@ values
 
 insert into products (id, name, collection, category, description, price_amount, price_currency, badges, accent)
 values
-	('hexagonal-overshirt', 'Hexagonal Overshirt', 'Architecture Drop', 'Overshirts', 'Structured overshirt with a technical drape. The layer you throw on when the mid-season weather throws uncaught exceptions.', 89, 'EUR', array['Low stock'], 'green'),
+	('hexagonal-overshirt', 'Hexagonal Overshirt', 'Architecture Drop', 'Overshirts', 'Structured overshirt with a technical drape. The layer you throw on when the mid-season weather throws uncaught exceptions.', 89, 'EUR', array[]::text[], 'green'),
 	('event-storm-knit', 'Event Storm Knit', 'Architecture Drop', 'Sweatshirts', 'Compact knit with a soft feel and raised texture. To keep your cool when the event storming session gets out of hand.', 69, 'EUR', array['Limited edition'], 'violet'),
 	('domain-event-tee', 'Domain Event Tee', 'Architecture Drop', 'T-shirts', 'Heavyweight cotton tee with a relaxed body. A solid staple, like a test that never fails.', 39, 'EUR', array['New'], 'green'),
 	('aggregate-hoodie', 'Aggregate Hoodie', 'Architecture Drop', 'Sweatshirts', 'Hoodie with a brushed interior and a loose fit. The comfort of a deploy Friday where everything goes right.', 95, 'EUR', array[]::text[], 'violet'),
 	('bounded-context-trousers', 'Bounded Context Trousers', 'Core Wardrobe', 'Trousers', 'Relaxed-fit trousers with an elastic waist. Comfortable and with well-defined boundaries, no context leaks.', 79, 'EUR', array[]::text[], 'yellow'),
 	('refactor-utility-vest', 'Refactor Utility Vest', 'Core Wardrobe', 'Outerwear', 'Lightweight utility vest with modular pockets. Strip away what you do not need and keep only the essentials.', 99, 'EUR', array['New'], 'pink'),
 	('value-object-shirt', 'Value Object Shirt', 'Core Wardrobe', 'Shirts', 'Poplin shirt with a clean collar and a regular fit. Immutable and reliable: it always looks good.', 59, 'EUR', array[]::text[], 'yellow'),
-	('ubiquitous-chinos', 'Ubiquitous Chinos', 'Core Wardrobe', 'Trousers', 'Versatile cotton chinos with a tapered leg. The common language of your wardrobe: they work for everything.', 65, 'EUR', array['Low stock'], 'pink'),
+	('ubiquitous-chinos', 'Ubiquitous Chinos', 'Core Wardrobe', 'Trousers', 'Versatile cotton chinos with a tapered leg. The common language of your wardrobe: they work for everything.', 65, 'EUR', array[]::text[], 'pink'),
 	('observability-jacket', 'Observability Jacket', 'Signal Series', 'Outerwear', 'Water-repellent shell jacket with sealed seams. Keeps you dry even when the day goes red.', 129, 'EUR', array['Limited edition'], 'green'),
 	('circuit-breaker-knit', 'Circuit Breaker Knit', 'Signal Series', 'Sweatshirts', 'Medium-weight merino-blend crewneck sweater. Breaks the cold before it propagates.', 75, 'EUR', array['New'], 'violet');
 
