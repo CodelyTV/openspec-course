@@ -1,11 +1,11 @@
 {
   "version": 1,
   "skills": {
-    "codely-openspec_spec-create_from_code": {
+    "codely-openspec-spec-create-from-code": {
       "source": "codelytv/agent-harness",
       "sourceType": "github",
-      "skillPath": ".agents/skills/codely-openspec_spec-create_from_code/SKILL.md",
-      "computedHash": "390dabddf3087719a72b65f86c46889f9034815e76b5c8e7c081fd837ac81fb5"
+      "skillPath": ".agents/skills/codely-openspec-spec-create-from-code/SKILL.md",
+      "computedHash": "da6bacd2faeca9794886d69679e20ef1b05b302de90476fc76065f9e52e49b0b"
     }
   }
 }
