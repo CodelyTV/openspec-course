@@ -1,0 +1,193 @@
+5-customize_openspec/2-custom_schema/2-proposed/openspec/changes/add-wishlist/specs/stock-monitoring/spec.md
+  s_714bdd8233b863::t_a06dcefa81d1bf 3,7,10,12-13
+5-customize_openspec/2-custom_schema/2-proposed/openspec/changes/add-wishlist/specs/wishlist/spec.md
+  s_714bdd8233b863::t_997cb4964b98f6 3,8,11,14-17,20,23-26,29,32-35,38,40-41,43-44,46-47,53,56,58-59,62-65,67-68,70-71
+5-customize_openspec/2-custom_schema/3-applied/database/seed.sql
+  s_054788035f5a21::t_abd5f6cef612a0 128-129,131
+5-customize_openspec/2-custom_schema/3-applied/docs/architecture/screens.md
+  s_054788035f5a21::t_083d0345258c42 4,8,10
+5-customize_openspec/2-custom_schema/3-applied/docs/sql-database/data-model.md
+  s_054788035f5a21::t_c1b8bdce1c2080 10
+5-customize_openspec/2-custom_schema/3-applied/openspec/changes/add-wishlist/plan.md
+  s_054788035f5a21::t_c40932885b078b 3,22,26,30-39,43,45,52,57-60,64-67,71-73,75-76,83,85-90,95-99,101-102,105-117,119-123,125-135,138,140,148,153,155-157,163-167,169,171-174,179,181
+5-customize_openspec/2-custom_schema/3-applied/openspec/changes/add-wishlist/specs/stock-monitoring/spec.md
+  s_714bdd8233b863::t_73eb4a90503c8c 3,7,10,12-13
+5-customize_openspec/2-custom_schema/3-applied/openspec/changes/add-wishlist/specs/wishlist/spec.md
+  s_714bdd8233b863::t_e6be2ce2a2a4f0 3,8,11,14-17,20,23-26,29,32-35,38,40-41,43-44,46-47,53,56,58-59,62-65,67-68,70-71
+5-customize_openspec/2-custom_schema/3-applied/src/app/account/wishlist/page.tsx
+  s_054788035f5a21::t_31ca6242a25436 4,10,15
+5-customize_openspec/2-custom_schema/3-applied/src/app/actions/wishlist/saveToWishlist.ts
+  s_054788035f5a21::t_b3e6204e5bd5bb 12,25
+5-customize_openspec/2-custom_schema/3-applied/src/app/products/[id]/ProductPurchasePanel.tsx
+  s_054788035f5a21::t_9f914406c8f2f2 13,21,52,55,60-63,73,79-82,96,106,112,238-241
+5-customize_openspec/2-custom_schema/3-applied/src/app/products/[id]/WishlistToggleForm.module.scss
+  s_cab8559083c9da::t_60fe73ebc917ea 2-3
+5-customize_openspec/2-custom_schema/3-applied/src/app/products/[id]/WishlistToggleForm.tsx
+  s_054788035f5a21::t_8ba417a7d14895 12,14,16,28,30-31,34
+5-customize_openspec/2-custom_schema/3-applied/src/app/products/[id]/page.tsx
+  s_054788035f5a21::t_fc525426bff516 45-50,75
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/application/check-customer-wishlist/CustomerWishlistChecker.ts
+  s_054788035f5a21::t_53ed4f8a99f21e 6,13
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/application/list-customer-wishlist/CustomerWishlistLister.ts
+  s_054788035f5a21::t_a7245466424a3c 7,14,26,28-34
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/application/save-to-wishlist/WishlistProductSaver.ts
+  s_054788035f5a21::t_70689f60975ef8 27
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/domain/WishlistItem.ts
+  s_054788035f5a21::t_e5b0af98746c8d 17-24
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/domain/WishlistRepository.ts
+  s_054788035f5a21::t_b8daee5e99b71f 13
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/infrastructure/PostgresWishlistRepository.ts
+  s_054788035f5a21::t_a71ba7dd23602b 26,30,34,45
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/shared/infrastructure/RetailContainer.ts
+  s_054788035f5a21::t_2b901a4a93b197 22,32,199-200,206-207
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/frontend/retail/sections/CustomerWishlist.module.scss
+  s_cab8559083c9da::t_6bae432772881b 1-5
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/frontend/retail/sections/CustomerWishlist.tsx
+  s_054788035f5a21::t_a8e5a25221cf0f 1-25
+5-customize_openspec/2-custom_schema/3-applied/tests/app/products/[id]/ProductPurchasePanel.spec.tsx
+  s_054788035f5a21::t_97d450e3653c36 396,406,410,414,418
+5-customize_openspec/2-custom_schema/3-applied/tests/app/products/[id]/WishlistToggleForm.spec.tsx
+  s_054788035f5a21::t_be22d9ecf99198 7,28-45,49-52,59,63-78,81,84-89,95,101,108-111,123,125,129-132
+5-customize_openspec/2-custom_schema/3-applied/tests/backend/products/application/check-customer-wishlist/CustomerWishlistChecker.spec.ts
+  s_054788035f5a21::t_1963158d88e3ec 3,11,14,24-25,27-28,30,34-35,37-38,40
+5-customize_openspec/2-custom_schema/3-applied/tests/backend/products/application/inventory/InventoryLister.spec.ts
+  s_054788035f5a21::t_a83bc5ad6da719 213,218-219,232,236,245
+5-customize_openspec/2-custom_schema/3-applied/tests/backend/products/application/list-customer-wishlist/CustomerWishlistLister.spec.ts
+  s_054788035f5a21::t_bb8c204ff60950 3,13,17,28-29,31-42,45-49,54-56,59,62
+5-customize_openspec/2-custom_schema/3-applied/tests/backend/products/application/remove-from-wishlist/WishlistProductRemover.spec.ts
+  s_054788035f5a21::t_aebc8a19e2b03d 23,27
+5-customize_openspec/2-custom_schema/3-applied/tests/backend/products/application/save-to-wishlist/WishlistProductSaver.spec.ts
+  s_054788035f5a21::t_b607c78fefd850 35,54
+5-customize_openspec/2-custom_schema/3-applied/tests/backend/products/infrastructure/PostgresWishlistRepository.spec.ts
+  s_054788035f5a21::t_bfd3603ff202c3 28-29,36,38,43,49,53-55,58,60,64,70-74,78,80,82,85,87-93,97,102-104,108,110,115,117,121-122,128-129,135,141,144-146,150,156,162-163
+5-customize_openspec/2-custom_schema/3-applied/tests/frontend/retail/sections/CustomerWishlist.spec.tsx
+  s_054788035f5a21::t_8a13d80ce0e5a3 1-50
+5-customize_openspec/2-custom_schema/3-applied/tests/frontend/retail/sections/InventoryTable.spec.tsx
+  s_054788035f5a21::t_65e9494087139d 9,20,33,57,60-63,71-74,79-80
+5-customize_openspec/2-custom_schema/3-applied/tests/frontend/retail/sections/UserMenuTrigger.spec.tsx
+  s_054788035f5a21::t_d91c5e55f3b1ab 47-61
+5-customize_openspec/2-custom_schema/4-archived/database/seed.sql
+  s_054788035f5a21::t_3bd745b4c12e00 128-129,131
+5-customize_openspec/2-custom_schema/4-archived/docs/architecture/screens.md
+  s_054788035f5a21::t_0b58a0a969d364 4,8,10
+5-customize_openspec/2-custom_schema/4-archived/docs/sql-database/data-model.md
+  s_054788035f5a21::t_38da630e5cbb1e 10
+5-customize_openspec/2-custom_schema/4-archived/openspec/changes/archive/2026-10-18-add-wishlist/plan.md
+  s_054788035f5a21::t_1508120376fdfa 3,22,26,30-39,43,45,52,57-60,64-67,71-73,75-76,83,85-90,95-99,101-102,105-117,119-123,125-135,138,140,148,153,155-157,163-167,169,171-174,179,181
+5-customize_openspec/2-custom_schema/4-archived/openspec/changes/archive/2026-10-18-add-wishlist/specs/stock-monitoring/spec.md
+  s_714bdd8233b863::t_3b24ece3fb8d15 3,7,10,12-13
+5-customize_openspec/2-custom_schema/4-archived/openspec/changes/archive/2026-10-18-add-wishlist/specs/wishlist/spec.md
+  s_714bdd8233b863::t_43e7cbdfc5913c 3,8,11,14-17,20,23-26,29,32-35,38,40-41,43-44,46-47,53,56,58-59,62-65,67-68,70-71
+5-customize_openspec/2-custom_schema/4-archived/openspec/specs/stock-monitoring/spec.md
+  s_49d3e6ba76af77::t_c047b2a257211c 61,65,68,70-71
+5-customize_openspec/2-custom_schema/4-archived/openspec/specs/wishlist/spec.md
+  s_49d3e6ba76af77::t_25dc84da0ba854 5,10,13,16-19,22,25-28,31,34-37,40,42-43,45-46,48-49,55,58,60-61,64-67,69-70,72-73
+5-customize_openspec/2-custom_schema/4-archived/src/app/account/wishlist/page.tsx
+  s_054788035f5a21::t_95f40363ce997c 4,10,15
+5-customize_openspec/2-custom_schema/4-archived/src/app/actions/wishlist/saveToWishlist.ts
+  s_054788035f5a21::t_617b054356a898 12,25
+5-customize_openspec/2-custom_schema/4-archived/src/app/products/[id]/ProductPurchasePanel.tsx
+  s_054788035f5a21::t_eb834cfd4b6f3f 13,21,52,55,60-63,73,79-82,96,106,112,238-241
+5-customize_openspec/2-custom_schema/4-archived/src/app/products/[id]/WishlistToggleForm.module.scss
+  s_cab8559083c9da::t_1df8421fba2f3c 2-3
+5-customize_openspec/2-custom_schema/4-archived/src/app/products/[id]/WishlistToggleForm.tsx
+  s_054788035f5a21::t_c6623359322617 12,14,16,28,30-31,34
+5-customize_openspec/2-custom_schema/4-archived/src/app/products/[id]/page.tsx
+  s_054788035f5a21::t_9e12d1d73fbc28 45-50,75
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/application/check-customer-wishlist/CustomerWishlistChecker.ts
+  s_054788035f5a21::t_c3946e73cc4272 6,13
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/application/list-customer-wishlist/CustomerWishlistLister.ts
+  s_054788035f5a21::t_d3d2ca3b0053b0 7,14,26,28-34
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/application/save-to-wishlist/WishlistProductSaver.ts
+  s_054788035f5a21::t_85dc74d32c6b80 27
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/domain/WishlistItem.ts
+  s_054788035f5a21::t_ce227613838123 17-24
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/domain/WishlistRepository.ts
+  s_054788035f5a21::t_20ce0620680596 13
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/infrastructure/PostgresWishlistRepository.ts
+  s_054788035f5a21::t_61fb867bde9a8c 26,30,34,45
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/shared/infrastructure/RetailContainer.ts
+  s_054788035f5a21::t_0867beec2c0bb0 22,32,199-200,206-207
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/frontend/retail/sections/CustomerWishlist.module.scss
+  s_cab8559083c9da::t_e21d00573d8bda 1-5
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/frontend/retail/sections/CustomerWishlist.tsx
+  s_054788035f5a21::t_e4e330ce0ee656 1-25
+5-customize_openspec/2-custom_schema/4-archived/tests/app/products/[id]/ProductPurchasePanel.spec.tsx
+  s_054788035f5a21::t_206d711af4d595 396,406,410,414,418
+5-customize_openspec/2-custom_schema/4-archived/tests/app/products/[id]/WishlistToggleForm.spec.tsx
+  s_054788035f5a21::t_23174d14b22736 7,28-45,49-52,59,63-78,81,84-89,95,101,108-111,123,125,129-132
+5-customize_openspec/2-custom_schema/4-archived/tests/backend/products/application/check-customer-wishlist/CustomerWishlistChecker.spec.ts
+  s_054788035f5a21::t_7891fc8f27c8e2 3,11,14,24-25,27-28,30,34-35,37-38,40
+5-customize_openspec/2-custom_schema/4-archived/tests/backend/products/application/inventory/InventoryLister.spec.ts
+  s_054788035f5a21::t_e44509e18499a3 213,218-219,232,236,245
+5-customize_openspec/2-custom_schema/4-archived/tests/backend/products/application/list-customer-wishlist/CustomerWishlistLister.spec.ts
+  s_054788035f5a21::t_852e22f4825ea8 3,13,17,28-29,31-42,45-49,54-56,59,62
+5-customize_openspec/2-custom_schema/4-archived/tests/backend/products/application/remove-from-wishlist/WishlistProductRemover.spec.ts
+  s_054788035f5a21::t_63c447a07dbcce 23,27
+5-customize_openspec/2-custom_schema/4-archived/tests/backend/products/application/save-to-wishlist/WishlistProductSaver.spec.ts
+  s_054788035f5a21::t_1c476201bef0f4 35,54
+5-customize_openspec/2-custom_schema/4-archived/tests/backend/products/infrastructure/PostgresWishlistRepository.spec.ts
+  s_054788035f5a21::t_516e0144879801 28-29,36,38,43,49,53-55,58,60,64,70-74,78,80,82,85,87-93,97,102-104,108,110,115,117,121-122,128-129,135,141,144-146,150,156,162-163
+5-customize_openspec/2-custom_schema/4-archived/tests/frontend/retail/sections/CustomerWishlist.spec.tsx
+  s_054788035f5a21::t_dc37d1408251b4 1-50
+5-customize_openspec/2-custom_schema/4-archived/tests/frontend/retail/sections/InventoryTable.spec.tsx
+  s_054788035f5a21::t_6a39f1f95afc82 9,20,33,57,60-63,71-74,79-80
+5-customize_openspec/2-custom_schema/4-archived/tests/frontend/retail/sections/UserMenuTrigger.spec.tsx
+  s_054788035f5a21::t_dca0af64dc5e65 47-61
+5-customize_openspec/2-custom_schema/2-proposed/openspec/schemas/codely-spec-plan/schema.yaml
+  s_f7ab57fc1e38b1::t_a9157a5090dcc6 25
+5-customize_openspec/2-custom_schema/3-applied/openspec/schemas/codely-spec-plan/schema.yaml
+  s_f7ab57fc1e38b1::t_61a56a6b68c5f0 25
+5-customize_openspec/2-custom_schema/4-archived/openspec/schemas/codely-spec-plan/schema.yaml
+  s_f7ab57fc1e38b1::t_b86f69608ca3f1 25
+5-customize_openspec/2-custom_schema/2-proposed/openspec/changes/add-wishlist/plan.md
+  s_054788035f5a21::t_d75f4aa5f98604 3,14,18,22-31,35,37,44,49-52,56-59,63-65,67-68,75,77-82,87-91,93-94,97-109,111-115,117-127,130,132,140,145,147-149,155-159,161,163-166,173
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d240fee242c4d60e9ba9cc2197929e019118dfbb",
+  "prompts": {},
+  "sessions": {
+    "s_054788035f5a21": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f2eb6e17-257a-4a9a-b545-c9b2ede9f39c",
+        "model": "unknown"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    },
+    "s_49d3e6ba76af77": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b53d2057-040a-49e0-b01f-f969102f8ae8",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    },
+    "s_714bdd8233b863": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c56d962c-0fc4-400b-abad-c1dca3271138",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    },
+    "s_cab8559083c9da": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "75cda2a4-aeed-4f5e-8279-5ee2e68b8d33",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    },
+    "s_f7ab57fc1e38b1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "650c47f5-4a81-49c1-bdaf-a93b1a8acb39",
+        "model": "unknown"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
