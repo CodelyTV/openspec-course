@@ -1,6 +1,6 @@
 ---
 name: "add-wishlist"
-description: "Customers save products to a wishlist from the product page and see it in their account; admins see how many customers saved each product in the inventory."
+description: "Customers save products to a wishlist from the product page and see it in their account; admins see how many customers wishlisted each product in the inventory."
 created_at: "2026-10-18T00:00:00Z"
 
 created_by:
@@ -11,139 +11,125 @@ created_by:
     reasoning_effort: "low"
 ---
 
-# Add wishlist
+# Wishlist
 
 ## Goal
 
-Customers save or remove a product with one toggle on the product page and find their saved products in /account/wishlist. Admins see a "Wishlisted" column in the inventory to prioritize restocking the most wanted products.
+Customers save or remove a product with one toggle on the product page and review their saved products in /account/wishlist. Admins see a "Wishlisted" count per variant row in the inventory to prioritize restocking.
 
 ## Decisions
 
-- The wishlist lives in the `products` context, next to restock alerts, so `InventoryLister` reads the counts from its own repository (instead of a new context with a consumer-owned port).
-- "Signed-in customers only" relies on the current user from `CurrentUserProvider`, which today is always present (`FakeSessionCurrentUserProvider`); no anonymous state is added until the app has auth.
-- One table `wishlist_items (user_id, product_id, saved_at)` with primary key `(user_id, product_id)`; a repeated save keeps the original date with `on conflict do nothing` (instead of refreshing `saved_at`).
-- Removing is a delete, not a soft delete; deleting a product cascades to its wishlist items.
-- The toggle is one client component with two server actions (`saveToWishlist`, `removeFromWishlist`) instead of one "toggle" action, so a stale page never flips the state the wrong way.
-- Removing does not check the catalog: removing a missing product is a no-op, matching the idempotency requirement.
-- The wishlist page reuses `ProductGrid`/`ProductCard` (name, price, link to the product page) with the empty message "Your wishlist is empty."
-- Out of scope: moving products to the cart, notifications, sharing wishlists, variant-level wishlists and real authentication.
+- The wishlist lives in the `products` context (`WishlistItem` + `WishlistRepository`), like restock alerts: it is about catalog products and the inventory that counts it is in `products` (instead of a new bounded context with ports to `products`).
+- One `wishlist_items` table with primary key `(user_id, product_id)`, both foreign keys `on delete cascade`; save is `insert ... on conflict do nothing` and remove is a plain `delete`, so double clicks and stale pages are never errors (instead of check-then-write in the use case).
+- Saving checks that the product exists (`ProductNotFoundError` mapped to "This product is no longer available."); removing does not, so a customer can always clean up.
+- The toggle state comes from a separate `CustomerWishlistChecker` called by the product page, keeping `ProductResponse` the same for every customer (same reasoning as `CustomerRestockAlertsFinder`).
+- The toggle is one form with two server actions (`saveToWishlist`, `removeFromWishlist`) that revalidate the product page and the wishlist page and do not redirect.
+- The toggle sits under the purchase actions and is shown for every product, including products without variants.
+- "Signed-in only" is met by the current session: `CurrentUserProvider` always resolves a customer today, so there is no signed-out state to render.
+- /account/wishlist reuses `ProductGrid` (cards already link to `/products/[id]`) and shows "Your wishlist is empty." with a "Browse the catalog" link to `/` when empty.
+- The inventory "Wishlisted" count is per product, repeated on each variant row, placed after "Waiting".
+- Out of scope: moving products to the cart, notifications, sharing wishlists, saving specific variants, and showing wishlist counts outside the inventory.
 
 ## Phases
 
-### Phase 1: Save and remove from the product page
+### Phase 1: Save, remove and review the wishlist
 
-Customers toggle the product in their wishlist from the product page, and the state persists across visits.
+A customer toggles a product in their wishlist from the product page and sees their saved products, newest first, in /account/wishlist, reached from the user menu.
 
 **Contracts**
 
 ```ts
 // Domain (src/contexts/backend/products/domain/)
-type WishlistItemPrimitives = { userId: string; productId: string; savedAt: string };
 class WishlistItem {
-	constructor(readonly userId: UserId, readonly productId: ProductId, readonly savedAt: Date);
-	static fromPrimitives(primitives: WishlistItemPrimitives): WishlistItem;
-	toPrimitives(): WishlistItemPrimitives;
+  static create(userId: UserId, productId: ProductId, savedAt: Date): WishlistItem;
 }
 
 // Ports and repositories
 abstract class WishlistRepository {
-	abstract save(item: WishlistItem): Promise<void>;
-	abstract remove(userId: UserId, productId: ProductId): Promise<void>;
-	abstract has(userId: UserId, productId: ProductId): Promise<boolean>;
+  abstract save(item: WishlistItem): Promise<void>;
+  abstract remove(userId: UserId, productId: ProductId): Promise<void>;
+  abstract contains(userId: UserId, productId: ProductId): Promise<boolean>;
+  abstract searchProductIdsOf(userId: UserId): Promise<ProductId[]>; // most recently saved first
 }
 
 // Application services
-class WishlistProductSaver { save(productId: string): Promise<void> } // throws ProductNotFoundError
-class WishlistProductRemover { remove(productId: string): Promise<void> }
-class WishlistProductChecker { isSaved(productId: string): Promise<boolean> }
+class WishlistProductSaver { save(productId: string): Promise<void>; } // throws ProductNotFoundError
+class WishlistProductRemover { remove(productId: string): Promise<void>; }
+class CustomerWishlistChecker { isSaved(productId: string): Promise<boolean>; }
+class CustomerWishlistLister { list(): Promise<ProductResponse[]>; } // most recently saved first
 
 // Server actions (src/app/actions/wishlist/)
 type WishlistActionState = ActionState & { isSaved: boolean };
-saveToWishlist(_prev: WishlistActionState, formData: FormData): Promise<WishlistActionState>;
-removeFromWishlist(_prev: WishlistActionState, formData: FormData): Promise<WishlistActionState>;
+function saveToWishlist(previous: WishlistActionState, formData: FormData): Promise<WishlistActionState>;
+function removeFromWishlist(previous: WishlistActionState, formData: FormData): Promise<WishlistActionState>;
+```
 
-// Database schema
+```sql
+-- Database schema
 create table wishlist_items (
 	user_id text not null references users(id) on delete cascade,
 	product_id text not null references products(id) on delete cascade,
 	saved_at timestamptz not null,
 	primary key (user_id, product_id)
 );
+```
 
-// UI copy
-"Save to wishlist" | "Remove from wishlist" | "This product is no longer available."
+```txt
+UI copy
+"Save to wishlist" | "Remove from wishlist"
+"This product is no longer available."
+/account/wishlist: title "Wishlist", "Your wishlist is empty.", "Browse the catalog"
+User menu: "Wishlist"
 ```
 
 **Tests**
 
+- `tests/backend/products/infrastructure/PostgresWishlistRepository.spec.ts`
+  - save a product once even when saved twice (Saving twice)
+  - remove a product and ignore removing a missing one (Customer removes a product, Removing twice)
+  - tell whether a customer saved a product, ignoring other customers (Later visit, Product saved by another customer)
+  - return a customer's product ids most recently saved first, without other customers' (Saved products, Products saved by other customers)
 - `tests/backend/products/application/save-to-wishlist/WishlistProductSaver.spec.ts`
-  - save the product in the current customer's wishlist, at the current time (Customer saves a product)
-  - reject a product that is not in the catalog and save nothing (Product removed after the page was opened)
+  - save the product for the current customer with the current time (Customer saves a product, Saving does not depend on the selected variant)
+  - throw ProductNotFoundError when the product does not exist (Product removed after the page was opened)
 - `tests/backend/products/application/remove-from-wishlist/WishlistProductRemover.spec.ts`
   - remove the product from the current customer's wishlist (Customer removes a product)
-- `tests/backend/products/application/check-wishlist/WishlistProductChecker.spec.ts`
-  - tell that a product saved by the current customer is saved (Later visit)
-  - tell that a product only saved by another customer is not saved (Product saved by another customer)
-- `tests/backend/products/infrastructure/PostgresWishlistRepository.spec.ts`
-  - keep a single item when a customer saves the same product twice (Saving twice from a stale page)
-  - remove nothing when the product is not in the wishlist (Removing twice from a stale page)
-  - tell whether a customer has a product, per customer (Later visit, Product saved by another customer)
-- `tests/app/products/[id]/WishlistToggle.spec.tsx`
-  - show "Save to wishlist" and switch to "Remove from wishlist" after saving (Customer saves a product)
-  - show "Remove from wishlist" and switch to "Save to wishlist" after removing (Customer removes a product)
-  - disable the button and show it busy while the request is in progress (Request in progress)
-  - show "This product is no longer available." when the save is rejected (Product removed after the page was opened)
+- `tests/backend/products/application/check-customer-wishlist/CustomerWishlistChecker.spec.ts`
+  - return true when the current customer saved the product (Later visit)
+  - return false when only another customer saved it (Product saved by another customer)
+- `tests/backend/products/application/list-customer-wishlist/CustomerWishlistLister.spec.ts`
+  - return the saved products most recently saved first (Saved products)
+  - return an empty list when nothing is saved (Empty wishlist)
+- `tests/app/products/[id]/WishlistToggleForm.spec.tsx`
+  - show "Save to wishlist" when the product is not saved (Customer saves a product, Product saved by another customer)
+  - show "Remove from wishlist" after saving (Right after saving)
+  - show "Remove from wishlist" when initially saved (Later visit)
+  - show "Save to wishlist" after removing (Customer removes a product)
+  - disable the button and show it busy while pending (Request in progress)
+  - show the error message when saving fails (Product removed after the page was opened)
 - `tests/app/products/[id]/ProductPurchasePanel.spec.tsx`
-  - keep the wishlist button state when another variant is picked (Saving does not depend on the selected variant)
-
-- [ ] Add `wishlist_items` to `database/schema.sql` (including its `drop table if exists`) and a few rows to `database/seed.sql`, copying the `restock_alerts` table and seed rows.
-- [ ] Add `WishlistItem`, `WishlistRepository` and `WishlistItemMother`, copying `RestockAlert.ts`, `RestockAlertRepository.ts` and `tests/backend/products/domain/RestockAlertMother.ts`.
-- [ ] Add `PostgresWishlistRepository` with its integration tests, copying `PostgresRestockAlertRepository.ts` and its spec; register the table in `RetailEnvironmentArranger` if it cleans tables explicitly.
-- [ ] Add `WishlistProductSaver`, `WishlistProductRemover` and `WishlistProductChecker` with their tests, copying `RestockAlertRequester` and `CustomerRestockAlertsFinder`; wire them as getters in `RetailContainer.ts`.
-- [ ] Add `src/app/actions/wishlist/` (`WishlistActionState.ts`, `saveToWishlist.ts`, `removeFromWishlist.ts`), copying `src/app/actions/restock-alerts/`, mapping `ProductNotFoundError` with `actionStateFor` and revalidating `/products/[id]` and `/account/wishlist`.
-- [ ] Add `src/app/products/[id]/WishlistToggle.tsx` (+ `.module.scss`) copying `NotifyMeForm.tsx`, render it in `ProductPurchasePanel` actions with an `isSaved` prop (also for products without variants), and load `wishlistProductChecker.isSaved(product.id)` in the `Promise.all` of `src/app/products/[id]/page.tsx`.
-- [ ] Verify typecheck, lint and every test suite with the project's verification commands, and check the phase's behaviour in the running app. Fix issues if any.
-
-### Phase 2: Wishlist page in my account
-
-Customers see their saved products in /account/wishlist, reached from the user menu.
-
-**Contracts**
-
-```ts
-// Ports and repositories
-abstract class WishlistRepository {
-	abstract searchProductIdsOf(userId: UserId): Promise<ProductId[]>; // most recently saved first
-}
-
-// Application services
-class CustomerWishlistFinder { find(): Promise<ProductResponse[]> }
-
-// UI copy
-"Wishlist" (page title and user menu link) | "Your wishlist is empty."
-```
-
-**Tests**
-
-- `tests/backend/products/application/find-customer-wishlist/CustomerWishlistFinder.spec.ts`
-  - return the current customer's products, most recently saved first (Products listed by saving date)
-  - return nothing when the wishlist is empty (Empty wishlist)
-- `tests/backend/products/infrastructure/PostgresWishlistRepository.spec.ts`
-  - search only the customer's product ids, most recently saved first (Products listed by saving date, Only the current customer's products)
+  - show the wishlist toggle for a sold-out variant (Saving does not depend on the selected variant)
+  - show the wishlist toggle next to "Sold out" for a product without variants (Product without variants)
+- `tests/frontend/retail/sections/CustomerWishlist.spec.tsx`
+  - list the products in the given order, each linking to its product page (Saved products)
+  - show the empty state with a link to the catalog (Empty wishlist)
 - `tests/frontend/retail/sections/UserMenuTrigger.spec.tsx`
-  - offer a "Wishlist" link to /account/wishlist next to "My orders" (Reaching the page from the user menu)
-- `tests/frontend/retail/sections/ProductGrid.spec.tsx` (existing or new)
-  - show the given empty message when there are no products (Empty wishlist)
+  - show a "Wishlist" link to /account/wishlist after "My orders" (Opening the user menu)
 
-- [ ] Add `searchProductIdsOf` to `WishlistRepository` and `PostgresWishlistRepository` (`order by saved_at desc`) with its integration test.
-- [ ] Add `CustomerWishlistFinder`, which keeps the repository order after `productRepository.searchByIds`, mapping with the same response mapper as `ProductFinder`; wire it in `RetailContainer.ts`.
-- [ ] Add `src/app/account/wishlist/page.tsx`, copying `src/app/account/orders/page.tsx`, with `PageHeader` titled "Wishlist" and `<ProductGrid products={...} emptyMessage="Your wishlist is empty." />`.
-- [ ] Add the "Wishlist" link after "My orders" in `src/contexts/frontend/retail/sections/UserMenuTrigger.tsx` and its test.
+- [ ] Add the `wishlist_items` table to `database/schema.sql` (drop it at the top, before `products` and `users`, like `restock_alerts`), seed saved products in `database/seed.sql` for the fake-session user and other users (two customers for "Hexagonal Overshirt"), document it in `docs/sql-database/data-model.md`, and run `npm run db:reset` and `npm run db:test:reset`
+- [ ] Add `WishlistItem` and `WishlistRepository` in `products/domain` with a `WishlistItemMother`, copying `RestockAlert`, `RestockAlertRepository` and `RestockAlertMother`
+- [ ] Implement `PostgresWishlistRepository` copying `PostgresRestockAlertRepository` and its integration test
+- [ ] Implement `WishlistProductSaver`, `WishlistProductRemover`, `CustomerWishlistChecker` and `CustomerWishlistLister` (user from `CurrentUserProvider`, time from `Clock`, products via `ProductRepository.searchByIds` reordered by saved order), copying `RestockAlertRequester` and `CustomerRestockAlertsFinder`, and register them in `RetailContainer`
+- [ ] Add `saveToWishlist` and `removeFromWishlist` in `src/app/actions/wishlist/` copying `requestRestockAlert` and `RestockAlertActionState` (map `ProductNotFoundError`, revalidate `/products/[id]` and `/account/wishlist`)
+- [ ] Add `WishlistToggleForm` in `src/app/products/[id]/` copying `NotifyMeForm` (`SubmitButton` busy while pending), render it from `ProductPurchasePanel` for every product with an `isSavedToWishlist` prop, and pass `customerWishlistChecker.isSaved` from the product page next to `customerRestockAlertsFinder`
+- [ ] Add `CustomerWishlist` section (`ProductGrid` or empty state) and `src/app/account/wishlist/page.tsx` copying `src/app/account/orders/page.tsx`
+- [ ] Add the "Wishlist" link after "My orders" in `UserMenuTrigger`
+- [ ] Update `docs/architecture/screens.md` for `/products/[id]` and add `/account/wishlist`
 - [ ] Verify typecheck, lint and every test suite with the project's verification commands, and check the phase's behaviour in the running app. Fix issues if any.
 
-### Phase 3: Wishlisted column in the admin inventory
+### Phase 2: "Wishlisted" column in the admin inventory
 
-Admins see how many customers saved each variant's product.
+Admins see, on each inventory row, how many customers saved the variant's product.
 
 **Contracts**
 
@@ -151,34 +137,37 @@ Admins see how many customers saved each variant's product.
 // Ports and repositories
 type WishlistCountByProductId = Map<string, number>;
 abstract class WishlistRepository {
-	abstract countByProduct(): Promise<WishlistCountByProductId>;
+  abstract countByProduct(): Promise<WishlistCountByProductId>;
 }
 
 // Application services
 type InventoryResponse = { /* existing fields */ wishlisted: number };
+```
 
-// UI copy
-"Wishlisted" (inventory column header)
+```txt
+UI copy
+Inventory column: "Wishlisted"
 ```
 
 **Tests**
 
-- `tests/backend/products/application/inventory/InventoryLister.spec.ts`
-  - show on every variant the number of customers who saved its product (Product saved by several customers)
-  - show 0 wishlisted customers for a product nobody saved (Product nobody saved)
-  - keep the inventory order whatever the wishlisted customers (Order is not changed by the wishlists)
 - `tests/backend/products/infrastructure/PostgresWishlistRepository.spec.ts`
-  - count the customers who saved each product (Product saved by several customers)
+  - count customers per product (Product saved by several customers)
+- `tests/backend/products/application/inventory/InventoryLister.spec.ts`
+  - set wishlisted to the product's count on every variant (Product saved by several customers)
+  - set wishlisted to 0 when nobody saved the product (Product nobody saved)
+  - keep the order regardless of wishlisted counts (Order is not changed by the wishlisted count)
 - `tests/frontend/retail/sections/InventoryTable.spec.tsx`
-  - show the "Wishlisted" column with each row's count (Product saved by several customers)
+  - show the wishlisted count and 0 in the "Wishlisted" column (Product saved by several customers, Product nobody saved)
 
-- [ ] Add `countByProduct` to `WishlistRepository` and `PostgresWishlistRepository`, copying `countByVariant` in `PostgresRestockAlertRepository.ts`, with its integration test.
-- [ ] Inject `WishlistRepository` into `InventoryLister` and add `wishlisted` to `InventoryResponse`, copying how `waiting` is computed; update `RetailContainer.ts` and `InventoryResponseMother`.
-- [ ] Add the "Wishlisted" column after "Waiting" in `src/contexts/frontend/retail/sections/InventoryTable.tsx` and its test.
+- [ ] Add `countByProduct` to `WishlistRepository` and `PostgresWishlistRepository`, copying `RestockAlertRepository.countByVariant`
+- [ ] Add `wishlisted` to `InventoryResponse` in `InventoryLister` (0 when absent, sort untouched), copying how `waiting` is merged, and update `InventoryResponseMother`
+- [ ] Add the "Wishlisted" column (`align: "end"`) after "Waiting" in `InventoryTable`
+- [ ] Update `docs/architecture/screens.md` for `/admin/inventory`
 - [ ] Verify typecheck, lint and every test suite with the project's verification commands, and check the phase's behaviour in the running app. Fix issues if any.
 
 ## Next step
 
 Run `/openspec-apply-change` to implement every phase.
 
-Saved, sorted and counted: Turbotuga 🐢💨 already has this plan on its wishlist.
+Turbotuga 🐢 💨 already has a wishlist: one more shell polish and a faster deploy, courtesy of [Codely](https://codely.com).

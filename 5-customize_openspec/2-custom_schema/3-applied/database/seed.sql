@@ -125,9 +125,10 @@ values
 
 insert into wishlist_items (user_id, product_id, saved_at)
 values
+	('user-a1c92f04', 'domain-event-tee', now() - interval '2 days'),
+	('user-a1c92f04', 'hexagonal-overshirt', now() - interval '1 day'),
 	('user-7e3b19a2', 'hexagonal-overshirt', now() - interval '4 days'),
-	('user-4d6f8c11', 'hexagonal-overshirt', now() - interval '2 days'),
-	('user-9b2e5a77', 'event-storm-knit', now() - interval '1 day');
+	('user-9b2e5a77', 'merge-conflict-jeans', now() - interval '3 days');
 
 create temporary table seeded_orders (sequence integer primary key, id text not null unique);
 

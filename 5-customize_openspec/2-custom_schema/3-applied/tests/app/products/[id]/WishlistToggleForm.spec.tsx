@@ -4,7 +4,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { removeFromWishlist } from "@/app/actions/wishlist/removeFromWishlist";
 import { saveToWishlist } from "@/app/actions/wishlist/saveToWishlist";
-import { WishlistToggle } from "@/app/products/[id]/WishlistToggle";
+import { WishlistToggleForm } from "@/app/products/[id]/WishlistToggleForm";
 
 vi.mock("@/app/actions/wishlist/saveToWishlist", () => ({
 	saveToWishlist: vi.fn(),
@@ -25,47 +25,90 @@ function productIdSubmittedTo(
 	return formData?.get("productId") ?? null;
 }
 
-describe("WishlistToggle should", () => {
-	it('show "Save to wishlist" and switch to "Remove from wishlist" after saving', async () => {
+describe("WishlistToggleForm should", () => {
+	it('show "Save to wishlist" when the product is not saved', () => {
+		render(
+			<WishlistToggleForm
+				productId="domain-event-tee"
+				isSavedToWishlist={false}
+			/>,
+		);
+
+		expect(
+			screen.getByRole("button", { name: "Save to wishlist" }),
+		).toBeEnabled();
+		expect(
+			screen.queryByRole("button", { name: "Remove from wishlist" }),
+		).not.toBeInTheDocument();
+	});
+
+	it('show "Remove from wishlist" after saving', async () => {
 		const user = userEvent.setup();
 		save.mockResolvedValue({ error: null, isSaved: true });
 		render(
-			<WishlistToggle productId="hexagonal-overshirt" isSaved={false} />,
+			<WishlistToggleForm
+				productId="merge-conflict-jeans"
+				isSavedToWishlist={false}
+			/>,
 		);
 
 		await user.click(
 			screen.getByRole("button", { name: "Save to wishlist" }),
 		);
 
-		expect(productIdSubmittedTo(save)).toBe("hexagonal-overshirt");
+		expect(productIdSubmittedTo(save)).toBe("merge-conflict-jeans");
 		expect(
 			await screen.findByRole("button", { name: "Remove from wishlist" }),
 		).toBeEnabled();
+		expect(
+			screen.queryByRole("button", { name: "Save to wishlist" }),
+		).not.toBeInTheDocument();
 	});
 
-	it('show "Remove from wishlist" and switch to "Save to wishlist" after removing', async () => {
+	it('show "Remove from wishlist" when initially saved', () => {
+		render(
+			<WishlistToggleForm
+				productId="merge-conflict-jeans"
+				isSavedToWishlist
+			/>,
+		);
+
+		expect(
+			screen.getByRole("button", { name: "Remove from wishlist" }),
+		).toBeEnabled();
+	});
+
+	it('show "Save to wishlist" after removing', async () => {
 		const user = userEvent.setup();
 		remove.mockResolvedValue({ error: null, isSaved: false });
-		render(<WishlistToggle productId="event-storm-knit" isSaved />);
+		render(
+			<WishlistToggleForm
+				productId="merge-conflict-jeans"
+				isSavedToWishlist
+			/>,
+		);
 
 		await user.click(
 			screen.getByRole("button", { name: "Remove from wishlist" }),
 		);
 
-		expect(productIdSubmittedTo(remove)).toBe("event-storm-knit");
+		expect(productIdSubmittedTo(remove)).toBe("merge-conflict-jeans");
 		expect(
 			await screen.findByRole("button", { name: "Save to wishlist" }),
 		).toBeEnabled();
 	});
 
-	it('show "This product is no longer available." when the save is rejected', async () => {
+	it("show the error message when saving fails", async () => {
 		const user = userEvent.setup();
 		save.mockResolvedValue({
 			error: "This product is no longer available.",
 			isSaved: false,
 		});
 		render(
-			<WishlistToggle productId="hexagonal-overshirt" isSaved={false} />,
+			<WishlistToggleForm
+				productId="hexagonal-overshirt"
+				isSavedToWishlist={false}
+			/>,
 		);
 
 		await user.click(
@@ -77,14 +120,16 @@ describe("WishlistToggle should", () => {
 		);
 		expect(
 			screen.getByRole("button", { name: "Save to wishlist" }),
-		).toBeEnabled();
+		).toBeInTheDocument();
 	});
-
-	it("disable the button and show it busy while the request is in progress", async () => {
+	it("disable the button and show it busy while pending", async () => {
 		const user = userEvent.setup();
 		save.mockReturnValue(new Promise(() => {}));
 		render(
-			<WishlistToggle productId="hexagonal-overshirt" isSaved={false} />,
+			<WishlistToggleForm
+				productId="hexagonal-overshirt"
+				isSavedToWishlist={false}
+			/>,
 		);
 
 		await user.click(

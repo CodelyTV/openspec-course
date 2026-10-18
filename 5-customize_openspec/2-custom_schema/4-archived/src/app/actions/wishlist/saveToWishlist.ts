@@ -9,7 +9,7 @@ import { requiredProductId } from "./requiredProductId";
 import { revalidateWishlistPages } from "./revalidateWishlistPages";
 import type { WishlistActionState } from "./WishlistActionState";
 
-const saveToWishlistMessages: UserFacingMessages = [
+const wishlistMessages: UserFacingMessages = [
 	[ProductNotFoundError, "This product is no longer available."],
 ];
 
@@ -22,10 +22,7 @@ export async function saveToWishlist(
 			requiredProductId(formData),
 		);
 	} catch (error) {
-		return {
-			...actionStateFor(error, saveToWishlistMessages),
-			isSaved: false,
-		};
+		return { ...actionStateFor(error, wishlistMessages), isSaved: false };
 	}
 
 	revalidateWishlistPages();

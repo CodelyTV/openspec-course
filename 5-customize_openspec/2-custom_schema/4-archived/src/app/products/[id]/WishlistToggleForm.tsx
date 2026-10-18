@@ -9,11 +9,11 @@ import { removeFromWishlist } from "../../actions/wishlist/removeFromWishlist";
 import { saveToWishlist } from "../../actions/wishlist/saveToWishlist";
 import type { WishlistActionState } from "../../actions/wishlist/WishlistActionState";
 
-import styles from "./WishlistToggle.module.scss";
+import styles from "./WishlistToggleForm.module.scss";
 
-type WishlistToggleProps = {
+type WishlistToggleFormProps = {
 	productId: string;
-	isSaved: boolean;
+	isSavedToWishlist: boolean;
 };
 
 async function toggleWishlist(
@@ -25,13 +25,13 @@ async function toggleWishlist(
 		: saveToWishlist(previousState, formData);
 }
 
-export function WishlistToggle({
+export function WishlistToggleForm({
 	productId,
-	isSaved,
-}: WishlistToggleProps): React.JSX.Element {
+	isSavedToWishlist,
+}: WishlistToggleFormProps): React.JSX.Element {
 	const [state, formAction] = useActionState(toggleWishlist, {
 		error: null,
-		isSaved,
+		isSaved: isSavedToWishlist,
 	});
 
 	return (

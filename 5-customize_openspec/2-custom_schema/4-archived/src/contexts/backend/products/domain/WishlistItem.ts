@@ -14,6 +14,14 @@ export class WishlistItem {
 		readonly savedAt: Date,
 	) {}
 
+	static create(
+		userId: UserId,
+		productId: ProductId,
+		savedAt: Date,
+	): WishlistItem {
+		return new WishlistItem(userId, productId, savedAt);
+	}
+
 	static fromPrimitives(primitives: WishlistItemPrimitives): WishlistItem {
 		return new WishlistItem(
 			new UserId(primitives.userId),

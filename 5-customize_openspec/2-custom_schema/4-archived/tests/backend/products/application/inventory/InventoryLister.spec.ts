@@ -210,14 +210,13 @@ describe("InventoryLister should", () => {
 		]);
 	});
 
-	it("show on every variant the number of customers who saved its product", async () => {
+	it("set wishlisted to the product's count on every variant", async () => {
 		repository.searchAllShouldReturn([
 			ProductMother.create({
 				id: "hexagonal-overshirt",
-				name: "Hexagonal Overshirt",
 				variants: [
-					ProductVariantMother.createPrimitives({ onlineStock: 3 }),
-					ProductVariantMother.createPrimitives({ onlineStock: 5 }),
+					ProductVariantMother.createPrimitives(),
+					ProductVariantMother.createPrimitives(),
 				],
 			}),
 		]);
@@ -230,13 +229,11 @@ describe("InventoryLister should", () => {
 		expect(variants.map((row) => row.wishlisted)).toEqual([2, 2]);
 	});
 
-	it("show 0 wishlisted customers for a product nobody saved", async () => {
+	it("set wishlisted to 0 when nobody saved the product", async () => {
 		repository.searchAllShouldReturn([
 			ProductMother.create({
 				id: "domain-event-tee",
-				variants: [
-					ProductVariantMother.createPrimitives({ onlineStock: 4 }),
-				],
+				variants: [ProductVariantMother.createPrimitives()],
 			}),
 		]);
 
@@ -245,7 +242,7 @@ describe("InventoryLister should", () => {
 		expect(variants.map((row) => row.wishlisted)).toEqual([0]);
 	});
 
-	it("keep the inventory order whatever the wishlisted customers", async () => {
+	it("keep the order regardless of wishlisted counts", async () => {
 		repository.searchAllShouldReturn([
 			ProductMother.create({
 				id: "hexagonal-overshirt",

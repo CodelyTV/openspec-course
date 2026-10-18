@@ -44,6 +44,21 @@ describe("UserMenuTrigger should", () => {
 		);
 	});
 
+	it('show a "Wishlist" link to /account/wishlist after "My orders"', async () => {
+		const user = userEvent.setup();
+		render(<UserMenuTrigger name="Ada Lovelace" email="ada@codely.com" />);
+
+		await user.click(menuTrigger());
+
+		expect(screen.getByRole("link", { name: "Wishlist" })).toHaveAttribute(
+			"href",
+			"/account/wishlist",
+		);
+		expect(
+			screen.getAllByRole("link").map((link) => link.textContent),
+		).toEqual(["My orders", "Wishlist", "Admin"]);
+	});
+
 	it("close the menu when clicking the trigger again", async () => {
 		const user = userEvent.setup();
 		render(<UserMenuTrigger name="Ada Lovelace" email="ada@codely.com" />);
@@ -113,24 +128,6 @@ describe("UserMenuTrigger should", () => {
 		expect(screen.getByRole("link", { name: "Admin" })).toHaveAttribute(
 			"aria-current",
 			"page",
-		);
-	});
-
-	it('offer a "Wishlist" link to /account/wishlist next to "My orders"', async () => {
-		const user = userEvent.setup();
-		render(<UserMenuTrigger name="Ada Lovelace" email="ada@codely.com" />);
-
-		await user.click(menuTrigger());
-
-		expect(
-			screen
-				.getAllByRole("link")
-				.map((link) => link.textContent)
-				.slice(0, 2),
-		).toEqual(["My orders", "Wishlist"]);
-		expect(screen.getByRole("link", { name: "Wishlist" })).toHaveAttribute(
-			"href",
-			"/account/wishlist",
 		);
 	});
 });

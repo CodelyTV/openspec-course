@@ -23,17 +23,15 @@ export class PostgresWishlistRepository
 	async remove(userId: UserId, productId: ProductId): Promise<void> {
 		await this.sql`
 			delete from wishlist_items
-			where user_id = ${userId.value}
-				and product_id = ${productId.value}
+			where user_id = ${userId.value} and product_id = ${productId.value}
 		`;
 	}
 
-	async has(userId: UserId, productId: ProductId): Promise<boolean> {
+	async contains(userId: UserId, productId: ProductId): Promise<boolean> {
 		const rows = await this.sql`
 			select 1
 			from wishlist_items
-			where user_id = ${userId.value}
-				and product_id = ${productId.value}
+			where user_id = ${userId.value} and product_id = ${productId.value}
 		`;
 
 		return rows.length > 0;
@@ -44,7 +42,7 @@ export class PostgresWishlistRepository
 			select product_id
 			from wishlist_items
 			where user_id = ${userId.value}
-			order by saved_at desc
+			order by saved_at desc, product_id
 		`;
 
 		return rows.map((row) => new ProductId(row.product_id));

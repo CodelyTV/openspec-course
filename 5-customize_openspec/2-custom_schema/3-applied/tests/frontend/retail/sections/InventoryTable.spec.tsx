@@ -6,7 +6,7 @@ import { InventoryTable } from "@/contexts/frontend/retail/sections/InventoryTab
 import { InventoryResponseMother } from "../responses/InventoryResponseMother";
 
 describe("InventoryTable should", () => {
-	it("show each variant with its product, collection, stock, waiting and wishlisted customers", () => {
+	it("show each variant with its product, collection, stock and waiting customers", () => {
 		render(
 			<InventoryTable
 				inventory={[
@@ -17,7 +17,7 @@ describe("InventoryTable should", () => {
 						size: "M",
 						stock: 7,
 						waiting: 2,
-						wishlisted: 4,
+						wishlisted: 3,
 					}),
 				]}
 			/>,
@@ -30,7 +30,7 @@ describe("InventoryTable should", () => {
 			.getAllByRole("cell")
 			.map((cell) => cell.textContent);
 
-		expect(cells).toEqual(["Tee", "Core", "Black / M", "7", "2", "4"]);
+		expect(cells).toEqual(["Tee", "Core", "Black / M", "7", "2", "3"]);
 	});
 
 	it("show 0 waiting customers for a variant nobody is waiting for", () => {
@@ -54,10 +54,13 @@ describe("InventoryTable should", () => {
 		expect(cells[headers.indexOf("Waiting")]).toBe("0");
 	});
 
-	it('show the "Wishlisted" column with each row\'s count', () => {
+	it('show the wishlisted count and 0 in the "Wishlisted" column', () => {
 		render(
 			<InventoryTable
-				inventory={[InventoryResponseMother.create({ wishlisted: 2 })]}
+				inventory={[
+					InventoryResponseMother.create({ stock: 1, wishlisted: 2 }),
+					InventoryResponseMother.create({ stock: 2, wishlisted: 0 }),
+				]}
 			/>,
 		);
 
@@ -65,15 +68,16 @@ describe("InventoryTable should", () => {
 		const headers = within(table)
 			.getAllByRole("columnheader")
 			.map((header) => header.textContent);
-		const [, variantRow] = within(table).getAllByRole("row");
-		const cells = within(variantRow)
-			.getAllByRole("cell")
-			.map((cell) => cell.textContent);
+		const [, savedRow, notSavedRow] = within(table).getAllByRole("row");
+		const wishlistedOf = (row: HTMLElement): string | null =>
+			within(row).getAllByRole("cell")[headers.indexOf("Wishlisted")]
+				.textContent;
 
 		expect(headers.indexOf("Wishlisted")).toBe(
 			headers.indexOf("Waiting") + 1,
 		);
-		expect(cells[headers.indexOf("Wishlisted")]).toBe("2");
+		expect(wishlistedOf(savedRow)).toBe("2");
+		expect(wishlistedOf(notSavedRow)).toBe("0");
 	});
 
 	it("tag the variants whose product belongs to an outfit", () => {

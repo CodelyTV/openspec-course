@@ -32,7 +32,7 @@ describe("WishlistProductSaver should", () => {
 		clock.nowShouldReturn(now);
 	});
 
-	it("save the product in the current customer's wishlist, at the current time", async () => {
+	it("save the product for the current customer with the current time", async () => {
 		productRepository.searchShouldReturn(
 			ProductMother.create({ id: "hexagonal-overshirt" }),
 		);
@@ -51,7 +51,7 @@ describe("WishlistProductSaver should", () => {
 		);
 	});
 
-	it("reject a product that is not in the catalog and save nothing", async () => {
+	it("throw ProductNotFoundError when the product does not exist", async () => {
 		productRepository.searchShouldReturn(null);
 
 		await expect(saver.save("ghost")).rejects.toBeInstanceOf(

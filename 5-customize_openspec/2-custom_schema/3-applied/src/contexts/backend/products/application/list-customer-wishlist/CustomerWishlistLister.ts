@@ -4,14 +4,14 @@ import type { ProductRepository } from "../../domain/ProductRepository";
 import type { WishlistRepository } from "../../domain/WishlistRepository";
 import { type ProductResponse, toProductResponse } from "../ProductResponse";
 
-export class CustomerWishlistFinder {
+export class CustomerWishlistLister {
 	constructor(
 		private readonly wishlistRepository: WishlistRepository,
 		private readonly productRepository: ProductRepository,
 		private readonly currentUserProvider: CurrentUserProvider,
 	) {}
 
-	async find(): Promise<ProductResponse[]> {
+	async list(): Promise<ProductResponse[]> {
 		const savedProductIds =
 			await this.wishlistRepository.searchProductIdsOf(
 				await this.currentUserProvider.currentUserId(),
@@ -23,14 +23,14 @@ export class CustomerWishlistFinder {
 
 		const products =
 			await this.productRepository.searchByIds(savedProductIds);
-		const productsById = new Map(
-			products.map((product) => [product.id.value, product]),
-		);
+		const savedOrder = savedProductIds.map((productId) => productId.value);
 
-		return savedProductIds.flatMap((productId) => {
-			const product = productsById.get(productId.value);
-
-			return product ? [toProductResponse(product)] : [];
-		});
+		return products
+			.toSorted(
+				(a, b) =>
+					savedOrder.indexOf(a.id.value) -
+					savedOrder.indexOf(b.id.value),
+			)
+			.map(toProductResponse);
 	}
 }

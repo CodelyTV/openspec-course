@@ -10,7 +10,7 @@ import { Button } from "@/contexts/frontend/design-system/atoms/Button";
 
 import { AddToCartForm } from "./AddToCartForm";
 import { NotifyMeForm } from "./NotifyMeForm";
-import { WishlistToggle } from "./WishlistToggle";
+import { WishlistToggleForm } from "./WishlistToggleForm";
 
 import styles from "./ProductPurchasePanel.module.scss";
 
@@ -18,7 +18,7 @@ type ProductPurchasePanelProps = {
 	product: ProductResponse;
 	initialVariantId?: string;
 	alertedVariantIds?: string[];
-	isSaved?: boolean;
+	isSavedToWishlist?: boolean;
 };
 
 function variantToSelectWhenChoosingColor(
@@ -49,15 +49,18 @@ function BackToCatalogButton(): React.JSX.Element {
 
 function ProductWithoutVariants({
 	productId,
-	isSaved,
+	isSavedToWishlist,
 }: {
 	productId: string;
-	isSaved: boolean;
+	isSavedToWishlist: boolean;
 }): React.JSX.Element {
 	return (
 		<div className={styles.actions}>
 			<Button disabled>Sold out</Button>
-			<WishlistToggle productId={productId} isSaved={isSaved} />
+			<WishlistToggleForm
+				productId={productId}
+				isSavedToWishlist={isSavedToWishlist}
+			/>
 			<BackToCatalogButton />
 		</div>
 	);
@@ -67,13 +70,16 @@ export function ProductPurchasePanel({
 	product,
 	initialVariantId,
 	alertedVariantIds = [],
-	isSaved = false,
+	isSavedToWishlist = false,
 }: ProductPurchasePanelProps): React.JSX.Element {
 	const firstVariant = product.variants.at(0);
 
 	if (!firstVariant) {
 		return (
-			<ProductWithoutVariants productId={product.id} isSaved={isSaved} />
+			<ProductWithoutVariants
+				productId={product.id}
+				isSavedToWishlist={isSavedToWishlist}
+			/>
 		);
 	}
 
@@ -87,7 +93,7 @@ export function ProductPurchasePanel({
 				firstVariant.id
 			}
 			alertedVariantIds={alertedVariantIds}
-			isSaved={isSaved}
+			isSavedToWishlist={isSavedToWishlist}
 		/>
 	);
 }
@@ -97,13 +103,13 @@ function VariantPurchasePanel({
 	firstVariant,
 	initialVariantId,
 	alertedVariantIds,
-	isSaved,
+	isSavedToWishlist,
 }: {
 	product: ProductResponse;
 	firstVariant: ProductVariantResponse;
 	initialVariantId: string;
 	alertedVariantIds: string[];
-	isSaved: boolean;
+	isSavedToWishlist: boolean;
 }): React.JSX.Element {
 	const colorLabelId = useId();
 	const sizeLabelId = useId();
@@ -229,7 +235,10 @@ function VariantPurchasePanel({
 						)}
 					/>
 				)}
-				<WishlistToggle productId={product.id} isSaved={isSaved} />
+				<WishlistToggleForm
+					productId={product.id}
+					isSavedToWishlist={isSavedToWishlist}
+				/>
 				<BackToCatalogButton />
 			</div>
 		</>

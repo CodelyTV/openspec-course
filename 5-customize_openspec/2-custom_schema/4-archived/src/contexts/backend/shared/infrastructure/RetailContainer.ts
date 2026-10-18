@@ -19,17 +19,17 @@ import { OrdersSummaryGetter } from "@/contexts/backend/orders/application/summa
 import { PostgresOrderRepository } from "@/contexts/backend/orders/infrastructure/PostgresOrderRepository";
 import { UsersCustomerDirectory } from "@/contexts/backend/orders/infrastructure/UsersCustomerDirectory";
 import { CategoriesLister } from "@/contexts/backend/products/application/categories/CategoriesLister";
-import { WishlistProductChecker } from "@/contexts/backend/products/application/check-wishlist/WishlistProductChecker";
+import { CustomerWishlistChecker } from "@/contexts/backend/products/application/check-customer-wishlist/CustomerWishlistChecker";
 import { CollectionsLister } from "@/contexts/backend/products/application/collections/CollectionsLister";
 import { OutfitCreator } from "@/contexts/backend/products/application/create-outfit/OutfitCreator";
 import { StockDecreaser } from "@/contexts/backend/products/application/decrease-stock/StockDecreaser";
 import { OutfitDeleter } from "@/contexts/backend/products/application/delete-outfit/OutfitDeleter";
 import { ProductFinder } from "@/contexts/backend/products/application/find/ProductFinder";
 import { CustomerRestockAlertsFinder } from "@/contexts/backend/products/application/find-customer-restock-alerts/CustomerRestockAlertsFinder";
-import { CustomerWishlistFinder } from "@/contexts/backend/products/application/find-customer-wishlist/CustomerWishlistFinder";
 import { OutfitFinder } from "@/contexts/backend/products/application/find-outfit/OutfitFinder";
 import { ProductSuggestionsFinder } from "@/contexts/backend/products/application/find-suggestions/ProductSuggestionsFinder";
 import { InventoryLister } from "@/contexts/backend/products/application/inventory/InventoryLister";
+import { CustomerWishlistLister } from "@/contexts/backend/products/application/list-customer-wishlist/CustomerWishlistLister";
 import { OutfitsLister } from "@/contexts/backend/products/application/list-outfits/OutfitsLister";
 import { LowStockLister } from "@/contexts/backend/products/application/low-stock/LowStockLister";
 import { WishlistProductRemover } from "@/contexts/backend/products/application/remove-from-wishlist/WishlistProductRemover";
@@ -196,15 +196,15 @@ class RetailContainer {
 		);
 	}
 
-	get wishlistProductChecker(): WishlistProductChecker {
-		return new WishlistProductChecker(
+	get customerWishlistChecker(): CustomerWishlistChecker {
+		return new CustomerWishlistChecker(
 			this.wishlistRepository,
 			this.currentUserProviderInstance,
 		);
 	}
 
-	get customerWishlistFinder(): CustomerWishlistFinder {
-		return new CustomerWishlistFinder(
+	get customerWishlistLister(): CustomerWishlistLister {
+		return new CustomerWishlistLister(
 			this.wishlistRepository,
 			this.productRepository,
 			this.currentUserProviderInstance,

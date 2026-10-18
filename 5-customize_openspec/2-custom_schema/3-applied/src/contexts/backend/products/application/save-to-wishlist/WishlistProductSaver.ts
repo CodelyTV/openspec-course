@@ -24,7 +24,7 @@ export class WishlistProductSaver {
 		}
 
 		await this.wishlistRepository.save(
-			new WishlistItem(
+			WishlistItem.create(
 				await this.currentUserProvider.currentUserId(),
 				savedProductId,
 				this.clock.now(),

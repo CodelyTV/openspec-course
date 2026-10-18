@@ -10,7 +10,7 @@ export abstract class WishlistRepository {
 
 	abstract remove(userId: UserId, productId: ProductId): Promise<void>;
 
-	abstract has(userId: UserId, productId: ProductId): Promise<boolean>;
+	abstract contains(userId: UserId, productId: ProductId): Promise<boolean>;
 
 	abstract searchProductIdsOf(userId: UserId): Promise<ProductId[]>;
 

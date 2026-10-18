@@ -42,11 +42,12 @@ export default async function ProductPage({
 		notFound();
 	}
 
-	const [suggestions, alertedVariantIds, isSaved] = await Promise.all([
-		retailContainer.productSuggestionsFinder.find(product.id),
-		retailContainer.customerRestockAlertsFinder.find(product.id),
-		retailContainer.wishlistProductChecker.isSaved(product.id),
-	]);
+	const [suggestions, alertedVariantIds, isSavedToWishlist] =
+		await Promise.all([
+			retailContainer.productSuggestionsFinder.find(product.id),
+			retailContainer.customerRestockAlertsFinder.find(product.id),
+			retailContainer.customerWishlistChecker.isSaved(product.id),
+		]);
 
 	return (
 		<main className={`container ${styles.main}`}>
@@ -71,7 +72,7 @@ export default async function ProductPage({
 					<ProductPurchasePanel
 						product={product}
 						alertedVariantIds={alertedVariantIds}
-						isSaved={isSaved}
+						isSavedToWishlist={isSavedToWishlist}
 					/>
 				</section>
 			</div>

@@ -25,152 +25,142 @@ async function givenProducts(...ids: string[]): Promise<void> {
 	);
 }
 
-async function wishlistItemsOf(userId: string): Promise<number> {
-	const [{ count }] = await connection.sql<Array<{ count: number }>>`
-		select count(*)::integer as count from wishlist_items where user_id = ${userId}
-	`;
-
-	return count;
+function productIds(...ids: string[]): ProductId[] {
+	return ids.map((id) => new ProductId(id));
 }
 
 describeWithEnvironmentArranger(
 	arranger,
 	"PostgresWishlistRepository should",
 	() => {
-		it("keep a single item when a customer saves the same product twice", async () => {
+		it("save a product once even when saved twice", async () => {
 			await givenCustomers("user-1");
-			await givenProducts("hexagonal-overshirt");
+			await givenProducts("overshirt");
 
 			await repository.save(
 				WishlistItemMother.create({
 					userId: "user-1",
-					productId: "hexagonal-overshirt",
-				}),
-			);
-			await repository.save(
-				WishlistItemMother.create({
-					userId: "user-1",
-					productId: "hexagonal-overshirt",
-				}),
-			);
-
-			expect(await wishlistItemsOf("user-1")).toBe(1);
-		});
-
-		it("remove nothing when the product is not in the wishlist", async () => {
-			await givenCustomers("user-1");
-			await givenProducts("hexagonal-overshirt", "event-storm-knit");
-			await repository.save(
-				WishlistItemMother.create({
-					userId: "user-1",
-					productId: "event-storm-knit",
-				}),
-			);
-
-			await repository.remove(
-				new UserId("user-1"),
-				new ProductId("hexagonal-overshirt"),
-			);
-
-			expect(
-				await repository.has(
-					new UserId("user-1"),
-					new ProductId("event-storm-knit"),
-				),
-			).toBe(true);
-		});
-
-		it("tell whether a customer has a product, per customer", async () => {
-			await givenCustomers("user-1", "user-2");
-			await givenProducts("event-storm-knit");
-			await repository.save(
-				WishlistItemMother.create({
-					userId: "user-2",
-					productId: "event-storm-knit",
-				}),
-			);
-
-			expect(
-				await repository.has(
-					new UserId("user-2"),
-					new ProductId("event-storm-knit"),
-				),
-			).toBe(true);
-			expect(
-				await repository.has(
-					new UserId("user-1"),
-					new ProductId("event-storm-knit"),
-				),
-			).toBe(false);
-		});
-
-		it("search only the customer's product ids, most recently saved first", async () => {
-			await givenCustomers("user-1", "user-2");
-			await givenProducts(
-				"hexagonal-overshirt",
-				"event-storm-knit",
-				"domain-event-tee",
-			);
-			await repository.save(
-				WishlistItemMother.create({
-					userId: "user-1",
-					productId: "hexagonal-overshirt",
-					savedAt: "2026-10-10T10:00:00.000Z",
+					productId: "overshirt",
 				}),
 			);
 			await repository.save(
 				WishlistItemMother.create({
 					userId: "user-1",
-					productId: "event-storm-knit",
-					savedAt: "2026-10-12T10:00:00.000Z",
-				}),
-			);
-			await repository.save(
-				WishlistItemMother.create({
-					userId: "user-2",
-					productId: "domain-event-tee",
+					productId: "overshirt",
 				}),
 			);
 
 			expect(
 				await repository.searchProductIdsOf(new UserId("user-1")),
-			).toEqual([
-				new ProductId("event-storm-knit"),
-				new ProductId("hexagonal-overshirt"),
-			]);
+			).toEqual(productIds("overshirt"));
 		});
 
-		it("count the customers who saved each product", async () => {
-			await givenCustomers("user-1", "user-2", "user-3");
-			await givenProducts(
-				"hexagonal-overshirt",
-				"event-storm-knit",
-				"domain-event-tee",
-			);
+		it("remove a product and ignore removing a missing one", async () => {
+			await givenCustomers("user-1");
+			await givenProducts("jeans");
 			await repository.save(
 				WishlistItemMother.create({
 					userId: "user-1",
-					productId: "hexagonal-overshirt",
+					productId: "jeans",
+				}),
+			);
+
+			await repository.remove(
+				new UserId("user-1"),
+				new ProductId("jeans"),
+			);
+			await repository.remove(
+				new UserId("user-1"),
+				new ProductId("jeans"),
+			);
+
+			expect(
+				await repository.contains(
+					new UserId("user-1"),
+					new ProductId("jeans"),
+				),
+			).toBe(false);
+		});
+
+		it("tell whether a customer saved a product, ignoring other customers", async () => {
+			await givenCustomers("user-1", "user-2");
+			await givenProducts("jeans", "tee");
+			await repository.save(
+				WishlistItemMother.create({
+					userId: "user-1",
+					productId: "jeans",
 				}),
 			);
 			await repository.save(
 				WishlistItemMother.create({
 					userId: "user-2",
-					productId: "hexagonal-overshirt",
+					productId: "tee",
+				}),
+			);
+
+			expect(
+				await repository.contains(
+					new UserId("user-1"),
+					new ProductId("jeans"),
+				),
+			).toBe(true);
+			expect(
+				await repository.contains(
+					new UserId("user-1"),
+					new ProductId("tee"),
+				),
+			).toBe(false);
+		});
+
+		it("return a customer's product ids most recently saved first, without other customers'", async () => {
+			await givenCustomers("user-1", "user-2");
+			await givenProducts("tee", "overshirt", "jeans");
+			await repository.save(
+				WishlistItemMother.create({
+					userId: "user-1",
+					productId: "tee",
+					savedAt: "2026-10-01T10:00:00.000Z",
 				}),
 			);
 			await repository.save(
 				WishlistItemMother.create({
-					userId: "user-3",
-					productId: "event-storm-knit",
+					userId: "user-1",
+					productId: "overshirt",
+					savedAt: "2026-10-02T10:00:00.000Z",
+				}),
+			);
+			await repository.save(
+				WishlistItemMother.create({
+					userId: "user-2",
+					productId: "jeans",
+				}),
+			);
+
+			expect(
+				await repository.searchProductIdsOf(new UserId("user-1")),
+			).toEqual(productIds("overshirt", "tee"));
+		});
+
+		it("count customers per product", async () => {
+			await givenCustomers("user-1", "user-2");
+			await givenProducts("overshirt", "tee");
+			await repository.save(
+				WishlistItemMother.create({
+					userId: "user-1",
+					productId: "overshirt",
+				}),
+			);
+			await repository.save(
+				WishlistItemMother.create({
+					userId: "user-2",
+					productId: "overshirt",
 				}),
 			);
 
 			const counts = await repository.countByProduct();
 
-			expect(counts.get("hexagonal-overshirt")).toBe(2);
-			expect(counts.get("event-storm-knit")).toBe(1);
-			expect(counts.has("domain-event-tee")).toBe(false);
+			expect(counts.get("overshirt")).toBe(2);
+			expect(counts.has("tee")).toBe(false);
 		});
 	},
 );

@@ -20,11 +20,11 @@ describe("WishlistProductRemover should", () => {
 		const userId = new UserId("user-aibuilder");
 		currentUserProvider.currentUserIdShouldReturn(userId);
 
-		await remover.remove("event-storm-knit");
+		await remover.remove("merge-conflict-jeans");
 
 		wishlistRepository.expectRemoveToHaveBeenCalledWith(
 			userId,
-			new ProductId("event-storm-knit"),
+			new ProductId("merge-conflict-jeans"),
 		);
 	});
 });
