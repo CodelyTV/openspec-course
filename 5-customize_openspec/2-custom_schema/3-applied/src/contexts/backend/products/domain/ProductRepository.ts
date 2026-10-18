@@ -34,9 +34,4 @@ export abstract class ProductRepository {
 		variantId: VariantId,
 		quantity: number,
 	): Promise<boolean>;
-
-	abstract increaseStock(
-		variantId: VariantId,
-		quantity: number,
-	): Promise<void>;
 }

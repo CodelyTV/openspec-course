@@ -80,6 +80,13 @@ export function UserMenuTrigger({
 						>
 							My orders
 						</Link>
+						<Link
+							href="/account/wishlist"
+							className={styles.link}
+							onClick={() => setOpen(false)}
+						>
+							Wishlist
+						</Link>
 						<AdminLink />
 					</nav>
 				</div>

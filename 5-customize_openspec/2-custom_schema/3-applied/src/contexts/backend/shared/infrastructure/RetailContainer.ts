@@ -9,7 +9,6 @@ import { OrdersOrderPlacement } from "@/contexts/backend/checkout/infrastructure
 import { PostgresCheckoutRepository } from "@/contexts/backend/checkout/infrastructure/PostgresCheckoutRepository";
 import { ProductsCheckoutCatalog } from "@/contexts/backend/checkout/infrastructure/ProductsCheckoutCatalog";
 import { ProductsStockReserver } from "@/contexts/backend/checkout/infrastructure/ProductsStockReserver";
-import { UserOrderCanceller } from "@/contexts/backend/orders/application/cancel-mine/UserOrderCanceller";
 import { OrderFinder } from "@/contexts/backend/orders/application/find/OrderFinder";
 import { UserOrderFinder } from "@/contexts/backend/orders/application/find-mine/UserOrderFinder";
 import { OrdersLister } from "@/contexts/backend/orders/application/list/OrdersLister";
@@ -18,28 +17,31 @@ import { RecentOrdersLister } from "@/contexts/backend/orders/application/list-r
 import { OrderPlacer } from "@/contexts/backend/orders/application/place/OrderPlacer";
 import { OrdersSummaryGetter } from "@/contexts/backend/orders/application/summarize/OrdersSummaryGetter";
 import { PostgresOrderRepository } from "@/contexts/backend/orders/infrastructure/PostgresOrderRepository";
-import { ProductsStockReleaser } from "@/contexts/backend/orders/infrastructure/ProductsStockReleaser";
 import { UsersCustomerDirectory } from "@/contexts/backend/orders/infrastructure/UsersCustomerDirectory";
 import { CategoriesLister } from "@/contexts/backend/products/application/categories/CategoriesLister";
+import { WishlistProductChecker } from "@/contexts/backend/products/application/check-wishlist/WishlistProductChecker";
 import { CollectionsLister } from "@/contexts/backend/products/application/collections/CollectionsLister";
 import { OutfitCreator } from "@/contexts/backend/products/application/create-outfit/OutfitCreator";
 import { StockDecreaser } from "@/contexts/backend/products/application/decrease-stock/StockDecreaser";
 import { OutfitDeleter } from "@/contexts/backend/products/application/delete-outfit/OutfitDeleter";
 import { ProductFinder } from "@/contexts/backend/products/application/find/ProductFinder";
 import { CustomerRestockAlertsFinder } from "@/contexts/backend/products/application/find-customer-restock-alerts/CustomerRestockAlertsFinder";
+import { CustomerWishlistFinder } from "@/contexts/backend/products/application/find-customer-wishlist/CustomerWishlistFinder";
 import { OutfitFinder } from "@/contexts/backend/products/application/find-outfit/OutfitFinder";
 import { ProductSuggestionsFinder } from "@/contexts/backend/products/application/find-suggestions/ProductSuggestionsFinder";
-import { StockIncreaser } from "@/contexts/backend/products/application/increase-stock/StockIncreaser";
 import { InventoryLister } from "@/contexts/backend/products/application/inventory/InventoryLister";
 import { OutfitsLister } from "@/contexts/backend/products/application/list-outfits/OutfitsLister";
 import { LowStockLister } from "@/contexts/backend/products/application/low-stock/LowStockLister";
+import { WishlistProductRemover } from "@/contexts/backend/products/application/remove-from-wishlist/WishlistProductRemover";
 import { RestockAlertRequester } from "@/contexts/backend/products/application/request-restock-alert/RestockAlertRequester";
+import { WishlistProductSaver } from "@/contexts/backend/products/application/save-to-wishlist/WishlistProductSaver";
 import { ProductsSearcher } from "@/contexts/backend/products/application/search/ProductsSearcher";
 import { VariantsSearcher } from "@/contexts/backend/products/application/search-variants/VariantsSearcher";
 import { OutfitUpdater } from "@/contexts/backend/products/application/update-outfit/OutfitUpdater";
 import { PostgresOutfitRepository } from "@/contexts/backend/products/infrastructure/PostgresOutfitRepository";
 import { PostgresProductRepository } from "@/contexts/backend/products/infrastructure/PostgresProductRepository";
 import { PostgresRestockAlertRepository } from "@/contexts/backend/products/infrastructure/PostgresRestockAlertRepository";
+import { PostgresWishlistRepository } from "@/contexts/backend/products/infrastructure/PostgresWishlistRepository";
 import { CurrentUserGetter } from "@/contexts/backend/users/application/current/CurrentUserGetter";
 import { UsersByIdsSearcher } from "@/contexts/backend/users/application/search-by-ids/UsersByIdsSearcher";
 import { FakeSessionCurrentUserProvider } from "@/contexts/backend/users/infrastructure/FakeSessionCurrentUserProvider";
@@ -64,6 +66,10 @@ class RetailContainer {
 
 	private readonly restockAlertRepository =
 		new PostgresRestockAlertRepository(this.connection);
+
+	private readonly wishlistRepository = new PostgresWishlistRepository(
+		this.connection,
+	);
 
 	private readonly orderRepository = new PostgresOrderRepository(
 		this.connection,
@@ -114,6 +120,7 @@ class RetailContainer {
 			this.productRepository,
 			this.outfitRepository,
 			this.restockAlertRepository,
+			this.wishlistRepository,
 		);
 	}
 
@@ -130,10 +137,6 @@ class RetailContainer {
 
 	get stockDecreaser(): StockDecreaser {
 		return new StockDecreaser(this.productRepository);
-	}
-
-	get stockIncreaser(): StockIncreaser {
-		return new StockIncreaser(this.productRepository);
 	}
 
 	get outfitsLister(): OutfitsLister {
@@ -172,6 +175,37 @@ class RetailContainer {
 	get customerRestockAlertsFinder(): CustomerRestockAlertsFinder {
 		return new CustomerRestockAlertsFinder(
 			this.restockAlertRepository,
+			this.productRepository,
+			this.currentUserProviderInstance,
+		);
+	}
+
+	get wishlistProductSaver(): WishlistProductSaver {
+		return new WishlistProductSaver(
+			this.wishlistRepository,
+			this.productRepository,
+			this.currentUserProviderInstance,
+			this.clock,
+		);
+	}
+
+	get wishlistProductRemover(): WishlistProductRemover {
+		return new WishlistProductRemover(
+			this.wishlistRepository,
+			this.currentUserProviderInstance,
+		);
+	}
+
+	get wishlistProductChecker(): WishlistProductChecker {
+		return new WishlistProductChecker(
+			this.wishlistRepository,
+			this.currentUserProviderInstance,
+		);
+	}
+
+	get customerWishlistFinder(): CustomerWishlistFinder {
+		return new CustomerWishlistFinder(
+			this.wishlistRepository,
 			this.productRepository,
 			this.currentUserProviderInstance,
 		);
@@ -219,15 +253,6 @@ class RetailContainer {
 		return new UserOrderFinder(
 			this.orderFinder,
 			this.currentUserProviderInstance,
-		);
-	}
-
-	get userOrderCanceller(): UserOrderCanceller {
-		return new UserOrderCanceller(
-			this.orderRepository,
-			new ProductsStockReleaser(this.stockIncreaser),
-			this.currentUserProviderInstance,
-			this.unitOfWork,
 		);
 	}
 

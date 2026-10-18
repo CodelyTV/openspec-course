@@ -26,10 +26,6 @@ export class OrderMother {
 		return Order.fromPrimitives(OrderMother.createPrimitives(overrides));
 	}
 
-	static cancelled(overrides: Partial<OrderPrimitives> = {}): Order {
-		return OrderMother.create({ ...overrides, status: "cancelled" });
-	}
-
 	static createPrimitives(
 		overrides: Partial<OrderPrimitives> = {},
 	): OrderPrimitives {

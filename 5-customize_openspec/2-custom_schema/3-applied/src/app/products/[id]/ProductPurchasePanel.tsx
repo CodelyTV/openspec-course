@@ -10,6 +10,7 @@ import { Button } from "@/contexts/frontend/design-system/atoms/Button";
 
 import { AddToCartForm } from "./AddToCartForm";
 import { NotifyMeForm } from "./NotifyMeForm";
+import { WishlistToggle } from "./WishlistToggle";
 
 import styles from "./ProductPurchasePanel.module.scss";
 
@@ -17,6 +18,7 @@ type ProductPurchasePanelProps = {
 	product: ProductResponse;
 	initialVariantId?: string;
 	alertedVariantIds?: string[];
+	isSaved?: boolean;
 };
 
 function variantToSelectWhenChoosingColor(
@@ -45,10 +47,17 @@ function BackToCatalogButton(): React.JSX.Element {
 	);
 }
 
-function ProductWithoutVariants(): React.JSX.Element {
+function ProductWithoutVariants({
+	productId,
+	isSaved,
+}: {
+	productId: string;
+	isSaved: boolean;
+}): React.JSX.Element {
 	return (
 		<div className={styles.actions}>
 			<Button disabled>Sold out</Button>
+			<WishlistToggle productId={productId} isSaved={isSaved} />
 			<BackToCatalogButton />
 		</div>
 	);
@@ -58,11 +67,14 @@ export function ProductPurchasePanel({
 	product,
 	initialVariantId,
 	alertedVariantIds = [],
+	isSaved = false,
 }: ProductPurchasePanelProps): React.JSX.Element {
 	const firstVariant = product.variants.at(0);
 
 	if (!firstVariant) {
-		return <ProductWithoutVariants />;
+		return (
+			<ProductWithoutVariants productId={product.id} isSaved={isSaved} />
+		);
 	}
 
 	return (
@@ -75,6 +87,7 @@ export function ProductPurchasePanel({
 				firstVariant.id
 			}
 			alertedVariantIds={alertedVariantIds}
+			isSaved={isSaved}
 		/>
 	);
 }
@@ -84,11 +97,13 @@ function VariantPurchasePanel({
 	firstVariant,
 	initialVariantId,
 	alertedVariantIds,
+	isSaved,
 }: {
 	product: ProductResponse;
 	firstVariant: ProductVariantResponse;
 	initialVariantId: string;
 	alertedVariantIds: string[];
+	isSaved: boolean;
 }): React.JSX.Element {
 	const colorLabelId = useId();
 	const sizeLabelId = useId();
@@ -214,6 +229,7 @@ function VariantPurchasePanel({
 						)}
 					/>
 				)}
+				<WishlistToggle productId={product.id} isSaved={isSaved} />
 				<BackToCatalogButton />
 			</div>
 		</>

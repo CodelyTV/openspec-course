@@ -139,16 +139,6 @@ export class PostgresOrderRepository
 		return this.withLines(orderRows);
 	}
 
-	async cancel(id: OrderId): Promise<boolean> {
-		const result = await this.sql`
-			update orders
-			set status = 'cancelled'
-			where id = ${id.value} and status = 'confirmed'
-		`;
-
-		return result.count === 1;
-	}
-
 	async revenuePerCurrency(): Promise<CurrencyRevenue[]> {
 		const rows = await this.sql<CurrencyRevenueRow[]>`
 			select currency, sum(subtotal_amount)::int as revenue_amount, count(*)::int as orders_count

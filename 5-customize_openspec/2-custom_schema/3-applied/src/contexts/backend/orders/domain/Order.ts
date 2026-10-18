@@ -7,7 +7,7 @@ import { EmptyOrderError } from "./errors/EmptyOrderError";
 import { OrderId } from "./OrderId";
 import { OrderLine, type OrderLinePrimitives } from "./OrderLine";
 
-export const orderStatuses = ["confirmed", "cancelled"] as const;
+export const orderStatuses = ["confirmed"] as const;
 
 export type OrderStatus = (typeof orderStatuses)[number];
 
@@ -72,26 +72,6 @@ export class Order {
 			Money.fromPrimitives(primitives.subtotal),
 			primitives.lines.map(OrderLine.fromPrimitives),
 		);
-	}
-
-	cancel(): Order {
-		if (this.isCancelled()) {
-			return this;
-		}
-
-		return new Order(
-			this.id,
-			this.userId,
-			this.createdAt,
-			this.deliveryMethod,
-			"cancelled",
-			this.subtotal,
-			this.lines,
-		);
-	}
-
-	isCancelled(): boolean {
-		return this.status === "cancelled";
 	}
 
 	items(): number {

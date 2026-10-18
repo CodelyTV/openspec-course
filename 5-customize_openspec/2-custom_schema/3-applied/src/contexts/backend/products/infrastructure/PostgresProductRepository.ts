@@ -145,14 +145,6 @@ export class PostgresProductRepository
 		return result.count === 1;
 	}
 
-	async increaseStock(variantId: VariantId, quantity: number): Promise<void> {
-		await this.sql`
-			update product_variants
-			set online_stock = online_stock + ${quantity}
-			where id = ${variantId.value}
-		`;
-	}
-
 	private async withVariants(productRows: ProductRow[]): Promise<Product[]> {
 		if (productRows.length === 0) {
 			return [];

@@ -22,7 +22,7 @@ artifacts:
       Plan how to implement the specs. Keep it short: it is reviewed together with the specs.
 
       - Decisions: choices and assumptions not stated in the request, one line each, naming the discarded alternative when it is not obvious. End with what is out of scope.
-      - Phases: one per group of requirements that delivers value on its own. Each phase is a vertical slice (UI, logic and persistence together) that builds and passes verification alone and never leaves the system in a wrong business state. Phase 1 must produce something the user can run or see.
+      - Phases: one phase per part of the change that is worth having on its own, even if the rest were never built. Parts that are only valuable together form one phase. Each phase is a vertical slice (UI, logic and persistence together) that builds, passes verification alone and never leaves the system in a wrong business state. Phase 1 must produce something the user can run or see.
       - Contracts: public signatures only, in the project's language, grouped by type (domain, application services, ports and repositories, domain events, database schemas, UI copy). No constructor dependencies. Omit types without changes.
       - Tests: acceptance and application service suites with their test cases in the project's naming convention, each case naming the scenario it covers. Cover every scenario unless the project's testing strategy excludes that layer.
       - Tasks: cite the existing code to copy patterns from in the task that needs it.

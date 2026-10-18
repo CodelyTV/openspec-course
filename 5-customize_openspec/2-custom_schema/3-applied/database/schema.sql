@@ -1,3 +1,4 @@
+drop table if exists wishlist_items;
 drop table if exists restock_alerts;
 drop table if exists outfit_products;
 drop table if exists outfits;
@@ -59,6 +60,13 @@ create table restock_alerts (
 	variant_id text not null references product_variants(id) on delete cascade,
 	requested_at timestamptz not null,
 	primary key (user_id, variant_id)
+);
+
+create table wishlist_items (
+	user_id text not null references users(id) on delete cascade,
+	product_id text not null references products(id) on delete cascade,
+	saved_at timestamptz not null,
+	primary key (user_id, product_id)
 );
 
 create table checkouts (

@@ -6,7 +6,7 @@ import { InventoryTable } from "@/contexts/frontend/retail/sections/InventoryTab
 import { InventoryResponseMother } from "../responses/InventoryResponseMother";
 
 describe("InventoryTable should", () => {
-	it("show each variant with its product, collection, stock and waiting customers", () => {
+	it("show each variant with its product, collection, stock, waiting and wishlisted customers", () => {
 		render(
 			<InventoryTable
 				inventory={[
@@ -17,6 +17,7 @@ describe("InventoryTable should", () => {
 						size: "M",
 						stock: 7,
 						waiting: 2,
+						wishlisted: 4,
 					}),
 				]}
 			/>,
@@ -29,7 +30,7 @@ describe("InventoryTable should", () => {
 			.getAllByRole("cell")
 			.map((cell) => cell.textContent);
 
-		expect(cells).toEqual(["Tee", "Core", "Black / M", "7", "2"]);
+		expect(cells).toEqual(["Tee", "Core", "Black / M", "7", "2", "4"]);
 	});
 
 	it("show 0 waiting customers for a variant nobody is waiting for", () => {
@@ -51,6 +52,28 @@ describe("InventoryTable should", () => {
 			.map((cell) => cell.textContent);
 
 		expect(cells[headers.indexOf("Waiting")]).toBe("0");
+	});
+
+	it('show the "Wishlisted" column with each row\'s count', () => {
+		render(
+			<InventoryTable
+				inventory={[InventoryResponseMother.create({ wishlisted: 2 })]}
+			/>,
+		);
+
+		const table = screen.getByRole("table", { name: "Inventory" });
+		const headers = within(table)
+			.getAllByRole("columnheader")
+			.map((header) => header.textContent);
+		const [, variantRow] = within(table).getAllByRole("row");
+		const cells = within(variantRow)
+			.getAllByRole("cell")
+			.map((cell) => cell.textContent);
+
+		expect(headers.indexOf("Wishlisted")).toBe(
+			headers.indexOf("Waiting") + 1,
+		);
+		expect(cells[headers.indexOf("Wishlisted")]).toBe("2");
 	});
 
 	it("tag the variants whose product belongs to an outfit", () => {

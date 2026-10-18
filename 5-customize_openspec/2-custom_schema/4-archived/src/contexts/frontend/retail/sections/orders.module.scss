@@ -1,5 +1,3 @@
-@use "../../design-system/tools/colors" as colorMixins;
-
 .link {
 	font-weight: 700;
 
@@ -14,10 +12,6 @@
 	font-weight: 700;
 	background: var(--surface-strong);
 	border-radius: 999px;
-
-	&--cancelled {
-		@include colorMixins.color-with-bg("live");
-	}
 }
 
 .back {

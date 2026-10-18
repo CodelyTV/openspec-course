@@ -20,7 +20,6 @@ export function formatMoneyPerCurrency(amounts: MoneyPrimitives[]): string {
 
 const statusLabels: Record<string, string> = {
 	confirmed: "Confirmed",
-	cancelled: "Cancelled",
 	draft: "Draft",
 };
 

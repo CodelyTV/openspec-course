@@ -162,35 +162,6 @@ describeWithEnvironmentArranger(
 			]);
 		});
 
-		it("cancel a confirmed order and report the change", async () => {
-			await seedUsers();
-			const order = OrderMother.create({
-				userId: "user-aibuilder",
-				status: "confirmed",
-			});
-			await repository.save(order);
-
-			const changed = await repository.cancel(order.id);
-
-			expect(changed).toBe(true);
-			expect((await repository.search(order.id))?.isCancelled()).toBe(
-				true,
-			);
-		});
-
-		it("report no change when cancelling an already cancelled order", async () => {
-			await seedUsers();
-			const order = OrderMother.cancelled({ userId: "user-aibuilder" });
-			await repository.save(order);
-
-			const changed = await repository.cancel(order.id);
-
-			expect(changed).toBe(false);
-			expect((await repository.search(order.id))?.isCancelled()).toBe(
-				true,
-			);
-		});
-
 		it("sum the revenue and count the orders of each currency, sorted by currency", async () => {
 			await seedUsers();
 			await repository.save(

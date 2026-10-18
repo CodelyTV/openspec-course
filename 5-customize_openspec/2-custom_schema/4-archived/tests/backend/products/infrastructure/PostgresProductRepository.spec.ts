@@ -273,23 +273,6 @@ describeWithEnvironmentArranger(
 			expect(await onlineStockOf("v1")).toBe(2);
 		});
 
-		it("add units to a variant's online stock", async () => {
-			await arranger.givenProducts(
-				ProductMother.create({
-					variants: [
-						ProductVariantMother.createPrimitives({
-							id: "v1",
-							onlineStock: 3,
-						}),
-					],
-				}),
-			);
-
-			await repository.increaseStock(new VariantId("v1"), 2);
-
-			expect(await onlineStockOf("v1")).toBe(5);
-		});
-
 		it("sell the last unit only once when two buyers race for it", async () => {
 			await arranger.givenProducts(
 				ProductMother.create({

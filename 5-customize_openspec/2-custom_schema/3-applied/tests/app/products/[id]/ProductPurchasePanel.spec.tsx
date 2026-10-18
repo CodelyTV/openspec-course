@@ -4,6 +4,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { addSelectedVariantToCart } from "@/app/actions/checkout/addSelectedVariantToCart";
 import { requestRestockAlert } from "@/app/actions/restock-alerts/requestRestockAlert";
+import { saveToWishlist } from "@/app/actions/wishlist/saveToWishlist";
 import { ProductPurchasePanel } from "@/app/products/[id]/ProductPurchasePanel";
 
 import { ProductVariantMother } from "../../../backend/products/domain/ProductVariantMother";
@@ -17,8 +18,17 @@ vi.mock("@/app/actions/restock-alerts/requestRestockAlert", () => ({
 	requestRestockAlert: vi.fn(),
 }));
 
+vi.mock("@/app/actions/wishlist/saveToWishlist", () => ({
+	saveToWishlist: vi.fn(),
+}));
+
+vi.mock("@/app/actions/wishlist/removeFromWishlist", () => ({
+	removeFromWishlist: vi.fn(),
+}));
+
 const addToCart = vi.mocked(addSelectedVariantToCart);
 const notifyMe = vi.mocked(requestRestockAlert);
+const save = vi.mocked(saveToWishlist);
 
 const product = ProductResponseMother.create({
 	variants: [
@@ -131,6 +141,7 @@ describe("ProductPurchasePanel should", () => {
 	beforeEach(() => {
 		addToCart.mockResolvedValue({ error: null });
 		notifyMe.mockResolvedValue({ error: null, isAlertActive: true });
+		save.mockResolvedValue({ error: null, isSaved: true });
 	});
 
 	it("preselect the first variant in stock", () => {
@@ -383,5 +394,39 @@ describe("ProductPurchasePanel should", () => {
 		expect(
 			screen.getByRole("link", { name: "Back to catalog" }),
 		).toBeInTheDocument();
+	});
+
+	it("keep the wishlist button state when another variant is picked", async () => {
+		const user = userEvent.setup();
+		render(<ProductPurchasePanel product={hexagonalOvershirt} />);
+
+		await user.click(screen.getByRole("button", { name: "Moss" }));
+		await user.click(
+			screen.getByRole("button", { name: "Size L, sold out" }),
+		);
+		await user.click(
+			screen.getByRole("button", { name: "Save to wishlist" }),
+		);
+		await screen.findByRole("button", { name: "Remove from wishlist" });
+		await user.click(screen.getByRole("button", { name: "Indigo" }));
+		await user.click(screen.getByRole("button", { name: "Size S" }));
+
+		expect(selectedVariantSummary()).toHaveTextContent("Indigo / S");
+		expect(
+			screen.getByRole("button", { name: "Remove from wishlist" }),
+		).toBeEnabled();
+	});
+
+	it("offer to save a product without variants to the wishlist", () => {
+		render(
+			<ProductPurchasePanel
+				product={ProductResponseMother.create({ variants: [] })}
+				isSaved
+			/>,
+		);
+
+		expect(
+			screen.getByRole("button", { name: "Remove from wishlist" }),
+		).toBeEnabled();
 	});
 });

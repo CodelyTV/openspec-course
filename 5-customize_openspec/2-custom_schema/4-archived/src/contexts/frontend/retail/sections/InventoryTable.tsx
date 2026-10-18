@@ -50,6 +50,11 @@ export function InventoryTable({
 					),
 				},
 				{ header: "Waiting", align: "end", cell: (row) => row.waiting },
+				{
+					header: "Wishlisted",
+					align: "end",
+					cell: (row) => row.wishlisted,
+				},
 			]}
 		/>
 	);

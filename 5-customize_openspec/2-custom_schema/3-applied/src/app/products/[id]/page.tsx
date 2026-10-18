@@ -42,9 +42,10 @@ export default async function ProductPage({
 		notFound();
 	}
 
-	const [suggestions, alertedVariantIds] = await Promise.all([
+	const [suggestions, alertedVariantIds, isSaved] = await Promise.all([
 		retailContainer.productSuggestionsFinder.find(product.id),
 		retailContainer.customerRestockAlertsFinder.find(product.id),
+		retailContainer.wishlistProductChecker.isSaved(product.id),
 	]);
 
 	return (
@@ -70,6 +71,7 @@ export default async function ProductPage({
 					<ProductPurchasePanel
 						product={product}
 						alertedVariantIds={alertedVariantIds}
+						isSaved={isSaved}
 					/>
 				</section>
 			</div>

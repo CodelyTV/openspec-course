@@ -16,6 +16,7 @@ export class InventoryResponseMother {
 			low: false,
 			inOutfit: false,
 			waiting: faker.number.int({ min: 0, max: 5 }),
+			wishlisted: faker.number.int({ min: 0, max: 5 }),
 			...overrides,
 		};
 	}

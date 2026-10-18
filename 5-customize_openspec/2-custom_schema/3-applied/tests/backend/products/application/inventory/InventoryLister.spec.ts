@@ -4,6 +4,7 @@ import { InventoryLister } from "@/contexts/backend/products/application/invento
 import type { OutfitRepository } from "@/contexts/backend/products/domain/OutfitRepository";
 import type { ProductRepository } from "@/contexts/backend/products/domain/ProductRepository";
 import type { RestockAlertRepository } from "@/contexts/backend/products/domain/RestockAlertRepository";
+import type { WishlistRepository } from "@/contexts/backend/products/domain/WishlistRepository";
 
 import { Mock } from "../../../../shared/Mock";
 import { ProductMother } from "../../domain/ProductMother";
@@ -13,15 +14,18 @@ describe("InventoryLister should", () => {
 	const repository = Mock.create<ProductRepository>();
 	const outfitRepository = Mock.create<OutfitRepository>();
 	const restockAlertRepository = Mock.create<RestockAlertRepository>();
+	const wishlistRepository = Mock.create<WishlistRepository>();
 	const lister = new InventoryLister(
 		repository,
 		outfitRepository,
 		restockAlertRepository,
+		wishlistRepository,
 	);
 
 	beforeEach(() => {
 		outfitRepository.countOutfitsByProductShouldReturn(new Map());
 		restockAlertRepository.countByVariantShouldReturn(new Map());
+		wishlistRepository.countByProductShouldReturn(new Map());
 	});
 
 	it("list every variant of every product flagging and counting those at or below the low stock threshold", async () => {
@@ -55,6 +59,7 @@ describe("InventoryLister should", () => {
 					low: true,
 					inOutfit: false,
 					waiting: 0,
+					wishlisted: 0,
 				},
 				{
 					productName: "Tee",
@@ -65,6 +70,7 @@ describe("InventoryLister should", () => {
 					low: false,
 					inOutfit: false,
 					waiting: 0,
+					wishlisted: 0,
 				},
 			],
 			lowStockCount: 1,
@@ -201,6 +207,83 @@ describe("InventoryLister should", () => {
 			["Event Storm Knit Black / L", 0],
 			["Hexagonal Overshirt Moss / L", 3],
 			["Hexagonal Overshirt Moss / S", 1],
+		]);
+	});
+
+	it("show on every variant the number of customers who saved its product", async () => {
+		repository.searchAllShouldReturn([
+			ProductMother.create({
+				id: "hexagonal-overshirt",
+				name: "Hexagonal Overshirt",
+				variants: [
+					ProductVariantMother.createPrimitives({ onlineStock: 3 }),
+					ProductVariantMother.createPrimitives({ onlineStock: 5 }),
+				],
+			}),
+		]);
+		wishlistRepository.countByProductShouldReturn(
+			new Map([["hexagonal-overshirt", 2]]),
+		);
+
+		const { variants } = await lister.list();
+
+		expect(variants.map((row) => row.wishlisted)).toEqual([2, 2]);
+	});
+
+	it("show 0 wishlisted customers for a product nobody saved", async () => {
+		repository.searchAllShouldReturn([
+			ProductMother.create({
+				id: "domain-event-tee",
+				variants: [
+					ProductVariantMother.createPrimitives({ onlineStock: 4 }),
+				],
+			}),
+		]);
+
+		const { variants } = await lister.list();
+
+		expect(variants.map((row) => row.wishlisted)).toEqual([0]);
+	});
+
+	it("keep the inventory order whatever the wishlisted customers", async () => {
+		repository.searchAllShouldReturn([
+			ProductMother.create({
+				id: "hexagonal-overshirt",
+				name: "Hexagonal Overshirt",
+				variants: [
+					ProductVariantMother.createPrimitives({
+						color: "Moss",
+						size: "L",
+						onlineStock: 0,
+					}),
+				],
+			}),
+			ProductMother.create({
+				id: "event-storm-knit",
+				name: "Event Storm Knit",
+				variants: [
+					ProductVariantMother.createPrimitives({
+						color: "Black",
+						size: "L",
+						onlineStock: 0,
+					}),
+				],
+			}),
+		]);
+		wishlistRepository.countByProductShouldReturn(
+			new Map([["hexagonal-overshirt", 3]]),
+		);
+
+		const { variants } = await lister.list();
+
+		expect(
+			variants.map((row) => [
+				`${row.productName} ${row.color} / ${row.size}`,
+				row.wishlisted,
+			]),
+		).toEqual([
+			["Event Storm Knit Black / L", 0],
+			["Hexagonal Overshirt Moss / L", 3],
 		]);
 	});
 

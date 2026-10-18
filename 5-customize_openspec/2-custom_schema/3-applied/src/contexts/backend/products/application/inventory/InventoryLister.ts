@@ -2,6 +2,7 @@ import type { OutfitRepository } from "../../domain/OutfitRepository";
 import type { ProductRepository } from "../../domain/ProductRepository";
 import { type Size, sizeOrder } from "../../domain/ProductVariant";
 import type { RestockAlertRepository } from "../../domain/RestockAlertRepository";
+import type { WishlistRepository } from "../../domain/WishlistRepository";
 
 export type InventoryResponse = {
 	productName: string;
@@ -12,6 +13,7 @@ export type InventoryResponse = {
 	low: boolean;
 	inOutfit: boolean;
 	waiting: number;
+	wishlisted: number;
 };
 
 export type InventoryReportResponse = {
@@ -24,15 +26,21 @@ export class InventoryLister {
 		private readonly repository: ProductRepository,
 		private readonly outfitRepository: OutfitRepository,
 		private readonly restockAlertRepository: RestockAlertRepository,
+		private readonly wishlistRepository: WishlistRepository,
 	) {}
 
 	async list(): Promise<InventoryReportResponse> {
-		const [products, outfitCountByProductId, waitingByVariantId] =
-			await Promise.all([
-				this.repository.searchAll(),
-				this.outfitRepository.countOutfitsByProduct(),
-				this.restockAlertRepository.countByVariant(),
-			]);
+		const [
+			products,
+			outfitCountByProductId,
+			waitingByVariantId,
+			wishlistedByProductId,
+		] = await Promise.all([
+			this.repository.searchAll(),
+			this.outfitRepository.countOutfitsByProduct(),
+			this.restockAlertRepository.countByVariant(),
+			this.wishlistRepository.countByProduct(),
+		]);
 
 		const variants = products.flatMap((product) =>
 			product.variants.map((variant) => ({
@@ -45,6 +53,7 @@ export class InventoryLister {
 				inOutfit:
 					(outfitCountByProductId.get(product.id.value) ?? 0) > 0,
 				waiting: waitingByVariantId.get(variant.id.value) ?? 0,
+				wishlisted: wishlistedByProductId.get(product.id.value) ?? 0,
 			})),
 		);
 

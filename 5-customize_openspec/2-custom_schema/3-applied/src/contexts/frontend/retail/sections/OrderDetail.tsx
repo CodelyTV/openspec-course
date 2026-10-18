@@ -14,7 +14,6 @@ import {
 	variantLabel,
 } from "../ui/format";
 
-import { CancelOrderForm } from "./CancelOrderForm";
 import { PageHeader } from "./PageHeader";
 
 import styles from "./orders.module.scss";
@@ -38,8 +37,6 @@ export function OrderDetail({
 	audience,
 }: OrderDetailProps): React.JSX.Element {
 	const backLink = backLinks[audience];
-	const canBeCancelled =
-		audience === "customer" && order.status === "confirmed";
 	const facts = [
 		audience === "admin"
 			? { label: "Customer", value: order.customerName }
@@ -73,8 +70,6 @@ export function OrderDetail({
 					</div>
 				))}
 			</dl>
-
-			{canBeCancelled && <CancelOrderForm orderId={order.id} />}
 
 			<Table
 				label="Order lines"
