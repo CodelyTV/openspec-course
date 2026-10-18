@@ -1,0 +1,259 @@
+5-customize_openspec/1-lighter_specs/2-proposed/openspec/changes/add-wishlist/.openspec.yaml
+  s_46bb4d46d04108::t_41c8c542f52fcd 2
+5-customize_openspec/2-custom_schema/2-proposed/openspec/changes/add-wishlist/.openspec.yaml
+  s_8d6379ad534221::t_17b5825d7b09b1 2
+5-customize_openspec/2-custom_schema/2-proposed/openspec/changes/add-wishlist/plan.md
+  s_8d6379ad534221::t_2e53208a447ff7 2-4,14,18,22-29,33,35,40-53,55-117,120,122-144,146-158,161,166-177,184
+5-customize_openspec/2-custom_schema/3-applied/database/schema.sql
+  s_682a4d270a5814::t_8e42cfec1a5ad2 1,65-71
+5-customize_openspec/2-custom_schema/3-applied/database/seed.sql
+  s_682a4d270a5814::t_1d5b9e36db6e36 126-131
+5-customize_openspec/2-custom_schema/3-applied/openspec/changes/add-wishlist/.openspec.yaml
+  s_8d6379ad534221::t_91260a8c52b5ef 2
+5-customize_openspec/2-custom_schema/3-applied/openspec/changes/add-wishlist/plan.md
+  s_682a4d270a5814::t_2857a76ddd6d98 2-4,19,22,26,30-37,41,43,48-61,63-125,128,130-152,154-166,169,174-185,190,192
+5-customize_openspec/2-custom_schema/3-applied/src/app/account/wishlist/page.tsx
+  s_682a4d270a5814::t_00b9ff65efc94d 1,3-5,7-10,13-19
+5-customize_openspec/2-custom_schema/3-applied/src/app/actions/wishlist/WishlistActionState.ts
+  s_682a4d270a5814::t_f6f5907a7d7b4c 1-3
+5-customize_openspec/2-custom_schema/3-applied/src/app/actions/wishlist/removeFromWishlist.ts
+  s_682a4d270a5814::t_7578de1b5b55ed 5-14,16-18,20,23-25
+5-customize_openspec/2-custom_schema/3-applied/src/app/actions/wishlist/requiredProductId.ts
+  s_682a4d270a5814::t_865d3ea312b279 1,3-7,9-10
+5-customize_openspec/2-custom_schema/3-applied/src/app/actions/wishlist/revalidateWishlistPages.ts
+  s_682a4d270a5814::t_328de18550dfc6 1,3-5
+5-customize_openspec/2-custom_schema/3-applied/src/app/actions/wishlist/saveToWishlist.ts
+  s_682a4d270a5814::t_4611da2f663908 1-34
+5-customize_openspec/2-custom_schema/3-applied/src/app/products/[id]/ProductPurchasePanel.tsx
+  s_682a4d270a5814::t_8c5ddf6401c727 13,21,50-56,60,70,75-77,90,100,106,232
+5-customize_openspec/2-custom_schema/3-applied/src/app/products/[id]/WishlistToggle.module.scss
+  s_682a4d270a5814::t_aa7737d37fca87 1-4
+5-customize_openspec/2-custom_schema/3-applied/src/app/products/[id]/WishlistToggle.tsx
+  s_682a4d270a5814::t_bc6692a296236b 1-5,8-36,38-41,43
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/orders/domain/Order.ts
+  s_7e2386a68c572e::t_c429edaef92e38 10
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/application/check-wishlist/WishlistProductChecker.ts
+  s_682a4d270a5814::t_f66c77360d7aca 1-18
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/application/find-customer-wishlist/CustomerWishlistFinder.ts
+  s_682a4d270a5814::t_897a4d5788a6c0 3-5,7,9-10,14-17,20-21,24-28,30-31,33-34
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/application/inventory/InventoryLister.ts
+  s_682a4d270a5814::t_110bd808edf468 5,16,29,33-43,56
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/application/remove-from-wishlist/WishlistProductRemover.ts
+  s_682a4d270a5814::t_7d5afbbae42835 1-18
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/application/save-to-wishlist/WishlistProductSaver.ts
+  s_682a4d270a5814::t_9be9d1d78ae6b8 1-3,5,7-8,10-16,18-20,22-24,26-30
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/domain/WishlistItem.ts
+  s_682a4d270a5814::t_823113a75263b0 1-2,4-8,10-15,17-21,24-31
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/domain/WishlistRepository.ts
+  s_682a4d270a5814::t_dcee2cfee2caf9 1-18
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/products/infrastructure/PostgresWishlistRepository.ts
+  s_682a4d270a5814::t_eb9b7599f87f0e 1-64
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/backend/shared/infrastructure/RetailContainer.ts
+  s_682a4d270a5814::t_e2b6c19446fd60 22,29,35,37,44,70-73,123,183-213
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/frontend/retail/sections/AdminOrdersTable.tsx
+  s_7e2386a68c572e::t_81dffe412e2f78 6,44-48
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/frontend/retail/sections/CustomerOrdersTable.tsx
+  s_7e2386a68c572e::t_b678d67d01e824 10,52-56
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/frontend/retail/sections/InventoryTable.tsx
+  s_682a4d270a5814::t_7bf2a2fc76aea0 53-57
+5-customize_openspec/2-custom_schema/3-applied/src/contexts/frontend/retail/sections/UserMenuTrigger.tsx
+  s_682a4d270a5814::t_55e0d47e96aa22 83-89
+5-customize_openspec/2-custom_schema/3-applied/tests/app/products/[id]/ProductPurchasePanel.spec.tsx
+  s_682a4d270a5814::t_0e79a39e5d4921 7,21-28,31,144,398-431
+5-customize_openspec/2-custom_schema/3-applied/tests/app/products/[id]/WishlistToggle.spec.tsx
+  s_682a4d270a5814::t_1349ce747c19b2 1-101
+5-customize_openspec/2-custom_schema/3-applied/tests/backend/products/application/check-wishlist/WishlistProductChecker.spec.ts
+  s_682a4d270a5814::t_f044b9aef55f0a 1,3-4,6,11-12,14-15,18,21,24-25,27-30,34-35,37-40
+5-customize_openspec/2-custom_schema/3-applied/tests/backend/products/application/find-customer-wishlist/CustomerWishlistFinder.spec.ts
+  s_682a4d270a5814::t_2b60ff4f89cb7d 1,3-4,6-9,12-27,29-34,36,38-43,47-48,50
+5-customize_openspec/2-custom_schema/3-applied/tests/backend/products/application/inventory/InventoryLister.spec.ts
+  s_682a4d270a5814::t_064c9b83d2c244 7,17,22,28,62,73,213-289
+5-customize_openspec/2-custom_schema/3-applied/tests/backend/products/application/remove-from-wishlist/WishlistProductRemover.spec.ts
+  s_682a4d270a5814::t_a0d321cfde9aaf 1-30
+5-customize_openspec/2-custom_schema/3-applied/tests/backend/products/application/save-to-wishlist/WishlistProductSaver.spec.ts
+  s_682a4d270a5814::t_1f693a2812b417 1,3-7,9,13-14,16-18,20-23,25,27-28,31-32,35-38,40,42-50,54-55,57-58,60
+5-customize_openspec/2-custom_schema/3-applied/tests/backend/products/domain/WishlistItemMother.ts
+  s_682a4d270a5814::t_312171026c7309 1-31
+5-customize_openspec/2-custom_schema/3-applied/tests/backend/products/infrastructure/PostgresWishlistRepository.spec.ts
+  s_682a4d270a5814::t_0988aafb8921d2 1-176
+5-customize_openspec/2-custom_schema/3-applied/tests/frontend/retail/responses/InventoryResponseMother.ts
+  s_682a4d270a5814::t_e766ac890e3512 19
+5-customize_openspec/2-custom_schema/3-applied/tests/frontend/retail/sections/InventoryTable.spec.tsx
+  s_682a4d270a5814::t_ce545378b839f1 9,20,33,57-78
+5-customize_openspec/2-custom_schema/3-applied/tests/frontend/retail/sections/OrderDetail.spec.tsx
+  s_7e2386a68c572e::t_eab72e608e691c 2
+5-customize_openspec/2-custom_schema/3-applied/tests/frontend/retail/sections/UserMenuTrigger.spec.tsx
+  s_682a4d270a5814::t_338d3c23450e38 118-135
+5-customize_openspec/2-custom_schema/4-archived/database/schema.sql
+  s_682a4d270a5814::t_741d49bf9103ab 1,65-71
+5-customize_openspec/2-custom_schema/4-archived/database/seed.sql
+  s_682a4d270a5814::t_990d63f78169e1 126-131
+5-customize_openspec/2-custom_schema/4-archived/openspec/changes/archive/2026-10-18-add-wishlist/.openspec.yaml
+  s_8d6379ad534221::t_99f8bf021ef10b 2
+5-customize_openspec/2-custom_schema/4-archived/openspec/changes/archive/2026-10-18-add-wishlist/plan.md
+  s_682a4d270a5814::t_033401ad4b8f69 2-4,19,22,26,30-37,41,43,48-61,63-125,128,130-152,154-166,169,174-185,190,192
+5-customize_openspec/2-custom_schema/4-archived/openspec/specs/stock-monitoring/spec.md
+  s_3ec64cb4ddaafa::t_f49c7993bf450b 60-74
+5-customize_openspec/2-custom_schema/4-archived/openspec/specs/wishlist/spec.md
+  s_3ec64cb4ddaafa::t_0f81b8c3e8c53a 1-74
+5-customize_openspec/2-custom_schema/4-archived/src/app/account/wishlist/page.tsx
+  s_682a4d270a5814::t_259c0d28734caa 1,3-5,7-10,13-19
+5-customize_openspec/2-custom_schema/4-archived/src/app/actions/wishlist/WishlistActionState.ts
+  s_682a4d270a5814::t_6834e19f3c63a0 1-3
+5-customize_openspec/2-custom_schema/4-archived/src/app/actions/wishlist/removeFromWishlist.ts
+  s_682a4d270a5814::t_c2fd76fb4dd128 5-14,16-18,20,23-25
+5-customize_openspec/2-custom_schema/4-archived/src/app/actions/wishlist/requiredProductId.ts
+  s_682a4d270a5814::t_b5fb6a6da959b8 1,3-7,9-10
+5-customize_openspec/2-custom_schema/4-archived/src/app/actions/wishlist/revalidateWishlistPages.ts
+  s_682a4d270a5814::t_dfab4a15b27ddb 1,3-5
+5-customize_openspec/2-custom_schema/4-archived/src/app/actions/wishlist/saveToWishlist.ts
+  s_682a4d270a5814::t_d479ebf2cb4996 1-34
+5-customize_openspec/2-custom_schema/4-archived/src/app/products/[id]/ProductPurchasePanel.tsx
+  s_682a4d270a5814::t_60682f343d015e 13,21,50-56,60,70,75-77,90,100,106,232
+5-customize_openspec/2-custom_schema/4-archived/src/app/products/[id]/WishlistToggle.module.scss
+  s_682a4d270a5814::t_9a1dbdbfece4f6 1-4
+5-customize_openspec/2-custom_schema/4-archived/src/app/products/[id]/WishlistToggle.tsx
+  s_682a4d270a5814::t_a0820e2597c2b6 1-5,8-36,38-41,43
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/orders/domain/Order.ts
+  s_7e2386a68c572e::t_db7d2b308b785e 10
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/application/check-wishlist/WishlistProductChecker.ts
+  s_682a4d270a5814::t_2f6acb139c35cb 1-18
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/application/find-customer-wishlist/CustomerWishlistFinder.ts
+  s_682a4d270a5814::t_3452662a9eb889 3-5,7,9-10,14-17,20-21,24-28,30-31,33-34
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/application/inventory/InventoryLister.ts
+  s_682a4d270a5814::t_a8189c131bdc29 5,16,29,33-43,56
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/application/remove-from-wishlist/WishlistProductRemover.ts
+  s_682a4d270a5814::t_a951c44fe31ecb 1-18
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/application/save-to-wishlist/WishlistProductSaver.ts
+  s_682a4d270a5814::t_5f4927aab2a868 1-3,5,7-8,10-16,18-20,22-24,26-30
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/domain/WishlistItem.ts
+  s_682a4d270a5814::t_ab8d55d1b337c2 1-2,4-8,10-15,17-21,24-31
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/domain/WishlistRepository.ts
+  s_682a4d270a5814::t_639eedf8d48ae9 1-18
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/products/infrastructure/PostgresWishlistRepository.ts
+  s_682a4d270a5814::t_b448dfbf1e59ac 1-64
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/backend/shared/infrastructure/RetailContainer.ts
+  s_682a4d270a5814::t_5be3a7a1aed379 22,29,35,37,44,70-73,123,183-213
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/frontend/retail/sections/AdminOrdersTable.tsx
+  s_7e2386a68c572e::t_d2da18892c22cb 6,44-48
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/frontend/retail/sections/CustomerOrdersTable.tsx
+  s_7e2386a68c572e::t_8db3173c9fad54 10,52-56
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/frontend/retail/sections/InventoryTable.tsx
+  s_682a4d270a5814::t_2db53efe3041fb 53-57
+5-customize_openspec/2-custom_schema/4-archived/src/contexts/frontend/retail/sections/UserMenuTrigger.tsx
+  s_682a4d270a5814::t_15a280e09c61cb 83-89
+5-customize_openspec/2-custom_schema/4-archived/tests/app/products/[id]/ProductPurchasePanel.spec.tsx
+  s_682a4d270a5814::t_b7dfa3052a19ec 7,21-28,31,144,398-431
+5-customize_openspec/2-custom_schema/4-archived/tests/app/products/[id]/WishlistToggle.spec.tsx
+  s_682a4d270a5814::t_89c470ef72d898 1-101
+5-customize_openspec/2-custom_schema/4-archived/tests/backend/products/application/check-wishlist/WishlistProductChecker.spec.ts
+  s_682a4d270a5814::t_b38f35c61471c2 1-43
+5-customize_openspec/2-custom_schema/4-archived/tests/backend/products/application/find-customer-wishlist/CustomerWishlistFinder.spec.ts
+  s_682a4d270a5814::t_0d739e8573e842 1,3-4,6-9,12-27,29-34,36,38-43,47-48,50
+5-customize_openspec/2-custom_schema/4-archived/tests/backend/products/application/inventory/InventoryLister.spec.ts
+  s_682a4d270a5814::t_6ca1b398a713ac 7,17,22,28,62,73,213-289
+5-customize_openspec/2-custom_schema/4-archived/tests/backend/products/application/remove-from-wishlist/WishlistProductRemover.spec.ts
+  s_682a4d270a5814::t_9185f10922957e 1-30
+5-customize_openspec/2-custom_schema/4-archived/tests/backend/products/application/save-to-wishlist/WishlistProductSaver.spec.ts
+  s_682a4d270a5814::t_2e7c884cc99e94 1-62
+5-customize_openspec/2-custom_schema/4-archived/tests/backend/products/domain/WishlistItemMother.ts
+  s_682a4d270a5814::t_7760f2edd9de4c 1-31
+5-customize_openspec/2-custom_schema/4-archived/tests/backend/products/infrastructure/PostgresWishlistRepository.spec.ts
+  s_682a4d270a5814::t_7531711376e3cc 1-176
+5-customize_openspec/2-custom_schema/4-archived/tests/frontend/retail/responses/InventoryResponseMother.ts
+  s_682a4d270a5814::t_46d129a02eb6cc 19
+5-customize_openspec/2-custom_schema/4-archived/tests/frontend/retail/sections/InventoryTable.spec.tsx
+  s_682a4d270a5814::t_faa744ab2a01de 9,20,33,57-78
+5-customize_openspec/2-custom_schema/4-archived/tests/frontend/retail/sections/OrderDetail.spec.tsx
+  s_7e2386a68c572e::t_136320f0179f3d 2
+5-customize_openspec/2-custom_schema/4-archived/tests/frontend/retail/sections/UserMenuTrigger.spec.tsx
+  s_682a4d270a5814::t_b0858ac465adc5 118-135
+5-customize_openspec/2-custom_schema/2-proposed/openspec/schemas/codely-spec-plan/schema.yaml
+  s_f7ab57fc1e38b1::t_15dfe868560389 25
+5-customize_openspec/2-custom_schema/3-applied/openspec/schemas/codely-spec-plan/schema.yaml
+  s_f7ab57fc1e38b1::t_9ad58d8cdfcafa 25
+5-customize_openspec/2-custom_schema/4-archived/openspec/schemas/codely-spec-plan/schema.yaml
+  s_f7ab57fc1e38b1::t_ea41bbcef14d02 25
+5-customize_openspec/1-lighter_specs/2-proposed/openspec/changes/add-wishlist/design.md
+  s_682a4d270a5814::t_6c775fbb5e6c3c 5,10-11,14-15,19-40,44-46,50
+5-customize_openspec/1-lighter_specs/2-proposed/openspec/changes/add-wishlist/proposal.md
+  s_682a4d270a5814::t_bf9af0e67c332d 5,9-13,18,21,25-28
+5-customize_openspec/1-lighter_specs/2-proposed/openspec/changes/add-wishlist/specs/stock-monitoring/spec.md
+  s_682a4d270a5814::t_a20d93e445dbd9 5-6,8-9,11-12,14-15
+5-customize_openspec/1-lighter_specs/2-proposed/openspec/changes/add-wishlist/specs/wishlist/spec.md
+  s_682a4d270a5814::t_2fdb9b62ef0b1c 1-73
+5-customize_openspec/1-lighter_specs/2-proposed/openspec/changes/add-wishlist/tasks.md
+  s_682a4d270a5814::t_ad8efb8b1e2d09 1-38
+5-customize_openspec/2-custom_schema/2-proposed/openspec/changes/add-wishlist/specs/stock-monitoring/spec.md
+  s_682a4d270a5814::t_f23e34fa47ab9f 1-16
+5-customize_openspec/2-custom_schema/2-proposed/openspec/changes/add-wishlist/specs/wishlist/spec.md
+  s_682a4d270a5814::t_bbbad9fc4298bc 1-72
+5-customize_openspec/2-custom_schema/3-applied/openspec/changes/add-wishlist/specs/stock-monitoring/spec.md
+  s_682a4d270a5814::t_c321ea627333ef 1-16
+5-customize_openspec/2-custom_schema/3-applied/openspec/changes/add-wishlist/specs/wishlist/spec.md
+  s_682a4d270a5814::t_6ab3d6fc2a8c34 1-72
+5-customize_openspec/2-custom_schema/3-applied/src/app/products/[id]/page.tsx
+  s_682a4d270a5814::t_1247d04304376a 45,48,74
+5-customize_openspec/2-custom_schema/4-archived/openspec/changes/archive/2026-10-18-add-wishlist/specs/stock-monitoring/spec.md
+  s_682a4d270a5814::t_5b7bf50428737a 1-16
+5-customize_openspec/2-custom_schema/4-archived/openspec/changes/archive/2026-10-18-add-wishlist/specs/wishlist/spec.md
+  s_682a4d270a5814::t_9d978ae76bc604 1-72
+5-customize_openspec/2-custom_schema/4-archived/src/app/products/[id]/page.tsx
+  s_682a4d270a5814::t_3167cd3785cba6 45,48,74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0dd911d39d58b4efe5d045888a304a659ce76ad8",
+  "prompts": {},
+  "sessions": {
+    "s_3ec64cb4ddaafa": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "52dea52e-557e-45db-a231-ff31e265b8b8",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    },
+    "s_46bb4d46d04108": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4ad7e165-2eac-4b3d-b64c-66b01d9322fc",
+        "model": "unknown"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    },
+    "s_682a4d270a5814": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4bbfff27-978e-4986-a0e5-d66a3edb607f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    },
+    "s_7e2386a68c572e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8ded8c1d-fb07-4e6d-ab23-6a8f17188131",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    },
+    "s_8d6379ad534221": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2ef2e903-7930-4903-85a2-f533825146d6",
+        "model": "unknown"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    },
+    "s_f7ab57fc1e38b1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "650c47f5-4a81-49c1-bdaf-a93b1a8acb39",
+        "model": "unknown"
+      },
+      "human_author": "Pablo Rodríguez Guillén <pablo.rodriguez@codely.com>"
+    }
+  }
+}
